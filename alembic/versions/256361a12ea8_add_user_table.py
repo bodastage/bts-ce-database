@@ -40,6 +40,40 @@ def upgrade():
     )
     op.execute('ALTER SEQUENCE  users_pk_seq RENAME TO seq_users_pk')
 
+    users = sa.sql.table(
+         'users',
+         sa.Column('pk', sa.Integer, sa.Sequence('seq_users_pk', ), primary_key=True, nullable=False),
+         sa.Column('password', sa.String(200), nullable=False),
+         sa.Column('username', sa.String(200)),
+         sa.Column('is_enabled', sa.Boolean),
+         sa.Column('is_account_non_expired', sa.Boolean),
+         sa.Column('is_account_non_locked', sa.Boolean),
+         sa.Column('is_credentials_non_expired', sa.Boolean),
+         sa.Column('token', sa.String(200)),
+         sa.Column('first_name', sa.String(200)),
+         sa.Column('last_name', sa.String(200)),
+         sa.Column('other_names', sa.String(200)),
+         sa.Column('job_title', sa.String(200)),
+         sa.Column('phone_number', sa.String(200)),
+         sa.Column('photo', sa.Text),
+         sa.Column('modified_by', sa.Integer),
+         sa.Column('added_by', sa.Integer),
+         sa.Column('date_added', sa.TIMESTAMP, default=datetime.datetime.utcnow,onupdate=datetime.datetime.utcnow),
+         sa.Column('date_modified', sa.TIMESTAMP, default=datetime.datetime.utcnow),
+    )
+
+    # @TODO: Encrypt password
+    op.bulk_insert(users, [
+        {
+             'username': 'user@bts.bodastage.org',
+             'password': 'password',
+             'is_enabled': True,
+             'token': '123456789123456789',
+             'first_name': 'Bodastage',
+             'last_name': 'Solutions',
+             'job_title': 'Engineer'
+         }
+    ])
 
 def downgrade():
     op.drop_table('users')

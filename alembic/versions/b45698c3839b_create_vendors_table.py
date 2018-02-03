@@ -30,18 +30,17 @@ def upgrade():
     )
     op.execute('ALTER SEQUENCE  vendors_pk_seq RENAME TO seq_vendors_pk')
 
-    vendors = sa.sql.table('vendors',
-                                sa.Column('pk', sa.Integer, sa.Sequence('seq_vendors_pk', ), primary_key=True,
-                                          nullable=False),
-                                sa.Column('name', sa.String(50), unique=True, nullable=False),
-                                sa.Column('notes', sa.Text),
-                                sa.Column('supported', sa.Boolean),
-                                sa.Column('modified_by', sa.Integer),
-                                sa.Column('added_by', sa.Integer),
-                                sa.Column('date_added', sa.TIMESTAMP, default=datetime.datetime.utcnow,
-                                          onupdate=datetime.datetime.utcnow),
-                                sa.Column('date_modified', sa.TIMESTAMP, default=datetime.datetime.utcnow)
-                            )
+    vendors = sa.sql.table(
+        'vendors',
+        sa.Column('pk', sa.Integer, sa.Sequence('seq_vendors_pk', ), primary_key=True, nullable=False),
+        sa.Column('name', sa.String(50), unique=True, nullable=False),
+        sa.Column('notes', sa.Text),
+        sa.Column('supported', sa.Boolean),
+        sa.Column('modified_by', sa.Integer),
+        sa.Column('added_by', sa.Integer),
+        sa.Column('date_added', sa.TIMESTAMP, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow),
+        sa.Column('date_modified', sa.TIMESTAMP, default=datetime.datetime.utcnow)
+    )
 
     op.bulk_insert(vendors, [
         {'name': 'Ericsson', 'supported': True, 'modified_by': 0, 'added_by': 0},
