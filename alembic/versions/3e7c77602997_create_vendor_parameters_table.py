@@ -7,7 +7,7 @@ Create Date: 2018-02-03 03:22:50.224000
 """
 from alembic import op
 import sqlalchemy as sa
-
+import datetime
 
 # revision identifiers, used by Alembic.
 revision = '3e7c77602997'
@@ -30,7 +30,9 @@ def upgrade():
         sa.Column('tech_pk', sa.Integer),
         sa.Column('vendor_pk', sa.Integer),
     )
+    op.execute('ALTER SEQUENCE  vendor_parameters_pk_seq RENAME TO seq_vendor_parameters_pk')
 
 
 def downgrade():
     op.drop_table('vendor_parameters')
+    op.execute('DROP SEQUENCE seq_vendor_parameters_pk')
