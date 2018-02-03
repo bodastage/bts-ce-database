@@ -3,9 +3,9 @@
 Database migration scripts for Boda Telecom Suite Communtiy Edition (BTS-CE). BTS-CE is an open source telecommunication network management platform.
 
 ## Built With
-[Python](https://www.python.org/)
-[Alembic](http://alembic.zzzcomputing.com)
-[SQLAlchemy](http://sqlalchemy.readthedocs.io/)
+- [Python](https://www.python.org/)
+- [Alembic](http://alembic.zzzcomputing.com)
+- [SQLAlchemy](http://sqlalchemy.readthedocs.io/)
 
 ## Resources
 
