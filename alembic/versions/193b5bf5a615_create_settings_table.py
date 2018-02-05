@@ -37,6 +37,30 @@ def upgrade():
     )
     op.execute('ALTER SEQUENCE  settings_pk_seq RENAME TO seq_settings_pk')
 
+    settings = sa.sql.table(
+        'settings',
+        sa.Column('pk', sa.Integer, sa.Sequence('seq_users_pk', ), primary_key=True, nullable=False),
+        sa.Column('name', sa.String(50), nullable=False),
+        sa.Column('data_type', sa.String(200)),
+        sa.Column('integer_value', sa.Integer),
+        sa.Column('float_value', sa.Float),
+        sa.Column('string_value', sa.String(200)),
+        sa.Column('text_value', sa.Text),
+        sa.Column('timestamp_value', sa.TIMESTAMP),
+        sa.Column('label', sa.String(200)),
+        sa.Column('category_id', sa.String(200)),
+        sa.Column('modified_by', sa.Integer),
+        sa.Column('added_by', sa.Integer),
+        sa.Column('date_added', sa.TIMESTAMP, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow),
+        sa.Column('date_modified', sa.TIMESTAMP, default=datetime.datetime.utcnow)
+    )
+
+    op.bulk_insert(settings, [
+        {'name': 'cm_dag_schedule_interval', 'data_type': 'string', 'string_value': '0 0 * * *',
+         'category_id': 'configuration_management', 'label': 'CM ETL Schedule'},
+        {'name': 'cm_dag_fuelux_scheduler_value', 'data_type': 'text', 'text_value': '{}',
+         'category_id': 'configuration_management', 'label':'Fuelux UI Component Value'},
+    ])
 
 def downgrade():
     op.drop_table('settings')
