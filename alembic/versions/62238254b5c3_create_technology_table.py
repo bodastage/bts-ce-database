@@ -29,5 +29,24 @@ def upgrade():
     )
     op.execute('ALTER SEQUENCE  technologies_pk_seq RENAME TO seq_technologies_pk')
 
+    technologies = sa.sql.table(
+        'technologies',
+        sa.Column('pk', sa.Integer, primary_key=True),
+        sa.Column('name', sa.String(50), nullable=False),
+        sa.Column('notes', sa.Text),
+        sa.Column('modified_by', sa.Integer),
+        sa.Column('added_by', sa.Integer),
+        sa.Column('date_added', sa.TIMESTAMP, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow),
+        sa.Column('date_modified', sa.TIMESTAMP, default=datetime.datetime.utcnow),
+    )
+
+    op.bulk_insert(technologies, [
+        {'name': 'GSM', 'notes': 'Global System for Mobile Communications', 'modified_by': 0, 'added_by': 0},
+        {'name': 'UMTS', 'notes': 'Universal Mobile Telecommunications System', 'modified_by': 0, 'added_by': 0},
+        {'name': 'LTE', 'notes': 'Long-Term Evolution', 'modified_by': 0, 'added_by': 0},
+        {'name': '5G', 'notes': '', 'modified_by': 0, 'added_by': 0},
+        {'name': 'WiMAX', 'notes': 'Worldwide Interoperability for Microwave Access', 'modified_by': 0, 'added_by': 0},
+        {'name': 'Wi-Fi', 'notes': '', 'modified_by': 0, 'added_by': 0},
+    ])
 def downgrade():
     op.drop_table('technologies')
