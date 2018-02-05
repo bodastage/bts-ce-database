@@ -33,6 +33,7 @@ def upgrade():
         sa.Column('bcch', sa.Integer,),
         sa.Column('lac', sa.Integer,),
         sa.Column('maximum_transmission_power', sa.Integer,),
+        sa.Column('secondary_sch_power', sa.Integer, ),
         sa.Column('azimuth', sa.Integer,),
         sa.Column('height', sa.Integer,),
         sa.Column('primary_sch_power', sa.Integer,),
