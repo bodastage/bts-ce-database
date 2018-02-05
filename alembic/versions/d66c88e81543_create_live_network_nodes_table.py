@@ -30,9 +30,8 @@ def upgrade():
         sa.Column('date_modified', sa.TIMESTAMP, default=datetime.datetime.utcnow),
         schema=u'live_network'
     )
-    op.execute('ALTER SEQUENCE  nodes_pk_seq RENAME TO seq_nodes_pk')
+    op.execute('ALTER SEQUENCE  live_network.nodes_pk_seq RENAME TO seq_nodes_pk')
 
 
 def downgrade():
-    op.drop_table('nodes')
-    op.execute('DROP SEQUENCE seq_nodes_pk')
+    op.drop_table('nodes',schema=u'live_network')

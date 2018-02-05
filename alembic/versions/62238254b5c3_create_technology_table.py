@@ -31,4 +31,3 @@ def upgrade():
 
 def downgrade():
     op.drop_table('technologies')
-    op.execute('DROP SEQUENCE seq_technologies_pk')

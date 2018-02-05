@@ -21,7 +21,7 @@ def upgrade():
      CREATE OR REPLACE VIEW live_network.vw_baseline AS
          SELECT t4.name AS vendor,
          t5.name AS technology,
-         t3.nam1e AS mo,
+         t3.name AS mo,
          t2.name AS parameter,
          t1.value,
          t1.date_added,

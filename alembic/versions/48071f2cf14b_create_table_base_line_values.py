@@ -18,22 +18,18 @@ depends_on = None
 
 def upgrade():
     op.create_table(
-        'cells',
+        'base_line_values',
         sa.Column('pk', sa.Integer, primary_key=True),
-        sa.Column('name', sa.String(100), nullable=False),
-        sa.Column('notes', sa.Text),
-        sa.Column('site_pk', sa.Integer),
-        sa.Column('tech_pk', sa.Integer),
-        sa.Column('vendor_pk', sa.Integer),
+        sa.Column('parameter_pk', sa.Integer, nullable=False),
+        sa.Column('value', sa.String(200)),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
         sa.Column('date_added', sa.TIMESTAMP, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow),
         sa.Column('date_modified', sa.TIMESTAMP, default=datetime.datetime.utcnow),
         schema=u'live_network'
     )
-    op.execute('ALTER SEQUENCE  cells_pk_seq RENAME TO seq_cells_pk')
+    op.execute('ALTER SEQUENCE  live_network.base_line_values_pk_seq RENAME TO seq_base_line_values_pk')
 
 
 def downgrade():
-    op.drop_table('cells')
-    op.execute('DROP SEQUENCE seq_cells_pk')
+    op.drop_table('base_line_values', schema=u'live_network')

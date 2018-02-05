@@ -1,15 +1,15 @@
-"""create table base_line_values
-Revision ID: 48071f2cf14b
-Revises: 5309f65cfd33
-Create Date: 2018-02-05 02:37:30.869000
+"""create live_network cells table
+Revision ID: 8579697b2bb6
+Revises: 9b3717bc5552
+Create Date: 2018-02-05 03:01:26.177000
 """
 from alembic import op
 import sqlalchemy as sa
 import datetime
 
 # revision identifiers, used by Alembic.
-revision = '48071f2cf14b'
-down_revision = '5309f65cfd33'
+revision = '8579697b2bb6'
+down_revision = '9b3717bc5552'
 branch_labels = None
 depends_on = None
 
@@ -29,9 +29,8 @@ def upgrade():
         sa.Column('date_modified', sa.TIMESTAMP, default=datetime.datetime.utcnow),
         schema=u'live_network'
     )
-    op.execute('ALTER SEQUENCE  cells_pk_seq RENAME TO seq_cells_pk')
+    op.execute('ALTER SEQUENCE  live_network.cells_pk_seq RENAME TO seq_cells_pk')
 
 
 def downgrade():
-    op.drop_table('cells')
-    op.execute('DROP SEQUENCE seq_cells_pk')
+    op.drop_table('cells', schema=u'live_network')

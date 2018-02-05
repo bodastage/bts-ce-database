@@ -56,12 +56,11 @@ def upgrade():
     )
 
     op.bulk_insert(settings, [
-        {'name': 'cm_dag_schedule_interval', 'data_type': 'string', 'string_value': '0 0 * * *',
+        {'name': 'cm_dag_schedule_interval', 'data_type': 'string', 'string_value': '0 0 * * *', 'text_value':None,
          'category_id': 'configuration_management', 'label': 'CM ETL Schedule'},
-        {'name': 'cm_dag_fuelux_scheduler_value', 'data_type': 'text', 'text_value': '{}',
+        {'name': 'cm_dag_fuelux_scheduler_value', 'data_type': 'text', 'text_value': '{}', 'string_value':None,
          'category_id': 'configuration_management', 'label':'Fuelux UI Component Value'},
     ])
 
 def downgrade():
     op.drop_table('settings')
-    op.execute('DROP SEQUENCE seq_settings_pk')

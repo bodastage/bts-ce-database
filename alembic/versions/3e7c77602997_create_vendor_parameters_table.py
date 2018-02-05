@@ -35,4 +35,3 @@ def upgrade():
 
 def downgrade():
     op.drop_table('vendor_parameters')
-    op.execute('DROP SEQUENCE seq_vendor_parameters_pk')

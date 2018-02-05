@@ -36,4 +36,3 @@ def upgrade():
 
 def downgrade():
     op.drop_table('managedobjects')
-    op.execute('DROP SEQUENCE seq_managedobjects_pk')
