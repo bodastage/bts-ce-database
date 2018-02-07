@@ -56,13 +56,13 @@ def upgrade():
         {'vendor_pk': '1', 'format_pk': 3, 'tech_pk':'3', 'modified_by': 0, 'added_by': 0},
         
         # Huawei 2G
-        {'vendor_pk': '1', 'format_pk': 4, 'tech_pk':'1', 'modified_by': 0, 'added_by': 0},
+        {'vendor_pk': '2', 'format_pk': 4, 'tech_pk':'1', 'modified_by': 0, 'added_by': 0},
 
         # Huawei 3G
-        {'vendor_pk': '1', 'format_pk': 5, 'tech_pk':'2', 'modified_by': 0, 'added_by': 0},
+        {'vendor_pk': '2', 'format_pk': 5, 'tech_pk':'2', 'modified_by': 0, 'added_by': 0},
 
         # Huawei 3G
-        {'vendor_pk': '1', 'format_pk': 6, 'tech_pk':'3', 'modified_by': 0, 'added_by': 0},
+        {'vendor_pk': '2', 'format_pk': 6, 'tech_pk':'3', 'modified_by': 0, 'added_by': 0},
     ])
 
 
