@@ -19,7 +19,7 @@ depends_on = None
 def upgrade():
     op.create_table(
         'technologies',
-        sa.Column('pk', sa.Integer, primary_key=True),
+        sa.Column('pk', sa.Integer, primary_key=True,  nullable=False),
         sa.Column('name', sa.String(50), nullable=False),
         sa.Column('notes', sa.Text),
         sa.Column('modified_by', sa.Integer),
@@ -31,7 +31,7 @@ def upgrade():
 
     technologies = sa.sql.table(
         'technologies',
-        sa.Column('pk', sa.Integer, primary_key=True),
+        sa.Column('pk', sa.Integer, sa.Sequence('seq_technologies_pk', ), primary_key=True, nullable=False),
         sa.Column('name', sa.String(50), nullable=False),
         sa.Column('notes', sa.Text),
         sa.Column('modified_by', sa.Integer),

@@ -72,6 +72,6 @@ def downgrade():
     op.execute("DROP SCHEMA alc_cm_4g")
 
     # Samsung
-    op.execute("CREATE SCHEMA sam_cm_2g")
-    op.execute("CREATE SCHEMA sam_cm_3g")
-    op.execute("CREATE SCHEMA sam_cm_4g")
+    op.execute("DROP SCHEMA sam_cm_2g")
+    op.execute("DROP SCHEMA sam_cm_3g")
+    op.execute("DROP SCHEMA sam_cm_4g")
