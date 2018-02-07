@@ -39,7 +39,7 @@ def upgrade():
 
     settings = sa.sql.table(
         'settings',
-        sa.Column('pk', sa.Integer, sa.Sequence('seq_users_pk', ), primary_key=True, nullable=False),
+        sa.Column('pk', sa.Integer, sa.Sequence('seq_settings_pk', ), primary_key=True, nullable=False),
         sa.Column('name', sa.String(50), nullable=False),
         sa.Column('data_type', sa.String(200)),
         sa.Column('integer_value', sa.Integer),

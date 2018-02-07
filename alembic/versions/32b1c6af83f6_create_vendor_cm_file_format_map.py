@@ -63,6 +63,15 @@ def upgrade():
 
         # Huawei 3G
         {'vendor_pk': '2', 'format_pk': 6, 'tech_pk':'3', 'modified_by': 0, 'added_by': 0},
+
+        # ZTE 2G
+        {'vendor_pk': '3', 'format_pk': 7, 'tech_pk': '1', 'modified_by': 0, 'added_by': 0},
+
+        # ZTE 3G
+        {'vendor_pk': '3', 'format_pk': 8, 'tech_pk': '2', 'modified_by': 0, 'added_by': 0},
+
+        # ZTE 4G
+        {'vendor_pk': '3', 'format_pk': 9, 'tech_pk': '3', 'modified_by': 0, 'added_by': 0},
     ])
 
 

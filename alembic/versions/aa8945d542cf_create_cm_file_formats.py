@@ -46,7 +46,7 @@ def upgrade():
 
     op.bulk_insert(cm_file_formats, [
         # Ericsson 2G
-        {'name': 'cnai_v1', 'vendor_pk':1, 'label':'CNA V1', 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
+        {'name': 'cnai_v1', 'vendor_pk':1, 'label':'CNA V2', 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         # Ericsson 3G
         {'name': 'bulk_cm_xml', 'vendor_pk': 1,  'label':'Bulk CM XML', 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         # Ericsson 4G
