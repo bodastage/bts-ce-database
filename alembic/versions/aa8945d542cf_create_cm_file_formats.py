@@ -69,13 +69,13 @@ def upgrade():
         {'name': 'bulk_cm_xml', 'vendor_pk': 3, 'label': 'Bulk CM XML', 'tech_pk': 3, 'modified_by': 0,
          'added_by': 0},
         # Nokia 2G
-        {'name': 'ram_v1', 'vendor_pk': 4, 'label': 'RAM V1', 'tech_pk': 1, 'modified_by': 0,
+        {'name': 'raml20', 'vendor_pk': 4, 'label': 'RAML 2.0', 'tech_pk': 1, 'modified_by': 0,
          'added_by': 0},
         # Nokia 3G
-        {'name': 'ram_v1', 'vendor_pk': 4, 'label': 'RAM V1', 'tech_pk': 2, 'modified_by': 0,
+        {'name': 'raml20', 'vendor_pk': 4, 'label': 'RAML 2.0', 'tech_pk': 2, 'modified_by': 0,
          'added_by': 0},
         # Nokia 4G
-        {'name': 'ram_v1', 'vendor_pk': 4, 'label': 'RAM V1', 'tech_pk': 3, 'modified_by': 0,
+        {'name': 'raml20', 'vendor_pk': 4, 'label': 'RAML 2.0', 'tech_pk': 3, 'modified_by': 0,
          'added_by': 0},
     ])
 
