@@ -33,17 +33,19 @@ def upgrade():
         sa.Column('date_modified', sa.TIMESTAMP, default=datetime.datetime.utcnow)
     )
 
-
     op.bulk_insert(managedobjects, [
         {'name': 'ADCE', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'ADJL', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'ADJW', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'BCF', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
+        {'name': 'BSC', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
+        {'name': 'BTS', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'DAP', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'GPC', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'HOC', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'LAPD', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'MAL', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
+        {'name': 'NSE', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'NSVL', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'PCM', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'PCU', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},

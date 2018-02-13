@@ -33,7 +33,6 @@ def upgrade():
         sa.Column('date_modified', sa.TIMESTAMP, default=datetime.datetime.utcnow)
     )
 
-
     op.bulk_insert(managedobjects, [
         {'name': 'A2NE', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'A2ST', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
@@ -41,6 +40,7 @@ def upgrade():
         {'name': 'ACCP', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'ADJG', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'ADJI', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
+        {'name': 'ADJL', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'ADJS', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'ADR4GW', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'AMGR', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
@@ -86,6 +86,7 @@ def upgrade():
         {'name': 'IPQM', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'IPRM', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'IPRO', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
+        {'name': 'IPRT', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'IPSECC', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'IQOS', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'ISBFP', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
@@ -129,6 +130,7 @@ def upgrade():
         {'name': 'STPG', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'STPORT', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'SUBMODULE', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
+        {'name': 'SUBRACK', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'SVTT', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'SYNC', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'TCTT', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
@@ -151,7 +153,6 @@ def upgrade():
         {'name': 'WCEL', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'WRAB', 'parent_pk': 0, 'vendor_pk': 4, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
     ])
-
 
 
 def downgrade():

@@ -20,7 +20,7 @@ def upgrade():
     op.create_table(
         'vendor_parameters',
         sa.Column('pk', sa.Integer, primary_key=True),
-        sa.Column('name', sa.String(50), nullable=False),
+        sa.Column('name', sa.String(250), nullable=False),
         sa.Column('notes', sa.Text),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
