@@ -1,7 +1,7 @@
 """create live_network cells table
 Revision ID: 8579697b2bb6
 Revises: 9b3717bc5552
-Create Date: 2018-02-05 03:01:26.177000
+Create Date: 2018-02-05 02:59:26.177000
 """
 from alembic import op
 import sqlalchemy as sa

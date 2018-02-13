@@ -19,7 +19,7 @@ depends_on = None
 def upgrade():
     managedobjects = sa.sql.table(
         'managedobjects',
-        sa.Column('pk', sa.Integer, primary_key=True),
+        sa.Column('pk', sa.Integer, sa.Sequence('seq_managedobjects_pk', ), primary_key=True, nullable=False),
         sa.Column('name', sa.String(50), nullable=False),
         sa.Column('notes', sa.Text),
         sa.Column('label', sa.String(200)),
