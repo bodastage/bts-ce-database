@@ -22,6 +22,7 @@ def upgrade():
         sa.Column('pk', sa.Integer, primary_key=True),
         sa.Column('name', sa.String(100), nullable=False),
         sa.Column('notes', sa.Text),
+        sa.Column('type', sa.String(20)),
         sa.Column('tech_pk', sa.Integer),
         sa.Column('vendor_pk', sa.Integer),
         sa.Column('modified_by', sa.Integer),
