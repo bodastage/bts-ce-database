@@ -47,6 +47,7 @@ def upgrade():
     op.bulk_insert(managedobjects_schemas, [
         {'name': 'eri_cm_2g', 'parent_pk': 0, 'vendor_pk': 1, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'eri_cm_3g4g', 'parent_pk': 0, 'vendor_pk': 1, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
+        {'name': 'eri_cm_3g4g', 'parent_pk': 0, 'vendor_pk': 1, 'tech_pk': 3, 'modified_by': 0, 'added_by': 0},
         {'name': 'hua_cm_2g', 'parent_pk': 0, 'vendor_pk': 2, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'hua_cm_3g', 'parent_pk': 0, 'vendor_pk': 2, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'hua_cm_4g', 'parent_pk': 0, 'vendor_pk': 2, 'tech_pk': 3, 'modified_by': 0, 'added_by': 0},
