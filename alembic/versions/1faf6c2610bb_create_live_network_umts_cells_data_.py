@@ -45,7 +45,7 @@ def upgrade():
         sa.Column('cpich_power', sa.Integer, ),
         sa.Column('scrambling_code', sa.Integer, ),
         sa.Column('cell_range', sa.Integer, ),
-        sa.Column('site_sector_carrier', sa.String(200), ),
+        sa.Column('site_sector_carrier', sa.String(300), ),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
         sa.Column('date_added', sa.TIMESTAMP, default=sa.func.now(), onupdate=sa.func.now()),

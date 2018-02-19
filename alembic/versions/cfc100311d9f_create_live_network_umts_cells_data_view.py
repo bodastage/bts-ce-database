@@ -43,7 +43,7 @@ def upgrade():
         t1.height,
         t1.site_sector_carrier
        FROM live_network.umts_cells_data t1
-         JOIN live_network.sites t2 ON t2.pk = t1.pk
+         JOIN live_network.sites t2 ON t2.pk = t1.site_pk
          JOIN vendors t3 ON t3.pk = t1.vendor_pk
          JOIN live_network.nodes t4 ON t4.pk = t2.node_pk
     """)
