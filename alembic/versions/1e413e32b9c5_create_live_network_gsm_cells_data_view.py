@@ -22,6 +22,7 @@ def upgrade():
      SELECT gsm_cells_data.pk,
         gsm_cells_data.name,
         gsm_cells_data.cell_pk,
+        gsm_cells_data.ci,
         gsm_cells_data.bcc,
         gsm_cells_data.ncc,
         gsm_cells_data.bsic,

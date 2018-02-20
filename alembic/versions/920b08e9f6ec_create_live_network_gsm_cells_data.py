@@ -22,6 +22,7 @@ def upgrade():
         sa.Column('pk', sa.Integer, primary_key=True),
         sa.Column('name', sa.String(100), nullable=False),
         sa.Column('cell_pk', sa.Integer, nullable=False),
+        sa.Column('ci', sa.Integer, nullable=False),
         sa.Column('bcc', sa.Integer,),
         sa.Column('ncc', sa.Integer,),
         sa.Column('bsic', sa.Integer,),
