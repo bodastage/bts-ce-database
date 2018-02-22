@@ -21,6 +21,15 @@ def upgrade():
     Frequencies and Bandwidths are in MHz
 
     LTE frequency band 36.101 (Rel 15 Dec 2017)
+
+    F_dl = F_dl_low + 0.1 (N_dl-N_dl_low)
+    F_ul = F_ul_low + 0.1(N_ul-N_ul_low)
+
+    F_dl - Downlink Frequency
+    F_dl_low = Lowest DL Frequency for band
+    N_dl - Downlink EUARFCN
+    N_dl_low - Lowest Downlink EUARFCN
+
     """
     op.create_table(
         'lte_frequency_bands',
@@ -337,6 +346,42 @@ def upgrade():
          'ul_freq_low': 452.5, 'ul_freq_middle': 455, 'ul_freq_high': 457.5,
          'ul_arfcn_low': 27760, 'ul_arfcn_middle': 27785, 'ul_arfcn_high': 27809,
          'duplex_spacing': 10, 'geographical_area': 'Global',
+         'modified_by': 0, 'added_by': 0},
+
+        {'band_id': 32, 'name': '1500 L-band',
+         'dl_freq_low': 1452, 'dl_freq_middle': 1474, 'dl_freq_high': 1496,
+         'dl_arfcn_low': 9920, 'dl_arfcn_middle': 10140, 'dl_arfcn_high': 10359,
+         'dl_bandwidth': 44, 'ul_bandwidth': 44,
+         'ul_freq_low': None, 'ul_freq_middle': None, 'ul_freq_high': None,
+         'ul_arfcn_low': None, 'ul_arfcn_middle': None, 'ul_arfcn_high': None,
+         'duplex_spacing': None, 'geographical_area': 'EMEA',
+         'modified_by': 0, 'added_by': 0},
+
+        {'band_id': 65, 'name': '2100+',
+         'dl_freq_low': 2110, 'dl_freq_middle': 2155, 'dl_freq_high': 2200,
+         'dl_arfcn_low': 65536, 'dl_arfcn_middle': 65986, 'dl_arfcn_high': 66435,
+         'dl_bandwidth': 90, 'ul_bandwidth': 90,
+         'ul_freq_low': 1920, 'ul_freq_middle': 1965, 'ul_freq_high': 2010,
+         'ul_arfcn_low': 131072, 'ul_arfcn_middle': 131522, 'ul_arfcn_high': 131971,
+         'duplex_spacing': 190, 'geographical_area': 'Global',
+         'modified_by': 0, 'added_by': 0},
+
+        {'band_id': 66, 'name': 'AWS-3',
+         'dl_freq_low': 2110, 'dl_freq_middle': 2155, 'dl_freq_high': 2200,
+         'dl_arfcn_low': 66436, 'dl_arfcn_middle': 66886, 'dl_arfcn_high': 67335,
+         'dl_bandwidth': 90, 'ul_bandwidth': 70,
+         'ul_freq_low': 1710, 'ul_freq_middle': 1745, 'ul_freq_high': 1780,
+         'ul_arfcn_low': 131972, 'ul_arfcn_middle': 132322, 'ul_arfcn_high': 132671,
+         'duplex_spacing': 400, 'geographical_area': 'NAR',
+         'modified_by': 0, 'added_by': 0},
+
+        {'band_id': 67, 'name': '700 EU',
+         'dl_freq_low': 738, 'dl_freq_middle': 748, 'dl_freq_high': 758,
+         'dl_arfcn_low': 67336, 'dl_arfcn_middle': 67436, 'dl_arfcn_high': 67535,
+         'dl_bandwidth': 20, 'ul_bandwidth': 20,
+         'ul_freq_low': None, 'ul_freq_middle': None, 'ul_freq_high': None,
+         'ul_arfcn_low': None, 'ul_arfcn_middle': None, 'ul_arfcn_high': None,
+         'duplex_spacing': 400, 'geographical_area': 'EMEA',
          'modified_by': 0, 'added_by': 0},
     ])
 
