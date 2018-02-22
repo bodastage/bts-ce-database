@@ -38,6 +38,8 @@ def upgrade():
         sa.Column('hsn', sa.Integer, ),
         sa.Column('hopping_type', sa.String(100), ),
         sa.Column('tch_carriers', sa.String(255), ),
+        sa.Column('mcc', sa.Integer),
+        sa.Column('mnc', sa.Integer),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
         sa.Column('date_added', sa.TIMESTAMP, default=sa.func.now(), onupdate=sa.func.now()),

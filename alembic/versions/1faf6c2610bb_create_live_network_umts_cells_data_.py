@@ -63,6 +63,7 @@ def upgrade():
         sa.Column('hspda_enabled', sa.Boolean, ),
         sa.Column('max_hsupa_codes', sa.Integer, ),
         sa.Column('localcellid', sa.Integer, ),
+        sa.Column('ci', sa.Integer, ),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
         sa.Column('date_added', sa.TIMESTAMP, default=sa.func.now(), onupdate=sa.func.now()),
