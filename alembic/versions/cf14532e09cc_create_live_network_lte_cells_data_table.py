@@ -35,6 +35,7 @@ def upgrade():
         sa.Column('longitude', sa.Float,),
         sa.Column('height', sa.Integer,),
         sa.Column('dl_bandwidth', sa.Integer, ),
+        sa.Column('ul_bandwidth', sa.Integer, ),
         sa.Column('ta', sa.Integer,),
         sa.Column('ta_mode', sa.String(100), ),
         sa.Column('tx_elements', sa.Integer, ),
