@@ -49,6 +49,8 @@ def upgrade():
         {'name': 'Nokia', 'supported': False, 'modified_by': 0, 'added_by': 0},
         {'name': 'Samsung', 'supported': False, 'modified_by': 0, 'added_by': 0},
         {'name': 'Alcatel', 'supported': False, 'modified_by': 0, 'added_by': 0},
+        {'name': 'Siemens', 'supported': False, 'modified_by': 0, 'added_by': 0},
+        {'name': 'Motorola', 'supported': False, 'modified_by': 0, 'added_by': 0},
         {'name': 'Bodastage', 'supported': True, 'modified_by': 0, 'added_by': 0},
     ])
 
