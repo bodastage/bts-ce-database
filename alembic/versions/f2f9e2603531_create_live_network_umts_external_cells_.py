@@ -22,6 +22,7 @@ def upgrade():
      SELECT umts_external_cells.pk,
         umts_external_cells.name,
         umts_external_cells.cell_pk,
+        umts_external_cells.node_pk,
         umts_external_cells.rac,
         umts_external_cells.lac,
         umts_external_cells.primary_cpich_power,
