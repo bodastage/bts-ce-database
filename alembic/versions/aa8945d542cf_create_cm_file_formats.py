@@ -45,19 +45,35 @@ def upgrade():
     )
 
     op.bulk_insert(cm_file_formats, [
-        # Ericsson 2G
-        {'name': 'cnai_v1', 'vendor_pk':1, 'label':'CNA V2', 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
-        # Ericsson 3G
+        # Ericsson 2G EAW
+        {'name': 'eaw', 'vendor_pk': 1, 'label': 'EAW', 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
+        # Ericsson 2G XML
+        {'name': 'cnai_v2', 'vendor_pk':1, 'label':'CNA V2', 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
+        # Ericsson 3G AMOS
+        {'name': 'amos', 'vendor_pk': 1, 'label': 'AMOS', 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
+        # Ericsson 3G XML
         {'name': 'bulk_cm_xml', 'vendor_pk': 1,  'label':'Bulk CM XML', 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
-        # Ericsson 4G
+        # Ericsson 4G XML
         {'name': 'bulk_cm_xml', 'vendor_pk': 1, 'label': 'Bulk CM XML', 'tech_pk': 3, 'modified_by': 0, 'added_by': 0},
-        # Huawei 2G
-        {'name': 'huawei_gexport_xml', 'vendor_pk': 2, 'label': 'Huawei GExport XML', 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
-        # Huawei 3G
+        # Ericsson 4G AMOS
+        {'name': 'amos', 'vendor_pk': 1, 'label': 'AMOS', 'tech_pk': 3, 'modified_by': 0, 'added_by': 0},
+        # Huawei 2G gexport xml
+        {'name': 'huawei_gexport_xml', 'vendor_pk': 2, 'label': 'Huawei GExport XML', 'tech_pk': 1, 'modified_by':
+            0, 'added_by': 0},
+        # Huawei 3G gexport xml
         {'name': 'huawei_gexport_xml', 'vendor_pk': 2, 'label': 'Huawei GExport XML', 'tech_pk': 2, 'modified_by': 0,
          'added_by': 0},
-        # Huawei 4G
+        # Huawei 4G gexport xml
         {'name': 'huawei_gexport_xml', 'vendor_pk': 2, 'label': 'Huawei GExport XML', 'tech_pk': 3, 'modified_by': 0,
+         'added_by': 0},
+        # Huawei 2G mml
+        {'name': 'huawei_mml', 'vendor_pk': 2, 'label': 'Huawei MML', 'tech_pk': 1, 'modified_by': 0,
+         'added_by': 0},
+        # Huawei 3G MML
+        {'name': 'huawei_mml', 'vendor_pk': 2, 'label': 'Huawei MML', 'tech_pk': 2, 'modified_by': 0,
+         'added_by': 0},
+        # Huawei 4G MML
+        {'name': 'huawei_mml', 'vendor_pk': 2, 'label': 'Huawei MML', 'tech_pk': 3, 'modified_by': 0,
          'added_by': 0},
         # ZTE 2G
         {'name': 'bulk_cm_xml', 'vendor_pk': 3, 'label': 'Bulk CM XML', 'tech_pk': 1, 'modified_by': 0,
