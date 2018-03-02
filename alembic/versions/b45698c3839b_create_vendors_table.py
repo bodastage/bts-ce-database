@@ -22,7 +22,6 @@ def upgrade():
         sa.Column('pk', sa.Integer, primary_key=True,  nullable=False),
         sa.Column('name', sa.String(50), nullable=False),
         sa.Column('notes', sa.Text),
-        sa.Column('supported', sa.Boolean),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
         sa.Column('date_added', sa.TIMESTAMP, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow),
@@ -35,7 +34,6 @@ def upgrade():
         sa.Column('pk', sa.Integer, sa.Sequence('seq_vendors_pk', ), primary_key=True, nullable=False),
         sa.Column('name', sa.String(50), unique=True, nullable=False),
         sa.Column('notes', sa.Text),
-        sa.Column('supported', sa.Boolean),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
         sa.Column('date_added', sa.TIMESTAMP, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow),
@@ -43,15 +41,15 @@ def upgrade():
     )
 
     op.bulk_insert(vendors, [
-        {'name': 'Ericsson', 'supported': True, 'modified_by': 0, 'added_by': 0},
-        {'name': 'Huawei', 'supported': True, 'modified_by': 0, 'added_by': 0},
-        {'name': 'ZTE', 'supported': False, 'modified_by': 0, 'added_by': 0},
-        {'name': 'Nokia', 'supported': False, 'modified_by': 0, 'added_by': 0},
-        {'name': 'Samsung', 'supported': False, 'modified_by': 0, 'added_by': 0},
-        {'name': 'Alcatel', 'supported': False, 'modified_by': 0, 'added_by': 0},
-        {'name': 'Siemens', 'supported': False, 'modified_by': 0, 'added_by': 0},
-        {'name': 'Motorola', 'supported': False, 'modified_by': 0, 'added_by': 0},
-        {'name': 'Bodastage', 'supported': True, 'modified_by': 0, 'added_by': 0},
+        {'name': 'Ericsson', 'modified_by': 0, 'added_by': 0},
+        {'name': 'Huawei', 'modified_by': 0, 'added_by': 0},
+        {'name': 'ZTE', 'modified_by': 0, 'added_by': 0},
+        {'name': 'Nokia',  'modified_by': 0, 'added_by': 0},
+        {'name': 'Samsung',  'modified_by': 0, 'added_by': 0},
+        {'name': 'Alcatel',  'modified_by': 0, 'added_by': 0},
+        {'name': 'Siemens', 'modified_by': 0, 'added_by': 0},
+        {'name': 'Motorola', 'modified_by': 0, 'added_by': 0},
+        {'name': 'Bodastage', 'modified_by': 0, 'added_by': 0},
     ])
 
 
