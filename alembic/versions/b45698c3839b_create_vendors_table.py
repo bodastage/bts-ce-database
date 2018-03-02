@@ -41,15 +41,15 @@ def upgrade():
     )
 
     op.bulk_insert(vendors, [
-        {'name': 'Ericsson', 'modified_by': 0, 'added_by': 0},
-        {'name': 'Huawei', 'modified_by': 0, 'added_by': 0},
-        {'name': 'ZTE', 'modified_by': 0, 'added_by': 0},
-        {'name': 'Nokia',  'modified_by': 0, 'added_by': 0},
-        {'name': 'Samsung',  'modified_by': 0, 'added_by': 0},
-        {'name': 'Alcatel',  'modified_by': 0, 'added_by': 0},
-        {'name': 'Siemens', 'modified_by': 0, 'added_by': 0},
-        {'name': 'Motorola', 'modified_by': 0, 'added_by': 0},
-        {'name': 'Bodastage', 'modified_by': 0, 'added_by': 0},
+        {'name': 'Ericsson', notes: 'Ericsson AB', 'modified_by': 0, 'added_by': 0},
+        {'name': 'Huawei', notes: 'Huawei Technologies Co., Ltd.', 'modified_by': 0, 'added_by': 0},
+        {'name': 'ZTE', notes: 'ZTE Corporation', 'modified_by': 0, 'added_by': 0},
+        {'name': 'Nokia', notes: 'Nokia Networks', 'modified_by': 0, 'added_by': 0},
+        {'name': 'Bodastage', notes: 'Bodastage Solutions', 'modified_by': 0, 'added_by': 0},
+        {'name': 'Samsung',  notes: 'Samsung Electronics', 'modified_by': 0, 'added_by': 0},
+        {'name': 'Alcatel', notes: 'Alcatel-Lucent S.A.', 'modified_by': 0, 'added_by': 0},
+        {'name': 'Siemens', notes: 'Siemens AG', 'modified_by': 0, 'added_by': 0},
+        {'name': 'Motorola', notes: 'Motorola, Inc.', 'modified_by': 0, 'added_by': 0},
     ])
 
 
