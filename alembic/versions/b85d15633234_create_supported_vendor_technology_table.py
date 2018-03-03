@@ -20,8 +20,8 @@ def upgrade():
     op.create_table(
         'supported_vendor_tech',
         sa.Column('pk', sa.Integer, primary_key=True),
-        sa.Column('vendor_pk', sa.String(200), nullable=False),
-        sa.Column('tech_pk', sa.Text),
+        sa.Column('vendor_pk', sa.Integer, nullable=False),
+        sa.Column('tech_pk', sa.Integer),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
         sa.Column('date_added', sa.TIMESTAMP, default=sa.func.now(), onupdate=sa.func.now()),
@@ -35,15 +35,15 @@ def upgrade():
     supported_vendor_tech = sa.sql.table(
         'supported_vendor_tech',
         sa.Column('pk', sa.Integer, sa.Sequence('seq_supported_vendor_tech_pk', ), primary_key=True, nullable=False),
-        sa.Column('vendor_pk', sa.String(200), nullable=False),
-        sa.Column('tech_pk', sa.Text),
+        sa.Column('vendor_pk', sa.Integer, nullable=False),
+        sa.Column('tech_pk', sa.Integer, nullable=False),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
         sa.Column('date_added', sa.TIMESTAMP, default=sa.func.now(), onupdate=sa.func.now()),
         sa.Column('date_modified', sa.TIMESTAMP, default=sa.func.now()),
     )
 
-    op.bulk_insert(cache, [
+    op.bulk_insert(supported_vendor_tech, [
         {'vendor_pk': 1, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'vendor_pk': 1, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'vendor_pk': 1, 'tech_pk': 3, 'modified_by': 0, 'added_by': 0},
