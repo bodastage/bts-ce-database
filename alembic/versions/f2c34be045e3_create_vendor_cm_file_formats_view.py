@@ -19,15 +19,17 @@ depends_on = None
 def upgrade():
     op.execute("""
     CREATE OR REPLACE VIEW vw_vendor_cm_file_formats AS
-     SELECT 
-        t2.name as vendor,
-        t3.name as technology,
-        t4.label as format
-     FROM vendors_cm_file_format_map t1
-     INNER JOIN vendors t2 on t2.pk = t1.vendor_pk
-     INNER JOIN technologies t3 on t3.pk  = t1.tech_pk
-     INNER JOIN cm_file_formats t4 on t4.pk = t1.format_pk
-     ORDER BY t2.pk
+    select t1.pk, 
+    t4.name as vendor,
+    t5.name as technology,
+    t3.name as format,
+    t3.label as label
+    from 
+    vendors_cm_file_format_map t1
+    INNER JOIN supported_vendor_tech t2 on t2.pk = t1.vendor_tech_pk
+    INNER JOIN cm_file_formats t3 on t3.pk = t1.format_pk
+    INNER JOIN vendors t4 on t4.pk  = t3.vendor_pk 
+    INNER JOIN technologies t5 on t5.pk = t3.tech_pk
     """)
 
 

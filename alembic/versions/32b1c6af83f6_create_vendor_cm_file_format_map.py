@@ -35,9 +35,8 @@ def upgrade():
     vendors = sa.sql.table(
         'vendors_cm_file_format_map',
         sa.Column('pk', sa.Integer, sa.Sequence('seq_vendors_cm_file_format_map_pk', ), primary_key=True, nullable=False),
-        sa.Column('vendor_pk', sa.Integer, nullable=False),
+        sa.Column('vendor_tech_pk', sa.Integer, nullable=False),
         sa.Column('format_pk', sa.Integer, nullable=False),
-        sa.Column('tech_pk', sa.Integer, nullable=False),
         sa.Column('notes', sa.Text),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
@@ -46,32 +45,16 @@ def upgrade():
     )
 
     op.bulk_insert(vendors, [
-        # Ericsson 2G
-        {'vendor_pk': '1', 'format_pk': 1, 'tech_pk':'1', 'modified_by': 0, 'added_by': 0},
+        # Ericsson
+        {'vendor_tech_pk': 1, 'format_pk': 2, 'modified_by': 0, 'added_by': 0}, # cnaiv2
+        {'vendor_tech_pk': 2, 'format_pk': 4, 'modified_by': 0, 'added_by': 0}, # bulkcm
+        {'vendor_tech_pk': 3, 'format_pk': 5, 'modified_by': 0, 'added_by': 0}, # bulkcm
 
-        # Ericsson 3G
-        {'vendor_pk': '1', 'format_pk': 2, 'tech_pk':'2', 'modified_by': 0, 'added_by': 0},
+        # Huawei
+        {'vendor_tech_pk': 4, 'format_pk': 10, 'modified_by': 0, 'added_by': 0}, # mml
+        {'vendor_tech_pk': 5, 'format_pk': 11, 'modified_by': 0, 'added_by': 0}, # mml
+        {'vendor_tech_pk': 6, 'format_pk': 9, 'modified_by': 0, 'added_by': 0},  # mml
 
-        # Ericsson 3G
-        {'vendor_pk': '1', 'format_pk': 3, 'tech_pk':'3', 'modified_by': 0, 'added_by': 0},
-        
-        # Huawei 2G
-        {'vendor_pk': '2', 'format_pk': 4, 'tech_pk':'1', 'modified_by': 0, 'added_by': 0},
-
-        # Huawei 3G
-        {'vendor_pk': '2', 'format_pk': 5, 'tech_pk':'2', 'modified_by': 0, 'added_by': 0},
-
-        # Huawei 3G
-        {'vendor_pk': '2', 'format_pk': 6, 'tech_pk':'3', 'modified_by': 0, 'added_by': 0},
-
-        # ZTE 2G
-        {'vendor_pk': '3', 'format_pk': 7, 'tech_pk': '1', 'modified_by': 0, 'added_by': 0},
-
-        # ZTE 3G
-        {'vendor_pk': '3', 'format_pk': 8, 'tech_pk': '2', 'modified_by': 0, 'added_by': 0},
-
-        # ZTE 4G
-        {'vendor_pk': '3', 'format_pk': 9, 'tech_pk': '3', 'modified_by': 0, 'added_by': 0},
     ])
 
 
