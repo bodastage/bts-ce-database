@@ -112,6 +112,7 @@ def upgrade():
         {'name': 'vsDataServiceDrx', 'parent_pk': 1996, 'vendor_pk': 3, 'tech_pk': 3, 'modified_by': 0, 'added_by': 0, 'pk': 2055},
     ])
 
+    op.execute("""ALTER SEQUENCE seq_managedobjects_pk RESTART WITH {};""".format(2072))
 
 
 

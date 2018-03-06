@@ -21,9 +21,8 @@ def upgrade():
     op.create_table(
         'vendors_cm_file_format_map',
         sa.Column('pk', sa.Integer, primary_key=True,  nullable=False),
-        sa.Column('vendor_pk', sa.Integer, nullable=False),
+        sa.Column('vendor_tech_pk', sa.Integer, nullable=False),
         sa.Column('format_pk', sa.Integer, nullable=False),
-        sa.Column('tech_pk', sa.Integer, nullable=False),
         sa.Column('notes', sa.Text),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),

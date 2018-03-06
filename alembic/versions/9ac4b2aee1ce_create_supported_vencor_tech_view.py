@@ -31,4 +31,4 @@ def upgrade():
     """)
 
 def downgrade():
-    pass
+    op.execute("""DROP VIEW vw_supported_vendor_tech""")

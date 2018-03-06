@@ -251,6 +251,7 @@ def upgrade():
          'added_by': 0, 'pk': 1744},
     ])
 
+    op.execute("""ALTER SEQUENCE seq_managedobjects_pk RESTART WITH {};""".format(1797))
 
 def downgrade():
     op.execute("""DELETE FROM managedobjects WHERE vendor_pk = {0} AND tech_pk = {1}""".format(3, 1))
