@@ -416,7 +416,7 @@ def upgrade():
     sa.Column('VAMOSBSCSTATE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('VAMOSMAXTRAFFIC_CLAL', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('VAMOSMAXTRAFFIC_CLTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    sa.Column('CAPACITYLOCKS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+    sa.Column('CAPACITYLOCKS', sa.Text, autoincrement=False, nullable=True),
     sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('VGENCR', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('VGPRECEDE', sa.CHAR(length=250), autoincrement=False, nullable=True),
