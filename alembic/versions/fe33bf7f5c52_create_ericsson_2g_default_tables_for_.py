@@ -933,7 +933,7 @@ def upgrade():
     sa.Column('PCIDG', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('PCIDP', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('PRIOCR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    sa.Column('UHPRIOTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+    sa.Column('UHPRIOTHR', sa.Text, autoincrement=False, nullable=True),
     sa.Column('ULPRIOTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('UQRXLEVMIN', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('URATPRIO', sa.CHAR(length=250), autoincrement=False, nullable=True),
