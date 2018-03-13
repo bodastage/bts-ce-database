@@ -36,12 +36,18 @@ def upgrade():
         sa.Column('name', sa.String(255), nullable=False),
         sa.Column('notes', sa.Text, nullable=False),
         sa.Column('category_pk', sa.Integer, nullable=False, default=0),
+        sa.Column('in_built', sa.Boolean,default=False),
+        sa.Column('table_name', sa.String(255), nullable=False),
+        sa.Column('sql', sa.Text, nullable=False),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
         sa.Column('date_added', sa.TIMESTAMP, default=sa.func.now(), onupdate=sa.func.now()),
         sa.Column('date_modified', sa.TIMESTAMP, default=sa.func.now()),
     )
     op.execute('ALTER SEQUENCE  audit_rules_pk_seq RENAME TO seq_audit_rules_pk')
+
+
+
 
 def downgrade():
     op.drop_table('audit_categories')
