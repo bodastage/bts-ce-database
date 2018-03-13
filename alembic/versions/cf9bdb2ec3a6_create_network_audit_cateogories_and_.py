@@ -23,6 +23,7 @@ def upgrade():
         sa.Column('name', sa.String(255), nullable=False),
         sa.Column('notes', sa.Text, nullable=False),
         sa.Column('parent_pk', sa.Integer, nullable=False, default=0),
+        sa.Column('in_built', sa.Boolean, default=False),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
         sa.Column('date_added', sa.TIMESTAMP, default=sa.func.now(), onupdate=sa.func.now()),
