@@ -17,11 +17,11 @@ depends_on = None
 
 
 def upgrade():
-    op.create_table(
+    baseline_parameter_config = op.create_table(
         'baseline_parameter_config',
         sa.Column('pk', sa.Integer, primary_key=True),
         sa.Column('mo_pk', sa.String(100), nullable=False),
-        sa.Column('parameter__pk', sa.Integer, nullable=False),
+        sa.Column('parameter_pk', sa.Integer, nullable=False),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
         sa.Column('date_added', sa.TIMESTAMP, default=sa.func.now(), onupdate=sa.func.now()),
@@ -29,6 +29,14 @@ def upgrade():
         schema=u'live_network'
     )
     op.execute('ALTER SEQUENCE  live_network.baseline_parameter_config_pk_seq RENAME TO seq_baseline_parameter_config_pk')
+
+    op.bulk_insert(baseline_parameter_config, [
+        {'mo_pk': 817, 'parameter_pk': 10129,  'modified_by': 0, 'added_by': 0}, # GCELL-MCC
+        {'mo_pk': 817, 'parameter_pk': 10130, 'modified_by': 0, 'added_by': 0},  # GCELL-MNC
+        {'mo_pk': 817, 'parameter_pk': 10126, 'modified_by': 0, 'added_by': 0},  # GCELL-HYBHIFREQBANDSUPPORT
+        {'mo_pk': 817, 'parameter_pk': 10134, 'modified_by': 0, 'added_by': 0},  # GCELL-PSHPSP
+        {'mo_pk': 817, 'parameter_pk': 10135, 'modified_by': 0, 'added_by': 0},  # GCELL-PSLPSVP
+    ])
 
 
 def downgrade():

@@ -17,6 +17,7 @@ depends_on = None
 
 
 def upgrade():
+
     op.create_table(
         'base_line_values',
         sa.Column('pk', sa.Integer, primary_key=True),
