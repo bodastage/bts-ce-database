@@ -20,7 +20,7 @@ def upgrade():
     baseline_parameter_config = op.create_table(
         'baseline_parameter_config',
         sa.Column('pk', sa.Integer, primary_key=True),
-        sa.Column('mo_pk', sa.String(100), nullable=False),
+        sa.Column('mo_pk', sa.Integer, nullable=False),
         sa.Column('parameter_pk', sa.Integer, nullable=False),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
