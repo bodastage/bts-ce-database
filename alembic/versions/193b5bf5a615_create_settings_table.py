@@ -18,7 +18,7 @@ depends_on = None
 
 
 def upgrade():
-    op.create_table(
+    settings = op.create_table(
         'settings',
         sa.Column('pk', sa.Integer, primary_key=True),
         sa.Column('name', sa.String(50), nullable=False),
@@ -36,24 +36,6 @@ def upgrade():
         sa.Column('date_modified', sa.TIMESTAMP, default=datetime.datetime.utcnow)
     )
     op.execute('ALTER SEQUENCE  settings_pk_seq RENAME TO seq_settings_pk')
-
-    settings = sa.sql.table(
-        'settings',
-        sa.Column('pk', sa.Integer, sa.Sequence('seq_settings_pk', ), primary_key=True, nullable=False),
-        sa.Column('name', sa.String(50), nullable=False),
-        sa.Column('data_type', sa.String(200)),
-        sa.Column('integer_value', sa.Integer),
-        sa.Column('float_value', sa.Float),
-        sa.Column('string_value', sa.String(200)),
-        sa.Column('text_value', sa.Text),
-        sa.Column('timestamp_value', sa.TIMESTAMP),
-        sa.Column('label', sa.String(200)),
-        sa.Column('category_id', sa.String(200)),
-        sa.Column('modified_by', sa.Integer),
-        sa.Column('added_by', sa.Integer),
-        sa.Column('date_added', sa.TIMESTAMP, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow),
-        sa.Column('date_modified', sa.TIMESTAMP, default=datetime.datetime.utcnow)
-    )
 
     op.bulk_insert(settings, [
         {'name': 'cm_dag_schedule_interval', 'data_type': 'string', 'string_value': '0 0 * * *', 'text_value':None,

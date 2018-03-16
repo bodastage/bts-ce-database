@@ -1,4 +1,4 @@
-"""Create managedojects table
+"""Create affect level and managedojects table
 
 Revision ID: 0b7905a9ba5b
 Revises: 193b5bf5a615
@@ -24,6 +24,7 @@ def upgrade():
         sa.Column('notes', sa.Text),
         sa.Column('label', sa.String(200)),
         sa.Column('parent_pk', sa.Integer),
+        sa.Column('affect_level', sa.Integer),
         sa.Column('tech_pk', sa.Integer),
         sa.Column('vendor_pk', sa.Integer),
         sa.Column('modified_by', sa.Integer),
