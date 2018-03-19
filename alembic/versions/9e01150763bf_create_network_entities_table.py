@@ -41,7 +41,16 @@ def upgrade():
         {'name': 'RNC', 'tech_pk': 2, 'notes': 'Radio Network Controller'},
         {'name': 'MSC', 'tech_pk': 1, 'notes': 'Mobile Switching Center'},
         {'name': 'MME', 'tech_pk': 3, 'notes': 'Mobility Management Entity'},
-        {'name': 'CG', 'tech_pk': 1, 'notes': 'GSM Cell Channel Group'}
+        {'name': 'CG', 'tech_pk': 1, 'notes': 'GSM Cell Channel Group'},
+        {'name': '2G-2G Relation', 'tech_pk': 1, 'notes': '2G - 2G Relation'},
+        {'name': '2G-3G Relation', 'tech_pk': 1, 'notes': '2G - 2G Relation'},
+        {'name': '2G-4G Relation', 'tech_pk': 1, 'notes': '2G - 2G Relation'},
+        {'name': '3G-2G Relation', 'tech_pk': 2, 'notes': '2G - 2G Relation'},
+        {'name': '3G-3G Relation', 'tech_pk': 2, 'notes': '2G - 2G Relation'},
+        {'name': '3G-4G Relation', 'tech_pk': 2, 'notes': '2G - 2G Relation'},
+        {'name': '4G-2G Relation', 'tech_pk': 3, 'notes': '2G - 2G Relation'},
+        {'name': '4G-3G Relation', 'tech_pk': 3, 'notes': '2G - 2G Relation'},
+        {'name': '4G-4G Relation', 'tech_pk': 3, 'notes': '2G - 2G Relation'},
     ])
 
 
