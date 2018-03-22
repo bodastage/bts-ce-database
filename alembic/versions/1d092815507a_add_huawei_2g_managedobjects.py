@@ -216,7 +216,7 @@ def upgrade():
         {'name': 'GCELL2GBA1', 'parent_pk': 0, 'vendor_pk': 2, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'GCELL3GARFCN', 'parent_pk': 0, 'vendor_pk': 2, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'GCELLAMRQUL', 'parent_pk': 0, 'vendor_pk': 2, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
-        {'name': 'GCELLBASICPARA', 'parent_pk': 0, 'vendor_pk': 2, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
+        {'name': 'GCELLBASICPARA', 'parent_pk': 0, 'vendor_pk': 2, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0, 'affect_level': 1},
         {'name': 'GCELLBTSSOFTPARA', 'parent_pk': 0, 'vendor_pk': 2, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'GCELLCCACCESS', 'parent_pk': 0, 'vendor_pk': 2, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'GCELLCCAD', 'parent_pk': 0, 'vendor_pk': 2, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
