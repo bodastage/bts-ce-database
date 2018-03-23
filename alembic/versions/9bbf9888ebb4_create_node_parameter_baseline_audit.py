@@ -1,8 +1,8 @@
-"""Create site parameter baseline audit
+"""Create node parameter baseline audit
 
-Revision ID: 638009709b7e
-Revises: 9e01150763bf
-Create Date: 2018-03-22 15:38:23.474000
+Revision ID: 9bbf9888ebb4
+Revises: 638009709b7e
+Create Date: 2018-03-23 04:21:42.078000
 
 """
 from alembic import op
@@ -10,18 +10,17 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '638009709b7e'
-down_revision = '9e01150763bf'
+revision = '9bbf9888ebb4'
+down_revision = '638009709b7e'
 branch_labels = None
 depends_on = None
 
 
 def upgrade():
     op.create_table(
-        'site_parameter_baseline',
+        'node_parameter_baseline',
         sa.Column('pk', sa.Integer, primary_key=True),
         sa.Column('node', sa.String(100), nullable=False),
-        sa.Column('site', sa.String(200), nullable=False),
         sa.Column('mo', sa.String(100), nullable=False, default=0),
         sa.Column('parameter', sa.String(100), nullable=False, default=0),
         sa.Column('bvalue', sa.String(200), nullable=False, default=0),
@@ -35,7 +34,7 @@ def upgrade():
         sa.Column('date_modified', sa.TIMESTAMP, default=sa.func.now()),
         schema=u'network_audit'
     )
-    op.execute('ALTER SEQUENCE  network_audit.site_parameter_baseline_pk_seq RENAME TO seq_site_parameter_baseline_pk')
+    op.execute('ALTER SEQUENCE  network_audit.node_parameter_baseline_pk_seq RENAME TO seq_node_parameter_baseline_pk')
 
     audit_categories = sa.sql.table(
         'audit_categories',
@@ -73,14 +72,12 @@ def upgrade():
         category_pk = row['pk']
 
     op.bulk_insert(audit_rules, [
-        {'name': 'Site Parameter Discrepancies', 'category_pk': category_pk, 'in_built': True,
-         'table_name': 'baseline_site_parameters',
-         'sql': 'SELECT * FROM network_audit.baseline_site_parameters',
+        {'name': 'Node Parameter Discrepancies', 'category_pk': category_pk, 'in_built': True,
+         'table_name': 'baseline_node_parameters',
+         'sql': 'SELECT * FROM network_audit.baseline_node_parameters',
          'notes': 'Network Baseline Discrepancies for Site parameters'},
-
-
     ])
 
 
 def downgrade():
-    op.drop_table('site_parameter_baseline', schema=u'network_audit')
+    op.drop_table('node_parameter_baseline', schema=u'network_audit')
