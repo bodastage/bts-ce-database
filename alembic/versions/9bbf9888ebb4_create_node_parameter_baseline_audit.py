@@ -75,7 +75,7 @@ def upgrade():
         {'name': 'Node Parameter Discrepancies', 'category_pk': category_pk, 'in_built': True,
          'table_name': 'baseline_node_parameters',
          'sql': 'SELECT * FROM network_audit.baseline_node_parameters',
-         'notes': 'Network Baseline Discrepancies for Site parameters'},
+         'notes': 'Network Baseline Discrepancies for Node parameters'},
     ])
 
 
