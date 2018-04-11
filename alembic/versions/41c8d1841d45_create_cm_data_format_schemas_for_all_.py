@@ -20,7 +20,7 @@ def upgrade():
 
     # Huawei
     op.execute("CREATE SCHEMA huawei_gexport_gsm")
-    op.execute("CREATE SCHEMA huawei_gexport_umts")
+    op.execute("CREATE SCHEMA huawei_gexport_wcdma")
     op.execute("CREATE SCHEMA huawei_gexport_lte")
     op.execute("CREATE SCHEMA huawei_gexport_cdma")
     op.execute("CREATE SCHEMA huawei_gexport_sran")
@@ -54,5 +54,41 @@ def upgrade():
     op.execute("CREATE SCHEMA nokia_raml2_gsm")
     op.execute("CREATE SCHEMA nokia_raml2_umts")
     op.execute("CREATE SCHEMA nokia_raml2_lte")
+
+
 def downgrade():
-    pass
+    op.execute("DROP SCHEMA huawei_gexport_gsm")
+    op.execute("DROP SCHEMA huawei_gexport_wcdma")
+    op.execute("DROP SCHEMA huawei_gexport_lte")
+    op.execute("DROP SCHEMA huawei_gexport_cdma")
+    op.execute("DROP SCHEMA huawei_gexport_sran")
+    op.execute("DROP SCHEMA huawei_gexport_other")
+
+    op.execute("DROP SCHEMA huawei_nbi_gsm")
+    op.execute("DROP SCHEMA huawei_nbi_umts")
+    op.execute("DROP SCHEMA huawei_nbi_lte")
+    op.execute("DROP SCHEMA huawei_nbi_cdma")
+    op.execute("DROP SCHEMA huawei_nbi_sran")
+    op.execute("DROP SCHEMA huawei_nbi_other")
+
+    op.execute("DROP SCHEMA huawei_mml_gsm")
+    op.execute("DROP SCHEMA huawei_mml_umts")
+    op.execute("DROP SCHEMA huawei_mml_lte")
+    op.execute("DROP SCHEMA huawei_mml_cdma")
+    op.execute("DROP SCHEMA huawei_mml_sran")
+    op.execute("DROP SCHEMA huawei_mml_other")
+
+    # Ericsson
+    op.execute("DROP SCHEMA ericsson_blkcm_3g4g")
+    op.execute("DROP SCHEMA ericsson_eaw_2g")
+    op.execute("DROP SCHEMA ericsson_cnaiv2_2g")
+
+    #ZTE
+    op.execute("DROP SCHEMA zte_blkcm_gsm")
+    op.execute("DROP SCHEMA zte_blkcm_umts")
+    op.execute("DROP SCHEMA zte_blkcm_lte")
+
+    #Nokia
+    op.execute("DROP SCHEMA nokia_raml2_gsm")
+    op.execute("DROP SCHEMA nokia_raml2_umts")
+    op.execute("DROP SCHEMA nokia_raml2_lte")
