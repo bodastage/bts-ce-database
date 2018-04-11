@@ -19,6 +19,7 @@ depends_on = None
 def upgrade():
     op.create_table('GCELL_BSC6900GSM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -64,6 +65,7 @@ def upgrade():
 
     op.create_table('BSCBASIC_BSC6900GSM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -142,6 +144,7 @@ def upgrade():
 
     op.create_table('SYS_BSC6900GSM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -153,6 +156,7 @@ def upgrade():
 
     op.create_table('CELLBIND2BTS_BSC6900GSM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -165,6 +169,7 @@ def upgrade():
 
     op.create_table('GEXT2GCELL_BSC6900GSM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -206,6 +211,7 @@ def upgrade():
 
     op.create_table('GEXTLTECELL_BSC6900GSM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -229,6 +235,7 @@ def upgrade():
 
     op.create_table('GEXT3GCELL_BSC6900GSM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -264,6 +271,7 @@ def upgrade():
 
     op.create_table('GEXTSMLC_BSC6900GSM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -278,6 +286,7 @@ def upgrade():
 
     op.create_table('BTS_BSC6900GSM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -321,6 +330,7 @@ def upgrade():
 
     op.create_table('GCELLBASICPARA_BSC6900GSM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -393,6 +403,7 @@ def upgrade():
 
     op.create_table('GTRX_BSC6900GSM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -434,6 +445,7 @@ def upgrade():
 
     op.create_table('GCELLLCS_BSC6900GSM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
