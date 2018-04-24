@@ -65,12 +65,12 @@ def upgrade():
     # @TODO: Encrypt password
     op.bulk_insert(users, [
         {
-             'username': 'user@bts.bodastage.org',
+             'username': 'btsuser@bodastage.org',
              'password': 'password',
              'is_enabled': True,
              'token': '123456789123456789',
-             'first_name': 'Bodastage',
-             'last_name': 'Solutions',
+             'first_name': 'btsuser',
+             'last_name': '',
              'job_title': 'Engineer'
          }
     ])
