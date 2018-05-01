@@ -40,6 +40,8 @@ def upgrade():
     op.execute("CREATE SCHEMA huawei_mml_sran")
     op.execute("CREATE SCHEMA huawei_mml_other")
 
+    op.execute("CREATE SCHEMA huawei_cfgsyn")
+
     # Ericsson
     op.execute("CREATE SCHEMA ericsson_blkcm_3g4g")
     op.execute("CREATE SCHEMA ericsson_eaw_2g")
@@ -77,6 +79,8 @@ def downgrade():
     op.execute("DROP SCHEMA huawei_mml_cdma")
     op.execute("DROP SCHEMA huawei_mml_sran")
     op.execute("DROP SCHEMA huawei_mml_other")
+
+    op.execute("DROP SCHEMA huawei_cfgsyn")
 
     # Ericsson
     op.execute("DROP SCHEMA ericsson_blkcm_3g4g")
