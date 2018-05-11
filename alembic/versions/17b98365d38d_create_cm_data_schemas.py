@@ -18,13 +18,17 @@ depends_on = None
 
 def upgrade():
     # Ericsson
-    op.execute("CREATE SCHEMA eri_cm_2g")
-    op.execute("CREATE SCHEMA eri_cm_3g4g")
+    op.execute("CREATE SCHEMA ericsson_cm_2g")
+    op.execute("CREATE SCHEMA ericsson_cm_3g")
+    op.execute("CREATE SCHEMA ericsson_cm_4g")
+    op.execute("CREATE SCHEMA ericsson_bulkcm")
+    op.execute("CREATE SCHEMA ericsson_cnaiv2")
+
 
     # Huawei
-    op.execute("CREATE SCHEMA hua_cm_2g")
-    op.execute("CREATE SCHEMA hua_cm_3g")
-    op.execute("CREATE SCHEMA hua_cm_4g")
+    op.execute("CREATE SCHEMA huawei_cm_2g")
+    op.execute("CREATE SCHEMA huawei_cm_3g")
+    op.execute("CREATE SCHEMA huawei_cm_4g")
 
     # ZTE
     op.execute("CREATE SCHEMA zte_cm_2g")
@@ -32,29 +36,31 @@ def upgrade():
     op.execute("CREATE SCHEMA zte_cm_4g")
 
     # Nokia
-    op.execute("CREATE SCHEMA nok_cm_2g")
-    op.execute("CREATE SCHEMA nok_cm_3g")
-    op.execute("CREATE SCHEMA nok_cm_4g")
+    op.execute("CREATE SCHEMA nokia_cm_2g")
+    op.execute("CREATE SCHEMA nokia_cm_3g")
+    op.execute("CREATE SCHEMA nokia_cm_4g")
 
     # Alcatel
-    op.execute("CREATE SCHEMA alc_cm_2g")
-    op.execute("CREATE SCHEMA alc_cm_3g")
-    op.execute("CREATE SCHEMA alc_cm_4g")
+    op.execute("CREATE SCHEMA alcatel_cm_2g")
+    op.execute("CREATE SCHEMA alcatel_cm_3g")
+    op.execute("CREATE SCHEMA alcatel_cm_4g")
 
     # Samsung
-    op.execute("CREATE SCHEMA sam_cm_2g")
-    op.execute("CREATE SCHEMA sam_cm_3g")
-    op.execute("CREATE SCHEMA sam_cm_4g")
+    op.execute("CREATE SCHEMA samsung_cm_2g")
+    op.execute("CREATE SCHEMA samsung_cm_3g")
+    op.execute("CREATE SCHEMA samsung_cm_4g")
 
 def downgrade():
-    # Ericsson
-    op.execute("DROP SCHEMA eri_cm_2g")
-    op.execute("DROP SCHEMA eri_cm_3g4g")
+    op.execute("DROP SCHEMA ericsson_cm_2g")
+    op.execute("DROP SCHEMA ericsson_cm_3g")
+    op.execute("DROP SCHEMA ericsson_cm_4g")
+    op.execute("DROP SCHEMA ericsson_bulkcm")
+    op.execute("DROP SCHEMA ericsson_cnaiv2")
 
     # Huawei
-    op.execute("DROP SCHEMA hua_cm_2g")
-    op.execute("DROP SCHEMA hua_cm_3g")
-    op.execute("DROP SCHEMA hua_cm_4g")
+    op.execute("DROP SCHEMA huawei_cm_2g")
+    op.execute("DROP SCHEMA huawei_cm_3g")
+    op.execute("DROP SCHEMA huawei_cm_4g")
 
     # ZTE
     op.execute("DROP SCHEMA zte_cm_2g")
@@ -62,16 +68,16 @@ def downgrade():
     op.execute("DROP SCHEMA zte_cm_4g")
 
     # Nokia
-    op.execute("DROP SCHEMA nok_cm_2g")
-    op.execute("DROP SCHEMA nok_cm_3g")
-    op.execute("DROP SCHEMA nok_cm_4g")
+    op.execute("DROP SCHEMA nokia_cm_2g")
+    op.execute("DROP SCHEMA nokia_cm_3g")
+    op.execute("DROP SCHEMA nokia_cm_4g")
 
     # Alcatel
-    op.execute("DROP SCHEMA alc_cm_2g")
-    op.execute("DROP SCHEMA alc_cm_3g")
-    op.execute("DROP SCHEMA alc_cm_4g")
+    op.execute("DROP SCHEMA alcatel_cm_2g")
+    op.execute("DROP SCHEMA alcatel_cm_3g")
+    op.execute("DROP SCHEMA alcatel_cm_4g")
 
     # Samsung
-    op.execute("DROP SCHEMA sam_cm_2g")
-    op.execute("DROP SCHEMA sam_cm_3g")
-    op.execute("DROP SCHEMA sam_cm_4g")
+    op.execute("DROP SCHEMA samsung_cm_2g")
+    op.execute("DROP SCHEMA samsung_cm_3g")
+    op.execute("DROP SCHEMA samsung_cm_4g")

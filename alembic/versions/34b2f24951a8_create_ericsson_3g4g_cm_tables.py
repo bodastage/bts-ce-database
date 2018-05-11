@@ -27,12 +27,12 @@ def upgrade():
     sa.Column('IRPAgent_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('AlarmIRP_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('irpVersion', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('bulkcmconfigdatafile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('bulkcmirp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -43,13 +43,13 @@ def upgrade():
     sa.Column('IRPAgent_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('BulkCmIRP_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('irpVersion', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('configdata',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
     sa.Column('configData_dnPrefix', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('externalgsmcell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -65,7 +65,7 @@ def upgrade():
     sa.Column('bcc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cellIdentity', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('externalutrancell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -84,20 +84,20 @@ def upgrade():
     sa.Column('rncId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('filefooter',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
     sa.Column('fileFooter_dateTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('fileheader',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
     sa.Column('fileHeader_fileFormatVersion', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('fileHeader_vendorName', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('gsmrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -111,7 +111,7 @@ def upgrade():
     sa.Column('UtranCell_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('GsmRelation_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('adjacentCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('irpagent',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -121,7 +121,7 @@ def upgrade():
     sa.Column('ManagementNode_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('IRPAgent_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('systemDN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('iublink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -136,7 +136,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('iubLinkUtranCell', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('iubLinkNodeBFunction', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('managedelement',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -157,7 +157,7 @@ def upgrade():
     sa.Column('sourceType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('release', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('siteRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('managementnode',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -171,7 +171,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('swVersion', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vendorName', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('mecontext',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -204,7 +204,7 @@ def upgrade():
     sa.Column('nodeStartTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('pendingRestart', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rbsGroupRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('nodebfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -225,7 +225,7 @@ def upgrade():
     sa.Column('eulNonServHwRate', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('eulLowRate', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('eulMaxAllowedSchRate', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('notificationirp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -236,7 +236,7 @@ def upgrade():
     sa.Column('IRPAgent_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('NotificationIRP_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('irpVersion', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('rncfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -251,14 +251,14 @@ def upgrade():
     sa.Column('mcc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rncId', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('subnetwork',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
     sa.Column('configData_dnPrefix', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('SubNetwork_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('subnetwork_2',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -268,7 +268,7 @@ def upgrade():
     sa.Column('SubNetwork_2_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userDefinedNetworkType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('utrancell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -297,7 +297,7 @@ def upgrade():
     sa.Column('utranCellIubLink', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('uraList', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('creationTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('utranrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -311,7 +311,7 @@ def upgrade():
     sa.Column('UtranCell_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('UtranRelation_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('adjacentCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataaal2qoscodepointprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -328,7 +328,7 @@ def upgrade():
     sa.Column('qualityOfServiceCodePointB', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('qualityOfServiceCodePointC', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('qualityOfServiceCodePointD', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataaal2qosprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -353,7 +353,7 @@ def upgrade():
     sa.Column('profileClassD_boundOnProbOfLoss', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('profileClassD_boundOnNodeDelay', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataaal2sp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -368,7 +368,7 @@ def upgrade():
     sa.Column('a2ea', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('afi', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataaal5tpvcctp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -390,7 +390,7 @@ def upgrade():
     sa.Column('vclTpId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('counterMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('counterActivation', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataaccesscontrollist',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -415,7 +415,7 @@ def upgrade():
     sa.Column('aclEntries_icmpType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('bypassNdpAndMld', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataaddressipv4',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -436,7 +436,7 @@ def upgrade():
     sa.Column('vsDataVrrpv3Interface_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('address', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataadmissioncontrol',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -502,7 +502,7 @@ def upgrade():
     sa.Column('maxVolteUe', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxReservedUe', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxActiveUe', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataadvcellsup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -520,7 +520,7 @@ def upgrade():
     sa.Column('keyIdAdvCellSup', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateAdvCellSup', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateAdvCellSup', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataagpspositioning',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -548,7 +548,7 @@ def upgrade():
     sa.Column('posQualities_accuracyCodeTypical', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('posQualities_verticalAccuracyCodeTypical', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('posQualities_confidenceEstimate', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataaidevice',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -570,7 +570,7 @@ def upgrade():
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataaideviceset',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -589,7 +589,7 @@ def upgrade():
     sa.Column('vsDataRbsSlot_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataDeviceGroup_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataairifloadgenerator',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -607,7 +607,7 @@ def upgrade():
     sa.Column('featureStateAilg', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateAilg', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateAilg', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataaisgv2fwdownload',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -625,7 +625,7 @@ def upgrade():
     sa.Column('featureStateAisgv2FwDownload', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateAisgv2FwDownload', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateAisgv2FwDownload', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataalarmport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -646,7 +646,7 @@ def upgrade():
     sa.Column('perceivedSeverity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataamofunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -659,7 +659,7 @@ def upgrade():
     sa.Column('vsDataENodeBFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataAmoFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('amoAllowedInterVendor', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataanr',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -681,7 +681,7 @@ def upgrade():
     sa.Column('keyIdAnr', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateAnr', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateAnr', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataanrfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -723,7 +723,7 @@ def upgrade():
     sa.Column('perEcgiMeasPlmnWhiteList', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxNoPciReportsInact', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nrHoNeededToAddCellRelation', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataanrfunctioneutran',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -759,7 +759,7 @@ def upgrade():
     sa.Column('anrEutranInterFMeasReportDecr', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('anrIntraFreqStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('anrInterFreqStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataanrfunctiongeran',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -780,7 +780,7 @@ def upgrade():
     sa.Column('rimIntegrationEnabled', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('anrGeranMeasReportRacIncr', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('anrGeranRacMeasOn', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataanrfunctionutran',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -805,7 +805,7 @@ def upgrade():
     sa.Column('cellAddEcNoThresholdUtranDelta', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cellAddRscpThresholdUtranDelta', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('srvccPolicy', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataanriafutran',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -828,7 +828,7 @@ def upgrade():
     sa.Column('anrDsReportFilterRscp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('anrDsReportFilterEcno', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('anrAttRatioBadCrs', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataantennabranch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -847,7 +847,7 @@ def upgrade():
     sa.Column('antennaSupervisionThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('fqBandLowEdge', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('lowCurrentSupervision', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataantennasubunit',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -869,7 +869,7 @@ def upgrade():
     sa.Column('commonChBeamfrmPortMap', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('customComChBeamfrmWtsPhase', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('customComChBeamfrmWtsAmplitude', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataantennaunit',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -883,7 +883,7 @@ def upgrade():
     sa.Column('vsDataAntennaUnitGroup_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataAntennaUnit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mechanicalAntennaTilt', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataantennaunitgroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -897,7 +897,7 @@ def upgrade():
     sa.Column('vsDataAntennaUnitGroup_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('positionInformation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('positionRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataantfeedercable',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -916,7 +916,7 @@ def upgrade():
     sa.Column('antennaBranchRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('connectedToObjectARef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('objectAConnector', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataareas',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -924,7 +924,7 @@ def upgrade():
     sa.Column('configData_dnPrefix', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('SubNetwork_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataAreas_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataarpmap',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -948,7 +948,7 @@ def upgrade():
     sa.Column('systemDefaultArpQos_intPrio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('systemDefaultArpQos_pci', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('systemDefaultArpQos_pvi', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataarpqosclassprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -962,7 +962,7 @@ def upgrade():
     sa.Column('vsDataRabHandling_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataArpQosClassProfile_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataatmconfservice',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -975,7 +975,7 @@ def upgrade():
     sa.Column('vsDataTransportNetwork_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataAtmConfService_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataatmport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -991,7 +991,7 @@ def upgrade():
     sa.Column('uses', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hecCorrectionMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('loopbackDetection', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataatmtrafficdescriptor',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1012,7 +1012,7 @@ def upgrade():
     sa.Column('serviceCategory', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('packetDiscard', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataauport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1028,7 +1028,7 @@ def upgrade():
     sa.Column('vsDataAntennaSubunit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataAuPort_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataauthenticationorder',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1046,7 +1046,7 @@ def upgrade():
     sa.Column('authenticationMethodOrder_methodReference', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('authenticationMethodOrder_userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataauthorizationorder',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1064,7 +1064,7 @@ def upgrade():
     sa.Column('authorizationMethodOrder_methodReference', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('authorizationMethodOrder_userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataautocellcapestfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1077,7 +1077,7 @@ def upgrade():
     sa.Column('vsDataENodeBFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataAutoCellCapEstFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('useEstimatedCellCap', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataautonomousmode',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1092,7 +1092,7 @@ def upgrade():
     sa.Column('vsDataAutonomousMode_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('expiration', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('activationState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataautoprovisioning',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1105,7 +1105,7 @@ def upgrade():
     sa.Column('vsDataNodeSupport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataAutoProvisioning_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rbsConfigLevel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataauxpluginunit',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1137,7 +1137,7 @@ def upgrade():
     sa.Column('positionCoordinates_longitude', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('supportUnitRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('uniqueHwId', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabatterybackup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1179,7 +1179,7 @@ def upgrade():
     sa.Column('batteryType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('chargingVoltage', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('increasedChargeVoltage', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabbprocessingresource',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1197,7 +1197,7 @@ def upgrade():
     sa.Column('vsDataBbProcessingResource_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataFieldReplaceableUnit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licCapDistr', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabestneighborsi',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1215,7 +1215,7 @@ def upgrade():
     sa.Column('keyIdBestNeighborSI', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateBestNeighborSI', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateBestNeighborSI', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabfdprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1232,7 +1232,7 @@ def upgrade():
     sa.Column('desiredMinTxInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('requiredMinRxInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataboundaryordinaryclock',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1252,7 +1252,7 @@ def upgrade():
     sa.Column('ptpProfile', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('clockStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabridge',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1271,7 +1271,7 @@ def upgrade():
     sa.Column('availabilityStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('macAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabrm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1284,7 +1284,7 @@ def upgrade():
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataBrM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('exportPackageLabelPrefix', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabrmbackup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1322,7 +1322,7 @@ def upgrade():
     sa.Column('progressReport_timeActionStarted', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('progressReport_timeActionCompleted', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('progressReport_timeOfLastStatusUpdate', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabrmbackuphousekeeping',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1338,7 +1338,7 @@ def upgrade():
     sa.Column('vsDataBrmBackupHousekeeping_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('autoDelete', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxStoredManualBackups', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabrmbackuplabelstore',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1357,7 +1357,7 @@ def upgrade():
     sa.Column('lastExportedBackup', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('restoreEscalationList', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('lastRestoredBackup', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabrmbackupmanager',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1384,7 +1384,7 @@ def upgrade():
     sa.Column('progressReport_timeActionCompleted', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('progressReport_timeOfLastStatusUpdate', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('progressReport', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabrmbackupscheduler',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1417,7 +1417,7 @@ def upgrade():
     sa.Column('autoExport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('autoExportPassword', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('progressReport', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabrmcalendarbasedperiodicevent',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1439,7 +1439,7 @@ def upgrade():
     sa.Column('month', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dayOfWeek', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('stopTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabrmfailsafebackup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1467,7 +1467,7 @@ def upgrade():
     sa.Column('progressReport_timeActionStarted', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('progressReport_timeActionCompleted', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('progressReport_timeOfLastStatusUpdate', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabrmperiodicevent',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1488,7 +1488,7 @@ def upgrade():
     sa.Column('hours', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('weeks', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('stopTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabrmrollbackatrestore',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1503,7 +1503,7 @@ def upgrade():
     sa.Column('vsDataBrmRollbackAtRestore_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeRemainingBeforeRollback', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeAllowedBeforeRollback', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatabrmsingleevent',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1519,7 +1519,7 @@ def upgrade():
     sa.Column('vsDataBrmBackupScheduler_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataBrmSingleEvent_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('scheduledTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacabinet',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1542,7 +1542,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('climateRegulationSystem', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('productData', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacapacitychannelbandwidth',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1560,7 +1560,7 @@ def upgrade():
     sa.Column('capacityUnitChannelBandwidth', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('keyIdChannelBandwidth', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateChannelBandwidth', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacapacityconnectedusers',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1583,7 +1583,7 @@ def upgrade():
     sa.Column('gracePeriodAvailable', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('gracePeriodOriginalLicenseLimit', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('gracePeriodTimeLeft', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacapacityfeaturelicense',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1609,7 +1609,7 @@ def upgrade():
     sa.Column('currentCapacityLimit_value', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licensedCapacity_noLimit', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licensedCapacity_value', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacapacitykey',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1633,7 +1633,7 @@ def upgrade():
     sa.Column('state', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('keyId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('productType', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacapacitylicenses',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1646,7 +1646,7 @@ def upgrade():
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataLicensing_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataCapacityLicenses_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacapacitystate',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1669,7 +1669,7 @@ def upgrade():
     sa.Column('keyId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('featureState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacarrier',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1750,7 +1750,7 @@ def upgrade():
     sa.Column('txBranchesConfigured', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nbirFixedNotchPosition', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nbirAlgorithm', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacarrieraggregationfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1780,7 +1780,7 @@ def upgrade():
     sa.Column('sCellActProhibitTimer', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sCellDeactProhibitTimer', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sCellActDeactProhibitTimer', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacaxfanunit',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1795,7 +1795,7 @@ def upgrade():
     sa.Column('vsDataCaxFanUnit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacbu',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1811,7 +1811,7 @@ def upgrade():
     sa.Column('vsDataPlugInUnit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataCbu_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacchframesynch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1830,7 +1830,7 @@ def upgrade():
     sa.Column('toAE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacdma2000sessioncontinuity',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1848,7 +1848,7 @@ def upgrade():
     sa.Column('featureStateCdma2000SessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateCdma2000SessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateCdma2000SessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacellresources',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1870,7 +1870,7 @@ def upgrade():
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('numOfSsch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('numOfBch', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacellsleepfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1894,7 +1894,7 @@ def upgrade():
     sa.Column('sleepState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capCellSleepMonitorDurTimer', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sleepMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacellsleepnodefunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1910,7 +1910,7 @@ def upgrade():
     sa.Column('csmEutranInterFMeasReportDecr', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('csmEutranInterFMeasReportIncr', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('csmEutranInterFMeasReportMin', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacertm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1935,7 +1935,7 @@ def upgrade():
     sa.Column('reportProgress_timeActionCompleted', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportProgress_timeOfLastStatusUpdate', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('localFileStorePath', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacertmcapabilities',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1949,7 +1949,7 @@ def upgrade():
     sa.Column('vsDataSecM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataCertM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataCertMCapabilities_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatachannelswitching',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1993,7 +1993,7 @@ def upgrade():
     sa.Column('inactivityTimerEnhUeDrx', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ulRlcBufUpswitchEulFach', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('uraToDchEnabledDl', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataclimate',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2009,7 +2009,7 @@ def upgrade():
     sa.Column('climateControlMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('availabilityStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataclissh',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2024,7 +2024,7 @@ def upgrade():
     sa.Column('vsDataCliSsh_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('port', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataclitls',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2041,7 +2041,7 @@ def upgrade():
     sa.Column('trustCategory', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nodeCredential', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('port', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacnoperator',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2065,7 +2065,7 @@ def upgrade():
     sa.Column('dchResourceShare', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('u1LinkRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('primarySharedCnOperatorRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacombinedcell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2083,7 +2083,7 @@ def upgrade():
     sa.Column('keyIdCombinedCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateCombinedCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateCombinedCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacommonchannelresourcesdl',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2104,7 +2104,7 @@ def upgrade():
     sa.Column('numOfPch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('numOfAich', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('numOfFach', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacommonchannelresourcesul',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2123,7 +2123,7 @@ def upgrade():
     sa.Column('availabilityStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('numOfRach', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacommunicationcontexts',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2136,7 +2136,7 @@ def upgrade():
     sa.Column('NodeBFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataCommunicationContexts_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('noOfCommunicationContexts', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataconfigurationversion',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2155,7 +2155,7 @@ def upgrade():
     sa.Column('rollbackInitTimerValue', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rollbackOn', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeForAutoCreatedCV', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacoveragerelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2176,7 +2176,7 @@ def upgrade():
     sa.Column('relationCapability_dchLoadSharing', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('relationCapability_powerSave', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hsIflsDownswitch', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacprilinksupervision',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2189,7 +2189,7 @@ def upgrade():
     sa.Column('vsDataNodeSupport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataCpriLinkSupervision_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cpriLinkFilterTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacsfbforlimiteddualradioue',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2207,7 +2207,7 @@ def upgrade():
     sa.Column('featureStateCsfbForLimitedDualRadioUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateCsfbForLimitedDualRadioUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateCsfbForLimitedDualRadioUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatacsfbtogeranutran',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2225,7 +2225,7 @@ def upgrade():
     sa.Column('keyIdCsfbToGeranUtran', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateCsfbToGeranUtran', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateCsfbToGeranUtran', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadatacollectiongeneration',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2239,7 +2239,7 @@ def upgrade():
     sa.Column('vsDataDataCollectionGeneration_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dcgState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadataradiobearer',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2256,7 +2256,7 @@ def upgrade():
     sa.Column('dlMaxRetxThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ulMaxRetxThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tPollRetransmitUl', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadateandtime',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2274,7 +2274,7 @@ def upgrade():
     sa.Column('dateTimeOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeZone', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('localDateTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadbsandsabe',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2292,7 +2292,7 @@ def upgrade():
     sa.Column('keyIdDBSAndSabe', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateDBSAndSabe', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateDBSAndSabe', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadchframesynch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2315,7 +2315,7 @@ def upgrade():
     sa.Column('toAEUl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('toAWSUl', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadevicegroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2334,7 +2334,7 @@ def upgrade():
     sa.Column('vsDataPiuDevice_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRbsSubrack_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRbsSlot_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadhcp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2348,7 +2348,7 @@ def upgrade():
     sa.Column('vsDataDhcp_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dhcpServerAddresses', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadifferentiatedadmissioncontrol',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2366,7 +2366,7 @@ def upgrade():
     sa.Column('keyIdDifferentiatedAdmissionControl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateDifferentiatedAdmissionControl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateDifferentiatedAdmissionControl', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadlbasebandcapacity',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2385,7 +2385,7 @@ def upgrade():
     sa.Column('keyIdDlBbCapacity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licDlBbPercentileConf', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateDlBbCapacity', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadlfss',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2403,7 +2403,7 @@ def upgrade():
     sa.Column('keyIdDlFss', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateDlFss', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateDlFss', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadlprbcapacity',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2422,7 +2422,7 @@ def upgrade():
     sa.Column('licDlPrbPercentileConf', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseCapacityDlPrbCapacity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateDlPrbCapacity', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadnsclient',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2443,7 +2443,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('usedServerAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('configurationMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadownlinkbasebandpool',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2458,7 +2458,7 @@ def upgrade():
     sa.Column('vsDataDownlinkBaseBandPool_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxNumADchReservation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('numHsCodeResources', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadrx',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2476,7 +2476,7 @@ def upgrade():
     sa.Column('featureStateDrx', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateDrx', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateDrx', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadrxprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2495,7 +2495,7 @@ def upgrade():
     sa.Column('onDurationTimer', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('shortDrxCycle', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('shortDrxCycleTimer', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadst',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2511,7 +2511,7 @@ def upgrade():
     sa.Column('vsDataDst_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataHost_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dst', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadualantdlperfpkg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2529,7 +2529,7 @@ def upgrade():
     sa.Column('keyIdDualAntDlPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('featureStateDualAntDlPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateDualAntDlPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataduallaybeamfperfpkg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2547,7 +2547,7 @@ def upgrade():
     sa.Column('keyIdDualLayBeamfPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateDualLayBeamfPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateDualLayBeamfPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadynamicgbradmctrl',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2565,7 +2565,7 @@ def upgrade():
     sa.Column('keyIdDynamicGBRAdmCtrl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateDynamicGBRAdmCtrl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateDynamicGBRAdmCtrl', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatadynamicqosmodification',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2583,7 +2583,7 @@ def upgrade():
     sa.Column('keyIdDynamicQoSModification', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateDynamicQoSModification', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateDynamicQoSModification', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatae1physpathterm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2610,7 +2610,7 @@ def upgrade():
     sa.Column('rdiReporting', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('aisReporting', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('shutDownTimeout', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataecbus',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2624,7 +2624,7 @@ def upgrade():
     sa.Column('vsDataEcBus_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('connectionType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ecBusConnectorRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataecport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2640,7 +2640,7 @@ def upgrade():
     sa.Column('hubPosition', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cascadingOrder', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ecBusRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataecscsfb',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2658,7 +2658,7 @@ def upgrade():
     sa.Column('keyIdEcsCsfb', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateEcsCsfb', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateEcsCsfb', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataedchresources',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2675,7 +2675,7 @@ def upgrade():
     sa.Column('vsDataEDchResources_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('availabilityStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataemergencyunlock',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2691,7 +2691,7 @@ def upgrade():
     sa.Column('activationsLeft', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('expiration', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('activationState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataenergymeter',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2704,7 +2704,7 @@ def upgrade():
     sa.Column('vsDataEquipment_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataHwUnit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataEnergyMeter_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataenhcellidintraces',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2722,7 +2722,7 @@ def upgrade():
     sa.Column('keyIdEnhCellIdInTraces', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateEnhCellIdInTraces', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateEnhCellIdInTraces', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataenodebfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2864,7 +2864,7 @@ def upgrade():
     sa.Column('csfbForDualRadioUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ipAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('thpWifiMobilityStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataenrollmentauthority',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2882,7 +2882,7 @@ def upgrade():
     sa.Column('enrollmentCaFingerprint', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('enrollmentAuthorityName', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataenrollmentserver',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2900,7 +2900,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('uri', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('protocol', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataenrollmentservergroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2915,7 +2915,7 @@ def upgrade():
     sa.Column('vsDataCertM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataEnrollmentServerGroup_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataequipment',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2933,7 +2933,7 @@ def upgrade():
     sa.Column('productNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('manufacturingDate', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('productName', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataequipmentdiscovery',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2946,7 +2946,7 @@ def upgrade():
     sa.Column('vsDataNodeSupport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataEquipmentDiscovery_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('antennaDeviceScanStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataequipmentsupportfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2961,7 +2961,7 @@ def upgrade():
     sa.Column('supportFunction', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('release', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataericssonfilter',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2980,7 +2980,7 @@ def upgrade():
     sa.Column('roleAliasesBaseDn', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('targetBasedAccessControl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('version', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataethernetbridgeport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3005,7 +3005,7 @@ def upgrade():
     sa.Column('untaggedIngressVlanRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vlanRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataethernetinterface',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3029,7 +3029,7 @@ def upgrade():
     sa.Column('ethMaxFrameSize', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ptpInterfaceGroup', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('currentState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataethernetlink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3056,7 +3056,7 @@ def upgrade():
     sa.Column('broadcastAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ipv4Addresses', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('prefixLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataethernetport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3097,7 +3097,7 @@ def upgrade():
     sa.Column('operatingMode_configuredSpeedDuplex', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('shutDownTimeout', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('trafficState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataethernetswitch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3123,7 +3123,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('macAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('linkAggLinkSelection', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataethernetswitchfabric',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3135,7 +3135,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataEthernetSwitchFabric_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataethernetswitchingadm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3153,7 +3153,7 @@ def upgrade():
     sa.Column('l2gpPathCost', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('l2gpRapidFailover', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateL2gp', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataethernetswitchmodule',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3171,7 +3171,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('macAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('linkAggLinkSelection', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataethernetswitchmoduleport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3202,7 +3202,7 @@ def upgrade():
     sa.Column('lagRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('trafficState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('remoteFaultIndication', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataethernetswitchport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3239,7 +3239,7 @@ def upgrade():
     sa.Column('operatingMode_configuredSpeedDuplex', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('lagRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('trafficState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataetws',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3252,7 +3252,7 @@ def upgrade():
     sa.Column('vsDataENodeBFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataEUtranCellFDD_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataEtws_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataeul',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3285,7 +3285,7 @@ def upgrade():
     sa.Column('improvedL2Support', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('pathlossThresholdEulTti2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('threshEulTti2Ecno', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataeutrancellfdd',
     *[sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3682,7 +3682,7 @@ def upgrade():
     sa.Column('prsEnabled', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('prsStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True)],
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataeutrancellrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3721,7 +3721,7 @@ def upgrade():
     sa.Column('amoState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mobilityStatus_available', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataeutranetwork',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3744,7 +3744,7 @@ def upgrade():
     sa.Column('aliasPlmnIdentities_mcc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('aliasPlmnIdentities_mnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('aliasPlmnIdentities_mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataeutranfreqrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3830,7 +3830,7 @@ def upgrade():
     sa.Column('blackListEntryIdleMode_physicalLayerCellIdGroup', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('blackListEntryIdleMode_physicalLayerSubCellId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('blackListEntryIdleMode_range', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataeutranfrequency',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3842,7 +3842,7 @@ def upgrade():
     sa.Column('arfcnValueEUtranDl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('excludeAdditionalFreqBandList', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataeventcapabilities',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3857,7 +3857,7 @@ def upgrade():
     sa.Column('vsDataEventProducer_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataEventCapabilities_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxNoOfJobs', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataeventproducer',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3870,7 +3870,7 @@ def upgrade():
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataPmEventM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataEventProducer_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexchangeterminal',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3893,7 +3893,7 @@ def upgrade():
     sa.Column('description_tdmSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('shuttingDownTimer', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexchangeterminalip',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3910,7 +3910,7 @@ def upgrade():
     sa.Column('vsDataExchangeTerminalIp_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataPiuDevice_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexternalenodebfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3936,7 +3936,7 @@ def upgrade():
     sa.Column('timeOfCreation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeOfLastModification', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ulTrigHoSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexternaleutrancellfdd',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3970,7 +3970,7 @@ def upgrade():
     sa.Column('pciConflictCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('pciDetectingCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('activePlmnList', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexternaleutranfrequency',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3984,7 +3984,7 @@ def upgrade():
     sa.Column('plmnIdentity_mcc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('plmnIdentity_mnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('plmnIdentity_mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexternaleutranplmn',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3996,7 +3996,7 @@ def upgrade():
     sa.Column('plmnIdentity_mnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('plmnIdentity_mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexternalgsmcell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4014,7 +4014,7 @@ def upgrade():
     sa.Column('mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rac', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rimCapable', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexternalgsmfreq',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4027,7 +4027,7 @@ def upgrade():
     sa.Column('arfcnValueGeranDl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('bandIndicator', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('externalGsmFreqGroupId', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexternalgsmfreqgroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4039,7 +4039,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('frequencyGroupId', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexternalgsmplmn',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4052,7 +4052,7 @@ def upgrade():
     sa.Column('mnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('aliasPlmnIdentities', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexternalnode',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4069,7 +4069,7 @@ def upgrade():
     sa.Column('informationOnly', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('radioAccessTechnology', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('supportSystemControl', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexternalutrancell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4104,7 +4104,7 @@ def upgrade():
     sa.Column('rimCapable', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('lbUtranCellOffloadCapacity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cellCapability', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexternalutranfreq',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4115,7 +4115,7 @@ def upgrade():
     sa.Column('vsDataExternalUtranFreq_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('arfcnValueUtranDl', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataexternalutranplmn',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4128,7 +4128,7 @@ def upgrade():
     sa.Column('mnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('aliasPlmnIdentities', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafach',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4148,7 +4148,7 @@ def upgrade():
     sa.Column('pOffset1Fach', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('pOffset3Fach', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafangroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4161,7 +4161,7 @@ def upgrade():
     sa.Column('vsDataEquipment_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataCabinet_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataFanGroup_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafeaturekey',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4181,7 +4181,7 @@ def upgrade():
     sa.Column('state', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('keyId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('productType', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafeaturestate',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4200,7 +4200,7 @@ def upgrade():
     sa.Column('serviceState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('keyId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('featureState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafieldreplaceableunit',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4232,7 +4232,7 @@ def upgrade():
     sa.Column('positionCoordinates_geoDatum', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('positionCoordinates_latitude', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('positionCoordinates_longitude', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafilepullcapabilities',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4251,7 +4251,7 @@ def upgrade():
     sa.Column('alignedReportingPeriod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('outputDirectory', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('supportedReportingPeriods', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafiletpm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4264,7 +4264,7 @@ def upgrade():
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSysM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataFileTPM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafilter',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4283,7 +4283,7 @@ def upgrade():
     sa.Column('xossx_type', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('filter', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4303,7 +4303,7 @@ def upgrade():
     sa.Column('totalActive', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('lastChanged', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('heartbeatInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafmalarmmodel',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4316,7 +4316,7 @@ def upgrade():
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataFm_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataFmAlarmModel_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafmalarmtype',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4338,7 +4338,7 @@ def upgrade():
     sa.Column('isStateful', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('additionalText', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('configuredSeverity', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafmsubscription',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4354,7 +4354,7 @@ def upgrade():
     sa.Column('destPortNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('adminState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('heartbeatInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafreqmanagement',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4362,7 +4362,7 @@ def upgrade():
     sa.Column('configData_dnPrefix', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('SubNetwork_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataFreqManagement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatafrequencysyncio',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4379,7 +4379,7 @@ def upgrade():
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('encapsulation', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataftptls',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4395,7 +4395,7 @@ def upgrade():
     sa.Column('vsDataFtpTls_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('trustCategory', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nodeCredential', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataftptlsserver',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4411,7 +4411,7 @@ def upgrade():
     sa.Column('vsDataFtpTls_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataFtpTlsServer_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatageneralprocessorunit',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4428,7 +4428,7 @@ def upgrade():
     sa.Column('vsDataGeneralProcessorUnit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataCbu_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatagerancellrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4451,7 +4451,7 @@ def upgrade():
     sa.Column('timeOfLastModification', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('isHoAllowed', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('extGeranCellRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatageranetwork',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4464,7 +4464,7 @@ def upgrade():
     sa.Column('vsDataENodeBFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataGeraNetwork_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatageranfreqgrouprelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4503,7 +4503,7 @@ def upgrade():
     sa.Column('allowedPlmnList_mcc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('allowedPlmnList_mnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('allowedPlmnList_mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatagigabitethernet',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4543,7 +4543,7 @@ def upgrade():
     sa.Column('switchBackTimer', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('linkType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('defRoutersLinkSwitch', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatagpeh',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4555,7 +4555,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('RncFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataGpeh_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatagraceperiod',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4571,7 +4571,7 @@ def upgrade():
     sa.Column('vsDataGracePeriod_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('gracePeriodExpiration', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('gracePeriodState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatagsmrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4588,7 +4588,7 @@ def upgrade():
     sa.Column('qOffset1sn', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mobilityRelationType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('selectionPriority', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatagsmsessioncontinuity',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4606,7 +4606,7 @@ def upgrade():
     sa.Column('featureStateGsmSessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateGsmSessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateGsmSessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatagtppath',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4619,7 +4619,7 @@ def upgrade():
     sa.Column('vsDataENodeBFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataTermPointToSGW_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataGtpPath_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatahandover',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4672,7 +4672,7 @@ def upgrade():
     sa.Column('blockEcRelEutra_rwrEutra', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('eulMcSohoSupp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rejCsfbPshoSrbOnDch', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatahighspeedue',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4690,7 +4690,7 @@ def upgrade():
     sa.Column('keyIdHighSpeedUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateHighSpeedUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateHighSpeedUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatahooscctrlue',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4708,7 +4708,7 @@ def upgrade():
     sa.Column('keyIdHoOscCtrlUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateHoOscCtrlUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateHoOscCtrlUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatahsdsch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4743,7 +4743,7 @@ def upgrade():
     sa.Column('enhUeDrxSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hsAqmCongCtrlSpiSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hsAqmCongCtrlSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatahsdschresources',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4759,7 +4759,7 @@ def upgrade():
     sa.Column('vsDataHsDschResources_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('availabilityStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatahttpm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4772,7 +4772,7 @@ def upgrade():
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSysM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataHttpM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatahttps',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4788,7 +4788,7 @@ def upgrade():
     sa.Column('vsDataHttps_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('trustCategory', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nodeCredential', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatahwinventory',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4801,7 +4801,7 @@ def upgrade():
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataHwInventory_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeOfLatestInvChange', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatahwitem',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4833,7 +4833,7 @@ def upgrade():
     sa.Column('productData_productionDate', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('productData_description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('productData_xossx_type', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatahwunit',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4860,7 +4860,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('piuType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataimeisvtable',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4874,7 +4874,7 @@ def upgrade():
     sa.Column('vsDataImeisvTable_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('listOfFeaturesDefaultOff', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('listOfFeaturesDefaultOn', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataintegrationunlock',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4890,7 +4890,7 @@ def upgrade():
     sa.Column('activationsLeft', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('expiration', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('activationState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatainterfaceipv4',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4912,7 +4912,7 @@ def upgrade():
     sa.Column('bfdProfileRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('ethernetRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatainterfrequencyloadbalancing',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4930,7 +4930,7 @@ def upgrade():
     sa.Column('keyIdInterFrequencyLoadBalancing', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateInterFrequencyLoadBalancing', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateInterFrequencyLoadBalancing', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatainterfrequencyltehandover',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4948,7 +4948,7 @@ def upgrade():
     sa.Column('keyIdInterFrequencyLTEHandover', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateInterFrequencyLTEHandover', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateInterFrequencyLTEHandover', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatainterfrequencysessioncontinuity',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4966,7 +4966,7 @@ def upgrade():
     sa.Column('featureStateInterFrequencySessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateInterFrequencySessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateInterFrequencySessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatainternalethernetport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4989,7 +4989,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('macAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('configPbitArp', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataintraltehodatafwd',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5007,7 +5007,7 @@ def upgrade():
     sa.Column('keyIdIntraLTEHODataFwd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('featureStateIntraLTEHODataFwd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateIntraLTEHODataFwd', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataip',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5041,7 +5041,7 @@ def upgrade():
     sa.Column('dnsAutoConfigInterfaceRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('connectionAttemptTimer', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxRetransmissionAttempts', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipaccesshostet',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5061,7 +5061,7 @@ def upgrade():
     sa.Column('ntpDscp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('networkPrefixLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ntpServerMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipaccesshostgpb',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5090,7 +5090,7 @@ def upgrade():
     sa.Column('dnsClient1Ref', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('networkPrefixLength2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('networkPrefixLength1', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipaccesshostpool',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5105,7 +5105,7 @@ def upgrade():
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ipAccessHostRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipaccesshostspb',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5129,7 +5129,7 @@ def upgrade():
     sa.Column('ipAddress2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ipInterface', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reassemblyTimeout', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipaccesssctp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5144,7 +5144,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ipAccessHostEtRef1', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ipAccessHostEtRef2', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipethpacketdatarouter',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5162,7 +5162,7 @@ def upgrade():
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ipAccessHostSpbRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('ipAddressSelection', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipflowmonitor',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5184,7 +5184,7 @@ def upgrade():
     sa.Column('dscpValue', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('samplingInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataiphostlink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5203,7 +5203,7 @@ def upgrade():
     sa.Column('ipv4Addresses', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ipv6Addresses', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ipAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipinterface',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5247,7 +5247,7 @@ def upgrade():
     sa.Column('dhcpClientIdentifier_clientIdentifierType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ownIpAddressPassive', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vlanRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataiplicensing',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5264,7 +5264,7 @@ def upgrade():
     sa.Column('licenseStateIpFlowMonitoring', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('featureStateEthernetOamService', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateEthernetOamService', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipoam',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5276,7 +5276,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataIpOam_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataippm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5293,7 +5293,7 @@ def upgrade():
     sa.Column('licenseStateTwampResponder', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('responderFeatureState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('responderLicenseState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataiproute',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5314,7 +5314,7 @@ def upgrade():
     sa.Column('admDistance', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('disableConnectivityCheck', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tagValue', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataiprouter',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5329,7 +5329,7 @@ def upgrade():
     sa.Column('configPbitArp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('piuRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataiproutesys',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5348,7 +5348,7 @@ def upgrade():
     sa.Column('forwardingInterface', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('routeType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('admDistance', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataiproutingtable',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5368,7 +5368,7 @@ def upgrade():
     sa.Column('staticRoutes_nextHopIpAddr', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('staticRoutes_redistribute', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('staticRoutes_routeMetric', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipsec',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5397,7 +5397,7 @@ def upgrade():
     sa.Column('trustedCertInstallState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('autoUpdateCertEnrollmentServer', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipsyncref',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5414,7 +5414,7 @@ def upgrade():
     sa.Column('ntpServerIpAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipsystem',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5426,7 +5426,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataIpSystem_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipv4destnetwork',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5442,7 +5442,7 @@ def upgrade():
     sa.Column('vsDataIpv4DestNetwork_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ipv4Prefix', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipv4peer',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5458,7 +5458,7 @@ def upgrade():
     sa.Column('bfd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ipAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipv4staticroute',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5477,7 +5477,7 @@ def upgrade():
     sa.Column('ipv4StaticRouteNextHop', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('metric', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipv4staticroutetable',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5491,7 +5491,7 @@ def upgrade():
     sa.Column('vsDataIpRouter_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataIpv4StaticRouteTable_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataipv6routingtable',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5503,7 +5503,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSTN_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataIPv6RoutingTable_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatairc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5521,7 +5521,7 @@ def upgrade():
     sa.Column('featureStateIrc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateIrc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateIrc', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataiub',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5541,7 +5541,7 @@ def upgrade():
     sa.Column('userPlaneTransportOption_ipV4', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userPlaneIpResourceRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('ipv4Address', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataiubdatastreams',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5563,7 +5563,7 @@ def upgrade():
     sa.Column('noOfCommonStreams', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('noOfDedicatedStreams', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataiubedch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5578,7 +5578,7 @@ def upgrade():
     sa.Column('vsDataIubEdch_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('edchDataFrameDelayThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataiublink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5622,7 +5622,7 @@ def upgrade():
     sa.Column('rncModulePreferredRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('rncModuleAllocWeight', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('linkType', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataiulink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5643,7 +5643,7 @@ def upgrade():
     sa.Column('atmUserPlaneTermSubrackRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('spare', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('spareA', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataiurlink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5697,7 +5697,7 @@ def upgrade():
     sa.Column('ifIratHoPsIntHsEnabled', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nwInitCallReestEnabled', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('altIntraDrncHsccProcedure', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatakeyfileinformation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5715,7 +5715,7 @@ def upgrade():
     sa.Column('installationTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sequenceNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('productType', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatakeyfilemanagement',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5738,7 +5738,7 @@ def upgrade():
     sa.Column('reportProgress_timeActionStarted', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportProgress_timeActionCompleted', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportProgress_timeOfLastStatusUpdate', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatalag',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5762,7 +5762,7 @@ def upgrade():
     sa.Column('ethernetPortRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('linkSelection', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('linkSelectionMethod', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataldap',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5791,7 +5791,7 @@ def upgrade():
     sa.Column('useReferrals', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('useTls', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nodeCredential', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataldapauthenticationmethod',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5807,7 +5807,7 @@ def upgrade():
     sa.Column('vsDataLdapAuthenticationMethod_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatalicensing',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5820,7 +5820,7 @@ def upgrade():
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataLicensing_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('fingerprint', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatalinktransmissionprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5843,7 +5843,7 @@ def upgrade():
     sa.Column('dchStreamingCsDataFrameSynchRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('dchPsDataFrameSynchRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatalm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5861,7 +5861,7 @@ def upgrade():
     sa.Column('fingerprintUpdateable', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('referenceToLicenseServer', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('lastLicenseInventoryRefresh', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataloadbalancingfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5901,7 +5901,7 @@ def upgrade():
     sa.Column('ocdMaxNoHighHitRateCells', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('isUlEvalAllowedAtTpLbHo', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('isUlEvalAllowedAtCaTrHo', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataloadcontrol',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5917,7 +5917,7 @@ def upgrade():
     sa.Column('vsDataPlugInUnit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataGeneralProcessorUnit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataLoadControl_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatalocationarea',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5931,7 +5931,7 @@ def upgrade():
     sa.Column('lac', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('t3212', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('att', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatalog',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5956,7 +5956,7 @@ def upgrade():
     sa.Column('progressReport_timeActionStarted', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('progressReport_timeActionCompleted', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('progressReport_timeOfLastStatusUpdate', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatalogicalchannelgroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5971,7 +5971,7 @@ def upgrade():
     sa.Column('vsDataLogicalChannelGroup_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatalogm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5996,7 +5996,7 @@ def upgrade():
     sa.Column('trustCategory', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nodeCredential', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('progressReport', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatalppaecid',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6014,7 +6014,7 @@ def upgrade():
     sa.Column('keyIdLppaEcid', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateLppaEcid', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateLppaEcid', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatalsmecs',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6032,7 +6032,7 @@ def upgrade():
     sa.Column('keyIdLsmEcs', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateLsmEcs', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateLsmEcs', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatam3uassociation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6057,7 +6057,7 @@ def upgrade():
     sa.Column('remoteIpAddress2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('localIpMask', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('congestionAlarmThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamacconfiguration',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6071,7 +6071,7 @@ def upgrade():
     sa.Column('vsDataRadioBearerTable_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataMACConfiguration_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ulMaxHARQTx', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamaintenanceuser',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6089,7 +6089,7 @@ def upgrade():
     sa.Column('subjectName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('password', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamaintenanceusersecurity',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6104,7 +6104,7 @@ def upgrade():
     sa.Column('vsDataUserManagement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataUserIdentity_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataMaintenanceUserSecurity_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamanagedelement',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6130,7 +6130,7 @@ def upgrade():
     sa.Column('timeZone', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dateTimeOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('localDateTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamanagedelementdata',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6161,7 +6161,7 @@ def upgrade():
     sa.Column('ntpBurstFlagPrimary', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ntpMinPollSecondary', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ntpMaxPollSecondary', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamaximumcellrange',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6179,7 +6179,7 @@ def upgrade():
     sa.Column('keyIdMaximumCellRange', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateMaximumCellRange', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateMaximumCellRange', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatambmsm3based',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6197,7 +6197,7 @@ def upgrade():
     sa.Column('keyIdMbmsM3Based', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateMbmsM3Based', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateMbmsM3Based', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatambmsservicearea',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6209,7 +6209,7 @@ def upgrade():
     sa.Column('vsDataMbmsServiceArea_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sac', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamdtconfiguration',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6232,7 +6232,7 @@ def upgrade():
     sa.Column('maxReportCellsA2Mdt', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportQuantityA2Mdt', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerA2Mdt', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatameasurementdefinition',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6249,7 +6249,7 @@ def upgrade():
     sa.Column('granularityPeriod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportPeriod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measurementActive', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamecontext',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6278,7 +6278,7 @@ def upgrade():
     sa.Column('createUpgradePackageCapability', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('lastProcessedEventTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('associatedRnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamediumaccessunit',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6297,7 +6297,7 @@ def upgrade():
     sa.Column('vsDataCbu_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('connectorLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamibmanager',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6312,7 +6312,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dumpFile', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mibDumpState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamimosleepfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6336,7 +6336,7 @@ def upgrade():
     sa.Column('switchDownPrbThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sleepMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sleepPowerControl', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamixedmode',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6354,7 +6354,7 @@ def upgrade():
     sa.Column('keyIdMixedMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateMixedMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateMixedMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamobctrlatpoorcov',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6372,7 +6372,7 @@ def upgrade():
     sa.Column('keyIdMobCtrlAtPoorCov', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateMobCtrlAtPoorCov', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateMobCtrlAtPoorCov', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamocncellprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6389,7 +6389,7 @@ def upgrade():
     sa.Column('multiplePlmnListRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('spare', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('useCommonPlmn', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatampclusterhandling',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6402,7 +6402,7 @@ def upgrade():
     sa.Column('vsDataNodeSupport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataMpClusterHandling_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('primaryCoreRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatampprocessingresource',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6419,7 +6419,7 @@ def upgrade():
     sa.Column('vsDataDeviceGroup_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataMpProcessingResource_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataFieldReplaceableUnit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamtp3bap',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6435,7 +6435,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('routeSetId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceInd', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamtp3bspitu',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6511,7 +6511,7 @@ def upgrade():
     sa.Column('rpuId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('m3uaNoOfAttempsOfDauds', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('noOfAttempsOfAssociationEstablishment', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamtp3bsr',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6528,7 +6528,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('linkSetM3uId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('priority', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamtp3bsrs',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6544,7 +6544,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('destPointCode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('preferredBearer', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamulticarrier',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6567,7 +6567,7 @@ def upgrade():
     sa.Column('cellRefsDlSecondBand', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hsdpaDb3McSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hsdpa3McSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamulticastantennabranch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6584,7 +6584,7 @@ def upgrade():
     sa.Column('transceiverRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatamultierabsperuser',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6602,7 +6602,7 @@ def upgrade():
     sa.Column('keyIdMultiErabsPerUser', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('featureStateMultiErabsPerUser', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateMultiErabsPerUser', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanbapcommon',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6629,7 +6629,7 @@ def upgrade():
     sa.Column('activeUniSaalTpRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('standbyUniSaalTpRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanbapdedicated',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6654,7 +6654,7 @@ def upgrade():
     sa.Column('activeUniSaalTpRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('standbyUniSaalTpRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanetconfssh',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6669,7 +6669,7 @@ def upgrade():
     sa.Column('vsDataNetconfSsh_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('port', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanetconftls',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6686,7 +6686,7 @@ def upgrade():
     sa.Column('trustCategory', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nodeCredential', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('port', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanexthop',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6707,7 +6707,7 @@ def upgrade():
     sa.Column('adminDistance', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reference', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('discard', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatannisaalprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6746,7 +6746,7 @@ def upgrade():
     sa.Column('profileData_discardMessagesLevel1', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('profileData_discardMessagesLevel2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('profileData_discardMessagesLevel3', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanodebfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6848,7 +6848,7 @@ def upgrade():
     sa.Column('featureStateMultiSectorPerRadio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('featureStateUlSpectrumAnalyzer', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nonEqPwrCommonPrecoderState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanodeblocalcell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6935,7 +6935,7 @@ def upgrade():
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('hsdpaDbMcCapability', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('throughputPqxHsdpaFach', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanodeblocalcellgroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6955,7 +6955,7 @@ def upgrade():
     sa.Column('multiCarrierPair4', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('multiCarrierPair1', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('multiCarrierPair2', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanodebsectorcarrier',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6997,7 +6997,7 @@ def upgrade():
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('configuredMaxTxPower', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('numOfBranchWithNbir', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanodecredential',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7041,7 +7041,7 @@ def upgrade():
     sa.Column('enrollmentAuthority', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('expiryAlarmThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('subjectAltName', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanodegroupsyncmember',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7059,7 +7059,7 @@ def upgrade():
     sa.Column('syncRiPortCandidate', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('syncNodePriority', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanodemanagementfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7074,7 +7074,7 @@ def upgrade():
     sa.Column('nodeTag', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('antennaDeviceScanInBackground', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('technicianPresent', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanodesupport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7104,7 +7104,7 @@ def upgrade():
     sa.Column('nodeContext_domain', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('boundInstallation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hwSerialNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanodesynch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7126,7 +7126,7 @@ def upgrade():
     sa.Column('slidingWindowSize', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxAllowedIubRtt', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('transportDelayMeasDiscRatio', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatanonplannedpcidrxprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7141,7 +7141,7 @@ def upgrade():
     sa.Column('nonPlannedPciOnDurationTimer', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nonPlannedPciLongDrxCycle', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nonPlannedPciDrxInactivityTimer', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatantp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7153,7 +7153,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataTransport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataNtp_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatantpfrequencysync',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7175,7 +7175,7 @@ def upgrade():
     sa.Column('addressIPv4Reference', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('ntpFrequencySyncStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatantpserver',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7192,7 +7192,7 @@ def upgrade():
     sa.Column('serverAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataoamaccesspoint',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7206,7 +7206,7 @@ def upgrade():
     sa.Column('vsDataSysM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataOamAccessPoint_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('accessPoint', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataoamtrafficclass',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7221,7 +7221,7 @@ def upgrade():
     sa.Column('vsDataOamTrafficClass_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dscp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('xossx_name', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataoctantulperfpkg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7239,7 +7239,7 @@ def upgrade():
     sa.Column('keyIdOctAntUlPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateOctAntUlPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateOctAntUlPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataonsiteactivities',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7252,7 +7252,7 @@ def upgrade():
     sa.Column('vsDataNodeSupport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataOnSiteActivities_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('technicianPresent', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataoperatordefinedqci',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7270,7 +7270,7 @@ def upgrade():
     sa.Column('keyIdOperatorDefinedQci', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateOperatorDefinedQci', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateOperatorDefinedQci', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataopprofiles',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7285,7 +7285,7 @@ def upgrade():
     sa.Column('profileList_opProfileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('profileList_isActive', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('profileList_isAutomatic', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataoptionalfeaturelicense',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7303,7 +7303,7 @@ def upgrade():
     sa.Column('licenseState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataoptionalfeatures',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7316,7 +7316,7 @@ def upgrade():
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataLicensing_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataOptionalFeatures_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataotdoasupl',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7334,7 +7334,7 @@ def upgrade():
     sa.Column('featureStateOtdoaSupl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateOtdoaSupl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateOtdoaSupl', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapacketfrequencysyncref',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7356,7 +7356,7 @@ def upgrade():
     sa.Column('ptpOwnPortIdentity_ptpPortNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serverAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapaging',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7379,7 +7379,7 @@ def upgrade():
     sa.Column('noOfPagingRecordTransm', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('utranDrxCycleLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('noOfPagingRecordTransmUtran', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7397,7 +7397,7 @@ def upgrade():
     sa.Column('pichPower', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sccpchOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapci',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7415,7 +7415,7 @@ def upgrade():
     sa.Column('keyIdPci', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStatePci', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStatePci', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapcpsettoqueue',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7433,7 +7433,7 @@ def upgrade():
     sa.Column('vsDataPcpSetToQueue_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('queue', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('pcpSet', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapcptoqueuemap',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7451,7 +7451,7 @@ def upgrade():
     sa.Column('defaultQueue', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapdrdevice',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7465,7 +7465,7 @@ def upgrade():
     sa.Column('vsDataSpDevicePool_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataPdrDevice_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapfs',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7483,7 +7483,7 @@ def upgrade():
     sa.Column('keyIdPfs', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStatePfs', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStatePfs', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapiudevice',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7500,7 +7500,7 @@ def upgrade():
     sa.Column('vsDataPiuDevice_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataplmn',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7514,7 +7514,7 @@ def upgrade():
     sa.Column('mnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('aliasPlmnIdentities', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataplmnidentitygroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7531,7 +7531,7 @@ def upgrade():
     sa.Column('plmn_mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('plmn', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapluginunit',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7553,7 +7553,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('unitType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('positionRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7565,7 +7565,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataPm_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapmeventm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7577,7 +7577,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataPmEventM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapmeventservice',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7611,7 +7611,7 @@ def upgrade():
     sa.Column('eventsExcludedFromUeTrace', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cellTracePeriodicReport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('streamStatusNotification', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapminitiateduemeasurements',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7629,7 +7629,7 @@ def upgrade():
     sa.Column('keyIdPmInitiatedUeMeasurements', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStatePmInitiatedUeMeasurements', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStatePmInitiatedUeMeasurements', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapmmeasurementcapabilities',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7661,7 +7661,7 @@ def upgrade():
     sa.Column('supportedMeasJobGps', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('jobGroupingSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('producesUtcRopFiles', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapmservice',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7681,7 +7681,7 @@ def upgrade():
     sa.Column('maxNoOfPmFiles', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxNoOfCounters', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxNoOfMonitors', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapmsupport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7694,7 +7694,7 @@ def upgrade():
     sa.Column('vsDataNodeSupport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataPmSupport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ropFileHandling', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapmuemeascontrol',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7724,7 +7724,7 @@ def upgrade():
     sa.Column('ueMeasInterRat2_geranFrequencyRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('ueMeasInterRat2_utranFrequencyRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('ueMeasInterRat2_reportConfigInterRatPmRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapmulinterferencereport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7738,7 +7738,7 @@ def upgrade():
     sa.Column('vsDataSectorCarrier_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataPmUlInterferenceReport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rfBranchRxRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapositioningserviceclass',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7769,7 +7769,7 @@ def upgrade():
     sa.Column('shapeConversionEpa', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('shapeConversionEpaue', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportedConfidenceLevel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapowercontrol',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7822,7 +7822,7 @@ def upgrade():
     sa.Column('sirMaxTti10', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ulInactSirTargetReset', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ulInactSirTargetResetTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapowerdistribution',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7839,7 +7839,7 @@ def upgrade():
     sa.Column('undervoltageDisconnectCeaseOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('controlDomainRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('availabilityStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapowersupply',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7859,7 +7859,7 @@ def upgrade():
     sa.Column('systemOvervoltageAlarmLevel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('availabilityStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('systemOvervoltageAlarmCeaseOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapredefrbsscannergpeh',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7873,7 +7873,7 @@ def upgrade():
     sa.Column('vsDataPredefRbsScannerGpeh_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxStorageSize', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('fileLocation', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapreschedulingprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7888,7 +7888,7 @@ def upgrade():
     sa.Column('preschedulingPeriod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('preschedulingDataSize', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('preschedulingDuration', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataprocessorload',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7906,7 +7906,7 @@ def upgrade():
     sa.Column('vsDataProcessorLoad_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRbsUnit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataptp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7918,7 +7918,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataTransport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataPtp_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataptpbcocport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7946,7 +7946,7 @@ def upgrade():
     sa.Column('associatedGrandmaster', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dscp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ptpPortStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatapws',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7964,7 +7964,7 @@ def upgrade():
     sa.Column('keyIdPws', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStatePws', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStatePws', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataqciprofilepredefined',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8036,7 +8036,7 @@ def upgrade():
     sa.Column('timerPriority', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timerProfileRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('tReorderingUl', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataqcitable',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8048,7 +8048,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataENodeBFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataQciTable_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataqosawarescheduler',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8066,7 +8066,7 @@ def upgrade():
     sa.Column('featureStateQosAwareScheduler', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateQosAwareScheduler', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateQosAwareScheduler', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataqosclassifier',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8080,7 +8080,7 @@ def upgrade():
     sa.Column('vsDataEthernetPort_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataQueueSystem_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataQoSClassifier_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataqospolicy',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8230,7 +8230,7 @@ def upgrade():
     sa.Column('pcp2q5', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('pcp2q6', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('pcp2q7', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataqosprofiles',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8242,7 +8242,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataTransport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataQosProfiles_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataquadantulperfpkg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8260,7 +8260,7 @@ def upgrade():
     sa.Column('keyIdQuadAntUlPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateQuadAntUlPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateQuadAntUlPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataqueuesystem',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8273,7 +8273,7 @@ def upgrade():
     sa.Column('vsDataTransport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataEthernetPort_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataQueueSystem_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarabhandling',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8302,7 +8302,7 @@ def upgrade():
     sa.Column('amrIratRabConfig', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('puncturingLimitUlTti2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('csStreamMaxRateInit', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarach',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8331,7 +8331,7 @@ def upgrade():
     sa.Column('increasedRachCoverageEnabled', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nb01Max', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nb01Min', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataradiobearertable',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8343,7 +8343,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataENodeBFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRadioBearerTable_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataradioequipmentclock',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8362,7 +8362,7 @@ def upgrade():
     sa.Column('minQualityLevel_qualityLevelValueOptionIII', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('equipmentClockPriorityTable', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('clockState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataradioequipmentclockreference',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8390,7 +8390,7 @@ def upgrade():
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('encapsulation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('receivedQualityLevel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataradiolinks',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8405,7 +8405,7 @@ def upgrade():
     sa.Column('vsDataNodeBLocalCell_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRadioLinks_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('noOfRadioLinks', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataradiounitcascading',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8423,7 +8423,7 @@ def upgrade():
     sa.Column('keyIdRUCascading', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateRUCascading', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateRUCascading', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataranap',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8456,7 +8456,7 @@ def upgrade():
     sa.Column('overloadCtrlSupervision_msgIntervalTimeMin', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('overloadCtrlSupervision_reductionStepHoldTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('resetResourceMsgInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarateshaping',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8474,7 +8474,7 @@ def upgrade():
     sa.Column('keyIdRateShaping', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateRateShaping', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateRateShaping', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarbseventstreamer',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8492,7 +8492,7 @@ def upgrade():
     sa.Column('featureStateEventStreaming', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateEventStreaming', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateEventStreaming', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarbslocalcell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8617,7 +8617,7 @@ def upgrade():
     sa.Column('featureStateHsdpaMixedModePowerSharing', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('trafficAwarePwrSaveRadioRebiasing', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hsdpaMixedModePowerSharingCapability', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarbsmeascontrol',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8642,7 +8642,7 @@ def upgrade():
     sa.Column('dlCodePwrThreshCmStartDch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dlCodePwrTimeTriggMeasHsFdpch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dlCodePwrCmFilterCoeffHsFdpch', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarbsslot',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8655,7 +8655,7 @@ def upgrade():
     sa.Column('vsDataEquipment_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRbsSubrack_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRbsSlot_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarbssubrack',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8670,7 +8670,7 @@ def upgrade():
     sa.Column('cabinetPosition', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('noOfSlots', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('subrackPosition', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarbssynchronization',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8687,7 +8687,7 @@ def upgrade():
     sa.Column('timDeviceRef2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timDeviceRef1', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('masterTu', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarcs',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8705,7 +8705,7 @@ def upgrade():
     sa.Column('dchRcLostT', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cchWaitCuT', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hsDschRcLostT', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatardiport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8724,7 +8724,7 @@ def upgrade():
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('remoteRdiPortRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarealtimeseclog',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8744,7 +8744,7 @@ def upgrade():
     sa.Column('featureState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataredirectwithnacc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8762,7 +8762,7 @@ def upgrade():
     sa.Column('keyIdRedirectWithNacc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateRedirectWithNacc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateRedirectWithNacc', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareliableprogramuniter',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8781,7 +8781,7 @@ def upgrade():
     sa.Column('switchOver', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('normalisation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('replication', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfiga1prim',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8799,7 +8799,7 @@ def upgrade():
     sa.Column('a1ThresholdRsrqPrim', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisA1Prim', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerA1Prim', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfiga1sec',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8817,7 +8817,7 @@ def upgrade():
     sa.Column('a1ThresholdRsrqSec', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisA1Sec', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerA1Sec', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfiga4',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8836,7 +8836,7 @@ def upgrade():
     sa.Column('hysteresisA4', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerA4', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('triggerQuantityA4', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfiga5',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8859,7 +8859,7 @@ def upgrade():
     sa.Column('triggerQuantityA5', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisA5RsrqOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerA5Rsrq', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfiga5anr',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8880,7 +8880,7 @@ def upgrade():
     sa.Column('a5Threshold2RsrqAnrDelta', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisA5', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerA5', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfiga5dlcomp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8894,7 +8894,7 @@ def upgrade():
     sa.Column('vsDataEUtranCellFDD_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataUeMeasControl_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataReportConfigA5DlComp_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfiga5softlock',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8909,7 +8909,7 @@ def upgrade():
     sa.Column('vsDataUeMeasControl_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataReportConfigA5SoftLock_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('a5Threshold2Rsrp', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfiga5ultrig',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8927,7 +8927,7 @@ def upgrade():
     sa.Column('hysteresisA5', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('a5Threshold2Rsrp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportIntervalA5', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigb1geran',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8944,7 +8944,7 @@ def upgrade():
     sa.Column('b1ThresholdGeran', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisB1', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerB1', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigb1utra',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8962,7 +8962,7 @@ def upgrade():
     sa.Column('hysteresisB1', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerB1', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('b1ThresholdRscpUtra', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigb2cdma2000',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8984,7 +8984,7 @@ def upgrade():
     sa.Column('triggerQuantityB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerB2Rsrq', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisB2RsrqOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigb2cdma20001xrtt',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9006,7 +9006,7 @@ def upgrade():
     sa.Column('triggerQuantityB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerB2Rsrq', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisB2RsrqOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigb2cdmarttultrig',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9024,7 +9024,7 @@ def upgrade():
     sa.Column('timeToTriggerB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportIntervalB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigb2cdmaultrig',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9042,7 +9042,7 @@ def upgrade():
     sa.Column('timeToTriggerB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportIntervalB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigb2geran',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9064,7 +9064,7 @@ def upgrade():
     sa.Column('triggerQuantityB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerB2Rsrq', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisB2RsrqOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigb2geranultrig',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9082,7 +9082,7 @@ def upgrade():
     sa.Column('timeToTriggerB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportIntervalB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigb2utra',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9105,7 +9105,7 @@ def upgrade():
     sa.Column('triggerQuantityB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerB2Rsrq', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisB2RsrqOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigb2utraultrig',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9124,7 +9124,7 @@ def upgrade():
     sa.Column('timeToTriggerB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportIntervalB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigcsfbcdma2000',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9141,7 +9141,7 @@ def upgrade():
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('thresholdCdma20001xRtt', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTrigger', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigcsfbgeran',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9158,7 +9158,7 @@ def upgrade():
     sa.Column('thresholdGeran', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTrigger', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigcsfbutra',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9176,7 +9176,7 @@ def upgrade():
     sa.Column('thresholdRscp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('thresholdEcNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTrigger', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigcsg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9194,7 +9194,7 @@ def upgrade():
     sa.Column('a5Thr1RsrpAltCsgOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('a5Thr2RsrpAltCsgOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerA5AltCsg', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigeutrabadcovprim',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9213,7 +9213,7 @@ def upgrade():
     sa.Column('hysteresisA2Prim', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerA2Prim', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('triggerQuantityA2Prim', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigeutrabadcovsec',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9232,7 +9232,7 @@ def upgrade():
     sa.Column('hysteresisA2Sec', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerA2Sec', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('triggerQuantityA2Sec', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigeutrabestcell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9250,7 +9250,7 @@ def upgrade():
     sa.Column('hysteresisA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('triggerQuantityA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigeutrabestcellanr',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9268,7 +9268,7 @@ def upgrade():
     sa.Column('a3offsetAnrDelta', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigeutraifa3ultrig',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9286,7 +9286,7 @@ def upgrade():
     sa.Column('timeToTriggerA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportIntervalA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('a3Offset', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigeutraifbestcell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9307,7 +9307,7 @@ def upgrade():
     sa.Column('timeToTriggerA3Rsrq', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisA3RsrqOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('a3RsrqOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigeutrainterfreqlb',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9327,7 +9327,7 @@ def upgrade():
     sa.Column('a5Threshold1Rsrp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('a4ThresholdRsrp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisA4', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigeutrainterfreqmbms',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9343,7 +9343,7 @@ def upgrade():
     sa.Column('vsDataReportConfigEUtraInterFreqMbms_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisA5', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('a5ThresholdRsrp', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigeutraintrafreqpm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9377,7 +9377,7 @@ def upgrade():
     sa.Column('reportQuantityPm', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeToTriggerPm', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('triggerQuantityPm', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfiginterratlb',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9394,7 +9394,7 @@ def upgrade():
     sa.Column('utranB1ThresholdRscp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('utranHysteresisB1', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('utranB1ThresholdEcNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigscella1a2',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9415,7 +9415,7 @@ def upgrade():
     sa.Column('a1a2ThresholdRsrp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('a1a2ThresholdRsrq', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('triggerQuantityA1A2', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigscella4',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9434,7 +9434,7 @@ def upgrade():
     sa.Column('timeToTriggerA4', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('a4ThresholdRsrp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('triggerQuantityA4', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigscella6',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9452,7 +9452,7 @@ def upgrade():
     sa.Column('triggerQuantityA6', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresisA6', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('a6offset', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatareportconfigsearch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9501,7 +9501,7 @@ def upgrade():
     sa.Column('qciA1A2ThrOffsets_qciProfileRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('qciA1A2ThrOffsets_a1a2ThrRsrpQciOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('qciA1A2ThrOffsets_a1a2ThrRsrqQciOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataresmeascontrol',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9542,7 +9542,7 @@ def upgrade():
     sa.Column('resMeasure11_rmq', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('resMeasure12_service', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('resMeasure12_rmq', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataresourcepartitions',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9554,7 +9554,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataENodeBFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataResourcePartitions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataretcascading',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9572,7 +9572,7 @@ def upgrade():
     sa.Column('featureStateRetCascading', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateRetCascading', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateRetCascading', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataretconfigurationmgt',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9590,7 +9590,7 @@ def upgrade():
     sa.Column('featureStateRetConfigurationMgt', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateRetConfigurationMgt', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateRetConfigurationMgt', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataretdevice',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9623,7 +9623,7 @@ def upgrade():
     sa.Column('aretDeviceData_antennaBearing', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('aretDeviceData_installedMechTilt', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('aretDeviceData_minSupportedElectricalTilt', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataretdeviceset',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9641,7 +9641,7 @@ def upgrade():
     sa.Column('productNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('revState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('retType', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataretsupport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9659,7 +9659,7 @@ def upgrade():
     sa.Column('featureStateRetSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateRetSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateRetSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataretudevicegroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9674,7 +9674,7 @@ def upgrade():
     sa.Column('vsDataAuxPlugInUnit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRetuDeviceGroup_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hwTestResult', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarfbranch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9695,7 +9695,7 @@ def upgrade():
     sa.Column('ulTrafficDelay', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rfPortRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarfport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9719,7 +9719,7 @@ def upgrade():
     sa.Column('ulFrequencyRanges', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dlFrequencyRanges', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nodeUniqueRfPortId', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarilink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9738,7 +9738,7 @@ def upgrade():
     sa.Column('linkTag', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('transportType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('linkType', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatariport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9766,7 +9766,7 @@ def upgrade():
     sa.Column('sfpData_negotiatedBitRate', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sfpData_manufacturerRevision', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sfpData', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarlcum',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9784,7 +9784,7 @@ def upgrade():
     sa.Column('featureStateRlcUm', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateRlcUm', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateRlcUm', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarlfprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9802,7 +9802,7 @@ def upgrade():
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('t310', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('t311', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarnccapacity',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9835,7 +9835,7 @@ def upgrade():
     sa.Column('minHwacLicensedLimit_noLimit', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('minHwacLicensedLimit_value', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hwacKeyId', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarncconfiglimits',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9861,7 +9861,7 @@ def upgrade():
     sa.Column('serviceAreasLimit', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('urasLimit', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('utranCellsLimit', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarncfeature',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9880,7 +9880,7 @@ def upgrade():
     sa.Column('keyId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('isLicenseControlled', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarncfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9959,7 +9959,7 @@ def upgrade():
     sa.Column('nwInitCallReestTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('csPriorityRabSetupTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('aliasPlmnIdentities', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarncmodule',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9974,7 +9974,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('programInstanceId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('supportedIubLinkType', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarnlqosclassprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9992,7 +9992,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tcPsBgArpSpiMapRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('hsFachQueueSpi', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarnsap',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10010,7 +10010,7 @@ def upgrade():
     sa.Column('localSccpApRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('remoteSccpApRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarohc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10028,7 +10028,7 @@ def upgrade():
     sa.Column('keyIdROHC', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateROHC', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateROHC', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarouter',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10043,7 +10043,7 @@ def upgrade():
     sa.Column('ttl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hopLimit', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataroutetableipv4static',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10057,7 +10057,7 @@ def upgrade():
     sa.Column('vsDataRouter_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRouteTableIPv4Static_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataHost_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataroutingarea',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10071,7 +10071,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rac', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nmo', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataroutingtable',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10083,7 +10083,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSTN_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRoutingTable_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarps',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10101,7 +10101,7 @@ def upgrade():
     sa.Column('keyIdRps', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateRps', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateRps', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarrc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10160,7 +10160,7 @@ def upgrade():
     sa.Column('cfnOffsetMarginSrbDchDlInIratHo', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rrcLengthOptimizationSpeech', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rncRrcLcMonitorPeriod', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarrudevicegroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10176,7 +10176,7 @@ def upgrade():
     sa.Column('vsDataRruDeviceGroup_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRbsSubrack_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRbsSlot_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatarttpositioning',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10197,7 +10197,7 @@ def upgrade():
     sa.Column('measTimeMaxRbs', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('propagationTimeUncertainty', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('outlierFactor', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatas1hodatafwd',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10215,7 +10215,7 @@ def upgrade():
     sa.Column('keyIdS1HODataFwd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateS1HODataFwd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateS1HODataFwd', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasaspositioning',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10229,7 +10229,7 @@ def upgrade():
     sa.Column('vsDataSasPositioning_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('enabledSasFeatures', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('pcapSasRespTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasccpaplocal',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10248,7 +10248,7 @@ def upgrade():
     sa.Column('maxConn', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('useS1', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('enablePoolProxyExtension', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasccpapremote',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10267,7 +10267,7 @@ def upgrade():
     sa.Column('ssN', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('longClSegments', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('clSegmentationLimit', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasccpscrc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10281,7 +10281,7 @@ def upgrade():
     sa.Column('vsDataSccpSp_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSccpScrc_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasccpsp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10319,7 +10319,7 @@ def upgrade():
     sa.Column('useSCMG_useSST', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('useSCMG_allowRemoteBroadcast', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('useSCMG_initiateTimerTcon', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataschedulersp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10336,7 +10336,7 @@ def upgrade():
     sa.Column('vsDataSchedulerSp_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('order', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataschema',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10356,7 +10356,7 @@ def upgrade():
     sa.Column('selectedModelOptions', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mirrorMIBversion', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('neToMirrorMIBInfo', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasctp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10408,7 +10408,7 @@ def upgrade():
     sa.Column('switchbackMaxThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('switchbackMinThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('switchbackMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasctpassociation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10429,7 +10429,7 @@ def upgrade():
     sa.Column('remotePortNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('localPrimaryAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('localPortNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasctpendpoint',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10446,7 +10446,7 @@ def upgrade():
     sa.Column('localIpAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasctpprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10494,7 +10494,7 @@ def upgrade():
     sa.Column('bundlingAdaptiveActivated', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('volatileMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sctpPmtud', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasecm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10506,7 +10506,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSecM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasector',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10539,7 +10539,7 @@ def upgrade():
     sa.Column('mixedModeRadio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sectorConfiguration', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('noiseFigure', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasectorantenna',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10555,7 +10555,7 @@ def upgrade():
     sa.Column('beamDirection', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('positionInformation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('positionRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasectorcarrier',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10580,7 +10580,7 @@ def upgrade():
     sa.Column('txPowerPersistentLock', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('configuredMaxTxPower', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('partOfSectorPower', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasectorequipmentfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10604,7 +10604,7 @@ def upgrade():
     sa.Column('availableSectorPower', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('configuredOutputPower', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('confOutputPower', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasecurity',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10620,7 +10620,7 @@ def upgrade():
     sa.Column('certExpirWarnTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('autoUpdateCertEnrollmentServer', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('crlEarlyUpdateInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasecurityhandling',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10639,7 +10639,7 @@ def upgrade():
     sa.Column('integrityProtectAlgoPrio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ciphering', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('multiRabSmcHandling', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataservicearea',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10652,7 +10652,7 @@ def upgrade():
     sa.Column('vsDataServiceArea_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sac', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataservicespecificdrx',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10670,7 +10670,7 @@ def upgrade():
     sa.Column('keyIdServiceSpecificDRX', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateServiceSpecificDRX', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateServiceSpecificDRX', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataservicetriggeredmobility',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10688,7 +10688,7 @@ def upgrade():
     sa.Column('keyIdServiceTriggeredMobility', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateServiceTriggeredMobility', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateServiceTriggeredMobility', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasfpmodule',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10704,7 +10704,7 @@ def upgrade():
     sa.Column('availabilityStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasftp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10718,7 +10718,7 @@ def upgrade():
     sa.Column('vsDataSysM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataFileTPM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSftp_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatashaper',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10736,7 +10736,7 @@ def upgrade():
     sa.Column('committedBurstSize_bytes', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('committedInformationRate_kbps', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasharednetworksupport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10754,7 +10754,7 @@ def upgrade():
     sa.Column('featureStateSharedNetworkSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateSharedNetworkSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateSharedNetworkSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasid',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10791,7 +10791,7 @@ def upgrade():
     sa.Column('sib18_sib18StartPos', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sib19_sib19RepPeriod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sib19_sib19StartPos', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasignalingradiobearer',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10809,7 +10809,7 @@ def upgrade():
     sa.Column('ulMaxRetxThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tPollRetransmitUl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tReorderingUl', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasinglaybeamfperfpkg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10827,7 +10827,7 @@ def upgrade():
     sa.Column('keyIdSingLayBeamfPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateSingLayBeamfPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateSingLayBeamfPerfPkg', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasite',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10846,7 +10846,7 @@ def upgrade():
     sa.Column('datum', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('worldTimeZoneId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('daylightSavingsAdjust', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataslot',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10861,7 +10861,7 @@ def upgrade():
     sa.Column('vsDataSlot_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('slotNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('activeSwAllocation', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasnmp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10880,7 +10880,7 @@ def upgrade():
     sa.Column('agentAddressDtls', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('trustCategory', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nodeCredential', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasnmptargetv2c',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10902,7 +10902,7 @@ def upgrade():
     sa.Column('transportMethod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('isMibWritable', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasnmptargetv3',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10931,7 +10931,7 @@ def upgrade():
     sa.Column('authKey_cleartext', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('authKey_password', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('isMibWritable', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataspdevicepool',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10943,7 +10943,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataEquipment_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSpDevicePool_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataspidhowhitelist',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10961,7 +10961,7 @@ def upgrade():
     sa.Column('keyIdSpidHoWhiteList', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateSpidHoWhiteList', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateSpidHoWhiteList', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataspidratfreqprio',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10979,7 +10979,7 @@ def upgrade():
     sa.Column('keyIdSpidRATFreqPrio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateSpidRATFreqPrio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateSpidRATFreqPrio', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataspiqosclass',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10997,7 +10997,7 @@ def upgrade():
     sa.Column('flowControl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hsFachQosLevel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasrvcctoutran',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11015,7 +11015,7 @@ def upgrade():
     sa.Column('keyIdSRVCCtoUTRAN', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateSRVCCtoUTRAN', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateSRVCCtoUTRAN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatastn',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11062,7 +11062,7 @@ def upgrade():
     sa.Column('arpMeanRefreshInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('robustRollbackTimer', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nodeAuthenticationSecret', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatastnfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11084,7 +11084,7 @@ def upgrade():
     sa.Column('siteInstallation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('boundSiteInstallation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('softwareUpgrade', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatastreamingcapabilities',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11099,7 +11099,7 @@ def upgrade():
     sa.Column('vsDataEventProducer_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataStreamingCapabilities_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('supportedCompressionTypes', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasubrack',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11114,7 +11114,7 @@ def upgrade():
     sa.Column('subrackPosition', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cabinetPosition', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasubscrprofileidhandling',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11128,7 +11128,7 @@ def upgrade():
     sa.Column('vsDataSubscrProfileIdHandling_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('spidPreventRwrEutra', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('spidDedicPrioEutra', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasupport12cells',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11146,7 +11146,7 @@ def upgrade():
     sa.Column('keyIdSupport12Cells', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateSupport12Cells', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateSupport12Cells', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasupport6cells',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11164,7 +11164,7 @@ def upgrade():
     sa.Column('licenseStateSupport6Cells', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('keyIdSupport6Cells', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('featureStateSupport6Cells', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataswallocation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11178,7 +11178,7 @@ def upgrade():
     sa.Column('vsDataSwAllocation_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('role', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataswinventory',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11192,7 +11192,7 @@ def upgrade():
     sa.Column('vsDataSwInventory_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('active', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataswitchcoreunit',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11209,7 +11209,7 @@ def upgrade():
     sa.Column('vsDataSwitchCoreUnit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('administrativeStateSili', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataswitchinternallinkport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11226,7 +11226,7 @@ def upgrade():
     sa.Column('vsDataSwitchCoreUnit_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSwitchInternalLinkPort_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataswitchportstp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11265,7 +11265,7 @@ def upgrade():
     sa.Column('l2gpBpduReceive', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('l2gpPortPriority', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('l2gpPseudoRootId', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataswitchstp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11294,7 +11294,7 @@ def upgrade():
     sa.Column('rootPortNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('transmitHoldCount', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataswitem',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11316,7 +11316,7 @@ def upgrade():
     sa.Column('administrativeData_xossx_type', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('consistsOf', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataswm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11343,7 +11343,7 @@ def upgrade():
     sa.Column('reportProgress_timeActionStarted', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportProgress_timeActionCompleted', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reportProgress_timeOfLastStatusUpdate', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataswmanagement',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11355,7 +11355,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSwManagement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataswversion',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11379,7 +11379,7 @@ def upgrade():
     sa.Column('timeOfDeactivation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeOfInstallation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasynchronization',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11429,7 +11429,7 @@ def upgrade():
     sa.Column('ptpTimeLicenseState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('operQuality', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dscp', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasyncport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11446,7 +11446,7 @@ def upgrade():
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasysm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11459,7 +11459,7 @@ def upgrade():
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSysM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatasystemfunctions',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11470,7 +11470,7 @@ def upgrade():
     sa.Column('MeContext_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatcpoptimization',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11488,7 +11488,7 @@ def upgrade():
     sa.Column('keyIdTCPOptimization', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateTCPOptimization', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateTCPOptimization', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatdscdmasessioncontinuity',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11506,7 +11506,7 @@ def upgrade():
     sa.Column('keyIdTdScdmaSessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateTdScdmaSessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateTdScdmaSessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatempsensor',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11527,7 +11527,7 @@ def upgrade():
     sa.Column('lowDestructiveMeasure', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('inHighExtendedTemp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('inLowExtendedTemp', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatermpointtoenb',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11550,7 +11550,7 @@ def upgrade():
     sa.Column('createdBy', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeOfCreation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeOfLastModification', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatermpointtomme',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11579,7 +11579,7 @@ def upgrade():
     sa.Column('servedPlmnListLTERelated_mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('servedPlmnListOtherRATs', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('servedPlmnListLTERelated', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatermpointtosgw',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11591,7 +11591,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataENodeBFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataTermPointToSGW_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatimem',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11604,7 +11604,7 @@ def upgrade():
     sa.Column('vsDataSystemFunctions_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataSysM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataTimeM_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatimeserver',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11624,7 +11624,7 @@ def upgrade():
     sa.Column('ts_udp_port_event_ptp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('timeServerType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('domainNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatimesetting',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11652,7 +11652,7 @@ def upgrade():
     sa.Column('daylightSavingTimeStartDate', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('daylightSavingTimeOffDate', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('daylightSavingTimeOnDate', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatimesettings',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11670,7 +11670,7 @@ def upgrade():
     sa.Column('daylightSavingTimeOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('gpsToUtcLeapSecondsChangeDate', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('daylightSavingTimeStartDate', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatimingunit',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11689,7 +11689,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('gpsOutEnabled', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hptsiOutEnabled', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatls',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11719,7 +11719,7 @@ def upgrade():
     sa.Column('enabledCiphers_xossx_name', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('supportedCiphers', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('enabledCiphers', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatm7modeswitching',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11737,7 +11737,7 @@ def upgrade():
     sa.Column('keyIdTm7ModeSwitching', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateTm7ModeSwitching', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateTm7ModeSwitching', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatmasupport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11755,7 +11755,7 @@ def upgrade():
     sa.Column('featureStateTmaSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateTmaSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateTmaSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatnapplication',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11763,7 +11763,7 @@ def upgrade():
     sa.Column('configData_dnPrefix', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('SubNetwork_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataTnApplication_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatnlcchqosclassprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11776,7 +11776,7 @@ def upgrade():
     sa.Column('RncFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataTnlCchQosClassProfile_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatnldchqosclassprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11790,7 +11790,7 @@ def upgrade():
     sa.Column('vsDataRabHandling_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataTnlDchQosClassProfile_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatnlhspaqosclassprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11805,7 +11805,7 @@ def upgrade():
     sa.Column('vsDataTnlHspaQosClassProfile_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('eulFachSpi', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatnliuqosclassprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11819,7 +11819,7 @@ def upgrade():
     sa.Column('vsDataRabHandling_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataTnlIuQosClassProfile_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatnlqosclass',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11842,7 +11842,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('prefIubUserPlaneTransportOption_atm', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('prefIubUserPlaneTransportOption_ipv4', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatnport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11858,7 +11858,7 @@ def upgrade():
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sfpModuleRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatpadevice',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11881,7 +11881,7 @@ def upgrade():
     sa.Column('maxTotalOutputPowerLow', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('txPowerPersistentLock', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('extraPowerHsdpaMixedModePowerSharing', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatpadeviceset',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11899,7 +11899,7 @@ def upgrade():
     sa.Column('vsDataRbsSubrack_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRbsSlot_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataDeviceGroup_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatrafficawarepowersave',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11918,7 +11918,7 @@ def upgrade():
     sa.Column('tpsUnlockThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tpsLockThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tpsMultiCarrierAllowed', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatrafficclass',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11943,7 +11943,7 @@ def upgrade():
     sa.Column('ssd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('arpSpiMapRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatrafficclasspsint',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11965,7 +11965,7 @@ def upgrade():
     sa.Column('qosRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('arpSpiMapRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatrafficmanagement',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11980,7 +11980,7 @@ def upgrade():
     sa.Column('featureState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatrafficmanager',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12011,7 +12011,7 @@ def upgrade():
     sa.Column('diffServAlgDropQThreshold_8', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('diffServMinRateRelative_8', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('depQosPolicy', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatransceiver',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12029,7 +12029,7 @@ def upgrade():
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedBy', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('requestedRelativeOutputPower', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatransport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12040,7 +12040,7 @@ def upgrade():
     sa.Column('MeContext_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataTransport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatransportnetwork',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12052,7 +12052,7 @@ def upgrade():
     sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataTransportNetwork_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatrustcategory',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12068,7 +12068,7 @@ def upgrade():
     sa.Column('vsDataTrustCategory_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('trustedCertificates', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatrustedcertificate',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12094,7 +12094,7 @@ def upgrade():
     sa.Column('certificateContent_publicKeyAlgorithm', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('certificateContent_keyUsage', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('certificateContent_subject', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatattibundling',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12112,7 +12112,7 @@ def upgrade():
     sa.Column('keyIdTtiBundling', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateTtiBundling', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateTtiBundling', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatusyncref',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12131,7 +12131,7 @@ def upgrade():
     sa.Column('vsDataCbu_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatwampresponder',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12157,7 +12157,7 @@ def upgrade():
     sa.Column('remoteIpAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('responderType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ipAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatxdatacloning',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12175,7 +12175,7 @@ def upgrade():
     sa.Column('keyIdTxDataCloning', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateTxDataCloning', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateTxDataCloning', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatatxdevicegroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12193,7 +12193,7 @@ def upgrade():
     sa.Column('vsDataTxDeviceGroup_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('numHsCodeResources', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('numEulResources', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatauemeascontrol',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12335,7 +12335,7 @@ def upgrade():
     sa.Column('nonUsedFreqRelThresh4_2bRscp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('badCoverageMeasSelection', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nrCandFreqToMeas', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataueposcellid',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12353,7 +12353,7 @@ def upgrade():
     sa.Column('featureStateCellId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateCellId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateCellId', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatauepositioning',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12377,7 +12377,7 @@ def upgrade():
     sa.Column('cellIdPosQualities_accuracyCodeTypical', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cellIdPosQualities_verticalAccuracyCodeTypical', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cellIdPosQualities_confidenceEstimate', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatauerabtype',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12390,7 +12390,7 @@ def upgrade():
     sa.Column('RncFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataUeRabType_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dchFrameSynchRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatauerc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12408,7 +12408,7 @@ def upgrade():
     sa.Column('spare', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ifhoSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('gsmHoSupport', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatauercedchflow',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12423,7 +12423,7 @@ def upgrade():
     sa.Column('vsDataUeRcEdchFlow_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('harqTransmUlMax', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tti', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatauercphychedch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12437,7 +12437,7 @@ def upgrade():
     sa.Column('vsDataUeRc_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataUeRcPhyChEdch_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('eulHarqRv', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatauercrab',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12451,7 +12451,7 @@ def upgrade():
     sa.Column('vsDataUeRc_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataUeRcRab_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('fcState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatauerctrch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12466,7 +12466,7 @@ def upgrade():
     sa.Column('vsDataUeRcTrCh_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('blerQualityTargetDl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('blerQualityTargetUl', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatauerrctype',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12479,7 +12479,7 @@ def upgrade():
     sa.Column('RncFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataUeRrcType_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dchFrameSynchRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatauetac',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12497,7 +12497,7 @@ def upgrade():
     sa.Column('tac', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tacParams', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataulbasebandcapacity',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12516,7 +12516,7 @@ def upgrade():
     sa.Column('keyIdUlBbCapacity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licUlBbPercentileConf', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateUlBbCapacity', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataulcompgroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12532,7 +12532,7 @@ def upgrade():
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('availabilityStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataulfss',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12550,7 +12550,7 @@ def upgrade():
     sa.Column('keyIdUlFss', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateUlFss', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateUlFss', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataulprbcapacity',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12569,7 +12569,7 @@ def upgrade():
     sa.Column('licUlPrbPercentileConf', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseCapacityUlPrbCapacity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateUlPrbCapacity', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataunisaalprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12593,7 +12593,7 @@ def upgrade():
     sa.Column('profileData_maxCC', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('profileData_congestionOnSet', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('profileData_congestionAbatement', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataupgradetrace',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12609,7 +12609,7 @@ def upgrade():
     sa.Column('flushInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('outputMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sendLogsAsNotifications', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataura',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12623,7 +12623,7 @@ def upgrade():
     sa.Column('vsDataUra_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('uraIdentity', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatauseridentity',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12638,7 +12638,7 @@ def upgrade():
     sa.Column('vsDataUserManagement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataUserIdentity_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userName', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatausermanagement',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12653,7 +12653,7 @@ def upgrade():
     sa.Column('vsDataUserManagement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('targetType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatautrancell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12872,7 +12872,7 @@ def upgrade():
     sa.Column('ifIratHoPsIntHsEnabled', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cellUpdateConfirmPsInitRepeat', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cellUpdateConfirmCsInitRepeat', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatautrancellrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12897,7 +12897,7 @@ def upgrade():
     sa.Column('loadBalancing', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('lbBnrAllowed', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('lbCovIndicated', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatautranetwork',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12910,7 +12910,7 @@ def upgrade():
     sa.Column('vsDataENodeBFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataUtraNetwork_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatautranfreqrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12958,7 +12958,7 @@ def upgrade():
     sa.Column('utranFreqToQciProfileRelation_lbUtranB1ThresholdRscpOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('utranFreqToQciProfileRelation_lbQciProfileHandling', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('utranFreqToQciProfileRelation_qciProfileRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatautrannetwork',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12978,7 +12978,7 @@ def upgrade():
     sa.Column('plmnIdentity_mnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('plmnIdentity_mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('aliasPlmnIdentities', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatautranrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13006,7 +13006,7 @@ def upgrade():
     sa.Column('mobilityRelationType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('createdBy', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('creationTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatavcltp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13025,7 +13025,7 @@ def upgrade():
     sa.Column('externalVci', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('counterActivation', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatavendorcredential',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13050,7 +13050,7 @@ def upgrade():
     sa.Column('certificateContent_publicKeyAlgorithm', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('certificateContent_keyUsage', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('certificateContent_subject', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatavlan',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13068,7 +13068,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vid', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vlanType', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatavlangroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13082,7 +13082,7 @@ def upgrade():
     sa.Column('vsDataVLANGroup_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('operationalState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('depLinkLayer', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatavlanport',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13109,7 +13109,7 @@ def upgrade():
     sa.Column('ingressQosMarking', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('portRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('vid', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatavpctp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13128,7 +13128,7 @@ def upgrade():
     sa.Column('nomPmBlkSize', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('counterMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatavpltp',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13144,7 +13144,7 @@ def upgrade():
     sa.Column('atmTrafficDescriptor', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('externalVpi', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatavrf',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13158,7 +13158,7 @@ def upgrade():
     sa.Column('vsDataVRF_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('inUse', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vrfDescription', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatavrrpv3interface',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13175,7 +13175,7 @@ def upgrade():
     sa.Column('preemptMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('advertiseInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatavrrpv3session',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13193,7 +13193,7 @@ def upgrade():
     sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vrrpv3InterfaceRef', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatavswrsupervision',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13211,7 +13211,7 @@ def upgrade():
     sa.Column('featureStateVswrSupervision', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateVswrSupervision', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateVswrSupervision', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatawcdmacarrier',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13231,7 +13231,7 @@ def upgrade():
     sa.Column('uarfcnDl', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('thresh2dRwrDrnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('barredCnOperatorRef', sa.TEXT(), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatawcdmahandover',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13249,7 +13249,7 @@ def upgrade():
     sa.Column('keyIdWcdmaHandover', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateWcdmaHandover', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateWcdmaHandover', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatawcdmasessioncontinuity',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13267,7 +13267,7 @@ def upgrade():
     sa.Column('featureStateWcdmaSessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('licenseStateWcdmaSessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceStateWcdmaSessionContinuity', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdatawifimobility',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13281,7 +13281,7 @@ def upgrade():
     sa.Column('vsDataWifiMobility_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('thpBias', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('apMax', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
     op.create_table('vsdataxpprogram',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -13298,599 +13298,599 @@ def upgrade():
     sa.Column('vsDataRbsSubrack_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('vsDataRbsSlot_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('startState', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_3g4g'
+    schema='ericsson_bulkcm'
     )
 
 
 def downgrade():
-    op.drop_table('vsdataxpprogram', schema='eri_cm_3g4g')
-    op.drop_table('vsdatawifimobility', schema='eri_cm_3g4g')
-    op.drop_table('vsdatawcdmasessioncontinuity', schema='eri_cm_3g4g')
-    op.drop_table('vsdatawcdmahandover', schema='eri_cm_3g4g')
-    op.drop_table('vsdatawcdmacarrier', schema='eri_cm_3g4g')
-    op.drop_table('vsdatavswrsupervision', schema='eri_cm_3g4g')
-    op.drop_table('vsdatavrrpv3session', schema='eri_cm_3g4g')
-    op.drop_table('vsdatavrrpv3interface', schema='eri_cm_3g4g')
-    op.drop_table('vsdatavrf', schema='eri_cm_3g4g')
-    op.drop_table('vsdatavpltp', schema='eri_cm_3g4g')
-    op.drop_table('vsdatavpctp', schema='eri_cm_3g4g')
-    op.drop_table('vsdatavlanport', schema='eri_cm_3g4g')
-    op.drop_table('vsdatavlangroup', schema='eri_cm_3g4g')
-    op.drop_table('vsdatavlan', schema='eri_cm_3g4g')
-    op.drop_table('vsdatavendorcredential', schema='eri_cm_3g4g')
-    op.drop_table('vsdatavcltp', schema='eri_cm_3g4g')
-    op.drop_table('vsdatautranrelation', schema='eri_cm_3g4g')
-    op.drop_table('vsdatautrannetwork', schema='eri_cm_3g4g')
-    op.drop_table('vsdatautranfreqrelation', schema='eri_cm_3g4g')
-    op.drop_table('vsdatautranetwork', schema='eri_cm_3g4g')
-    op.drop_table('vsdatautrancellrelation', schema='eri_cm_3g4g')
-    op.drop_table('vsdatautrancell', schema='eri_cm_3g4g')
-    op.drop_table('vsdatausermanagement', schema='eri_cm_3g4g')
-    op.drop_table('vsdatauseridentity', schema='eri_cm_3g4g')
-    op.drop_table('vsdataura', schema='eri_cm_3g4g')
-    op.drop_table('vsdataupgradetrace', schema='eri_cm_3g4g')
-    op.drop_table('vsdataunisaalprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdataulprbcapacity', schema='eri_cm_3g4g')
-    op.drop_table('vsdataulfss', schema='eri_cm_3g4g')
-    op.drop_table('vsdataulcompgroup', schema='eri_cm_3g4g')
-    op.drop_table('vsdataulbasebandcapacity', schema='eri_cm_3g4g')
-    op.drop_table('vsdatauetac', schema='eri_cm_3g4g')
-    op.drop_table('vsdatauerrctype', schema='eri_cm_3g4g')
-    op.drop_table('vsdatauerctrch', schema='eri_cm_3g4g')
-    op.drop_table('vsdatauercrab', schema='eri_cm_3g4g')
-    op.drop_table('vsdatauercphychedch', schema='eri_cm_3g4g')
-    op.drop_table('vsdatauercedchflow', schema='eri_cm_3g4g')
-    op.drop_table('vsdatauerc', schema='eri_cm_3g4g')
-    op.drop_table('vsdatauerabtype', schema='eri_cm_3g4g')
-    op.drop_table('vsdatauepositioning', schema='eri_cm_3g4g')
-    op.drop_table('vsdataueposcellid', schema='eri_cm_3g4g')
-    op.drop_table('vsdatauemeascontrol', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatxdevicegroup', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatxdatacloning', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatwampresponder', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatusyncref', schema='eri_cm_3g4g')
-    op.drop_table('vsdatattibundling', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatrustedcertificate', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatrustcategory', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatransportnetwork', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatransport', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatransceiver', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatrafficmanager', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatrafficmanagement', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatrafficclasspsint', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatrafficclass', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatrafficawarepowersave', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatpadeviceset', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatpadevice', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatnport', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatnlqosclass', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatnliuqosclassprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatnlhspaqosclassprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatnldchqosclassprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatnlcchqosclassprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatnapplication', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatmasupport', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatm7modeswitching', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatls', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatimingunit', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatimesettings', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatimesetting', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatimeserver', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatimem', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatermpointtosgw', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatermpointtomme', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatermpointtoenb', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatempsensor', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatdscdmasessioncontinuity', schema='eri_cm_3g4g')
-    op.drop_table('vsdatatcpoptimization', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasystemfunctions', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasysm', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasyncport', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasynchronization', schema='eri_cm_3g4g')
-    op.drop_table('vsdataswversion', schema='eri_cm_3g4g')
-    op.drop_table('vsdataswmanagement', schema='eri_cm_3g4g')
-    op.drop_table('vsdataswm', schema='eri_cm_3g4g')
-    op.drop_table('vsdataswitem', schema='eri_cm_3g4g')
-    op.drop_table('vsdataswitchstp', schema='eri_cm_3g4g')
-    op.drop_table('vsdataswitchportstp', schema='eri_cm_3g4g')
-    op.drop_table('vsdataswitchinternallinkport', schema='eri_cm_3g4g')
-    op.drop_table('vsdataswitchcoreunit', schema='eri_cm_3g4g')
-    op.drop_table('vsdataswinventory', schema='eri_cm_3g4g')
-    op.drop_table('vsdataswallocation', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasupport6cells', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasupport12cells', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasubscrprofileidhandling', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasubrack', schema='eri_cm_3g4g')
-    op.drop_table('vsdatastreamingcapabilities', schema='eri_cm_3g4g')
-    op.drop_table('vsdatastnfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdatastn', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasrvcctoutran', schema='eri_cm_3g4g')
-    op.drop_table('vsdataspiqosclass', schema='eri_cm_3g4g')
-    op.drop_table('vsdataspidratfreqprio', schema='eri_cm_3g4g')
-    op.drop_table('vsdataspidhowhitelist', schema='eri_cm_3g4g')
-    op.drop_table('vsdataspdevicepool', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasnmptargetv3', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasnmptargetv2c', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasnmp', schema='eri_cm_3g4g')
-    op.drop_table('vsdataslot', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasite', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasinglaybeamfperfpkg', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasignalingradiobearer', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasid', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasharednetworksupport', schema='eri_cm_3g4g')
-    op.drop_table('vsdatashaper', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasftp', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasfpmodule', schema='eri_cm_3g4g')
-    op.drop_table('vsdataservicetriggeredmobility', schema='eri_cm_3g4g')
-    op.drop_table('vsdataservicespecificdrx', schema='eri_cm_3g4g')
-    op.drop_table('vsdataservicearea', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasecurityhandling', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasecurity', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasectorequipmentfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasectorcarrier', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasectorantenna', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasector', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasecm', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasctpprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasctpendpoint', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasctpassociation', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasctp', schema='eri_cm_3g4g')
-    op.drop_table('vsdataschema', schema='eri_cm_3g4g')
-    op.drop_table('vsdataschedulersp', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasccpsp', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasccpscrc', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasccpapremote', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasccpaplocal', schema='eri_cm_3g4g')
-    op.drop_table('vsdatasaspositioning', schema='eri_cm_3g4g')
-    op.drop_table('vsdatas1hodatafwd', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarttpositioning', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarrudevicegroup', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarrc', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarps', schema='eri_cm_3g4g')
-    op.drop_table('vsdataroutingtable', schema='eri_cm_3g4g')
-    op.drop_table('vsdataroutingarea', schema='eri_cm_3g4g')
-    op.drop_table('vsdataroutetableipv4static', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarouter', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarohc', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarnsap', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarnlqosclassprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarncmodule', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarncfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarncfeature', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarncconfiglimits', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarnccapacity', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarlfprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarlcum', schema='eri_cm_3g4g')
-    op.drop_table('vsdatariport', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarilink', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarfport', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarfbranch', schema='eri_cm_3g4g')
-    op.drop_table('vsdataretudevicegroup', schema='eri_cm_3g4g')
-    op.drop_table('vsdataretsupport', schema='eri_cm_3g4g')
-    op.drop_table('vsdataretdeviceset', schema='eri_cm_3g4g')
-    op.drop_table('vsdataretdevice', schema='eri_cm_3g4g')
-    op.drop_table('vsdataretconfigurationmgt', schema='eri_cm_3g4g')
-    op.drop_table('vsdataretcascading', schema='eri_cm_3g4g')
-    op.drop_table('vsdataresourcepartitions', schema='eri_cm_3g4g')
-    op.drop_table('vsdataresmeascontrol', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigsearch', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigscella6', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigscella4', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigscella1a2', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfiginterratlb', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigeutraintrafreqpm', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigeutrainterfreqmbms', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigeutrainterfreqlb', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigeutraifbestcell', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigeutraifa3ultrig', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigeutrabestcellanr', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigeutrabestcell', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigeutrabadcovsec', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigeutrabadcovprim', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigcsg', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigcsfbutra', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigcsfbgeran', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigcsfbcdma2000', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigb2utraultrig', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigb2utra', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigb2geranultrig', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigb2geran', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigb2cdmaultrig', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigb2cdmarttultrig', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigb2cdma20001xrtt', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigb2cdma2000', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigb1utra', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfigb1geran', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfiga5ultrig', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfiga5softlock', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfiga5dlcomp', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfiga5anr', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfiga5', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfiga4', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfiga1sec', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareportconfiga1prim', schema='eri_cm_3g4g')
-    op.drop_table('vsdatareliableprogramuniter', schema='eri_cm_3g4g')
-    op.drop_table('vsdataredirectwithnacc', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarealtimeseclog', schema='eri_cm_3g4g')
-    op.drop_table('vsdatardiport', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarcs', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarbssynchronization', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarbssubrack', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarbsslot', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarbsmeascontrol', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarbslocalcell', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarbseventstreamer', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarateshaping', schema='eri_cm_3g4g')
-    op.drop_table('vsdataranap', schema='eri_cm_3g4g')
-    op.drop_table('vsdataradiounitcascading', schema='eri_cm_3g4g')
-    op.drop_table('vsdataradiolinks', schema='eri_cm_3g4g')
-    op.drop_table('vsdataradioequipmentclockreference', schema='eri_cm_3g4g')
-    op.drop_table('vsdataradioequipmentclock', schema='eri_cm_3g4g')
-    op.drop_table('vsdataradiobearertable', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarach', schema='eri_cm_3g4g')
-    op.drop_table('vsdatarabhandling', schema='eri_cm_3g4g')
-    op.drop_table('vsdataqueuesystem', schema='eri_cm_3g4g')
-    op.drop_table('vsdataquadantulperfpkg', schema='eri_cm_3g4g')
-    op.drop_table('vsdataqosprofiles', schema='eri_cm_3g4g')
-    op.drop_table('vsdataqospolicy', schema='eri_cm_3g4g')
-    op.drop_table('vsdataqosclassifier', schema='eri_cm_3g4g')
-    op.drop_table('vsdataqosawarescheduler', schema='eri_cm_3g4g')
-    op.drop_table('vsdataqcitable', schema='eri_cm_3g4g')
-    op.drop_table('vsdataqciprofilepredefined', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapws', schema='eri_cm_3g4g')
-    op.drop_table('vsdataptpbcocport', schema='eri_cm_3g4g')
-    op.drop_table('vsdataptp', schema='eri_cm_3g4g')
-    op.drop_table('vsdataprocessorload', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapreschedulingprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapredefrbsscannergpeh', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapowersupply', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapowerdistribution', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapowercontrol', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapositioningserviceclass', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapmulinterferencereport', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapmuemeascontrol', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapmsupport', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapmservice', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapmmeasurementcapabilities', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapminitiateduemeasurements', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapmeventservice', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapmeventm', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapm', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapluginunit', schema='eri_cm_3g4g')
-    op.drop_table('vsdataplmnidentitygroup', schema='eri_cm_3g4g')
-    op.drop_table('vsdataplmn', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapiudevice', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapfs', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapdrdevice', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapcptoqueuemap', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapcpsettoqueue', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapci', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapch', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapaging', schema='eri_cm_3g4g')
-    op.drop_table('vsdatapacketfrequencysyncref', schema='eri_cm_3g4g')
-    op.drop_table('vsdataotdoasupl', schema='eri_cm_3g4g')
-    op.drop_table('vsdataoptionalfeatures', schema='eri_cm_3g4g')
-    op.drop_table('vsdataoptionalfeaturelicense', schema='eri_cm_3g4g')
-    op.drop_table('vsdataopprofiles', schema='eri_cm_3g4g')
-    op.drop_table('vsdataoperatordefinedqci', schema='eri_cm_3g4g')
-    op.drop_table('vsdataonsiteactivities', schema='eri_cm_3g4g')
-    op.drop_table('vsdataoctantulperfpkg', schema='eri_cm_3g4g')
-    op.drop_table('vsdataoamtrafficclass', schema='eri_cm_3g4g')
-    op.drop_table('vsdataoamaccesspoint', schema='eri_cm_3g4g')
-    op.drop_table('vsdatantpserver', schema='eri_cm_3g4g')
-    op.drop_table('vsdatantpfrequencysync', schema='eri_cm_3g4g')
-    op.drop_table('vsdatantp', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanonplannedpcidrxprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanodesynch', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanodesupport', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanodemanagementfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanodegroupsyncmember', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanodecredential', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanodebsectorcarrier', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanodeblocalcellgroup', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanodeblocalcell', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanodebfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdatannisaalprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanexthop', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanetconftls', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanetconfssh', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanbapdedicated', schema='eri_cm_3g4g')
-    op.drop_table('vsdatanbapcommon', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamultierabsperuser', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamulticastantennabranch', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamulticarrier', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamtp3bsrs', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamtp3bsr', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamtp3bspitu', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamtp3bap', schema='eri_cm_3g4g')
-    op.drop_table('vsdatampprocessingresource', schema='eri_cm_3g4g')
-    op.drop_table('vsdatampclusterhandling', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamocncellprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamobctrlatpoorcov', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamixedmode', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamimosleepfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamibmanager', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamediumaccessunit', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamecontext', schema='eri_cm_3g4g')
-    op.drop_table('vsdatameasurementdefinition', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamdtconfiguration', schema='eri_cm_3g4g')
-    op.drop_table('vsdatambmsservicearea', schema='eri_cm_3g4g')
-    op.drop_table('vsdatambmsm3based', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamaximumcellrange', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamanagedelementdata', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamanagedelement', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamaintenanceusersecurity', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamaintenanceuser', schema='eri_cm_3g4g')
-    op.drop_table('vsdatamacconfiguration', schema='eri_cm_3g4g')
-    op.drop_table('vsdatam3uassociation', schema='eri_cm_3g4g')
-    op.drop_table('vsdatalsmecs', schema='eri_cm_3g4g')
-    op.drop_table('vsdatalppaecid', schema='eri_cm_3g4g')
-    op.drop_table('vsdatalogm', schema='eri_cm_3g4g')
-    op.drop_table('vsdatalogicalchannelgroup', schema='eri_cm_3g4g')
-    op.drop_table('vsdatalog', schema='eri_cm_3g4g')
-    op.drop_table('vsdatalocationarea', schema='eri_cm_3g4g')
-    op.drop_table('vsdataloadcontrol', schema='eri_cm_3g4g')
-    op.drop_table('vsdataloadbalancingfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdatalm', schema='eri_cm_3g4g')
-    op.drop_table('vsdatalinktransmissionprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatalicensing', schema='eri_cm_3g4g')
-    op.drop_table('vsdataldapauthenticationmethod', schema='eri_cm_3g4g')
-    op.drop_table('vsdataldap', schema='eri_cm_3g4g')
-    op.drop_table('vsdatalag', schema='eri_cm_3g4g')
-    op.drop_table('vsdatakeyfilemanagement', schema='eri_cm_3g4g')
-    op.drop_table('vsdatakeyfileinformation', schema='eri_cm_3g4g')
-    op.drop_table('vsdataiurlink', schema='eri_cm_3g4g')
-    op.drop_table('vsdataiulink', schema='eri_cm_3g4g')
-    op.drop_table('vsdataiublink', schema='eri_cm_3g4g')
-    op.drop_table('vsdataiubedch', schema='eri_cm_3g4g')
-    op.drop_table('vsdataiubdatastreams', schema='eri_cm_3g4g')
-    op.drop_table('vsdataiub', schema='eri_cm_3g4g')
-    op.drop_table('vsdatairc', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipv6routingtable', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipv4staticroutetable', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipv4staticroute', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipv4peer', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipv4destnetwork', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipsystem', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipsyncref', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipsec', schema='eri_cm_3g4g')
-    op.drop_table('vsdataiproutingtable', schema='eri_cm_3g4g')
-    op.drop_table('vsdataiproutesys', schema='eri_cm_3g4g')
-    op.drop_table('vsdataiprouter', schema='eri_cm_3g4g')
-    op.drop_table('vsdataiproute', schema='eri_cm_3g4g')
-    op.drop_table('vsdataippm', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipoam', schema='eri_cm_3g4g')
-    op.drop_table('vsdataiplicensing', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipinterface', schema='eri_cm_3g4g')
-    op.drop_table('vsdataiphostlink', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipflowmonitor', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipethpacketdatarouter', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipaccesssctp', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipaccesshostspb', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipaccesshostpool', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipaccesshostgpb', schema='eri_cm_3g4g')
-    op.drop_table('vsdataipaccesshostet', schema='eri_cm_3g4g')
-    op.drop_table('vsdataip', schema='eri_cm_3g4g')
-    op.drop_table('vsdataintraltehodatafwd', schema='eri_cm_3g4g')
-    op.drop_table('vsdatainternalethernetport', schema='eri_cm_3g4g')
-    op.drop_table('vsdatainterfrequencysessioncontinuity', schema='eri_cm_3g4g')
-    op.drop_table('vsdatainterfrequencyltehandover', schema='eri_cm_3g4g')
-    op.drop_table('vsdatainterfrequencyloadbalancing', schema='eri_cm_3g4g')
-    op.drop_table('vsdatainterfaceipv4', schema='eri_cm_3g4g')
-    op.drop_table('vsdataintegrationunlock', schema='eri_cm_3g4g')
-    op.drop_table('vsdataimeisvtable', schema='eri_cm_3g4g')
-    op.drop_table('vsdatahwunit', schema='eri_cm_3g4g')
-    op.drop_table('vsdatahwitem', schema='eri_cm_3g4g')
-    op.drop_table('vsdatahwinventory', schema='eri_cm_3g4g')
-    op.drop_table('vsdatahttps', schema='eri_cm_3g4g')
-    op.drop_table('vsdatahttpm', schema='eri_cm_3g4g')
-    op.drop_table('vsdatahsdschresources', schema='eri_cm_3g4g')
-    op.drop_table('vsdatahsdsch', schema='eri_cm_3g4g')
-    op.drop_table('vsdatahooscctrlue', schema='eri_cm_3g4g')
-    op.drop_table('vsdatahighspeedue', schema='eri_cm_3g4g')
-    op.drop_table('vsdatahandover', schema='eri_cm_3g4g')
-    op.drop_table('vsdatagtppath', schema='eri_cm_3g4g')
-    op.drop_table('vsdatagsmsessioncontinuity', schema='eri_cm_3g4g')
-    op.drop_table('vsdatagsmrelation', schema='eri_cm_3g4g')
-    op.drop_table('vsdatagraceperiod', schema='eri_cm_3g4g')
-    op.drop_table('vsdatagpeh', schema='eri_cm_3g4g')
-    op.drop_table('vsdatagigabitethernet', schema='eri_cm_3g4g')
-    op.drop_table('vsdatageranfreqgrouprelation', schema='eri_cm_3g4g')
-    op.drop_table('vsdatageranetwork', schema='eri_cm_3g4g')
-    op.drop_table('vsdatagerancellrelation', schema='eri_cm_3g4g')
-    op.drop_table('vsdatageneralprocessorunit', schema='eri_cm_3g4g')
-    op.drop_table('vsdataftptlsserver', schema='eri_cm_3g4g')
-    op.drop_table('vsdataftptls', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafrequencysyncio', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafreqmanagement', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafmsubscription', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafmalarmtype', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafmalarmmodel', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafm', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafilter', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafiletpm', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafilepullcapabilities', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafieldreplaceableunit', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafeaturestate', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafeaturekey', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafangroup', schema='eri_cm_3g4g')
-    op.drop_table('vsdatafach', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexternalutranplmn', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexternalutranfreq', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexternalutrancell', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexternalnode', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexternalgsmplmn', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexternalgsmfreqgroup', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexternalgsmfreq', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexternalgsmcell', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexternaleutranplmn', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexternaleutranfrequency', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexternaleutrancellfdd', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexternalenodebfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexchangeterminalip', schema='eri_cm_3g4g')
-    op.drop_table('vsdataexchangeterminal', schema='eri_cm_3g4g')
-    op.drop_table('vsdataeventproducer', schema='eri_cm_3g4g')
-    op.drop_table('vsdataeventcapabilities', schema='eri_cm_3g4g')
-    op.drop_table('vsdataeutranfrequency', schema='eri_cm_3g4g')
-    op.drop_table('vsdataeutranfreqrelation', schema='eri_cm_3g4g')
-    op.drop_table('vsdataeutranetwork', schema='eri_cm_3g4g')
-    op.drop_table('vsdataeutrancellrelation', schema='eri_cm_3g4g')
-    op.drop_table('vsdataeutrancellfdd', schema='eri_cm_3g4g')
-    op.drop_table('vsdataeul', schema='eri_cm_3g4g')
-    op.drop_table('vsdataetws', schema='eri_cm_3g4g')
-    op.drop_table('vsdataethernetswitchport', schema='eri_cm_3g4g')
-    op.drop_table('vsdataethernetswitchmoduleport', schema='eri_cm_3g4g')
-    op.drop_table('vsdataethernetswitchmodule', schema='eri_cm_3g4g')
-    op.drop_table('vsdataethernetswitchingadm', schema='eri_cm_3g4g')
-    op.drop_table('vsdataethernetswitchfabric', schema='eri_cm_3g4g')
-    op.drop_table('vsdataethernetswitch', schema='eri_cm_3g4g')
-    op.drop_table('vsdataethernetport', schema='eri_cm_3g4g')
-    op.drop_table('vsdataethernetlink', schema='eri_cm_3g4g')
-    op.drop_table('vsdataethernetinterface', schema='eri_cm_3g4g')
-    op.drop_table('vsdataethernetbridgeport', schema='eri_cm_3g4g')
-    op.drop_table('vsdataericssonfilter', schema='eri_cm_3g4g')
-    op.drop_table('vsdataequipmentsupportfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdataequipmentdiscovery', schema='eri_cm_3g4g')
-    op.drop_table('vsdataequipment', schema='eri_cm_3g4g')
-    op.drop_table('vsdataenrollmentservergroup', schema='eri_cm_3g4g')
-    op.drop_table('vsdataenrollmentserver', schema='eri_cm_3g4g')
-    op.drop_table('vsdataenrollmentauthority', schema='eri_cm_3g4g')
-    op.drop_table('vsdataenodebfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdataenhcellidintraces', schema='eri_cm_3g4g')
-    op.drop_table('vsdataenergymeter', schema='eri_cm_3g4g')
-    op.drop_table('vsdataemergencyunlock', schema='eri_cm_3g4g')
-    op.drop_table('vsdataedchresources', schema='eri_cm_3g4g')
-    op.drop_table('vsdataecscsfb', schema='eri_cm_3g4g')
-    op.drop_table('vsdataecport', schema='eri_cm_3g4g')
-    op.drop_table('vsdataecbus', schema='eri_cm_3g4g')
-    op.drop_table('vsdatae1physpathterm', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadynamicqosmodification', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadynamicgbradmctrl', schema='eri_cm_3g4g')
-    op.drop_table('vsdataduallaybeamfperfpkg', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadualantdlperfpkg', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadst', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadrxprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadrx', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadownlinkbasebandpool', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadnsclient', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadlprbcapacity', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadlfss', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadlbasebandcapacity', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadifferentiatedadmissioncontrol', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadhcp', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadevicegroup', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadchframesynch', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadbsandsabe', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadateandtime', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadataradiobearer', schema='eri_cm_3g4g')
-    op.drop_table('vsdatadatacollectiongeneration', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacsfbtogeranutran', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacsfbforlimiteddualradioue', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacprilinksupervision', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacoveragerelation', schema='eri_cm_3g4g')
-    op.drop_table('vsdataconfigurationversion', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacommunicationcontexts', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacommonchannelresourcesul', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacommonchannelresourcesdl', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacombinedcell', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacnoperator', schema='eri_cm_3g4g')
-    op.drop_table('vsdataclitls', schema='eri_cm_3g4g')
-    op.drop_table('vsdataclissh', schema='eri_cm_3g4g')
-    op.drop_table('vsdataclimate', schema='eri_cm_3g4g')
-    op.drop_table('vsdatachannelswitching', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacertmcapabilities', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacertm', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacellsleepnodefunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacellsleepfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacellresources', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacdma2000sessioncontinuity', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacchframesynch', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacbu', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacaxfanunit', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacarrieraggregationfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacarrier', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacapacitystate', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacapacitylicenses', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacapacitykey', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacapacityfeaturelicense', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacapacityconnectedusers', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacapacitychannelbandwidth', schema='eri_cm_3g4g')
-    op.drop_table('vsdatacabinet', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabrmsingleevent', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabrmrollbackatrestore', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabrmperiodicevent', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabrmfailsafebackup', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabrmcalendarbasedperiodicevent', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabrmbackupscheduler', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabrmbackupmanager', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabrmbackuplabelstore', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabrmbackuphousekeeping', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabrmbackup', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabrm', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabridge', schema='eri_cm_3g4g')
-    op.drop_table('vsdataboundaryordinaryclock', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabfdprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabestneighborsi', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabbprocessingresource', schema='eri_cm_3g4g')
-    op.drop_table('vsdatabatterybackup', schema='eri_cm_3g4g')
-    op.drop_table('vsdataauxpluginunit', schema='eri_cm_3g4g')
-    op.drop_table('vsdataautoprovisioning', schema='eri_cm_3g4g')
-    op.drop_table('vsdataautonomousmode', schema='eri_cm_3g4g')
-    op.drop_table('vsdataautocellcapestfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdataauthorizationorder', schema='eri_cm_3g4g')
-    op.drop_table('vsdataauthenticationorder', schema='eri_cm_3g4g')
-    op.drop_table('vsdataauport', schema='eri_cm_3g4g')
-    op.drop_table('vsdataatmtrafficdescriptor', schema='eri_cm_3g4g')
-    op.drop_table('vsdataatmport', schema='eri_cm_3g4g')
-    op.drop_table('vsdataatmconfservice', schema='eri_cm_3g4g')
-    op.drop_table('vsdataarpqosclassprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdataarpmap', schema='eri_cm_3g4g')
-    op.drop_table('vsdataareas', schema='eri_cm_3g4g')
-    op.drop_table('vsdataantfeedercable', schema='eri_cm_3g4g')
-    op.drop_table('vsdataantennaunitgroup', schema='eri_cm_3g4g')
-    op.drop_table('vsdataantennaunit', schema='eri_cm_3g4g')
-    op.drop_table('vsdataantennasubunit', schema='eri_cm_3g4g')
-    op.drop_table('vsdataantennabranch', schema='eri_cm_3g4g')
-    op.drop_table('vsdataanriafutran', schema='eri_cm_3g4g')
-    op.drop_table('vsdataanrfunctionutran', schema='eri_cm_3g4g')
-    op.drop_table('vsdataanrfunctiongeran', schema='eri_cm_3g4g')
-    op.drop_table('vsdataanrfunctioneutran', schema='eri_cm_3g4g')
-    op.drop_table('vsdataanrfunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdataanr', schema='eri_cm_3g4g')
-    op.drop_table('vsdataamofunction', schema='eri_cm_3g4g')
-    op.drop_table('vsdataalarmport', schema='eri_cm_3g4g')
-    op.drop_table('vsdataaisgv2fwdownload', schema='eri_cm_3g4g')
-    op.drop_table('vsdataairifloadgenerator', schema='eri_cm_3g4g')
-    op.drop_table('vsdataaideviceset', schema='eri_cm_3g4g')
-    op.drop_table('vsdataaidevice', schema='eri_cm_3g4g')
-    op.drop_table('vsdataagpspositioning', schema='eri_cm_3g4g')
-    op.drop_table('vsdataadvcellsup', schema='eri_cm_3g4g')
-    op.drop_table('vsdataadmissioncontrol', schema='eri_cm_3g4g')
-    op.drop_table('vsdataaddressipv4', schema='eri_cm_3g4g')
-    op.drop_table('vsdataaccesscontrollist', schema='eri_cm_3g4g')
-    op.drop_table('vsdataaal5tpvcctp', schema='eri_cm_3g4g')
-    op.drop_table('vsdataaal2sp', schema='eri_cm_3g4g')
-    op.drop_table('vsdataaal2qosprofile', schema='eri_cm_3g4g')
-    op.drop_table('vsdataaal2qoscodepointprofile', schema='eri_cm_3g4g')
-    op.drop_table('utranrelation', schema='eri_cm_3g4g')
-    op.drop_table('utrancell', schema='eri_cm_3g4g')
-    op.drop_table('subnetwork_2', schema='eri_cm_3g4g')
-    op.drop_table('subnetwork', schema='eri_cm_3g4g')
-    op.drop_table('rncfunction', schema='eri_cm_3g4g')
-    op.drop_table('notificationirp', schema='eri_cm_3g4g')
-    op.drop_table('nodebfunction', schema='eri_cm_3g4g')
-    op.drop_table('mecontext', schema='eri_cm_3g4g')
-    op.drop_table('managementnode', schema='eri_cm_3g4g')
-    op.drop_table('managedelement', schema='eri_cm_3g4g')
-    op.drop_table('iublink', schema='eri_cm_3g4g')
-    op.drop_table('irpagent', schema='eri_cm_3g4g')
-    op.drop_table('gsmrelation', schema='eri_cm_3g4g')
-    op.drop_table('fileheader', schema='eri_cm_3g4g')
-    op.drop_table('filefooter', schema='eri_cm_3g4g')
-    op.drop_table('externalutrancell', schema='eri_cm_3g4g')
-    op.drop_table('externalgsmcell', schema='eri_cm_3g4g')
-    op.drop_table('configdata', schema='eri_cm_3g4g')
-    op.drop_table('bulkcmirp', schema='eri_cm_3g4g')
-    op.drop_table('bulkcmconfigdatafile', schema='eri_cm_3g4g')
-    op.drop_table('alarmirp', schema='eri_cm_3g4g')
+    op.drop_table('vsdataxpprogram', schema='ericsson_bulkcm')
+    op.drop_table('vsdatawifimobility', schema='ericsson_bulkcm')
+    op.drop_table('vsdatawcdmasessioncontinuity', schema='ericsson_bulkcm')
+    op.drop_table('vsdatawcdmahandover', schema='ericsson_bulkcm')
+    op.drop_table('vsdatawcdmacarrier', schema='ericsson_bulkcm')
+    op.drop_table('vsdatavswrsupervision', schema='ericsson_bulkcm')
+    op.drop_table('vsdatavrrpv3session', schema='ericsson_bulkcm')
+    op.drop_table('vsdatavrrpv3interface', schema='ericsson_bulkcm')
+    op.drop_table('vsdatavrf', schema='ericsson_bulkcm')
+    op.drop_table('vsdatavpltp', schema='ericsson_bulkcm')
+    op.drop_table('vsdatavpctp', schema='ericsson_bulkcm')
+    op.drop_table('vsdatavlanport', schema='ericsson_bulkcm')
+    op.drop_table('vsdatavlangroup', schema='ericsson_bulkcm')
+    op.drop_table('vsdatavlan', schema='ericsson_bulkcm')
+    op.drop_table('vsdatavendorcredential', schema='ericsson_bulkcm')
+    op.drop_table('vsdatavcltp', schema='ericsson_bulkcm')
+    op.drop_table('vsdatautranrelation', schema='ericsson_bulkcm')
+    op.drop_table('vsdatautrannetwork', schema='ericsson_bulkcm')
+    op.drop_table('vsdatautranfreqrelation', schema='ericsson_bulkcm')
+    op.drop_table('vsdatautranetwork', schema='ericsson_bulkcm')
+    op.drop_table('vsdatautrancellrelation', schema='ericsson_bulkcm')
+    op.drop_table('vsdatautrancell', schema='ericsson_bulkcm')
+    op.drop_table('vsdatausermanagement', schema='ericsson_bulkcm')
+    op.drop_table('vsdatauseridentity', schema='ericsson_bulkcm')
+    op.drop_table('vsdataura', schema='ericsson_bulkcm')
+    op.drop_table('vsdataupgradetrace', schema='ericsson_bulkcm')
+    op.drop_table('vsdataunisaalprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdataulprbcapacity', schema='ericsson_bulkcm')
+    op.drop_table('vsdataulfss', schema='ericsson_bulkcm')
+    op.drop_table('vsdataulcompgroup', schema='ericsson_bulkcm')
+    op.drop_table('vsdataulbasebandcapacity', schema='ericsson_bulkcm')
+    op.drop_table('vsdatauetac', schema='ericsson_bulkcm')
+    op.drop_table('vsdatauerrctype', schema='ericsson_bulkcm')
+    op.drop_table('vsdatauerctrch', schema='ericsson_bulkcm')
+    op.drop_table('vsdatauercrab', schema='ericsson_bulkcm')
+    op.drop_table('vsdatauercphychedch', schema='ericsson_bulkcm')
+    op.drop_table('vsdatauercedchflow', schema='ericsson_bulkcm')
+    op.drop_table('vsdatauerc', schema='ericsson_bulkcm')
+    op.drop_table('vsdatauerabtype', schema='ericsson_bulkcm')
+    op.drop_table('vsdatauepositioning', schema='ericsson_bulkcm')
+    op.drop_table('vsdataueposcellid', schema='ericsson_bulkcm')
+    op.drop_table('vsdatauemeascontrol', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatxdevicegroup', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatxdatacloning', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatwampresponder', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatusyncref', schema='ericsson_bulkcm')
+    op.drop_table('vsdatattibundling', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatrustedcertificate', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatrustcategory', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatransportnetwork', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatransport', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatransceiver', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatrafficmanager', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatrafficmanagement', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatrafficclasspsint', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatrafficclass', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatrafficawarepowersave', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatpadeviceset', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatpadevice', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatnport', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatnlqosclass', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatnliuqosclassprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatnlhspaqosclassprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatnldchqosclassprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatnlcchqosclassprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatnapplication', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatmasupport', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatm7modeswitching', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatls', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatimingunit', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatimesettings', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatimesetting', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatimeserver', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatimem', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatermpointtosgw', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatermpointtomme', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatermpointtoenb', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatempsensor', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatdscdmasessioncontinuity', schema='ericsson_bulkcm')
+    op.drop_table('vsdatatcpoptimization', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasystemfunctions', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasysm', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasyncport', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasynchronization', schema='ericsson_bulkcm')
+    op.drop_table('vsdataswversion', schema='ericsson_bulkcm')
+    op.drop_table('vsdataswmanagement', schema='ericsson_bulkcm')
+    op.drop_table('vsdataswm', schema='ericsson_bulkcm')
+    op.drop_table('vsdataswitem', schema='ericsson_bulkcm')
+    op.drop_table('vsdataswitchstp', schema='ericsson_bulkcm')
+    op.drop_table('vsdataswitchportstp', schema='ericsson_bulkcm')
+    op.drop_table('vsdataswitchinternallinkport', schema='ericsson_bulkcm')
+    op.drop_table('vsdataswitchcoreunit', schema='ericsson_bulkcm')
+    op.drop_table('vsdataswinventory', schema='ericsson_bulkcm')
+    op.drop_table('vsdataswallocation', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasupport6cells', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasupport12cells', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasubscrprofileidhandling', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasubrack', schema='ericsson_bulkcm')
+    op.drop_table('vsdatastreamingcapabilities', schema='ericsson_bulkcm')
+    op.drop_table('vsdatastnfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdatastn', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasrvcctoutran', schema='ericsson_bulkcm')
+    op.drop_table('vsdataspiqosclass', schema='ericsson_bulkcm')
+    op.drop_table('vsdataspidratfreqprio', schema='ericsson_bulkcm')
+    op.drop_table('vsdataspidhowhitelist', schema='ericsson_bulkcm')
+    op.drop_table('vsdataspdevicepool', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasnmptargetv3', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasnmptargetv2c', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasnmp', schema='ericsson_bulkcm')
+    op.drop_table('vsdataslot', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasite', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasinglaybeamfperfpkg', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasignalingradiobearer', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasid', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasharednetworksupport', schema='ericsson_bulkcm')
+    op.drop_table('vsdatashaper', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasftp', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasfpmodule', schema='ericsson_bulkcm')
+    op.drop_table('vsdataservicetriggeredmobility', schema='ericsson_bulkcm')
+    op.drop_table('vsdataservicespecificdrx', schema='ericsson_bulkcm')
+    op.drop_table('vsdataservicearea', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasecurityhandling', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasecurity', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasectorequipmentfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasectorcarrier', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasectorantenna', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasector', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasecm', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasctpprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasctpendpoint', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasctpassociation', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasctp', schema='ericsson_bulkcm')
+    op.drop_table('vsdataschema', schema='ericsson_bulkcm')
+    op.drop_table('vsdataschedulersp', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasccpsp', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasccpscrc', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasccpapremote', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasccpaplocal', schema='ericsson_bulkcm')
+    op.drop_table('vsdatasaspositioning', schema='ericsson_bulkcm')
+    op.drop_table('vsdatas1hodatafwd', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarttpositioning', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarrudevicegroup', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarrc', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarps', schema='ericsson_bulkcm')
+    op.drop_table('vsdataroutingtable', schema='ericsson_bulkcm')
+    op.drop_table('vsdataroutingarea', schema='ericsson_bulkcm')
+    op.drop_table('vsdataroutetableipv4static', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarouter', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarohc', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarnsap', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarnlqosclassprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarncmodule', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarncfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarncfeature', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarncconfiglimits', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarnccapacity', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarlfprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarlcum', schema='ericsson_bulkcm')
+    op.drop_table('vsdatariport', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarilink', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarfport', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarfbranch', schema='ericsson_bulkcm')
+    op.drop_table('vsdataretudevicegroup', schema='ericsson_bulkcm')
+    op.drop_table('vsdataretsupport', schema='ericsson_bulkcm')
+    op.drop_table('vsdataretdeviceset', schema='ericsson_bulkcm')
+    op.drop_table('vsdataretdevice', schema='ericsson_bulkcm')
+    op.drop_table('vsdataretconfigurationmgt', schema='ericsson_bulkcm')
+    op.drop_table('vsdataretcascading', schema='ericsson_bulkcm')
+    op.drop_table('vsdataresourcepartitions', schema='ericsson_bulkcm')
+    op.drop_table('vsdataresmeascontrol', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigsearch', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigscella6', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigscella4', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigscella1a2', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfiginterratlb', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigeutraintrafreqpm', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigeutrainterfreqmbms', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigeutrainterfreqlb', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigeutraifbestcell', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigeutraifa3ultrig', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigeutrabestcellanr', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigeutrabestcell', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigeutrabadcovsec', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigeutrabadcovprim', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigcsg', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigcsfbutra', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigcsfbgeran', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigcsfbcdma2000', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigb2utraultrig', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigb2utra', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigb2geranultrig', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigb2geran', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigb2cdmaultrig', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigb2cdmarttultrig', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigb2cdma20001xrtt', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigb2cdma2000', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigb1utra', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfigb1geran', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfiga5ultrig', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfiga5softlock', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfiga5dlcomp', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfiga5anr', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfiga5', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfiga4', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfiga1sec', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareportconfiga1prim', schema='ericsson_bulkcm')
+    op.drop_table('vsdatareliableprogramuniter', schema='ericsson_bulkcm')
+    op.drop_table('vsdataredirectwithnacc', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarealtimeseclog', schema='ericsson_bulkcm')
+    op.drop_table('vsdatardiport', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarcs', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarbssynchronization', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarbssubrack', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarbsslot', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarbsmeascontrol', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarbslocalcell', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarbseventstreamer', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarateshaping', schema='ericsson_bulkcm')
+    op.drop_table('vsdataranap', schema='ericsson_bulkcm')
+    op.drop_table('vsdataradiounitcascading', schema='ericsson_bulkcm')
+    op.drop_table('vsdataradiolinks', schema='ericsson_bulkcm')
+    op.drop_table('vsdataradioequipmentclockreference', schema='ericsson_bulkcm')
+    op.drop_table('vsdataradioequipmentclock', schema='ericsson_bulkcm')
+    op.drop_table('vsdataradiobearertable', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarach', schema='ericsson_bulkcm')
+    op.drop_table('vsdatarabhandling', schema='ericsson_bulkcm')
+    op.drop_table('vsdataqueuesystem', schema='ericsson_bulkcm')
+    op.drop_table('vsdataquadantulperfpkg', schema='ericsson_bulkcm')
+    op.drop_table('vsdataqosprofiles', schema='ericsson_bulkcm')
+    op.drop_table('vsdataqospolicy', schema='ericsson_bulkcm')
+    op.drop_table('vsdataqosclassifier', schema='ericsson_bulkcm')
+    op.drop_table('vsdataqosawarescheduler', schema='ericsson_bulkcm')
+    op.drop_table('vsdataqcitable', schema='ericsson_bulkcm')
+    op.drop_table('vsdataqciprofilepredefined', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapws', schema='ericsson_bulkcm')
+    op.drop_table('vsdataptpbcocport', schema='ericsson_bulkcm')
+    op.drop_table('vsdataptp', schema='ericsson_bulkcm')
+    op.drop_table('vsdataprocessorload', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapreschedulingprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapredefrbsscannergpeh', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapowersupply', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapowerdistribution', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapowercontrol', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapositioningserviceclass', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapmulinterferencereport', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapmuemeascontrol', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapmsupport', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapmservice', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapmmeasurementcapabilities', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapminitiateduemeasurements', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapmeventservice', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapmeventm', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapm', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapluginunit', schema='ericsson_bulkcm')
+    op.drop_table('vsdataplmnidentitygroup', schema='ericsson_bulkcm')
+    op.drop_table('vsdataplmn', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapiudevice', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapfs', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapdrdevice', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapcptoqueuemap', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapcpsettoqueue', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapci', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapch', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapaging', schema='ericsson_bulkcm')
+    op.drop_table('vsdatapacketfrequencysyncref', schema='ericsson_bulkcm')
+    op.drop_table('vsdataotdoasupl', schema='ericsson_bulkcm')
+    op.drop_table('vsdataoptionalfeatures', schema='ericsson_bulkcm')
+    op.drop_table('vsdataoptionalfeaturelicense', schema='ericsson_bulkcm')
+    op.drop_table('vsdataopprofiles', schema='ericsson_bulkcm')
+    op.drop_table('vsdataoperatordefinedqci', schema='ericsson_bulkcm')
+    op.drop_table('vsdataonsiteactivities', schema='ericsson_bulkcm')
+    op.drop_table('vsdataoctantulperfpkg', schema='ericsson_bulkcm')
+    op.drop_table('vsdataoamtrafficclass', schema='ericsson_bulkcm')
+    op.drop_table('vsdataoamaccesspoint', schema='ericsson_bulkcm')
+    op.drop_table('vsdatantpserver', schema='ericsson_bulkcm')
+    op.drop_table('vsdatantpfrequencysync', schema='ericsson_bulkcm')
+    op.drop_table('vsdatantp', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanonplannedpcidrxprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanodesynch', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanodesupport', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanodemanagementfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanodegroupsyncmember', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanodecredential', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanodebsectorcarrier', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanodeblocalcellgroup', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanodeblocalcell', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanodebfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdatannisaalprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanexthop', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanetconftls', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanetconfssh', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanbapdedicated', schema='ericsson_bulkcm')
+    op.drop_table('vsdatanbapcommon', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamultierabsperuser', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamulticastantennabranch', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamulticarrier', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamtp3bsrs', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamtp3bsr', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamtp3bspitu', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamtp3bap', schema='ericsson_bulkcm')
+    op.drop_table('vsdatampprocessingresource', schema='ericsson_bulkcm')
+    op.drop_table('vsdatampclusterhandling', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamocncellprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamobctrlatpoorcov', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamixedmode', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamimosleepfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamibmanager', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamediumaccessunit', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamecontext', schema='ericsson_bulkcm')
+    op.drop_table('vsdatameasurementdefinition', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamdtconfiguration', schema='ericsson_bulkcm')
+    op.drop_table('vsdatambmsservicearea', schema='ericsson_bulkcm')
+    op.drop_table('vsdatambmsm3based', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamaximumcellrange', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamanagedelementdata', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamanagedelement', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamaintenanceusersecurity', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamaintenanceuser', schema='ericsson_bulkcm')
+    op.drop_table('vsdatamacconfiguration', schema='ericsson_bulkcm')
+    op.drop_table('vsdatam3uassociation', schema='ericsson_bulkcm')
+    op.drop_table('vsdatalsmecs', schema='ericsson_bulkcm')
+    op.drop_table('vsdatalppaecid', schema='ericsson_bulkcm')
+    op.drop_table('vsdatalogm', schema='ericsson_bulkcm')
+    op.drop_table('vsdatalogicalchannelgroup', schema='ericsson_bulkcm')
+    op.drop_table('vsdatalog', schema='ericsson_bulkcm')
+    op.drop_table('vsdatalocationarea', schema='ericsson_bulkcm')
+    op.drop_table('vsdataloadcontrol', schema='ericsson_bulkcm')
+    op.drop_table('vsdataloadbalancingfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdatalm', schema='ericsson_bulkcm')
+    op.drop_table('vsdatalinktransmissionprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatalicensing', schema='ericsson_bulkcm')
+    op.drop_table('vsdataldapauthenticationmethod', schema='ericsson_bulkcm')
+    op.drop_table('vsdataldap', schema='ericsson_bulkcm')
+    op.drop_table('vsdatalag', schema='ericsson_bulkcm')
+    op.drop_table('vsdatakeyfilemanagement', schema='ericsson_bulkcm')
+    op.drop_table('vsdatakeyfileinformation', schema='ericsson_bulkcm')
+    op.drop_table('vsdataiurlink', schema='ericsson_bulkcm')
+    op.drop_table('vsdataiulink', schema='ericsson_bulkcm')
+    op.drop_table('vsdataiublink', schema='ericsson_bulkcm')
+    op.drop_table('vsdataiubedch', schema='ericsson_bulkcm')
+    op.drop_table('vsdataiubdatastreams', schema='ericsson_bulkcm')
+    op.drop_table('vsdataiub', schema='ericsson_bulkcm')
+    op.drop_table('vsdatairc', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipv6routingtable', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipv4staticroutetable', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipv4staticroute', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipv4peer', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipv4destnetwork', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipsystem', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipsyncref', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipsec', schema='ericsson_bulkcm')
+    op.drop_table('vsdataiproutingtable', schema='ericsson_bulkcm')
+    op.drop_table('vsdataiproutesys', schema='ericsson_bulkcm')
+    op.drop_table('vsdataiprouter', schema='ericsson_bulkcm')
+    op.drop_table('vsdataiproute', schema='ericsson_bulkcm')
+    op.drop_table('vsdataippm', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipoam', schema='ericsson_bulkcm')
+    op.drop_table('vsdataiplicensing', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipinterface', schema='ericsson_bulkcm')
+    op.drop_table('vsdataiphostlink', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipflowmonitor', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipethpacketdatarouter', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipaccesssctp', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipaccesshostspb', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipaccesshostpool', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipaccesshostgpb', schema='ericsson_bulkcm')
+    op.drop_table('vsdataipaccesshostet', schema='ericsson_bulkcm')
+    op.drop_table('vsdataip', schema='ericsson_bulkcm')
+    op.drop_table('vsdataintraltehodatafwd', schema='ericsson_bulkcm')
+    op.drop_table('vsdatainternalethernetport', schema='ericsson_bulkcm')
+    op.drop_table('vsdatainterfrequencysessioncontinuity', schema='ericsson_bulkcm')
+    op.drop_table('vsdatainterfrequencyltehandover', schema='ericsson_bulkcm')
+    op.drop_table('vsdatainterfrequencyloadbalancing', schema='ericsson_bulkcm')
+    op.drop_table('vsdatainterfaceipv4', schema='ericsson_bulkcm')
+    op.drop_table('vsdataintegrationunlock', schema='ericsson_bulkcm')
+    op.drop_table('vsdataimeisvtable', schema='ericsson_bulkcm')
+    op.drop_table('vsdatahwunit', schema='ericsson_bulkcm')
+    op.drop_table('vsdatahwitem', schema='ericsson_bulkcm')
+    op.drop_table('vsdatahwinventory', schema='ericsson_bulkcm')
+    op.drop_table('vsdatahttps', schema='ericsson_bulkcm')
+    op.drop_table('vsdatahttpm', schema='ericsson_bulkcm')
+    op.drop_table('vsdatahsdschresources', schema='ericsson_bulkcm')
+    op.drop_table('vsdatahsdsch', schema='ericsson_bulkcm')
+    op.drop_table('vsdatahooscctrlue', schema='ericsson_bulkcm')
+    op.drop_table('vsdatahighspeedue', schema='ericsson_bulkcm')
+    op.drop_table('vsdatahandover', schema='ericsson_bulkcm')
+    op.drop_table('vsdatagtppath', schema='ericsson_bulkcm')
+    op.drop_table('vsdatagsmsessioncontinuity', schema='ericsson_bulkcm')
+    op.drop_table('vsdatagsmrelation', schema='ericsson_bulkcm')
+    op.drop_table('vsdatagraceperiod', schema='ericsson_bulkcm')
+    op.drop_table('vsdatagpeh', schema='ericsson_bulkcm')
+    op.drop_table('vsdatagigabitethernet', schema='ericsson_bulkcm')
+    op.drop_table('vsdatageranfreqgrouprelation', schema='ericsson_bulkcm')
+    op.drop_table('vsdatageranetwork', schema='ericsson_bulkcm')
+    op.drop_table('vsdatagerancellrelation', schema='ericsson_bulkcm')
+    op.drop_table('vsdatageneralprocessorunit', schema='ericsson_bulkcm')
+    op.drop_table('vsdataftptlsserver', schema='ericsson_bulkcm')
+    op.drop_table('vsdataftptls', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafrequencysyncio', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafreqmanagement', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafmsubscription', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafmalarmtype', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafmalarmmodel', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafm', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafilter', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafiletpm', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafilepullcapabilities', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafieldreplaceableunit', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafeaturestate', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafeaturekey', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafangroup', schema='ericsson_bulkcm')
+    op.drop_table('vsdatafach', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexternalutranplmn', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexternalutranfreq', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexternalutrancell', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexternalnode', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexternalgsmplmn', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexternalgsmfreqgroup', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexternalgsmfreq', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexternalgsmcell', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexternaleutranplmn', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexternaleutranfrequency', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexternaleutrancellfdd', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexternalenodebfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexchangeterminalip', schema='ericsson_bulkcm')
+    op.drop_table('vsdataexchangeterminal', schema='ericsson_bulkcm')
+    op.drop_table('vsdataeventproducer', schema='ericsson_bulkcm')
+    op.drop_table('vsdataeventcapabilities', schema='ericsson_bulkcm')
+    op.drop_table('vsdataeutranfrequency', schema='ericsson_bulkcm')
+    op.drop_table('vsdataeutranfreqrelation', schema='ericsson_bulkcm')
+    op.drop_table('vsdataeutranetwork', schema='ericsson_bulkcm')
+    op.drop_table('vsdataeutrancellrelation', schema='ericsson_bulkcm')
+    op.drop_table('vsdataeutrancellfdd', schema='ericsson_bulkcm')
+    op.drop_table('vsdataeul', schema='ericsson_bulkcm')
+    op.drop_table('vsdataetws', schema='ericsson_bulkcm')
+    op.drop_table('vsdataethernetswitchport', schema='ericsson_bulkcm')
+    op.drop_table('vsdataethernetswitchmoduleport', schema='ericsson_bulkcm')
+    op.drop_table('vsdataethernetswitchmodule', schema='ericsson_bulkcm')
+    op.drop_table('vsdataethernetswitchingadm', schema='ericsson_bulkcm')
+    op.drop_table('vsdataethernetswitchfabric', schema='ericsson_bulkcm')
+    op.drop_table('vsdataethernetswitch', schema='ericsson_bulkcm')
+    op.drop_table('vsdataethernetport', schema='ericsson_bulkcm')
+    op.drop_table('vsdataethernetlink', schema='ericsson_bulkcm')
+    op.drop_table('vsdataethernetinterface', schema='ericsson_bulkcm')
+    op.drop_table('vsdataethernetbridgeport', schema='ericsson_bulkcm')
+    op.drop_table('vsdataericssonfilter', schema='ericsson_bulkcm')
+    op.drop_table('vsdataequipmentsupportfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdataequipmentdiscovery', schema='ericsson_bulkcm')
+    op.drop_table('vsdataequipment', schema='ericsson_bulkcm')
+    op.drop_table('vsdataenrollmentservergroup', schema='ericsson_bulkcm')
+    op.drop_table('vsdataenrollmentserver', schema='ericsson_bulkcm')
+    op.drop_table('vsdataenrollmentauthority', schema='ericsson_bulkcm')
+    op.drop_table('vsdataenodebfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdataenhcellidintraces', schema='ericsson_bulkcm')
+    op.drop_table('vsdataenergymeter', schema='ericsson_bulkcm')
+    op.drop_table('vsdataemergencyunlock', schema='ericsson_bulkcm')
+    op.drop_table('vsdataedchresources', schema='ericsson_bulkcm')
+    op.drop_table('vsdataecscsfb', schema='ericsson_bulkcm')
+    op.drop_table('vsdataecport', schema='ericsson_bulkcm')
+    op.drop_table('vsdataecbus', schema='ericsson_bulkcm')
+    op.drop_table('vsdatae1physpathterm', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadynamicqosmodification', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadynamicgbradmctrl', schema='ericsson_bulkcm')
+    op.drop_table('vsdataduallaybeamfperfpkg', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadualantdlperfpkg', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadst', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadrxprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadrx', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadownlinkbasebandpool', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadnsclient', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadlprbcapacity', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadlfss', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadlbasebandcapacity', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadifferentiatedadmissioncontrol', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadhcp', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadevicegroup', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadchframesynch', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadbsandsabe', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadateandtime', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadataradiobearer', schema='ericsson_bulkcm')
+    op.drop_table('vsdatadatacollectiongeneration', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacsfbtogeranutran', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacsfbforlimiteddualradioue', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacprilinksupervision', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacoveragerelation', schema='ericsson_bulkcm')
+    op.drop_table('vsdataconfigurationversion', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacommunicationcontexts', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacommonchannelresourcesul', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacommonchannelresourcesdl', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacombinedcell', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacnoperator', schema='ericsson_bulkcm')
+    op.drop_table('vsdataclitls', schema='ericsson_bulkcm')
+    op.drop_table('vsdataclissh', schema='ericsson_bulkcm')
+    op.drop_table('vsdataclimate', schema='ericsson_bulkcm')
+    op.drop_table('vsdatachannelswitching', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacertmcapabilities', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacertm', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacellsleepnodefunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacellsleepfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacellresources', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacdma2000sessioncontinuity', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacchframesynch', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacbu', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacaxfanunit', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacarrieraggregationfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacarrier', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacapacitystate', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacapacitylicenses', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacapacitykey', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacapacityfeaturelicense', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacapacityconnectedusers', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacapacitychannelbandwidth', schema='ericsson_bulkcm')
+    op.drop_table('vsdatacabinet', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabrmsingleevent', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabrmrollbackatrestore', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabrmperiodicevent', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabrmfailsafebackup', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabrmcalendarbasedperiodicevent', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabrmbackupscheduler', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabrmbackupmanager', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabrmbackuplabelstore', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabrmbackuphousekeeping', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabrmbackup', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabrm', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabridge', schema='ericsson_bulkcm')
+    op.drop_table('vsdataboundaryordinaryclock', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabfdprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabestneighborsi', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabbprocessingresource', schema='ericsson_bulkcm')
+    op.drop_table('vsdatabatterybackup', schema='ericsson_bulkcm')
+    op.drop_table('vsdataauxpluginunit', schema='ericsson_bulkcm')
+    op.drop_table('vsdataautoprovisioning', schema='ericsson_bulkcm')
+    op.drop_table('vsdataautonomousmode', schema='ericsson_bulkcm')
+    op.drop_table('vsdataautocellcapestfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdataauthorizationorder', schema='ericsson_bulkcm')
+    op.drop_table('vsdataauthenticationorder', schema='ericsson_bulkcm')
+    op.drop_table('vsdataauport', schema='ericsson_bulkcm')
+    op.drop_table('vsdataatmtrafficdescriptor', schema='ericsson_bulkcm')
+    op.drop_table('vsdataatmport', schema='ericsson_bulkcm')
+    op.drop_table('vsdataatmconfservice', schema='ericsson_bulkcm')
+    op.drop_table('vsdataarpqosclassprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdataarpmap', schema='ericsson_bulkcm')
+    op.drop_table('vsdataareas', schema='ericsson_bulkcm')
+    op.drop_table('vsdataantfeedercable', schema='ericsson_bulkcm')
+    op.drop_table('vsdataantennaunitgroup', schema='ericsson_bulkcm')
+    op.drop_table('vsdataantennaunit', schema='ericsson_bulkcm')
+    op.drop_table('vsdataantennasubunit', schema='ericsson_bulkcm')
+    op.drop_table('vsdataantennabranch', schema='ericsson_bulkcm')
+    op.drop_table('vsdataanriafutran', schema='ericsson_bulkcm')
+    op.drop_table('vsdataanrfunctionutran', schema='ericsson_bulkcm')
+    op.drop_table('vsdataanrfunctiongeran', schema='ericsson_bulkcm')
+    op.drop_table('vsdataanrfunctioneutran', schema='ericsson_bulkcm')
+    op.drop_table('vsdataanrfunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdataanr', schema='ericsson_bulkcm')
+    op.drop_table('vsdataamofunction', schema='ericsson_bulkcm')
+    op.drop_table('vsdataalarmport', schema='ericsson_bulkcm')
+    op.drop_table('vsdataaisgv2fwdownload', schema='ericsson_bulkcm')
+    op.drop_table('vsdataairifloadgenerator', schema='ericsson_bulkcm')
+    op.drop_table('vsdataaideviceset', schema='ericsson_bulkcm')
+    op.drop_table('vsdataaidevice', schema='ericsson_bulkcm')
+    op.drop_table('vsdataagpspositioning', schema='ericsson_bulkcm')
+    op.drop_table('vsdataadvcellsup', schema='ericsson_bulkcm')
+    op.drop_table('vsdataadmissioncontrol', schema='ericsson_bulkcm')
+    op.drop_table('vsdataaddressipv4', schema='ericsson_bulkcm')
+    op.drop_table('vsdataaccesscontrollist', schema='ericsson_bulkcm')
+    op.drop_table('vsdataaal5tpvcctp', schema='ericsson_bulkcm')
+    op.drop_table('vsdataaal2sp', schema='ericsson_bulkcm')
+    op.drop_table('vsdataaal2qosprofile', schema='ericsson_bulkcm')
+    op.drop_table('vsdataaal2qoscodepointprofile', schema='ericsson_bulkcm')
+    op.drop_table('utranrelation', schema='ericsson_bulkcm')
+    op.drop_table('utrancell', schema='ericsson_bulkcm')
+    op.drop_table('subnetwork_2', schema='ericsson_bulkcm')
+    op.drop_table('subnetwork', schema='ericsson_bulkcm')
+    op.drop_table('rncfunction', schema='ericsson_bulkcm')
+    op.drop_table('notificationirp', schema='ericsson_bulkcm')
+    op.drop_table('nodebfunction', schema='ericsson_bulkcm')
+    op.drop_table('mecontext', schema='ericsson_bulkcm')
+    op.drop_table('managementnode', schema='ericsson_bulkcm')
+    op.drop_table('managedelement', schema='ericsson_bulkcm')
+    op.drop_table('iublink', schema='ericsson_bulkcm')
+    op.drop_table('irpagent', schema='ericsson_bulkcm')
+    op.drop_table('gsmrelation', schema='ericsson_bulkcm')
+    op.drop_table('fileheader', schema='ericsson_bulkcm')
+    op.drop_table('filefooter', schema='ericsson_bulkcm')
+    op.drop_table('externalutrancell', schema='ericsson_bulkcm')
+    op.drop_table('externalgsmcell', schema='ericsson_bulkcm')
+    op.drop_table('configdata', schema='ericsson_bulkcm')
+    op.drop_table('bulkcmirp', schema='ericsson_bulkcm')
+    op.drop_table('bulkcmconfigdatafile', schema='ericsson_bulkcm')
+    op.drop_table('alarmirp', schema='ericsson_bulkcm')
     # ### end Alembic commands ###

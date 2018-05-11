@@ -64,7 +64,7 @@ def upgrade():
     sa.Column('rxLevMinCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('synchronized', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('trhoTargetLevel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('adjl',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -85,7 +85,7 @@ def upgrade():
     sa.Column('lteAdjCellReselectLowerThr', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('lteAdjCellReselectUpperThr', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('lteAdjCellTac', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('adjw',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -107,7 +107,7 @@ def upgrade():
     sa.Column('scramblingCode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('txDiversityInd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('uarfcn', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('bcf',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -137,7 +137,7 @@ def upgrade():
     sa.Column('synchStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('outputDefinition_textId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('notificationOrigin', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('bsc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -306,7 +306,7 @@ def upgrade():
     sa.Column('triggerMeasPeriod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('variableDlStepSize', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('wcdmaRanSaiPenalty', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('bts',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -520,7 +520,7 @@ def upgrade():
     sa.Column('utranQualRxLevelMargin', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('utranThresholdReselection', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('wcdmaPriority', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('dap',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -536,7 +536,7 @@ def upgrade():
     sa.Column('pcmCircuit_ID', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('pcuID', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('psei', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('gpc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -550,7 +550,7 @@ def upgrade():
     sa.Column('qcTputThrModes_egprsUlRlcAckMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('qcTputThrModes_gprsDlRlcAckMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('qcTputThrModes_gprsUlRlcAckMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('hoc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -640,7 +640,7 @@ def upgrade():
     sa.Column('utranHoThScTpdc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('wcdmaRanCellPenalty', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('name', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('lapd',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -659,7 +659,7 @@ def upgrade():
     sa.Column('parameterSetNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sapi', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tei', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('mal',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -670,7 +670,7 @@ def upgrade():
     sa.Column('frequency', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('frequencyBandInUse', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('address', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('nse',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -683,7 +683,7 @@ def upgrade():
     sa.Column('localUdpPort', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nseType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('psei', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('nsvl',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -701,7 +701,7 @@ def upgrade():
     sa.Column('psei', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('signWeight', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('udpPort', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('pcm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -711,7 +711,7 @@ def upgrade():
     sa.Column('id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('address', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('name', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('pcu',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -727,7 +727,7 @@ def upgrade():
     sa.Column('pcuObjectState', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('piuType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('psei', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('poc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -792,7 +792,7 @@ def upgrade():
     sa.Column('tAvgT', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tAvgW', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('name', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('ra',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -806,7 +806,7 @@ def upgrade():
     sa.Column('routingAreaIdMcc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('routingAreaIdMnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('routingAreaIdRac', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('smlc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -816,7 +816,7 @@ def upgrade():
     sa.Column('id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('address', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('name', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('tcsm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -829,7 +829,7 @@ def upgrade():
     sa.Column('pcmConfiguration_pcmNumber_pcmType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tcsmType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('name', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('tid',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -839,7 +839,7 @@ def upgrade():
     sa.Column('id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('address', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ioTextValue', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('tre',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -851,7 +851,7 @@ def upgrade():
     sa.Column('name', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('q1Address', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('unitType', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
     op.create_table('trx',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -929,30 +929,30 @@ def upgrade():
     sa.Column('numberOfTrxRfPowerLevels', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('trxOscCapability', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('trxRfPower', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='nok_cm_2g'
+    schema='nokia_cm_2g'
     )
 
 
 def downgrade():
-    op.drop_table('trx', schema='nok_cm_2g')
-    op.drop_table('tre', schema='nok_cm_2g')
-    op.drop_table('tid', schema='nok_cm_2g')
-    op.drop_table('tcsm', schema='nok_cm_2g')
-    op.drop_table('smlc', schema='nok_cm_2g')
-    op.drop_table('ra', schema='nok_cm_2g')
-    op.drop_table('poc', schema='nok_cm_2g')
-    op.drop_table('pcu', schema='nok_cm_2g')
-    op.drop_table('pcm', schema='nok_cm_2g')
-    op.drop_table('nsvl', schema='nok_cm_2g')
-    op.drop_table('nse', schema='nok_cm_2g')
-    op.drop_table('mal', schema='nok_cm_2g')
-    op.drop_table('lapd', schema='nok_cm_2g')
-    op.drop_table('hoc', schema='nok_cm_2g')
-    op.drop_table('gpc', schema='nok_cm_2g')
-    op.drop_table('dap', schema='nok_cm_2g')
-    op.drop_table('bts', schema='nok_cm_2g')
-    op.drop_table('bsc', schema='nok_cm_2g')
-    op.drop_table('bcf', schema='nok_cm_2g')
-    op.drop_table('adjw', schema='nok_cm_2g')
-    op.drop_table('adjl', schema='nok_cm_2g')
-    op.drop_table('adce', schema='nok_cm_2g')
+    op.drop_table('trx', schema='nokia_cm_2g')
+    op.drop_table('tre', schema='nokia_cm_2g')
+    op.drop_table('tid', schema='nokia_cm_2g')
+    op.drop_table('tcsm', schema='nokia_cm_2g')
+    op.drop_table('smlc', schema='nokia_cm_2g')
+    op.drop_table('ra', schema='nokia_cm_2g')
+    op.drop_table('poc', schema='nokia_cm_2g')
+    op.drop_table('pcu', schema='nokia_cm_2g')
+    op.drop_table('pcm', schema='nokia_cm_2g')
+    op.drop_table('nsvl', schema='nokia_cm_2g')
+    op.drop_table('nse', schema='nokia_cm_2g')
+    op.drop_table('mal', schema='nokia_cm_2g')
+    op.drop_table('lapd', schema='nokia_cm_2g')
+    op.drop_table('hoc', schema='nokia_cm_2g')
+    op.drop_table('gpc', schema='nokia_cm_2g')
+    op.drop_table('dap', schema='nokia_cm_2g')
+    op.drop_table('bts', schema='nokia_cm_2g')
+    op.drop_table('bsc', schema='nokia_cm_2g')
+    op.drop_table('bcf', schema='nokia_cm_2g')
+    op.drop_table('adjw', schema='nokia_cm_2g')
+    op.drop_table('adjl', schema='nokia_cm_2g')
+    op.drop_table('adce', schema='nokia_cm_2g')

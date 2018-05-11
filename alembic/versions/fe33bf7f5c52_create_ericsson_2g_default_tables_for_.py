@@ -463,7 +463,7 @@ def upgrade():
     sa.Column('OF_BTSSOFTSYNC', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('OF_EPU', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('OF_APSULPC', sa.CHAR(length=250), autoincrement=False, nullable=True)],
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
     op.create_table('channel_group',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -503,7 +503,7 @@ def upgrade():
     sa.Column('CCCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('TNBCCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('BSPWRT', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
     op.create_table('external_cell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -545,7 +545,7 @@ def upgrade():
     sa.Column('RAC', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('RIMNACC', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('SCHO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
     op.create_table('inner_cell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -569,7 +569,7 @@ def upgrade():
     sa.Column('NCS', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('RME', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('RO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
     op.create_table('internal_cell',
     *[sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -970,7 +970,7 @@ def upgrade():
     sa.Column('SSDESGMSK', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('SSDES8PSK', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('SSDES16QAM', sa.CHAR(length=250), autoincrement=False, nullable=True)],
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
     op.create_table('msc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1000,7 +1000,7 @@ def upgrade():
     sa.Column('MESSAGE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('MSCBC', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('CIPHERALGALLOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
     op.create_table('nrel',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1030,7 +1030,7 @@ def upgrade():
     sa.Column('OFFSET', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('TRHYST', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('TROFFSET', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
     op.create_table('outer_cell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1049,7 +1049,7 @@ def upgrade():
     sa.Column('MCC', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('MNC', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('NCS', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
     op.create_table('overlaid_cell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1140,7 +1140,7 @@ def upgrade():
     sa.Column('TCHHROL', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('TIHO', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('TMAXIHO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
     op.create_table('priority_profile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1184,7 +1184,7 @@ def upgrade():
     sa.Column('PRL15_PROBF', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('PRL16_PROBF', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('PRI_PROFILE_NAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
     op.create_table('site',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1200,7 +1200,7 @@ def upgrade():
     sa.Column('LONGITUDE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('NOTE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('SITE_NAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
     op.create_table('tg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1213,7 +1213,7 @@ def upgrade():
     sa.Column('BSC_NAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('SITE_NAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('TG_NAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
     op.create_table('utran_external_cell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1234,7 +1234,7 @@ def upgrade():
     sa.Column('RNCID', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('SCRCODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('USEDFREQTHRESH2DECNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
     op.create_table('utran_nrel',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1247,22 +1247,22 @@ def upgrade():
     sa.Column('BSC_NAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('CELL_NAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('NREL_NAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='eri_cm_2g'
+    schema='ericsson_cnaiv2'
     )
 
 
 def downgrade():
-    op.drop_table('utran_nrel', schema='eri_cm_2g')
-    op.drop_table('utran_external_cell', schema='eri_cm_2g')
-    op.drop_table('tg', schema='eri_cm_2g')
-    op.drop_table('site', schema='eri_cm_2g')
-    op.drop_table('priority_profile', schema='eri_cm_2g')
-    op.drop_table('overlaid_cell', schema='eri_cm_2g')
-    op.drop_table('outer_cell', schema='eri_cm_2g')
-    op.drop_table('nrel', schema='eri_cm_2g')
-    op.drop_table('msc', schema='eri_cm_2g')
-    op.drop_table('internal_cell', schema='eri_cm_2g')
-    op.drop_table('inner_cell', schema='eri_cm_2g')
-    op.drop_table('external_cell', schema='eri_cm_2g')
-    op.drop_table('channel_group', schema='eri_cm_2g')
-    op.drop_table('bsc', schema='eri_cm_2g')
+    op.drop_table('utran_nrel', schema='ericsson_cnaiv2')
+    op.drop_table('utran_external_cell', schema='ericsson_cnaiv2')
+    op.drop_table('tg', schema='ericsson_cnaiv2')
+    op.drop_table('site', schema='ericsson_cnaiv2')
+    op.drop_table('priority_profile', schema='ericsson_cnaiv2')
+    op.drop_table('overlaid_cell', schema='ericsson_cnaiv2')
+    op.drop_table('outer_cell', schema='ericsson_cnaiv2')
+    op.drop_table('nrel', schema='ericsson_cnaiv2')
+    op.drop_table('msc', schema='ericsson_cnaiv2')
+    op.drop_table('internal_cell', schema='ericsson_cnaiv2')
+    op.drop_table('inner_cell', schema='ericsson_cnaiv2')
+    op.drop_table('external_cell', schema='ericsson_cnaiv2')
+    op.drop_table('channel_group', schema='ericsson_cnaiv2')
+    op.drop_table('bsc', schema='ericsson_cnaiv2')
