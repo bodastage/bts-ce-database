@@ -21,13 +21,13 @@ def upgrade():
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
     sa.Column('bulkCmConfigDataFile_schemaLocation', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('configdata',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
     sa.Column('bulkCmConfigDataFile_schemaLocation', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('eutranrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -41,7 +41,7 @@ def upgrade():
     sa.Column('UtranCellFDD_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('EUtranRelation_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('adjacentCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('externalenbfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -49,7 +49,7 @@ def upgrade():
     sa.Column('bulkCmConfigDataFile_schemaLocation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('SubNetwork_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ExternalENBFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('externaleutrancellfdd',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -66,7 +66,7 @@ def upgrade():
     sa.Column('mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('plmnNum', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mcc', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('externalgsmcell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -84,7 +84,7 @@ def upgrade():
     sa.Column('lac', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ncc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('racc', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('externalrncfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -97,7 +97,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mcc', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('controlledCellList', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('externalutrancellfdd',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -126,14 +126,14 @@ def upgrade():
     sa.Column('primaryScramblingCode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('closedLoopMode1SuptInd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cId', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('filefooter',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
     sa.Column('bulkCmConfigDataFile_schemaLocation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('fileFooter_dateTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('fileheader',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -141,7 +141,7 @@ def upgrade():
     sa.Column('bulkCmConfigDataFile_schemaLocation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('fileHeader_fileFormatVersion', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('fileHeader_vendorName', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('gsmrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -156,7 +156,7 @@ def upgrade():
     sa.Column('GsmRelation_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('adjacentCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('iublink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -172,7 +172,7 @@ def upgrade():
     sa.Column('iubLink-ATMChannelTerminationPoint', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('iubLinkUtranCell', sa.TEXT(), autoincrement=False, nullable=True),
     sa.Column('iubLinkNodeBFunction', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('managedelement',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -198,7 +198,7 @@ def upgrade():
     sa.Column('HARDWAREPLATFORM', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dnPrefix', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('OPERATIONALSTATE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('mecontext',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -209,7 +209,7 @@ def upgrade():
     sa.Column('meContext_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('meContextId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dnPrefix', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('rncfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -224,14 +224,14 @@ def upgrade():
     sa.Column('rncid', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mcc', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('subnetwork',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
     sa.Column('bulkCmConfigDataFile_schemaLocation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('SubNetwork_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('subnetwork_2',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -243,7 +243,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userDefinedNetworkType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dnPrefix', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('utrancellfdd',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -285,7 +285,7 @@ def upgrade():
     sa.Column('aichPower', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('primaryScramblingCode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('bchPower', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('utranrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -300,7 +300,7 @@ def upgrade():
     sa.Column('UtranRelation_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('adjacentCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataaich',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -317,7 +317,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('commPhyChanelId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataamrevttpueint',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -339,7 +339,7 @@ def upgrade():
     sa.Column('ueIntMCfgNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataanr',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -359,7 +359,7 @@ def upgrade():
     sa.Column('tWaitDelMacNbrPrd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cpichEcNoMinThrd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataappprimapping',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -380,7 +380,7 @@ def upgrade():
     sa.Column('bearerType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('direction', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataappprimappingprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -397,7 +397,7 @@ def upgrade():
     sa.Column('profileId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataappsrvtype',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -421,7 +421,7 @@ def upgrade():
     sa.Column('basicPrio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('trafficClass', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatabaspri',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -444,7 +444,7 @@ def upgrade():
     sa.Column('ulNormBitRate', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxDlDpchPO', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatabasprimapping',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -462,7 +462,7 @@ def upgrade():
     sa.Column('arpPL', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('trafficClass', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatabpriac',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -487,7 +487,7 @@ def upgrade():
     sa.Column('basicPrio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('codeTreeResRto', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatabpriacprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -504,7 +504,7 @@ def upgrade():
     sa.Column('profileId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatacelinfofdd',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -720,7 +720,7 @@ def upgrade():
     sa.Column('interNbrCelHoRatio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('powerMarginOpen', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatacelsel',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -779,7 +779,7 @@ def upgrade():
     sa.Column('nCr', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sLimitRat', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('qrxlevminOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatacfnoffset',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -798,7 +798,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('retranRate', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cfnOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatachspa',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -849,7 +849,7 @@ def upgrade():
     sa.Column('numofHsscch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hsNBAssInd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxRTWP', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatacmr',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -875,7 +875,7 @@ def upgrade():
     sa.Column('mrCellRtwpMeasSwit', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mrCellHsdschRpMeasSwit', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatacninfo',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -897,7 +897,7 @@ def upgrade():
     sa.Column('kcs', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mbmsModPrdCoeff', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatacomedchevuptrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -924,7 +924,7 @@ def upgrade():
     sa.Column('measQuantity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatacomhsdschevuptrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -951,7 +951,7 @@ def upgrade():
     sa.Column('measQuantity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatacommedch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -989,7 +989,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('edpcchPOTti2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cEdchMinRlcSize', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatacompressmode',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1025,7 +1025,7 @@ def upgrade():
     sa.Column('tgl1', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tgl2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatacpuctrlpri',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1042,7 +1042,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cpuLdCtrlPri', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('serviceType', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadchevuetrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1075,7 +1075,7 @@ def upgrade():
     sa.Column('measQuantity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadchevuptrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1108,7 +1108,7 @@ def upgrade():
     sa.Column('measQuantity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadchprduetrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1132,7 +1132,7 @@ def upgrade():
     sa.Column('measQuantity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadededchevuptrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1159,7 +1159,7 @@ def upgrade():
     sa.Column('measQuantity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadedibhsdschevuptrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1186,7 +1186,7 @@ def upgrade():
     sa.Column('measQuantity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadedshsdschevuptrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1213,7 +1213,7 @@ def upgrade():
     sa.Column('measQuantity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadedsrvtb',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1240,7 +1240,7 @@ def upgrade():
     sa.Column('iBDlResBwd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('iBUlResBwd', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadedsrvtbprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1258,7 +1258,7 @@ def upgrade():
     sa.Column('templateType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadiamonduserglobalpara',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1282,7 +1282,7 @@ def upgrade():
     sa.Column('dmdOverBookPriSwch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dmdExpPdcpBufSwch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadiamonduserimsilist',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1307,7 +1307,7 @@ def upgrade():
     sa.Column('csHspaSchPrio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('imsiDgt', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadiamondusersrvpc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1375,7 +1375,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dwThrSampNumTti10', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxUlDpchPwr', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadpi',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1389,7 +1389,7 @@ def upgrade():
     sa.Column('vsDataDpi_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadpialgparam',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1416,7 +1416,7 @@ def upgrade():
     sa.Column('P2pRateLmtSwitch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ref3UDpiProcMap', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadpiappsrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1435,7 +1435,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedByUDpiAppSrvPri', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadpiappsrvpri',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1454,7 +1454,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('RprtDataRtoThr', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadpiappsrvprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1470,7 +1470,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('APPCfgIndex', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadpibasprimapping',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1487,7 +1487,7 @@ def upgrade():
     sa.Column('AppSrvPriCls', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('DpiBasicPrio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadpidrbc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1504,7 +1504,7 @@ def upgrade():
     sa.Column('refUDrbcProfile', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadpipartnerip',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1522,7 +1522,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('PartnerIpLenth', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadpipartnername',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1543,7 +1543,7 @@ def upgrade():
     sa.Column('PartServiceType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('PriorityAdded', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadpiprocmap',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1563,7 +1563,7 @@ def upgrade():
     sa.Column('ProcId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('DpiUsageType', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadrbc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1597,7 +1597,7 @@ def upgrade():
     sa.Column('dToIdleThd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('pchSwch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('fachE4aThd', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadrbcprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1613,7 +1613,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('drbcStragyName', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadtxdrx',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1650,7 +1650,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dtxCyc1Tti10', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('gMonInactTrd10', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatadtxdrxprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1665,7 +1665,7 @@ def upgrade():
     sa.Column('profileId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataedchrcdch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1726,7 +1726,7 @@ def upgrade():
     sa.Column('rEtfcNum2T0QIp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rEtfci2T1Qb', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataedchrcdchprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1741,7 +1741,7 @@ def upgrade():
     sa.Column('profileId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataedchrcfach',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1771,7 +1771,7 @@ def upgrade():
     sa.Column('rEtfciTti10T0', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rEtfciTti10T1', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataedchtodchuptrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1798,7 +1798,7 @@ def upgrade():
     sa.Column('measQuantity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataefach',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1828,7 +1828,7 @@ def upgrade():
     sa.Column('commonEdchNum', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxBitRateCEdch', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataefachpch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1853,7 +1853,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('macehsWinSize', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('t1', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataettiedchevuptrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1880,7 +1880,7 @@ def upgrade():
     sa.Column('measQuantity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataeutranrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1896,7 +1896,7 @@ def upgrade():
     sa.Column('vsDataEUtranRelation_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataevtrttueint',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1918,7 +1918,7 @@ def upgrade():
     sa.Column('ueIntMCfgNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataexternalenbfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1932,7 +1932,7 @@ def upgrade():
     sa.Column('eNodeBId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataexternaleutrancellfdd',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1954,7 +1954,7 @@ def upgrade():
     sa.Column('eutranFreqBandInd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('eUtranMeasBand', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataexternalgsmcell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1988,7 +1988,7 @@ def upgrade():
     sa.Column('deltaQrxlevminSib12Pr', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cellIndivOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataexternalrncfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2003,7 +2003,7 @@ def upgrade():
     sa.Column('dIurCmbInd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refUIurLink', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataexternalutrancellfdd',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2116,7 +2116,7 @@ def upgrade():
     sa.Column('mimoSuptInd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('uncertAltitude', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatafachevuptrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2143,7 +2143,7 @@ def upgrade():
     sa.Column('measQuantity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataftpinfocfg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2164,7 +2164,7 @@ def upgrade():
     sa.Column('Password', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('FtpType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatafullsignaltrace',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2178,7 +2178,7 @@ def upgrade():
     sa.Column('vsDataFullSignalTrace_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatagbrreslimit',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2196,7 +2196,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ueHsReqPwrUplim', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatagbrreslimitprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2211,7 +2211,7 @@ def upgrade():
     sa.Column('profileId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatagloac',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2232,7 +2232,7 @@ def upgrade():
     sa.Column('amrDnRateAcSwch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tTrueQReloc', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatagsmrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2263,7 +2263,7 @@ def upgrade():
     sa.Column('gsmShareCover', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('useOfHCS', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatahoevttpueint',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2285,7 +2285,7 @@ def upgrade():
     sa.Column('ueIntMCfgNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatahspa',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2362,7 +2362,7 @@ def upgrade():
     sa.Column('rncDbMimoSupInd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hsupaCmAssoMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatainterecnoevmeasfore',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2386,7 +2386,7 @@ def upgrade():
     sa.Column('threshUsedFreq', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatainterecnoevmeasforg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2410,7 +2410,7 @@ def upgrade():
     sa.Column('threshUsedFreq', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatainterecnoevmeasforu',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2436,7 +2436,7 @@ def upgrade():
     sa.Column('wNoUsed', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatainterecnoprdmeas',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2456,7 +2456,7 @@ def upgrade():
     sa.Column('prdRptInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('interMeasCfgNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataintermeasnosrvspec',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2473,7 +2473,7 @@ def upgrade():
     sa.Column('reservedByUInterRscpPrdMeas', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataintermeasprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2489,7 +2489,7 @@ def upgrade():
     sa.Column('profileId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataintermeasrvspec',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2511,7 +2511,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedByUInterEcNoEvMeasforE', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedByUInterEcNoEvMeasforG', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatainterrscpevmeasfore',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2535,7 +2535,7 @@ def upgrade():
     sa.Column('threshUsedFreq', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatainterrscpevmeasforg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2559,7 +2559,7 @@ def upgrade():
     sa.Column('threshUsedFreq', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatainterrscpevmeasforu',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2585,7 +2585,7 @@ def upgrade():
     sa.Column('wNoUsed', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatainterrscpprdmeas',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2605,7 +2605,7 @@ def upgrade():
     sa.Column('prdRptInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('interMeasCfgNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataintraecnoevmeas',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2634,7 +2634,7 @@ def upgrade():
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('evtRptInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataintraecnoevmeasford',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2659,7 +2659,7 @@ def upgrade():
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('evtRptInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataintraecnoprdmeas',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2679,7 +2679,7 @@ def upgrade():
     sa.Column('prdRptInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('intraMeasCfgNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataintrameasnosrvspec',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2698,7 +2698,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedByUIntraRscpEvMeasForD', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedByUIntraEcNoEvMeasForD', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataintrameasprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2714,7 +2714,7 @@ def upgrade():
     sa.Column('profileId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataintrameassrvspec',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2732,7 +2732,7 @@ def upgrade():
     sa.Column('srvCategory', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataintrarscpevmeas',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2761,7 +2761,7 @@ def upgrade():
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('evtRptInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataintrarscpevmeasford',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2786,7 +2786,7 @@ def upgrade():
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('evtRptInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataintrarscpprdmeas',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2806,7 +2806,7 @@ def upgrade():
     sa.Column('prdRptInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('intraMeasCfgNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataipbm',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2831,7 +2831,7 @@ def upgrade():
     sa.Column('refUIucsLink', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refUIurgLink', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataiplicense',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2848,7 +2848,7 @@ def upgrade():
     sa.Column('IurIpFlag', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('IucsIpFlag', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataipslaextask',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2877,7 +2877,7 @@ def upgrade():
     sa.Column('MidFlag', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refUIucsLink', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataiublink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2997,7 +2997,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('UpQosMapType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('NResPara1', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataiubtrpath',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3032,7 +3032,7 @@ def upgrade():
     sa.Column('TrPathType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('IpBandAdjSwitch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('NRtTxResRatio', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataiubtrpathcir',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3051,7 +3051,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refTrPathGroup', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataiucnst',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3078,7 +3078,7 @@ def upgrade():
     sa.Column('tDatafwd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tigOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataiucslink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3159,7 +3159,7 @@ def upgrade():
     sa.Column('refRemoteSp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('NResPara1', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataiupslink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3231,7 +3231,7 @@ def upgrade():
     sa.Column('refRemoteSp', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('NResPara1', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataiupstrpath',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3265,7 +3265,7 @@ def upgrade():
     sa.Column('TrPathType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('NRtTxResRatio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('IpBandAdjSwitch', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataiupstrpathcir',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3285,7 +3285,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('RatioTrPathGroup', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataiurglink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3352,7 +3352,7 @@ def upgrade():
     sa.Column('BSCPSFeatSwitch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('NResPara1', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataiurlink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3464,7 +3464,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('NResPara1', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('RncFeatSwitchBit10', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataiurtrpath',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3498,7 +3498,7 @@ def upgrade():
     sa.Column('TrPathType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('NRtTxResRatio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('IpBandAdjSwitch', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataiurtrpathcir',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3517,7 +3517,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refTrPathGroup', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataldctrl',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3590,7 +3590,7 @@ def upgrade():
     sa.Column('psUlRecoverLdThr', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rtwpLoadLowThd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('uPAUNumMidThd', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatalocationarea',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3606,7 +3606,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('lac', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatalogicalcell',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3636,7 +3636,7 @@ def upgrade():
     sa.Column('pSBarAcNum', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('csACBarredOmcr', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatalogicaliublink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3655,7 +3655,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refUIubLink', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refUTbTypeProfile', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatalogicaliupslink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3698,7 +3698,7 @@ def upgrade():
     sa.Column('IpDscpForTHP4', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('DefaultInd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('IpDscpForTHP5', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatalogicaliupslinkgroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3714,7 +3714,7 @@ def upgrade():
     sa.Column('refULogicalIupsLink', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatalogicaliurglink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3731,7 +3731,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refUIurgLink', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('BSCId', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatalogicaliurlink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3748,7 +3748,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refUIurLink', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatalogicaliurqos',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3766,7 +3766,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refUIurLink', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refUTbTypeProfile', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatalogicalmgwlink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3784,7 +3784,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('IpDscpForC', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatalogicalmsclink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3808,7 +3808,7 @@ def upgrade():
     sa.Column('refUIucsLink', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('DefaultInd', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatalogicalmsclinkgroup',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3824,7 +3824,7 @@ def upgrade():
     sa.Column('refULogicalMscLink', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatalogicalrnc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3974,7 +3974,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('r99RtRatHoSw', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('amrOverHspaSwch', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatamgwtrpath',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4008,7 +4008,7 @@ def upgrade():
     sa.Column('TrPathType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('NRtTxResRatio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('IpBandAdjSwitch', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatamgwtrpathcir',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4027,7 +4027,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refTrPathGroup', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatampo',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4046,7 +4046,7 @@ def upgrade():
     sa.Column('appDcHsdpaInd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatampoprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4061,7 +4061,7 @@ def upgrade():
     sa.Column('profileId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatamr',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4112,7 +4112,7 @@ def upgrade():
     sa.Column('mrUeEvIntraInterIRatMeasSw', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('mrUePrdLocMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatanbaplink',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4139,7 +4139,7 @@ def upgrade():
     sa.Column('ref3SctpAssociation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('ref1SctpAssociation', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatanbcommeas',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4162,7 +4162,7 @@ def upgrade():
     sa.Column('measFilterCoeff', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nbCMCfgNote', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatanbcommeasprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4179,7 +4179,7 @@ def upgrade():
     sa.Column('profileId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatanbdedmeas',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4206,7 +4206,7 @@ def upgrade():
     sa.Column('measFilterCoeff', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nbDMCfgNote', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatanbdedmeasprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4222,7 +4222,7 @@ def upgrade():
     sa.Column('profileId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatapchevuetrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4244,7 +4244,7 @@ def upgrade():
     sa.Column('rptThres', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatapicosonmeascfg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4267,7 +4267,7 @@ def upgrade():
     sa.Column('initTimePointNum', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('initialTimePoint3', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataplbal',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4347,7 +4347,7 @@ def upgrade():
     sa.Column('initRrcLBSw', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dRWithoutLdComSwch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataplmnadjfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4362,7 +4362,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refPlmnGroup', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataplmnspecfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4377,7 +4377,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('refLocalPlmnGroup', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataprach',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4413,7 +4413,7 @@ def upgrade():
     sa.Column('dynPstLevelInit', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('constVal', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataprdrttueint',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4433,7 +4433,7 @@ def upgrade():
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('prdRptInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataprisel',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4479,7 +4479,7 @@ def upgrade():
     sa.Column('qrxlevminFDD', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('utranInterFNum', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatapsevttpueint',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4501,7 +4501,7 @@ def upgrade():
     sa.Column('ueIntMCfgNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatapwrlimtpueint',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4523,7 +4523,7 @@ def upgrade():
     sa.Column('ueIntMCfgNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataqchat',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4545,7 +4545,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('nReleasedQChat', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('tQchatdormancy', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataqosfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4559,7 +4559,7 @@ def upgrade():
     sa.Column('vsDataQosFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatarachevtuetrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4588,7 +4588,7 @@ def upgrade():
     sa.Column('txInterCfgPre', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatarachprduetrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4612,7 +4612,7 @@ def upgrade():
     sa.Column('measQuantity', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataratecnoevmeasfore',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4638,7 +4638,7 @@ def upgrade():
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('thresh', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataratecnoevmeasforg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4664,7 +4664,7 @@ def upgrade():
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('thresh', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataratecnoprdmeas',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4686,7 +4686,7 @@ def upgrade():
     sa.Column('prdRptInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('interRatCfgNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataratmeasnosrvspec',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4703,7 +4703,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedByURatEcNoPrdMeas', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedByURatRscpPrdMeas', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataratmeasprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4719,7 +4719,7 @@ def upgrade():
     sa.Column('profileId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataratmeassrvspec',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4739,7 +4739,7 @@ def upgrade():
     sa.Column('srvCategory', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedByURatRscpEvMeasforG', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataratrscpevmeasfore',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4765,7 +4765,7 @@ def upgrade():
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('thresh', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataratrscpevmeasforg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4791,7 +4791,7 @@ def upgrade():
     sa.Column('hysteresis', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('thresh', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataratrscpprdmeas',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4813,7 +4813,7 @@ def upgrade():
     sa.Column('prdRptInterval', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('interRatCfgNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatarlevtrttueint',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4835,7 +4835,7 @@ def upgrade():
     sa.Column('ueIntMCfgNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('measRptTrMod', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatarncfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5070,7 +5070,7 @@ def upgrade():
     sa.Column('psNriBitNum', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('startDsarCelNum', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatarncinfo',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5164,7 +5164,7 @@ def upgrade():
     sa.Column('olpcBerSwitch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rotIncrsStep', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatarncpool',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5185,7 +5185,7 @@ def upgrade():
     sa.Column('rncLdCheckPrd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rRelocDelayTimer', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatarnlucfg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5304,7 +5304,7 @@ def upgrade():
     sa.Column('RnluResPara67', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('RnluResPara68', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('RnluResPara69', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataroutingarea',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5320,7 +5320,7 @@ def upgrade():
     sa.Column('rac', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatarrccategorybasprimapping',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5337,7 +5337,7 @@ def upgrade():
     sa.Column('rrcSetupCategory', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatarrccategorymapping',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5354,7 +5354,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rrcSetupCause', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatarsvdueglobalpara',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5397,7 +5397,7 @@ def upgrade():
     sa.Column('vipTcpOptSwch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('rsvdUeStateChgSwch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatarsvdueimsilist',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5424,7 +5424,7 @@ def upgrade():
     sa.Column('csHspaSchPrio', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('imsiDgt', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatarsvdusersrvpc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5492,7 +5492,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dwThrSampNumTti10', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxUlDpchPwr', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatasccpch',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5513,7 +5513,7 @@ def upgrade():
     sa.Column('sccpchOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('sccpchUsage', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataschprimapping',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5532,7 +5532,7 @@ def upgrade():
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('bearerType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataschprimappingprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5548,7 +5548,7 @@ def upgrade():
     sa.Column('profileId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataservicearea',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5564,7 +5564,7 @@ def upgrade():
     sa.Column('sac', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatasignaltracecfg',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5591,7 +5591,7 @@ def upgrade():
     sa.Column('StartTimeList', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('StopDate', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatasrvbasedho',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5615,7 +5615,7 @@ def upgrade():
     sa.Column('srvHoIndCs64', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('srvHoComStra', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatasrvdivpc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5663,7 +5663,7 @@ def upgrade():
     sa.Column('eagchPOTti2', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('maxUlDpchPwr', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatasrvfunction',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5677,7 +5677,7 @@ def upgrade():
     sa.Column('vsDataSrvFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatasrvpc',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5745,7 +5745,7 @@ def upgrade():
     sa.Column('maxBerTarget', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('dwThrSampNumTti10', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatasrvpcprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5762,7 +5762,7 @@ def upgrade():
     sa.Column('profileId', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatasubsrv',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5793,7 +5793,7 @@ def upgrade():
     sa.Column('trafficClass', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('direction', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatatbtype',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5815,7 +5815,7 @@ def upgrade():
     sa.Column('dlResBwd', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('bearerType', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatatbtypeprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5832,7 +5832,7 @@ def upgrade():
     sa.Column('intialTransportModeScene', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatatrvmeasprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5861,7 +5861,7 @@ def upgrade():
     sa.Column('reservedByUDedEdchEvUpTrv', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedByUComEdchEvUpTrv', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatauecnst',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5897,7 +5897,7 @@ def upgrade():
     sa.Column('t323Swch', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('t300', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdataueintmeasprofile',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5919,7 +5919,7 @@ def upgrade():
     sa.Column('reservedByUEvtRttUeInt', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('reservedByUHoEvtTPUeInt', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatautrancellfdd',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6088,7 +6088,7 @@ def upgrade():
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('celAvaSubCha', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('uncertAltitude', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatautranregarea',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6103,7 +6103,7 @@ def upgrade():
     sa.Column('ura', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
     op.create_table('vsdatautranrelation',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6141,207 +6141,207 @@ def upgrade():
     sa.Column('useOfHCS', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('description', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('cellIndivOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
-    schema='zte_cm_3g'
+    schema='zte_bulkcm_umts'
     )
 
 
 def downgrade():
-    op.drop_table('vsdatautranrelation', schema='zte_cm_3g')
-    op.drop_table('vsdatautranregarea', schema='zte_cm_3g')
-    op.drop_table('vsdatautrancellfdd', schema='zte_cm_3g')
-    op.drop_table('vsdataueintmeasprofile', schema='zte_cm_3g')
-    op.drop_table('vsdatauecnst', schema='zte_cm_3g')
-    op.drop_table('vsdatatrvmeasprofile', schema='zte_cm_3g')
-    op.drop_table('vsdatatbtypeprofile', schema='zte_cm_3g')
-    op.drop_table('vsdatatbtype', schema='zte_cm_3g')
-    op.drop_table('vsdatasubsrv', schema='zte_cm_3g')
-    op.drop_table('vsdatasrvpcprofile', schema='zte_cm_3g')
-    op.drop_table('vsdatasrvpc', schema='zte_cm_3g')
-    op.drop_table('vsdatasrvfunction', schema='zte_cm_3g')
-    op.drop_table('vsdatasrvdivpc', schema='zte_cm_3g')
-    op.drop_table('vsdatasrvbasedho', schema='zte_cm_3g')
-    op.drop_table('vsdatasignaltracecfg', schema='zte_cm_3g')
-    op.drop_table('vsdataservicearea', schema='zte_cm_3g')
-    op.drop_table('vsdataschprimappingprofile', schema='zte_cm_3g')
-    op.drop_table('vsdataschprimapping', schema='zte_cm_3g')
-    op.drop_table('vsdatasccpch', schema='zte_cm_3g')
-    op.drop_table('vsdatarsvdusersrvpc', schema='zte_cm_3g')
-    op.drop_table('vsdatarsvdueimsilist', schema='zte_cm_3g')
-    op.drop_table('vsdatarsvdueglobalpara', schema='zte_cm_3g')
-    op.drop_table('vsdatarrccategorymapping', schema='zte_cm_3g')
-    op.drop_table('vsdatarrccategorybasprimapping', schema='zte_cm_3g')
-    op.drop_table('vsdataroutingarea', schema='zte_cm_3g')
-    op.drop_table('vsdatarnlucfg', schema='zte_cm_3g')
-    op.drop_table('vsdatarncpool', schema='zte_cm_3g')
-    op.drop_table('vsdatarncinfo', schema='zte_cm_3g')
-    op.drop_table('vsdatarncfunction', schema='zte_cm_3g')
-    op.drop_table('vsdatarlevtrttueint', schema='zte_cm_3g')
-    op.drop_table('vsdataratrscpprdmeas', schema='zte_cm_3g')
-    op.drop_table('vsdataratrscpevmeasforg', schema='zte_cm_3g')
-    op.drop_table('vsdataratrscpevmeasfore', schema='zte_cm_3g')
-    op.drop_table('vsdataratmeassrvspec', schema='zte_cm_3g')
-    op.drop_table('vsdataratmeasprofile', schema='zte_cm_3g')
-    op.drop_table('vsdataratmeasnosrvspec', schema='zte_cm_3g')
-    op.drop_table('vsdataratecnoprdmeas', schema='zte_cm_3g')
-    op.drop_table('vsdataratecnoevmeasforg', schema='zte_cm_3g')
-    op.drop_table('vsdataratecnoevmeasfore', schema='zte_cm_3g')
-    op.drop_table('vsdatarachprduetrv', schema='zte_cm_3g')
-    op.drop_table('vsdatarachevtuetrv', schema='zte_cm_3g')
-    op.drop_table('vsdataqosfunction', schema='zte_cm_3g')
-    op.drop_table('vsdataqchat', schema='zte_cm_3g')
-    op.drop_table('vsdatapwrlimtpueint', schema='zte_cm_3g')
-    op.drop_table('vsdatapsevttpueint', schema='zte_cm_3g')
-    op.drop_table('vsdataprisel', schema='zte_cm_3g')
-    op.drop_table('vsdataprdrttueint', schema='zte_cm_3g')
-    op.drop_table('vsdataprach', schema='zte_cm_3g')
-    op.drop_table('vsdataplmnspecfunction', schema='zte_cm_3g')
-    op.drop_table('vsdataplmnadjfunction', schema='zte_cm_3g')
-    op.drop_table('vsdataplbal', schema='zte_cm_3g')
-    op.drop_table('vsdatapicosonmeascfg', schema='zte_cm_3g')
-    op.drop_table('vsdatapchevuetrv', schema='zte_cm_3g')
-    op.drop_table('vsdatanbdedmeasprofile', schema='zte_cm_3g')
-    op.drop_table('vsdatanbdedmeas', schema='zte_cm_3g')
-    op.drop_table('vsdatanbcommeasprofile', schema='zte_cm_3g')
-    op.drop_table('vsdatanbcommeas', schema='zte_cm_3g')
-    op.drop_table('vsdatanbaplink', schema='zte_cm_3g')
-    op.drop_table('vsdatamr', schema='zte_cm_3g')
-    op.drop_table('vsdatampoprofile', schema='zte_cm_3g')
-    op.drop_table('vsdatampo', schema='zte_cm_3g')
-    op.drop_table('vsdatamgwtrpathcir', schema='zte_cm_3g')
-    op.drop_table('vsdatamgwtrpath', schema='zte_cm_3g')
-    op.drop_table('vsdatalogicalrnc', schema='zte_cm_3g')
-    op.drop_table('vsdatalogicalmsclinkgroup', schema='zte_cm_3g')
-    op.drop_table('vsdatalogicalmsclink', schema='zte_cm_3g')
-    op.drop_table('vsdatalogicalmgwlink', schema='zte_cm_3g')
-    op.drop_table('vsdatalogicaliurqos', schema='zte_cm_3g')
-    op.drop_table('vsdatalogicaliurlink', schema='zte_cm_3g')
-    op.drop_table('vsdatalogicaliurglink', schema='zte_cm_3g')
-    op.drop_table('vsdatalogicaliupslinkgroup', schema='zte_cm_3g')
-    op.drop_table('vsdatalogicaliupslink', schema='zte_cm_3g')
-    op.drop_table('vsdatalogicaliublink', schema='zte_cm_3g')
-    op.drop_table('vsdatalogicalcell', schema='zte_cm_3g')
-    op.drop_table('vsdatalocationarea', schema='zte_cm_3g')
-    op.drop_table('vsdataldctrl', schema='zte_cm_3g')
-    op.drop_table('vsdataiurtrpathcir', schema='zte_cm_3g')
-    op.drop_table('vsdataiurtrpath', schema='zte_cm_3g')
-    op.drop_table('vsdataiurlink', schema='zte_cm_3g')
-    op.drop_table('vsdataiurglink', schema='zte_cm_3g')
-    op.drop_table('vsdataiupstrpathcir', schema='zte_cm_3g')
-    op.drop_table('vsdataiupstrpath', schema='zte_cm_3g')
-    op.drop_table('vsdataiupslink', schema='zte_cm_3g')
-    op.drop_table('vsdataiucslink', schema='zte_cm_3g')
-    op.drop_table('vsdataiucnst', schema='zte_cm_3g')
-    op.drop_table('vsdataiubtrpathcir', schema='zte_cm_3g')
-    op.drop_table('vsdataiubtrpath', schema='zte_cm_3g')
-    op.drop_table('vsdataiublink', schema='zte_cm_3g')
-    op.drop_table('vsdataipslaextask', schema='zte_cm_3g')
-    op.drop_table('vsdataiplicense', schema='zte_cm_3g')
-    op.drop_table('vsdataipbm', schema='zte_cm_3g')
-    op.drop_table('vsdataintrarscpprdmeas', schema='zte_cm_3g')
-    op.drop_table('vsdataintrarscpevmeasford', schema='zte_cm_3g')
-    op.drop_table('vsdataintrarscpevmeas', schema='zte_cm_3g')
-    op.drop_table('vsdataintrameassrvspec', schema='zte_cm_3g')
-    op.drop_table('vsdataintrameasprofile', schema='zte_cm_3g')
-    op.drop_table('vsdataintrameasnosrvspec', schema='zte_cm_3g')
-    op.drop_table('vsdataintraecnoprdmeas', schema='zte_cm_3g')
-    op.drop_table('vsdataintraecnoevmeasford', schema='zte_cm_3g')
-    op.drop_table('vsdataintraecnoevmeas', schema='zte_cm_3g')
-    op.drop_table('vsdatainterrscpprdmeas', schema='zte_cm_3g')
-    op.drop_table('vsdatainterrscpevmeasforu', schema='zte_cm_3g')
-    op.drop_table('vsdatainterrscpevmeasforg', schema='zte_cm_3g')
-    op.drop_table('vsdatainterrscpevmeasfore', schema='zte_cm_3g')
-    op.drop_table('vsdataintermeasrvspec', schema='zte_cm_3g')
-    op.drop_table('vsdataintermeasprofile', schema='zte_cm_3g')
-    op.drop_table('vsdataintermeasnosrvspec', schema='zte_cm_3g')
-    op.drop_table('vsdatainterecnoprdmeas', schema='zte_cm_3g')
-    op.drop_table('vsdatainterecnoevmeasforu', schema='zte_cm_3g')
-    op.drop_table('vsdatainterecnoevmeasforg', schema='zte_cm_3g')
-    op.drop_table('vsdatainterecnoevmeasfore', schema='zte_cm_3g')
-    op.drop_table('vsdatahspa', schema='zte_cm_3g')
-    op.drop_table('vsdatahoevttpueint', schema='zte_cm_3g')
-    op.drop_table('vsdatagsmrelation', schema='zte_cm_3g')
-    op.drop_table('vsdatagloac', schema='zte_cm_3g')
-    op.drop_table('vsdatagbrreslimitprofile', schema='zte_cm_3g')
-    op.drop_table('vsdatagbrreslimit', schema='zte_cm_3g')
-    op.drop_table('vsdatafullsignaltrace', schema='zte_cm_3g')
-    op.drop_table('vsdataftpinfocfg', schema='zte_cm_3g')
-    op.drop_table('vsdatafachevuptrv', schema='zte_cm_3g')
-    op.drop_table('vsdataexternalutrancellfdd', schema='zte_cm_3g')
-    op.drop_table('vsdataexternalrncfunction', schema='zte_cm_3g')
-    op.drop_table('vsdataexternalgsmcell', schema='zte_cm_3g')
-    op.drop_table('vsdataexternaleutrancellfdd', schema='zte_cm_3g')
-    op.drop_table('vsdataexternalenbfunction', schema='zte_cm_3g')
-    op.drop_table('vsdataevtrttueint', schema='zte_cm_3g')
-    op.drop_table('vsdataeutranrelation', schema='zte_cm_3g')
-    op.drop_table('vsdataettiedchevuptrv', schema='zte_cm_3g')
-    op.drop_table('vsdataefachpch', schema='zte_cm_3g')
-    op.drop_table('vsdataefach', schema='zte_cm_3g')
-    op.drop_table('vsdataedchtodchuptrv', schema='zte_cm_3g')
-    op.drop_table('vsdataedchrcfach', schema='zte_cm_3g')
-    op.drop_table('vsdataedchrcdchprofile', schema='zte_cm_3g')
-    op.drop_table('vsdataedchrcdch', schema='zte_cm_3g')
-    op.drop_table('vsdatadtxdrxprofile', schema='zte_cm_3g')
-    op.drop_table('vsdatadtxdrx', schema='zte_cm_3g')
-    op.drop_table('vsdatadrbcprofile', schema='zte_cm_3g')
-    op.drop_table('vsdatadrbc', schema='zte_cm_3g')
-    op.drop_table('vsdatadpiprocmap', schema='zte_cm_3g')
-    op.drop_table('vsdatadpipartnername', schema='zte_cm_3g')
-    op.drop_table('vsdatadpipartnerip', schema='zte_cm_3g')
-    op.drop_table('vsdatadpidrbc', schema='zte_cm_3g')
-    op.drop_table('vsdatadpibasprimapping', schema='zte_cm_3g')
-    op.drop_table('vsdatadpiappsrvprofile', schema='zte_cm_3g')
-    op.drop_table('vsdatadpiappsrvpri', schema='zte_cm_3g')
-    op.drop_table('vsdatadpiappsrv', schema='zte_cm_3g')
-    op.drop_table('vsdatadpialgparam', schema='zte_cm_3g')
-    op.drop_table('vsdatadpi', schema='zte_cm_3g')
-    op.drop_table('vsdatadiamondusersrvpc', schema='zte_cm_3g')
-    op.drop_table('vsdatadiamonduserimsilist', schema='zte_cm_3g')
-    op.drop_table('vsdatadiamonduserglobalpara', schema='zte_cm_3g')
-    op.drop_table('vsdatadedsrvtbprofile', schema='zte_cm_3g')
-    op.drop_table('vsdatadedsrvtb', schema='zte_cm_3g')
-    op.drop_table('vsdatadedshsdschevuptrv', schema='zte_cm_3g')
-    op.drop_table('vsdatadedibhsdschevuptrv', schema='zte_cm_3g')
-    op.drop_table('vsdatadededchevuptrv', schema='zte_cm_3g')
-    op.drop_table('vsdatadchprduetrv', schema='zte_cm_3g')
-    op.drop_table('vsdatadchevuptrv', schema='zte_cm_3g')
-    op.drop_table('vsdatadchevuetrv', schema='zte_cm_3g')
-    op.drop_table('vsdatacpuctrlpri', schema='zte_cm_3g')
-    op.drop_table('vsdatacompressmode', schema='zte_cm_3g')
-    op.drop_table('vsdatacommedch', schema='zte_cm_3g')
-    op.drop_table('vsdatacomhsdschevuptrv', schema='zte_cm_3g')
-    op.drop_table('vsdatacomedchevuptrv', schema='zte_cm_3g')
-    op.drop_table('vsdatacninfo', schema='zte_cm_3g')
-    op.drop_table('vsdatacmr', schema='zte_cm_3g')
-    op.drop_table('vsdatachspa', schema='zte_cm_3g')
-    op.drop_table('vsdatacfnoffset', schema='zte_cm_3g')
-    op.drop_table('vsdatacelsel', schema='zte_cm_3g')
-    op.drop_table('vsdatacelinfofdd', schema='zte_cm_3g')
-    op.drop_table('vsdatabpriacprofile', schema='zte_cm_3g')
-    op.drop_table('vsdatabpriac', schema='zte_cm_3g')
-    op.drop_table('vsdatabasprimapping', schema='zte_cm_3g')
-    op.drop_table('vsdatabaspri', schema='zte_cm_3g')
-    op.drop_table('vsdataappsrvtype', schema='zte_cm_3g')
-    op.drop_table('vsdataappprimappingprofile', schema='zte_cm_3g')
-    op.drop_table('vsdataappprimapping', schema='zte_cm_3g')
-    op.drop_table('vsdataanr', schema='zte_cm_3g')
-    op.drop_table('vsdataamrevttpueint', schema='zte_cm_3g')
-    op.drop_table('vsdataaich', schema='zte_cm_3g')
-    op.drop_table('utranrelation', schema='zte_cm_3g')
-    op.drop_table('utrancellfdd', schema='zte_cm_3g')
-    op.drop_table('subnetwork_2', schema='zte_cm_3g')
-    op.drop_table('subnetwork', schema='zte_cm_3g')
-    op.drop_table('rncfunction', schema='zte_cm_3g')
-    op.drop_table('mecontext', schema='zte_cm_3g')
-    op.drop_table('managedelement', schema='zte_cm_3g')
-    op.drop_table('iublink', schema='zte_cm_3g')
-    op.drop_table('gsmrelation', schema='zte_cm_3g')
-    op.drop_table('fileheader', schema='zte_cm_3g')
-    op.drop_table('filefooter', schema='zte_cm_3g')
-    op.drop_table('externalutrancellfdd', schema='zte_cm_3g')
-    op.drop_table('externalrncfunction', schema='zte_cm_3g')
-    op.drop_table('externalgsmcell', schema='zte_cm_3g')
-    op.drop_table('externaleutrancellfdd', schema='zte_cm_3g')
-    op.drop_table('externalenbfunction', schema='zte_cm_3g')
-    op.drop_table('eutranrelation', schema='zte_cm_3g')
-    op.drop_table('configdata', schema='zte_cm_3g')
-    op.drop_table('bulkcmconfigdatafile', schema='zte_cm_3g')
+    op.drop_table('vsdatautranrelation', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatautranregarea', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatautrancellfdd', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataueintmeasprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatauecnst', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatatrvmeasprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatatbtypeprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatatbtype', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatasubsrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatasrvpcprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatasrvpc', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatasrvfunction', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatasrvdivpc', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatasrvbasedho', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatasignaltracecfg', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataservicearea', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataschprimappingprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataschprimapping', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatasccpch', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatarsvdusersrvpc', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatarsvdueimsilist', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatarsvdueglobalpara', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatarrccategorymapping', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatarrccategorybasprimapping', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataroutingarea', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatarnlucfg', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatarncpool', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatarncinfo', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatarncfunction', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatarlevtrttueint', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataratrscpprdmeas', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataratrscpevmeasforg', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataratrscpevmeasfore', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataratmeassrvspec', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataratmeasprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataratmeasnosrvspec', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataratecnoprdmeas', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataratecnoevmeasforg', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataratecnoevmeasfore', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatarachprduetrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatarachevtuetrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataqosfunction', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataqchat', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatapwrlimtpueint', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatapsevttpueint', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataprisel', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataprdrttueint', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataprach', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataplmnspecfunction', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataplmnadjfunction', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataplbal', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatapicosonmeascfg', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatapchevuetrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatanbdedmeasprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatanbdedmeas', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatanbcommeasprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatanbcommeas', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatanbaplink', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatamr', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatampoprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatampo', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatamgwtrpathcir', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatamgwtrpath', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatalogicalrnc', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatalogicalmsclinkgroup', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatalogicalmsclink', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatalogicalmgwlink', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatalogicaliurqos', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatalogicaliurlink', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatalogicaliurglink', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatalogicaliupslinkgroup', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatalogicaliupslink', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatalogicaliublink', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatalogicalcell', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatalocationarea', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataldctrl', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataiurtrpathcir', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataiurtrpath', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataiurlink', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataiurglink', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataiupstrpathcir', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataiupstrpath', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataiupslink', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataiucslink', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataiucnst', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataiubtrpathcir', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataiubtrpath', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataiublink', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataipslaextask', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataiplicense', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataipbm', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataintrarscpprdmeas', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataintrarscpevmeasford', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataintrarscpevmeas', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataintrameassrvspec', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataintrameasprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataintrameasnosrvspec', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataintraecnoprdmeas', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataintraecnoevmeasford', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataintraecnoevmeas', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatainterrscpprdmeas', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatainterrscpevmeasforu', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatainterrscpevmeasforg', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatainterrscpevmeasfore', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataintermeasrvspec', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataintermeasprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataintermeasnosrvspec', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatainterecnoprdmeas', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatainterecnoevmeasforu', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatainterecnoevmeasforg', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatainterecnoevmeasfore', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatahspa', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatahoevttpueint', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatagsmrelation', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatagloac', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatagbrreslimitprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatagbrreslimit', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatafullsignaltrace', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataftpinfocfg', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatafachevuptrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataexternalutrancellfdd', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataexternalrncfunction', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataexternalgsmcell', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataexternaleutrancellfdd', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataexternalenbfunction', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataevtrttueint', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataeutranrelation', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataettiedchevuptrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataefachpch', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataefach', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataedchtodchuptrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataedchrcfach', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataedchrcdchprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataedchrcdch', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadtxdrxprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadtxdrx', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadrbcprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadrbc', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadpiprocmap', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadpipartnername', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadpipartnerip', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadpidrbc', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadpibasprimapping', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadpiappsrvprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadpiappsrvpri', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadpiappsrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadpialgparam', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadpi', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadiamondusersrvpc', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadiamonduserimsilist', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadiamonduserglobalpara', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadedsrvtbprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadedsrvtb', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadedshsdschevuptrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadedibhsdschevuptrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadededchevuptrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadchprduetrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadchevuptrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatadchevuetrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatacpuctrlpri', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatacompressmode', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatacommedch', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatacomhsdschevuptrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatacomedchevuptrv', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatacninfo', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatacmr', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatachspa', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatacfnoffset', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatacelsel', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatacelinfofdd', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatabpriacprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatabpriac', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatabasprimapping', schema='zte_bulkcm_umts')
+    op.drop_table('vsdatabaspri', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataappsrvtype', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataappprimappingprofile', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataappprimapping', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataanr', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataamrevttpueint', schema='zte_bulkcm_umts')
+    op.drop_table('vsdataaich', schema='zte_bulkcm_umts')
+    op.drop_table('utranrelation', schema='zte_bulkcm_umts')
+    op.drop_table('utrancellfdd', schema='zte_bulkcm_umts')
+    op.drop_table('subnetwork_2', schema='zte_bulkcm_umts')
+    op.drop_table('subnetwork', schema='zte_bulkcm_umts')
+    op.drop_table('rncfunction', schema='zte_bulkcm_umts')
+    op.drop_table('mecontext', schema='zte_bulkcm_umts')
+    op.drop_table('managedelement', schema='zte_bulkcm_umts')
+    op.drop_table('iublink', schema='zte_bulkcm_umts')
+    op.drop_table('gsmrelation', schema='zte_bulkcm_umts')
+    op.drop_table('fileheader', schema='zte_bulkcm_umts')
+    op.drop_table('filefooter', schema='zte_bulkcm_umts')
+    op.drop_table('externalutrancellfdd', schema='zte_bulkcm_umts')
+    op.drop_table('externalrncfunction', schema='zte_bulkcm_umts')
+    op.drop_table('externalgsmcell', schema='zte_bulkcm_umts')
+    op.drop_table('externaleutrancellfdd', schema='zte_bulkcm_umts')
+    op.drop_table('externalenbfunction', schema='zte_bulkcm_umts')
+    op.drop_table('eutranrelation', schema='zte_bulkcm_umts')
+    op.drop_table('configdata', schema='zte_bulkcm_umts')
+    op.drop_table('bulkcmconfigdatafile', schema='zte_bulkcm_umts')

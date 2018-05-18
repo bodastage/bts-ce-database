@@ -34,11 +34,17 @@ def upgrade():
     op.execute("CREATE SCHEMA zte_cm_2g")
     op.execute("CREATE SCHEMA zte_cm_3g")
     op.execute("CREATE SCHEMA zte_cm_4g")
+    op.execute("CREATE SCHEMA zte_bulkcm_gsm")
+    op.execute("CREATE SCHEMA zte_bulkcm_umts")
+    op.execute("CREATE SCHEMA zte_bulkcm_lte")
 
     # Nokia
     op.execute("CREATE SCHEMA nokia_cm_2g")
     op.execute("CREATE SCHEMA nokia_cm_3g")
     op.execute("CREATE SCHEMA nokia_cm_4g")
+    op.execute("CREATE SCHEMA nokia_raml2_gsm")
+    op.execute("CREATE SCHEMA nokia_raml2_umts")
+    op.execute("CREATE SCHEMA nokia_raml2_lte")
 
     # Alcatel
     op.execute("CREATE SCHEMA alcatel_cm_2g")
@@ -66,11 +72,17 @@ def downgrade():
     op.execute("DROP SCHEMA zte_cm_2g")
     op.execute("DROP SCHEMA zte_cm_3g")
     op.execute("DROP SCHEMA zte_cm_4g")
+    op.execute("DROP SCHEMA zte_bulkcm_gsm")
+    op.execute("DROP SCHEMA zte_bulkcm_umts")
+    op.execute("DROP SCHEMA zte_bulkcm_lte")
 
     # Nokia
     op.execute("DROP SCHEMA nokia_cm_2g")
     op.execute("DROP SCHEMA nokia_cm_3g")
     op.execute("DROP SCHEMA nokia_cm_4g")
+    op.execute("DROP SCHEMA nokia_raml2_gsm")
+    op.execute("DROP SCHEMA nokia_raml2_umts")
+    op.execute("DROP SCHEMA nokia_raml2_lte")
 
     # Alcatel
     op.execute("DROP SCHEMA alcatel_cm_2g")

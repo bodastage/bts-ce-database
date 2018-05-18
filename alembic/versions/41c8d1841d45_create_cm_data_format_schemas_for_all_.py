@@ -1,4 +1,4 @@
-"""Create cm data format schemas for all vendors
+"""Create cm data format schemas for Huawesi
 
 Revision ID: 41c8d1841d45
 Revises: 9bbf9888ebb4
@@ -42,20 +42,8 @@ def upgrade():
 
     op.execute("CREATE SCHEMA huawei_cfgsyn")
 
-    # Ericsson
-    op.execute("CREATE SCHEMA ericsson_blkcm_3g4g")
-    op.execute("CREATE SCHEMA ericsson_eaw_2g")
-    op.execute("CREATE SCHEMA ericsson_cnaiv2_2g")
 
-    #ZTE
-    op.execute("CREATE SCHEMA zte_blkcm_gsm")
-    op.execute("CREATE SCHEMA zte_blkcm_umts")
-    op.execute("CREATE SCHEMA zte_blkcm_lte")
 
-    #Nokia
-    op.execute("CREATE SCHEMA nokia_raml2_gsm")
-    op.execute("CREATE SCHEMA nokia_raml2_umts")
-    op.execute("CREATE SCHEMA nokia_raml2_lte")
 
 
 def downgrade():
@@ -82,17 +70,5 @@ def downgrade():
 
     op.execute("DROP SCHEMA huawei_cfgsyn")
 
-    # Ericsson
-    op.execute("DROP SCHEMA ericsson_blkcm_3g4g")
-    op.execute("DROP SCHEMA ericsson_eaw_2g")
-    op.execute("DROP SCHEMA ericsson_cnaiv2_2g")
 
-    #ZTE
-    op.execute("DROP SCHEMA zte_blkcm_gsm")
-    op.execute("DROP SCHEMA zte_blkcm_umts")
-    op.execute("DROP SCHEMA zte_blkcm_lte")
 
-    #Nokia
-    op.execute("DROP SCHEMA nokia_raml2_gsm")
-    op.execute("DROP SCHEMA nokia_raml2_umts")
-    op.execute("DROP SCHEMA nokia_raml2_lte")
