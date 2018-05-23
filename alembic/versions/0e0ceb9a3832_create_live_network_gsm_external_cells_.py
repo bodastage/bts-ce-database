@@ -36,7 +36,7 @@ def upgrade():
         sa.Column('date_modified', sa.TIMESTAMP, default=sa.func.now()),
         schema=u'live_network'
     )
-    op.execute('ALTER SEQUENCE  live_network.gsm_external_cells_pk_seq RENAME TO seq_gsm_external_cells_data_pk')
+    op.execute('ALTER SEQUENCE  live_network.gsm_external_cells_pk_seq RENAME TO seq_gsm_external_cells_pk')
 
 
 def downgrade():

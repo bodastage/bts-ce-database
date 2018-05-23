@@ -18357,6 +18357,7 @@ XpProgram = ReplaceableObject(
 )
 
 
+
 def upgrade():
     op.create_view(AlarmIRP)
     op.create_view(BulkCmIRP)
@@ -18967,6 +18968,7 @@ def upgrade():
     op.create_view(WifiMobility)
     op.create_view(WifiModule)
     op.create_view(XpProgram)
+
 
 
 def downgrade():

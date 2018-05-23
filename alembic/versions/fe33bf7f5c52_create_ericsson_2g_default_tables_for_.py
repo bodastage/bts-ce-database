@@ -17,7 +17,7 @@ depends_on = None
 
 
 def upgrade():
-    op.create_table('bsc',
+    op.create_table('BSC',
     *[sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -465,7 +465,7 @@ def upgrade():
     sa.Column('OF_APSULPC', sa.CHAR(length=250), autoincrement=False, nullable=True)],
     schema='ericsson_cnaiv2'
     )
-    op.create_table('channel_group',
+    op.create_table('CHANNEL_GROUP',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -505,7 +505,7 @@ def upgrade():
     sa.Column('BSPWRT', sa.CHAR(length=250), autoincrement=False, nullable=True),
     schema='ericsson_cnaiv2'
     )
-    op.create_table('external_cell',
+    op.create_table('EXTERNAL_CELL',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -547,7 +547,7 @@ def upgrade():
     sa.Column('SCHO', sa.CHAR(length=250), autoincrement=False, nullable=True),
     schema='ericsson_cnaiv2'
     )
-    op.create_table('inner_cell',
+    op.create_table('INNER_CELL',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -571,7 +571,7 @@ def upgrade():
     sa.Column('RO', sa.CHAR(length=250), autoincrement=False, nullable=True),
     schema='ericsson_cnaiv2'
     )
-    op.create_table('internal_cell',
+    op.create_table('INTERNAL_CELL',
     *[sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -972,7 +972,7 @@ def upgrade():
     sa.Column('SSDES16QAM', sa.CHAR(length=250), autoincrement=False, nullable=True)],
     schema='ericsson_cnaiv2'
     )
-    op.create_table('msc',
+    op.create_table('MSC',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -1002,7 +1002,7 @@ def upgrade():
     sa.Column('CIPHERALGALLOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
     schema='ericsson_cnaiv2'
     )
-    op.create_table('nrel',
+    op.create_table('NREL',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -1032,7 +1032,7 @@ def upgrade():
     sa.Column('TROFFSET', sa.CHAR(length=250), autoincrement=False, nullable=True),
     schema='ericsson_cnaiv2'
     )
-    op.create_table('outer_cell',
+    op.create_table('OUTER_CELL',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -1051,7 +1051,7 @@ def upgrade():
     sa.Column('NCS', sa.CHAR(length=250), autoincrement=False, nullable=True),
     schema='ericsson_cnaiv2'
     )
-    op.create_table('overlaid_cell',
+    op.create_table('OVERLAID_CELL',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -1142,7 +1142,7 @@ def upgrade():
     sa.Column('TMAXIHO', sa.CHAR(length=250), autoincrement=False, nullable=True),
     schema='ericsson_cnaiv2'
     )
-    op.create_table('priority_profile',
+    op.create_table('PRIORITY_PROFILE',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -1186,7 +1186,7 @@ def upgrade():
     sa.Column('PRI_PROFILE_NAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
     schema='ericsson_cnaiv2'
     )
-    op.create_table('site',
+    op.create_table('SITE',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -1202,7 +1202,7 @@ def upgrade():
     sa.Column('SITE_NAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
     schema='ericsson_cnaiv2'
     )
-    op.create_table('tg',
+    op.create_table('TG',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -1215,7 +1215,7 @@ def upgrade():
     sa.Column('TG_NAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
     schema='ericsson_cnaiv2'
     )
-    op.create_table('utran_external_cell',
+    op.create_table('UTRAN_EXTERNAL_CELL',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -1236,7 +1236,7 @@ def upgrade():
     sa.Column('USEDFREQTHRESH2DECNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
     schema='ericsson_cnaiv2'
     )
-    op.create_table('utran_nrel',
+    op.create_table('UTRAN_NREL',
     sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('capabilities', sa.CHAR(length=250), autoincrement=False, nullable=True),
     sa.Column('varDateTime', postgresql.TIMESTAMP(), autoincrement=False, nullable=True),
@@ -1252,17 +1252,17 @@ def upgrade():
 
 
 def downgrade():
-    op.drop_table('utran_nrel', schema='ericsson_cnaiv2')
-    op.drop_table('utran_external_cell', schema='ericsson_cnaiv2')
-    op.drop_table('tg', schema='ericsson_cnaiv2')
-    op.drop_table('site', schema='ericsson_cnaiv2')
-    op.drop_table('priority_profile', schema='ericsson_cnaiv2')
-    op.drop_table('overlaid_cell', schema='ericsson_cnaiv2')
-    op.drop_table('outer_cell', schema='ericsson_cnaiv2')
-    op.drop_table('nrel', schema='ericsson_cnaiv2')
-    op.drop_table('msc', schema='ericsson_cnaiv2')
-    op.drop_table('internal_cell', schema='ericsson_cnaiv2')
-    op.drop_table('inner_cell', schema='ericsson_cnaiv2')
-    op.drop_table('external_cell', schema='ericsson_cnaiv2')
-    op.drop_table('channel_group', schema='ericsson_cnaiv2')
-    op.drop_table('bsc', schema='ericsson_cnaiv2')
+    op.drop_table('UTRAN_NREL', schema='ericsson_cnaiv2')
+    op.drop_table('UTRAN_EXTERNAL_CELL', schema='ericsson_cnaiv2')
+    op.drop_table('TG', schema='ericsson_cnaiv2')
+    op.drop_table('SITE', schema='ericsson_cnaiv2')
+    op.drop_table('PRIORITY_PROFILE', schema='ericsson_cnaiv2')
+    op.drop_table('OVERLAID_CELL', schema='ericsson_cnaiv2')
+    op.drop_table('OUTER_CELL', schema='ericsson_cnaiv2')
+    op.drop_table('NREL', schema='ericsson_cnaiv2')
+    op.drop_table('MSC', schema='ericsson_cnaiv2')
+    op.drop_table('INTERNAL_CELL', schema='ericsson_cnaiv2')
+    op.drop_table('INNER_CELL', schema='ericsson_cnaiv2')
+    op.drop_table('EXTERNAL_CELL', schema='ericsson_cnaiv2')
+    op.drop_table('CHANNEL_GROUP', schema='ericsson_cnaiv2')
+    op.drop_table('BSC', schema='ericsson_cnaiv2')

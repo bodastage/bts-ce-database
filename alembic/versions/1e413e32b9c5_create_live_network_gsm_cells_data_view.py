@@ -19,26 +19,31 @@ depends_on = None
 def upgrade():
     op.execute("""
     CREATE OR REPLACE VIEW live_network.vw_gsm_cells_data AS
-     SELECT gsm_cells_data.pk,
-        gsm_cells_data.name,
-        gsm_cells_data.cell_pk,
-        gsm_cells_data.ci,
-        gsm_cells_data.bcc,
-        gsm_cells_data.ncc,
-        gsm_cells_data.bsic,
-        gsm_cells_data.bcch,
-        gsm_cells_data.lac,
-        gsm_cells_data.latitude,
-        gsm_cells_data.longitude,
-        gsm_cells_data.cgi,
-        gsm_cells_data.azimuth,
-        gsm_cells_data.height,
-        gsm_cells_data.mechanical_tilt,
-        gsm_cells_data.electrical_tilt,
-        gsm_cells_data.hsn,
-        gsm_cells_data.hopping_type,
-        gsm_cells_data.tch_carriers
-       FROM live_network.gsm_cells_data
+     SELECT 
+        t1.cell_pk as pk,
+        t4."name" as node_name,
+        t3."name" as site_name,
+        t1.name as cell_name,
+        t1.ci,
+        t1.bcc,
+        t1.ncc,
+        t1.bsic,
+        t1.bcch,
+        t1.lac,
+        t1.latitude,
+        t1.longitude,
+        t1.cgi,
+        t1.azimuth,
+        t1.height,
+        t1.mechanical_tilt,
+        t1.electrical_tilt,
+        t1.hsn,
+        t1.hopping_type,
+        t1.tch_carriers
+       FROM live_network.gsm_cells_data t1
+       INNER JOIN live_network.cells t2 on t1.cell_pk = t2.pk
+       INNER JOIN live_network.sites t3 ON t2.site_pk = t3.pk
+       INNER JOIN live_network.nodes t4 on t4.pk = t3.node_pk
     """)
 
 

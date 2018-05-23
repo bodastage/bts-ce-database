@@ -33,7 +33,7 @@ def upgrade():
     )
     op.execute('ALTER SEQUENCE  live_network.sites_pk_seq RENAME TO seq_sites_pk')
 
-    op.create_unique_constraint("uq_site", "sites", ["name", "tech_pk", "vendor_pk"],"live_network")
+    op.create_unique_constraint("uq_site", "sites", ["name", "node_pk", "tech_pk", "vendor_pk"],"live_network")
 
 
 def downgrade():

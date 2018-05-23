@@ -12452,7 +12452,7 @@ def upgrade():
         sa.Column('vsDataTransport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('degradationIsFault', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('syncReference', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('syncReference', sa.Text, autoincrement=False, nullable=True),
         sa.Column('syncRefPriority', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('fixedPosition', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('sfnInitializationTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12517,6 +12517,7 @@ def upgrade():
         sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('vsDataTransport_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('vsDataSynchronization_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('vsDataRadioEquipmentClock_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('vsDataSyncServer_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('protocol', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('serverAddress', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -12818,7 +12819,7 @@ def upgrade():
         sa.Column('supportedCiphers_protocolVersion', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('supportedCiphers_keyExchange', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('supportedCiphers_authentication', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('supportedCiphers_encryption', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('supportedCiphers_encryption', sa.Text, autoincrement=False, nullable=True),
         sa.Column('supportedCiphers_mac', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('supportedCiphers_export', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('supportedCiphers_xossx_name', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -14559,6 +14560,469 @@ def upgrade():
         schema='ericsson_bulkcm'
     )
 
+
+    op.create_table('vsDataEUtranCellFDD',
+        sa.Column('FileName', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('varDateTime', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('configData_dnPrefix', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SubNetwork_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SubNetwork_2_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MeContext_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ManagedElement_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('vsDataENodeBFunction_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('vsDataEUtranCellFDD_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('userLabel', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('frameStartOffset_subFrameOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('administrativeState', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('earfcndl', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('earfcnul', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('cellId', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('physicalLayerCellIdGroup', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('physicalLayerSubCellId', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('tac', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ulChannelBandwidth', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('dlChannelBandwidth', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('noOfPucchCqiUsers', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('noOfPucchSrUsers', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('qciTableRef', sa.Text, autoincrement=False, nullable=True),
+        sa.Column('availabilityStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('useId', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pZeroNominalPusch', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pZeroNominalPucch', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('dlInterferenceManagementActive', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ulInterferenceManagementActive', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('minBestCellHoAttempts', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('cellBarred', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pMaxServingCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('systemInformationBlock3_qHyst', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('systemInformationBlock3_tEvaluation', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_tHystNormal', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_nCellChangeMedium', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_nCellChangeHigh', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_qHystSfMedium', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_qHystSfHigh', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_sIntraSearch', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_sNonIntraSearch', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_sIntraSearchQ', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_sIntraSearchP', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_sNonIntraSearchQ', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_sNonIntraSearchP', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_threshServingLowQ', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_sIntraSearchv920Active', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock3_sNonIntraSearchv920Active', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock6_tReselectionUtra', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock6_tReselectionUtraSfMedium', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock6_tReselectionUtraSfHigh', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock7_tReselectionGeran', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock7_tReselectionGeranSfMedium', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock7_tReselectionGeranSfHigh', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock8_searchWindowSizeCdma', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock8_tReselectionCdmaHrpd', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock8_tReselectionCdmaHrpdSfMedium', sa.CHAR(length=250),
+                  autoincrement=False, nullable=True),
+        sa.Column('systemInformationBlock8_tReselectionCdmaHrpdSfHigh', sa.CHAR(length=250),
+                  autoincrement=False, nullable=True),
+        sa.Column('systemInformationBlock8_tReselectionCdma1xRtt', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('systemInformationBlock8_tReselectionCdma1xRttSfHigh', sa.CHAR(length=250),
+                  autoincrement=False, nullable=True),
+        sa.Column('systemInformationBlock8_tReselectionCdma1xRttSfMedium', sa.CHAR(length=250),
+                  autoincrement=False, nullable=True),
+        sa.Column('qRxLevMin', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('bcCdma2000SysTimeType', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('drxActive', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('initCdma2000SysTimeType', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('networkSignallingValue', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pucchOverdimensioning', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('qRxLevMinOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('activePlmnList_mcc', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('activePlmnList_mnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('activePlmnList_mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('additionalPlmnList_mcc', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('additionalPlmnList_mnc', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('additionalPlmnList_mncLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('additionalPlmnReservedList', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ailgActive', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ailgRef', sa.Text, autoincrement=False, nullable=True),
+        sa.Column('altitude', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('cellRange', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('changeNotification_changeNotificationSIB2', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('changeNotification_changeNotificationSIB3', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('changeNotification_changeNotificationSIB4', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('changeNotification_changeNotificationSIB5', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('changeNotification_changeNotificationSIB6', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('changeNotification_changeNotificationSIB7', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('changeNotification_changeNotificationSIB8', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('changeNotification_changeNotificationSIB1', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('changeNotification_changeNotificationSIB15', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('changeNotification_changeNotificationSIB16', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('changeNotification_changeNotificationSIB13', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('confidence', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('gpsTimeSFN0DecimalSecond', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('gpsTimeSFN0Seconds', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('latitude', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('longitude', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mappingInfo_mappingInfoSIB4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mappingInfo_mappingInfoSIB5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mappingInfo_mappingInfoSIB6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mappingInfo_mappingInfoSIB7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mappingInfo_mappingInfoSIB8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mappingInfo_mappingInfoSIB3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mappingInfo_mappingInfoSIB10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mappingInfo_mappingInfoSIB11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mappingInfo_mappingInfoSIB12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mappingInfo_mappingInfoSIB15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mappingInfo_mappingInfoSIB16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mappingInfo_mappingInfoSIB13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('modificationPeriodCoeff', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('noConsecutiveSubframes', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('orientMajorAxis', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('otdoaSuplActive', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('primaryPlmnReserved', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('prsConfigIndex', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('rachRootSequence', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('siPeriodicity_siPeriodicitySI9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('siPeriodicity_siPeriodicitySI8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('siPeriodicity_siPeriodicitySI10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('siPeriodicity_siPeriodicitySI2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('siPeriodicity_siPeriodicitySI3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('siPeriodicity_siPeriodicitySI4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('siPeriodicity_siPeriodicitySI5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('siPeriodicity_siPeriodicitySI6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('siPeriodicity_siPeriodicitySI7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('siPeriodicity_siPeriodicitySI1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('siWindowLength', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('uncertAltitude', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('uncertSemiMajor', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('uncertSemiMinor', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('prsPeriod', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('covTriggerdBlindHoAllowed', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('dlConfigurableFrequencyStart', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('dlFrequencyAllocationProportion', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ulConfigurableFrequencyStart', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ulFrequencyAllocationProportion', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mixedModeRadio', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('eutranCellPolygon_cornerLatitude', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('eutranCellPolygon_cornerLongitude', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('prsConfigIndexMapped', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('eutranCellCoverage_posCellRadius', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('eutranCellCoverage_posCellOpeningAngle', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('eutranCellCoverage_posCellBearing', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('cellSubscriptionCapacity', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pdcchCfiMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('qQualMin', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('qQualMinOffset', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('rateShapingActive', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('threshServingLow', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ulSrsEnable', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('acBarringForEmergency', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('acBarringForMoData_acBarringFactor', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('acBarringForMoData_acBarringTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('acBarringForMoData_acBarringForSpecialAC', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('acBarringForMoSignalling_acBarringFactor', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('acBarringForMoSignalling_acBarringTime', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('acBarringForMoSignalling_acBarringForSpecialAC', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('acBarringInfoPresent', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('cfraEnable', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('emergencyAreaId', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('lastModification', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pciConflict', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pciConflictCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pciDetectingCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ssacBarringForMMTELVideo_acBarringFactor', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('ssacBarringForMMTELVideo_acBarringTime', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('ssacBarringForMMTELVideo_acBarringForSpecialAC', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('ssacBarringForMMTELVideoPresent', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ssacBarringForMMTELVoice_acBarringFactor', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('ssacBarringForMMTELVoice_acBarringTime', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('ssacBarringForMMTELVoice_acBarringForSpecialAC', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('ssacBarringForMMTELVoicePresent', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('timeOfLastModification', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('highSpeedUEActive', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('hostingDigitalUnit', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pciOSSConflictingCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('advCellSupAction', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('advCellSupSensitivity', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('mobCtrlAtPoorCovActive', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('sdmActive', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('sectorCarrierRef', sa.Text, autoincrement=False, nullable=True),
+        sa.Column('acBarringForCsfb_acBarringFactor', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('acBarringForCsfb_acBarringTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('acBarringForCsfb_acBarringForSpecialAC', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('externalCdma20001xRttCellRef', sa.Text, autoincrement=False, nullable=True),
+        sa.Column('lbUtranOffloadThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('powerLocked', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('zzzTemporary14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('zzzTemporary17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('snExternalCdma20001xRttCellRef', sa.Text, autoincrement=False, nullable=True),
+        sa.Column('commonSrPeriodicity', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('additionalFreqBandList', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('lbEUtranTriggerOffloadThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('lbEUtranCellOffloadCapacity', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('lbEUtranAcceptOffloadThreshold', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pdcchPowerBoostMax', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('isDlOnly', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('alpha', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('freqBand', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('activeServiceAreaId', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('hoOptStatNum', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('cellCapMinCellSubCap', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pdcchOuterLoopInitialAdjVolte', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('hoOptAdjThresholdAbs', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pdcchOuterLoopUpStepPCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('crsGain', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pdcchTargetBler', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pdcchOuterLoopInitialAdjPCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('cellCapMaxCellSubCap', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('expectedMaxNoOfUsersInCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('initialBufferSizeDefault', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pdcchTargetBlerPCell', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pdcchOuterLoopUpStepVolte', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pdcchOuterLoopInitialAdj', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('spectrumEmissionReqMapping', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('additionalSpectrumEmissionValues', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pdcchOuterLoopUpStep', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('cioLowerLimitAdjBySon', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('hoOptStatTime', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('hoOptAdjThresholdPerc', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('cioUpperLimitAdjBySon', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pdcchTargetBlerVolte', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('arpPriorityLevelForSPIFHo', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('servOrPrioRedirectEnabled', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('servOrPrioTriggeredIFHo', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('otdoaCheckEnabled', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('noOfChannelSelectionSets', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('lbabThreshRejectRateHigh', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('prsMutingPattern', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('prsPowerBoosting', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pdschTypeBGain', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('lbabThreshRejectRateLow', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('incrPrioServingFreqActive', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('puschMaxNrOfPrbsPerUe', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('lbabIncr', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('servOrPrioTriggeredErabAction', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('prsMutingPatternLen', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('dummyCdmaBandClass', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('prsTransmisScheme', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('lbabDecr', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('acBarringPresence_acBarringForMoDataPresence', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('acBarringPresence_acBarringForMoSignPresence', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('acBarringPresence_acBarringForCsfbPresence', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('acBarringPresence_acBarringForEmergPresence', sa.CHAR(length=250), autoincrement=False,
+                  nullable=True),
+        sa.Column('lbabThreshTimeHigh', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('channelSelectionSetSize', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('pdcchLaGinrMargin', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('zzzTemporary21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('zzzTemporary22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('zzzTemporary26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='ericsson_bulkcm'
+    )
+
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary23', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary24', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary27', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary19', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('preambleInitialReceivedTargetPower', sa.CHAR(length=250)),
+                  'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('lbabPeriod', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('lbabThreshTimeLow', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('csiRsConfigType8TxFDD', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('tTimeAlignmentTimer', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('cellCapMinMaxWriProt', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('primaryPlmnAlarmSuppr', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('lbTpNonQualFraction', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('additionalPlmnAlarmSupprList', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary29', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('idleModePrioAtReleaseRef', sa.Text), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary30', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary31', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('lbTpRankThreshMin', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary32', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary33', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary34', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary36', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary37', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('includeLcgInMacUeThp', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('acBarringSkipForMmtelVideo', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('acBarringSkipForMmtelVoice', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('acBarringSkipForSms', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('cceDynUeAdmCtrlOverloadThr', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('dlDynUeAdmCtrlOverloadThr', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('puschPwrOffset64qam', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('ulDynUeAdmCtrlRetDiffThr', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('dynUeAdmCtrlFilterConst', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('cellDownlinkCaCapacity', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('dlDynUeAdmCtrlRetDiffThr', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('dynUeAdmCtrlEnabled', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('servOrPrioIFHoSetupBearer', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('ulDynUeAdmCtrlOverloadThr', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('networkSignallingValueCa', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('cceDynUeAdmCtrlRetDiffThr', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('ul64qamEnabled', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('elcEnabled', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('estCellCapUsableFraction', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('ulBlerTargetEnabled', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('allocThrPucchFormat1', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('maxSoftLockBackoffTime', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('maxSentCrsAssistCells', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('deallocThrPucchFormat1', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('dlInternalChannelBandwidth', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('transmissionMode', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('ailgAutoRestartEnabled', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('rtpTimeout', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('enableUeAssistedSigReduction', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('deallocTimerPucchFormat1', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('primaryPsdOffset', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('clusteredPuschMprFactor', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('allocTimerPucchFormat1', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('dl256QamEnabled', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary43', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary44', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary41', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('ulInternalChannelBandwidth', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary42', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary40', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary47', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary45', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary46', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('enableUeAssistedAdaptiveDrx', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('spifhoSetupBearerAtInitialCtxtSetup', sa.CHAR(length=250)),
+                  'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('maxNoClusteredPuschAlloc', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary38', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary39', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('outOfCoverageSrTimerPeriodicity', sa.CHAR(length=250)),
+                  'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('ulSchedCtrlForOocUesEnabled', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('outOfCoverageThreshold', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('resourcePartitionGroupRef', sa.Text), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('mixedCellType', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary50', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('ttiBundlingSwitchThres', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pdcchCovImproveDtx', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('lastSchedLinkAdaptEnabled', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('prioAdditionalFreqBandList', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('ttiBundlingAfterHo', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('adaptiveCfiHoProhibit', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('ttiBundlingAfterReest', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('srDetectHighThres', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('ttiBundlingSwitchThresHyst', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pdcchCovImproveSrb', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('srProcessingLevel', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pdschMaxNrOfPrbsPerUe', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('ulTrigActive', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary49', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary48', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('ulSCellPriority', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pdcchCovImproveQci1', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pciConflictCell_enbId', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('mcc', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('mnc', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('mncLength', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pciDetectingCell_enbId', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('eutranCellPolygon', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('operationalState', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pciConflictCell_cellId', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pciConflictCell_mcc', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pciConflictCell_mnc', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pciConflictCell_mncLength', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pciDetectingCell_cellId', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pciDetectingCell_mcc', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pciDetectingCell_mnc', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pciDetectingCell_mncLength', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('frameStartOffset_symbolOffset', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('frameStartOffset_timeOffset', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('systemInformationBlock3_threshServingLow', sa.CHAR(length=250)),
+                  'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('acBarringForMoDataPresent', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('acBarringForMoSignallingPresent', sa.CHAR(length=250)),
+                  'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('acBarringForCsfbPresent', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary13', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary15', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary16', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pdcchAdmThreshold', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('pdcchAdmEnabled', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('serviceAreaId', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('lbacThreshRejectRateLow', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('lbacDecr', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('lbacPeriod', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('lbacThreshRejectRateHigh', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('lbacThreshTimeHigh', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('spectrumEmissionReq', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('lbacThreshTimeLow', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('activePlmnList', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary20', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary25', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary18', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary28', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('zzzTemporary35', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('maxQciLatencyMeas', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('minQciLatencyMeas', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('maximumTransmissionPower', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('noOfDefPagCyclPrim', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('numOfRxAntennas', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('numOfTxAntennas', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('rachRootSequenceAuto', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD',
+                  sa.Column('systemInformationBlock3_sNonintraSearchv920Active', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('sectorFunctionRef', sa.Text), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('prsEnabled', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('prsStatus', sa.CHAR(length=250)), 'ericsson_bulkcm')
+    op.add_column('vsDataEUtranCellFDD', sa.Column('reservedBy', sa.Text), 'ericsson_bulkcm')
+
+
 def downgrade():
     op.drop_table('AlarmIRP', schema='ericsson_bulkcm')
     op.drop_table('bulkCmConfigDataFile', schema='ericsson_bulkcm')
@@ -14726,7 +15190,7 @@ def downgrade():
     op.drop_table('vsDataEthernetSwitchPort', schema='ericsson_bulkcm')
     op.drop_table('vsDataEtws', schema='ericsson_bulkcm')
     op.drop_table('vsDataEul', schema='ericsson_bulkcm')
-    # op.drop_table('vsDataEUtranCellFDD', schema='ericsson_bulkcm')
+    op.drop_table('vsDataEUtranCellFDD', schema='ericsson_bulkcm')
     op.drop_table('vsDataEUtranCellRelation', schema='ericsson_bulkcm')
     op.drop_table('vsDataEUtraNetwork', schema='ericsson_bulkcm')
     op.drop_table('vsDataEUtranFreqRelation', schema='ericsson_bulkcm')

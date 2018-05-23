@@ -21,6 +21,7 @@ class ReplaceableObject(object):
     def __init__(self, name, sqltext):
         self.name = name
         self.sqltext = sqltext
+        self.sqltext = sqltext
 
 
 bsc = ReplaceableObject(
@@ -474,7 +475,7 @@ bsc = ReplaceableObject(
         "OF_EPU",
         "OF_APSULPC"
     FROM
-    ericsson_cnaiv2."bsc"
+    ericsson_cnaiv2."BSC"
 
     """
 )
@@ -522,7 +523,7 @@ channel_group = ReplaceableObject(
         "TNBCCH",
         "BSPWRT"
     FROM
-    ericsson_cnaiv2."channel_group"
+    ericsson_cnaiv2."CHANNEL_GROUP"
 
     """
 )
@@ -572,7 +573,7 @@ external_cell = ReplaceableObject(
         "RIMNACC",
         "SCHO"
     FROM
-    ericsson_cnaiv2."external_cell"
+    ericsson_cnaiv2."EXTERNAL_CELL"
 
     """
 )
@@ -604,7 +605,7 @@ inner_cell = ReplaceableObject(
         "RME",
         "RO"
     FROM
-    ericsson_cnaiv2."inner_cell"
+    ericsson_cnaiv2."INNER_CELL"
 
     """
 )
@@ -1013,7 +1014,7 @@ internal_cell = ReplaceableObject(
         "SSDES8PSK",
         "SSDES16QAM"
     FROM
-    ericsson_cnaiv2."internal_cell"
+    ericsson_cnaiv2."INTERNAL_CELL"
 
     """
 )
@@ -1051,7 +1052,7 @@ msc = ReplaceableObject(
         "MSCBC",
         "CIPHERALGALLOW"
     FROM
-    ericsson_cnaiv2."msc"
+    ericsson_cnaiv2."MSC"
 
     """
 )
@@ -1089,7 +1090,7 @@ nrel = ReplaceableObject(
         "TRHYST",
         "TROFFSET"
     FROM
-    ericsson_cnaiv2."nrel"
+    ericsson_cnaiv2."NREL"
 
     """
 )
@@ -1116,7 +1117,7 @@ outer_cell = ReplaceableObject(
         "MNC",
         "NCS"
     FROM
-    ericsson_cnaiv2."outer_cell"
+    ericsson_cnaiv2."OUTER_CELL"
 
     """
 )
@@ -1215,7 +1216,7 @@ overlaid_cell = ReplaceableObject(
         "TIHO",
         "TMAXIHO"
     FROM
-    ericsson_cnaiv2."overlaid_cell"
+    ericsson_cnaiv2."OVERLAID_CELL"
 
     """
 )
@@ -1267,7 +1268,7 @@ priority_profile = ReplaceableObject(
         "PRL16_PROBF",
         "PRI_PROFILE_NAME"
     FROM
-    ericsson_cnaiv2."priority_profile"
+    ericsson_cnaiv2."PRIORITY_PROFILE"
 
     """
 )
@@ -1291,7 +1292,7 @@ site = ReplaceableObject(
         "NOTE",
         "SITE_NAME"
     FROM
-    ericsson_cnaiv2."site"
+    ericsson_cnaiv2."SITE"
 
     """
 )
@@ -1312,7 +1313,7 @@ tg = ReplaceableObject(
         "SITE_NAME",
         "TG_NAME"
     FROM
-    ericsson_cnaiv2."tg"
+    ericsson_cnaiv2."TG"
 
     """
 )
@@ -1341,7 +1342,7 @@ utran_external_cell = ReplaceableObject(
         "SCRCODE",
         "USEDFREQTHRESH2DECNO"
     FROM
-    ericsson_cnaiv2."utran_external_cell"
+    ericsson_cnaiv2."UTRAN_EXTERNAL_CELL"
 
     """
 )
@@ -1362,7 +1363,7 @@ utran_nrel = ReplaceableObject(
         "CELL_NAME",
         "NREL_NAME"
     FROM
-    ericsson_cnaiv2."utran_nrel"
+    ericsson_cnaiv2."UTRAN_NREL"
 
     """
 )
