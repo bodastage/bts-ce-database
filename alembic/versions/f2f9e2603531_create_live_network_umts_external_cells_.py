@@ -15,26 +15,34 @@ down_revision = '7ffc4e23252c'
 branch_labels = None
 depends_on = None
 
+class ReplaceableObject(object):
+    def __init__(self, name, sqltext):
+        self.name = name
+        self.sqltext = sqltext
+
+vw_umts_external_cells = ReplaceableObject(
+    'live_network.vw_umts_external_cells',
+    """
+     SELECT 
+        t3.name as NODENAME,
+        t1.name AS CELLNAME,
+        t1.rac,
+        t1.lac,
+        t1.uarfcn_dl,
+        t1.mnc,
+        t1.mcc,
+        t1.rnc_id,
+        t1.ci,
+        t1.psc
+       FROM live_network.umts_external_cells t1
+       LEFT JOIN live_network.cells t2 ON t1.cell_pk = t2.pk
+       LEFT JOIN live_network.nodes t3 on t3.pk = t1.node_pk
+
+    """)
 
 def upgrade():
-    op.execute("""
-    CREATE OR REPLACE VIEW live_network.vw_umts_external_cells AS
-     SELECT umts_external_cells.pk,
-        umts_external_cells.name,
-        umts_external_cells.cell_pk,
-        umts_external_cells.rac,
-        umts_external_cells.lac,
-        umts_external_cells.primary_cpich_power,
-        umts_external_cells.secondary_cpich_power,
-        umts_external_cells.uarfcn_dl,
-        umts_external_cells.uarfcn_ul,
-        umts_external_cells.mnc,
-        umts_external_cells.mcc,
-        umts_external_cells.rnc_id,
-        umts_external_cells.ci
-       FROM live_network.umts_external_cells
-    """)
+    op.create_view(vw_umts_external_cells)
 
 
 def downgrade():
-    op.execute("""DROP VIEW live_network.vw_umts_external_cells""")
+    op.drop_view(vw_umts_external_cells)

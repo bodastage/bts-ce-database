@@ -16,23 +16,33 @@ branch_labels = None
 depends_on = None
 
 
-def upgrade():
-    op.execute("""
-    CREATE OR REPLACE VIEW live_network.vw_gsm_external_cells AS
-     SELECT gsm_external_cells.pk,
-        gsm_external_cells.name,
-        gsm_external_cells.cell_pk,
-        gsm_external_cells.node_pk,
-        gsm_external_cells.mcc,
-        gsm_external_cells.mnc,
-        gsm_external_cells.lac,
-        gsm_external_cells.bcch,
-        gsm_external_cells.ncc,
-        gsm_external_cells.bcc,
-        gsm_external_cells.ci
-       FROM live_network.gsm_external_cells
+class ReplaceableObject(object):
+    def __init__(self, name, sqltext):
+        self.name = name
+        self.sqltext = sqltext
+
+vw_gsm_external_cells = ReplaceableObject(
+    'live_network.vw_gsm_external_cells',
+    """
+     SELECT 
+        t1.name as cellname,
+        t3.name as nodename,
+        t1.mcc,
+        t1.mnc,
+        t1.lac,
+        t1.bcch,
+        t1.ncc,
+        t1.bcc,
+        t1.ci
+       FROM live_network.gsm_external_cells t1
+       INNER JOIN live_network.cells t2 ON t1.cell_pk = t2.pk
+       LEFT JOIN live_network.nodes t3 on t3.pk = t1.node_pk
+
     """)
+
+def upgrade():
+    op.create_view(vw_gsm_external_cells)
 
 
 def downgrade():
-    op.execute("""DROP VIEW live_network.vw_gsm_external_cells""")
+    op.drop_view(vw_gsm_external_cells)
