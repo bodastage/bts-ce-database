@@ -15,15 +15,20 @@ down_revision = '920b08e9f6ec'
 branch_labels = None
 depends_on = None
 
+class ReplaceableObject(object):
+    def __init__(self, name, sqltext):
+        self.name = name
+        self.sqltext = sqltext
 
-def upgrade():
-    op.execute("""
-    CREATE OR REPLACE VIEW live_network.vw_gsm_cells_data AS
-     SELECT 
-        t1.cell_pk as pk,
-        t4."name" as node_name,
-        t3."name" as site_name,
-        t1.name as cell_name,
+
+vw_gsm_cells_data = ReplaceableObject(
+    'live_network.vw_gsm_cells_data',
+    """
+      SELECT 
+        t5."name" as vendor,
+        t4."name" as nodename,
+        t3."name" as sitename,
+        t1.name as cellname,
         t1.ci,
         t1.bcc,
         t1.ncc,
@@ -44,8 +49,12 @@ def upgrade():
        INNER JOIN live_network.cells t2 on t1.cell_pk = t2.pk
        INNER JOIN live_network.sites t3 ON t2.site_pk = t3.pk
        INNER JOIN live_network.nodes t4 on t4.pk = t3.node_pk
+       JOIN vendors t5 ON t5.pk = t2.vendor_pk
     """)
+
+def upgrade():
+    op.create_view(vw_gsm_cells_data)
 
 
 def downgrade():
-    op.execute("""DROP VIEW live_network.vw_gsm_cells_data""")
+    op.drop_view(vw_gsm_cells_data)

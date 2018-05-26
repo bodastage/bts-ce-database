@@ -16,41 +16,54 @@ branch_labels = None
 depends_on = None
 
 
-def upgrade():
-    op.execute("""
-    CREATE OR REPLACE VIEW live_network.vw_lte_cells_data AS
-     SELECT lte_cells_data.pk,
-        lte_cells_data.cell_pk,
-        t4."name" as site_name,
-        lte_cells_data.name,
+
+class ReplaceableObject(object):
+    def __init__(self, name, sqltext):
+        self.name = name
+        self.sqltext = sqltext
+
+
+vw_lte_cells_data = ReplaceableObject(
+    'live_network.vw_lte_cells_data',
+    """
+    SELECT 
         t3."name" as vendor,
-        lte_cells_data.mcc,
-        lte_cells_data.mnc,
-        lte_cells_data.pci,
-        lte_cells_data.uarfcn_dl,
-        lte_cells_data.uarfcn_ul,
-        lte_cells_data.dl_bandwidth,
-        lte_cells_data.scheduler,
-        lte_cells_data.tac,
-        lte_cells_data.ecgi,
-        lte_cells_data.rach_root_sequence,
-        lte_cells_data.max_tx_power,
-        lte_cells_data.latitude,
-        lte_cells_data.longitude,
-        lte_cells_data.ta_mode,
-        lte_cells_data.ta,
-        lte_cells_data.tx_elements,
-        lte_cells_data.rx_elements,
-        lte_cells_data.azimuth,
-        lte_cells_data.height,
-        lte_cells_data.mechanical_tilt,
-        lte_cells_data.electrical_tilt
-       FROM live_network.lte_cells_data lte_cells_data
-       INNER JOIN live_network.cells t2 on t2.pk = lte_cells_data.cell_pk AND t2.tech_pk = 3
+        t5.name AS nodename,
+        t4."name" as sitename,
+        t1.name AS cellname,
+        t1.mcc,
+        t1.mnc,
+        t1.pci,
+        t1.uarfcn_dl,
+        t1.uarfcn_ul,
+        t1.dl_bandwidth,
+        t1.scheduler,
+        t1.tac,
+        t1.ecgi,
+        t1.rach_root_sequence,
+        t1.max_tx_power,
+        t1.latitude,
+        t1.longitude,
+        t1.ta_mode,
+        t1.ta,
+        t1.tx_elements,
+        t1.rx_elements,
+        t1.azimuth,
+        t1.height,
+        t1.mechanical_tilt,
+        t1.electrical_tilt
+       FROM live_network.lte_cells_data t1
+       INNER JOIN live_network.cells t2 on t2.pk = t1.cell_pk AND t2.tech_pk = 3
        INNER JOIN live_network.sites t4 on t4.pk = t2.site_pk
+       INNER JOIN live_network.nodes t5 on t5.pk = t4.node_pk
        INNER JOIN public.vendors t3 on t3.pk = t2.vendor_pk
+
     """)
 
 
+def upgrade():
+    op.create_view(vw_lte_cells_data)
+
+
 def downgrade():
-    op.execute("""DROP VIEW live_network.vw_lte_cells_data""")
+    op.drop_view(vw_lte_cells_data)
