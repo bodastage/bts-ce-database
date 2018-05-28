@@ -28,7 +28,6 @@ vw_lte_cells_data = ReplaceableObject(
     """
     SELECT 
         t3."name" as vendor,
-        t5.name AS nodename,
         t4."name" as sitename,
         t1.name AS cellname,
         t1.mcc,
@@ -55,7 +54,6 @@ vw_lte_cells_data = ReplaceableObject(
        FROM live_network.lte_cells_data t1
        INNER JOIN live_network.cells t2 on t2.pk = t1.cell_pk AND t2.tech_pk = 3
        INNER JOIN live_network.sites t4 on t4.pk = t2.site_pk
-       INNER JOIN live_network.nodes t5 on t5.pk = t4.node_pk
        INNER JOIN public.vendors t3 on t3.pk = t2.vendor_pk
 
     """)
