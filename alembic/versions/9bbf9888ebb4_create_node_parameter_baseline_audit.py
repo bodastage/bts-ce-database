@@ -73,7 +73,7 @@ def upgrade():
 
     op.bulk_insert(audit_rules, [
         {'name': 'Node Parameter Discrepancies', 'category_pk': category_pk, 'in_built': True,
-         'table_name': 'baseline_node_parameters',
+         'table_name': 'node_parameter_baseline',
          'sql': 'SELECT * FROM network_audit.baseline_node_parameters',
          'notes': 'Network Baseline Discrepancies for Node parameters'},
     ])

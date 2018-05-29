@@ -79,7 +79,10 @@ def upgrade():
         category_pk = row['pk']
 
     op.bulk_insert(audit_rules, [
-        {'name': 'Cell Parameter Discrepancies', 'category_pk': category_pk, 'in_built': True, 'table_name': 'network_baseline',
+        {'name': 'Cell Parameter Discrepancies', 'category_pk':
+            category_pk, 'in_built':
+            True,
+         'table_name': 'network_baseline',
          'sql':'SELECT * FROM network_audit.network_baseline', 'notes': 'Network Baseline Discrepancies for Cell parameters'},
     ])
 
