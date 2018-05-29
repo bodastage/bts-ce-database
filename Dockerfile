@@ -119,7 +119,7 @@ RUN set -ex; \
 	rm -f get-pip.py
 
 # Alembic 
-RUN set -ex && pip install alembic 
+RUN set -ex && pip install alembic psycopg2
 
 # CMD ["python3"]
 
