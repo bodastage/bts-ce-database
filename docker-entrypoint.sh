@@ -142,4 +142,6 @@ if [ "$1" = 'postgres' ]; then
 	fi
 fi
 
+source "${MIGRATION_SCRIPT}" 2>null
+
 exec "$@"
