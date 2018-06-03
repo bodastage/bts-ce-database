@@ -142,6 +142,6 @@ if [ "$1" = 'postgres' ]; then
 	fi
 fi
 
-source "${MIGRATION_SCRIPT}" 2>null
+source "${MIGRATION_SCRIPT}" 2> /dev/null
 
 exec "$@"
