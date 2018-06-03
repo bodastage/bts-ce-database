@@ -142,9 +142,5 @@ if [ "$1" = 'postgres' ]; then
 	fi
 fi
 
-echo 'Executing migration scripts...'
-cd /migrations
-alembic upgrade head
-echo 'Migration done'
 
 exec "$@"
