@@ -142,6 +142,8 @@ if [ "$1" = 'postgres' ]; then
 	fi
 fi
 
-source "${MIGRATION_SCRIPT}" 2> /dev/null
+echo 'Executing migration scripts...'
+$MIGRATION_SCRIPT 2>/dev/null
+echo 'Migration done'
 
 exec "$@"
