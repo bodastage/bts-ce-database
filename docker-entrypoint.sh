@@ -143,6 +143,9 @@ if [ "$1" = 'postgres' ]; then
 fi
 
 echo 'Executing migration scripts...'
+echo "MIGRATION_SCRIPT: $MIGRATION_SCRIPT"
+ls -l /migrations
+
 $MIGRATION_SCRIPT 2>/dev/null
 echo 'Migration done'
 
