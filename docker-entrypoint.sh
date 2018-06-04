@@ -142,5 +142,4 @@ if [ "$1" = 'postgres' ]; then
 	fi
 fi
 
-
 exec "$@"
