@@ -119,7 +119,7 @@ RUN set -ex; \
 	rm -f get-pip.py
 
 # Alembic 
-RUN set -ex && pip install alembic 
+RUN set -ex && pip install alembic psycopg2-binary
 
 # CMD ["python3"]
 
@@ -146,6 +146,13 @@ RUN set -x \
 	&& wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc" \
 	&& export GNUPGHOME="$(mktemp -d)" \
 	&& gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
+	&& for server in ha.pool.sks-keyservers.net \
+              hkp://p80.pool.sks-keyservers.net:80 \
+              keyserver.ubuntu.com \
+              hkp://keyserver.ubuntu.com:80 \
+              pgp.mit.edu; do \
+    gpg --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || echo "Trying new server..."; \
+	done \
 	&& gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu \
 	&& rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc \
 	&& chmod +x /usr/local/bin/gosu \
@@ -164,6 +171,14 @@ RUN set -eux; \
 	localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 ENV LANG en_US.utf8
 
+# install "nss_wrapper" in case we need to fake "/etc/passwd" and "/etc/group" (especially for OpenShift)
+# https://github.com/docker-library/postgres/issues/359
+# https://cwrap.org/nss_wrapper.html
+RUN set -eux; \
+	apt-get update; \
+	apt-get install -y --no-install-recommends libnss-wrapper; \
+	rm -rf /var/lib/apt/lists/*
+
 RUN mkdir /docker-entrypoint-initdb.d
 
 RUN set -ex; \
@@ -178,7 +193,7 @@ RUN set -ex; \
 	apt-key list
 
 ENV PG_MAJOR 10
-ENV PG_VERSION 10.3-1.pgdg90+1
+ENV PG_VERSION 10.4-2.pgdg90+1
 
 RUN set -ex; \
 	\

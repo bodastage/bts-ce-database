@@ -2,6 +2,8 @@
 #
 # 
 
+set -x 
+
 basefolder=$(realpath $(dirname $0))
 
 cd $basefolder
