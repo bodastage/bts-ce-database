@@ -17,7 +17,7 @@ depends_on = None
 
 
 def upgrade():
-    op.create_table(
+    nodes = op.create_table(
         'nodes',
         sa.Column('pk', sa.Integer, primary_key=True),
         sa.Column('name', sa.String(100), nullable=False),
@@ -32,6 +32,20 @@ def upgrade():
         schema=u'live_network'
     )
     op.execute('ALTER SEQUENCE  live_network.nodes_pk_seq RENAME TO seq_nodes_pk')
+
+    op.bulk_insert(nodes, [
+        {'name': 'SubNetwork', 'notes': 'Ericsson 3G SubNetwork', type: 'SUBNETWORK', 'tech_pk': 2, 'vendor_pk': 1,
+        'modified_by': 0, 'added_by': 0},
+        {'name': 'SubNetwork', 'notes': 'Ericsson 4G SubNetwork', type: 'SUBNETWORK', 'tech_pk': 3, 'vendor_pk': 1,
+         'modified_by': 0, 'added_by': 0},
+        {'name': 'SubNetwork', 'notes': 'ZTE 2G SubNetwork', type: 'SUBNETWORK', 'tech_pk': 1, 'vendor_pk': 3,
+         'modified_by': 0, 'added_by': 0},
+        {'name': 'SubNetwork', 'notes': 'ZTE 3G SubNetwork', type: 'SUBNETWORK', 'tech_pk': 2, 'vendor_pk': 3,
+         'modified_by': 0, 'added_by': 0},
+        {'name': 'SubNetwork', 'notes': 'ZTE 4G SubNetwork', type: 'SUBNETWORK', 'tech_pk': 3, 'vendor_pk': 3,
+         'modified_by': 0, 'added_by': 0}
+    ]
+   )
 
 
 def downgrade():
