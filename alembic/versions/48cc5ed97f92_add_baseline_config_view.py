@@ -22,14 +22,14 @@ class ReplaceableObject(object):
 vw_baseline_parameter_config = ReplaceableObject(
     'live_network."vw_baseline_parameter_config"',
     """
-SELECT t4.name as vendor, t5.name as technology, t2.name as mo, t3.name as parameter 
-FROM live_network.baseline_parameter_config t1
-inner join 
-managedobjects t2 on t2.pk = t1.mo_pk
-inner join 
-vendor_parameters t3 on t3.pk = t1.parameter_pk
-inner join vendors t4 on t4.pk = t2.vendor_pk
-inner join technologies t5 on t5.pk = t2.tech_pk
+    SELECT t4.name as vendor, t5.name as technology, t2.name as mo, t3.name as parameter 
+    FROM live_network.baseline_parameter_config t1
+    inner join 
+    managedobjects t2 on t2.pk = t1.mo_pk
+    inner join 
+    vendor_parameters t3 on t3.pk = t1.parameter_pk
+    inner join vendors t4 on t4.pk = t2.vendor_pk
+    inner join technologies t5 on t5.pk = t2.tech_pk
     """)
 
 
