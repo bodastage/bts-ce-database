@@ -7,7 +7,7 @@ import sys
 
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
 
-from manage_views import *
+from manage_views_and_stored_procedures import *
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
