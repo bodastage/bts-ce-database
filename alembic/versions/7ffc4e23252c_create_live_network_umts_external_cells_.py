@@ -20,7 +20,7 @@ def upgrade():
     op.create_table(
         'umts_external_cells',
         sa.Column('pk', sa.Integer, primary_key=True),
-        sa.Column('cell_pk', sa.Integer, nullable=False),
+        sa.Column('cell_pk', sa.Integer),
         sa.Column('name', sa.String(50), nullable=False),
         sa.Column('node_pk', sa.Integer),
         sa.Column('rac', sa.Integer),

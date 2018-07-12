@@ -22,7 +22,7 @@ def upgrade():
         'lte_external_cells',
         sa.Column('pk', sa.Integer, primary_key=True),
         sa.Column('name', sa.String(100), nullable=False),
-        sa.Column('cell_pk', sa.Integer, nullable=False),
+        sa.Column('cell_pk', sa.Integer),
         sa.Column('node_pk', sa.Integer,),
         sa.Column('dl_earfcn', sa.Integer,),
         sa.Column('mnc', sa.Integer,),
