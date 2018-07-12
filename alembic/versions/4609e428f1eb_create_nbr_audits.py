@@ -50,6 +50,7 @@ def upgrade():
         sa.Column('svrnode', sa.String(100), nullable=False),
         sa.Column('nbrvendor', sa.String(100), nullable=False),
         sa.Column('nbrtech', sa.String(100), nullable=False),
+        sa.Column('nbrnode', sa.String(100), nullable=False),
         sa.Column('nbrsite', sa.String(200), nullable=False),
         sa.Column('nbrcell', sa.String(100), nullable=False, default=0),
         sa.Column('age', sa.Integer, nullable=False, default=0),
