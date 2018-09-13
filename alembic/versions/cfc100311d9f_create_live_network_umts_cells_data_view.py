@@ -31,6 +31,7 @@ vw_umts_cells_data = ReplaceableObject(
         t1.name AS cellname,
         t1.bch_power,
         t1.cell_id AS ci,
+        t1.cell_pk AS cell_pk,
         t1.lac,
         t1.latitude,
         t1.longitude,
