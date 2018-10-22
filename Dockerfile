@@ -1,5 +1,9 @@
 # vim:set ft=dockerfile:
-FROM debian:stretch-slim
+FROM ubuntu:16.04
+LABEL maintainer Bodastage Engineering <engineering@bodastage.com>
+
+ENV DEBIAN_FRONTEND noninteractive
+
 
 # Python3
 # ########################################################################
