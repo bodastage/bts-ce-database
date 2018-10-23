@@ -21,9 +21,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 		libexpat1 \
 		libffi6 \
 		libgdbm3 \
-		libreadline7 \
+		libreadline6 \
+#		libreadline7 \
 		libsqlite3-0 \
-		libssl1.1 \
+#		libssl1.1 \
+		libssl1.0.0 \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV GPG_KEY 0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D
