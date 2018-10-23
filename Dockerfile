@@ -215,7 +215,7 @@ RUN set -ex; \
 # uid                  PostgreSQL Debian Repository
 	key='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8'; \
 	export GNUPGHOME="$(mktemp -d)"; \
-	&& for server in ha.pool.sks-keyservers.net \
+	for server in ha.pool.sks-keyservers.net \
               hkp://p80.pool.sks-keyservers.net:80 \
               keyserver.ubuntu.com \
               hkp://keyserver.ubuntu.com:80 \
