@@ -252,7 +252,7 @@ RUN set -ex; \
 	\
 	apt-get install -y postgresql-common; \
 	sed -ri 's/#(create_main_cluster) .*$/\1 = false/' /etc/postgresql-common/createcluster.conf; \
-	apt-get install -y \
+	apt-get install -f -y \
 		"postgresql-$PG_MAJOR=$PG_VERSION" \
 	; \
 	\
