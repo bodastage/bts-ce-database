@@ -1,9 +1,5 @@
 # vim:set ft=dockerfile:
-FROM ubuntu:16.04
-LABEL maintainer Bodastage Engineering <engineering@bodastage.com>
-
-ENV DEBIAN_FRONTEND noninteractive
-
+FROM debian:stretch-slim
 
 # Python3
 # ########################################################################
@@ -15,11 +11,9 @@ ENV PATH /usr/local/bin:$PATH
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 ENV LANG C.UTF-8
 
-# Add bionic repo for libss1.1 from bionic and libreadline6 from artful
-RUN echo 'deb http://security.ubuntu.com/ubuntu bionic-security main' >> /etc/apt/sources.list ; \
-echo 'deb http://cz.archive.ubuntu.com/ubuntu artful main' >> /etc/apt/sources.list;\
+RUN echo 'deb http://ftp.de.debian.org/debian stretch main' >> /etc/apt/sources.list ; \
+echo 'deb http://ftp.de.debian.org/debian sid main' >> /etc/apt/sources.list ; \
 apt-get update 
-
 
 # runtime dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -155,6 +149,7 @@ RUN set -x \
 	&& wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)" \
 	&& wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc" \
 	&& export GNUPGHOME="$(mktemp -d)" \
+	&& gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
 	&& for server in ha.pool.sks-keyservers.net \
               hkp://p80.pool.sks-keyservers.net:80 \
               keyserver.ubuntu.com \
@@ -202,7 +197,7 @@ RUN set -ex; \
 	apt-key list
 
 ENV PG_MAJOR 10
-ENV PG_VERSION 10.5-2.pgdg90+1
+ENV PG_VERSION 10.4-2.pgdg90+1
 
 RUN set -ex; \
 	\
