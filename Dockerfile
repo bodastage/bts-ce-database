@@ -15,17 +15,21 @@ ENV PATH /usr/local/bin:$PATH
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 ENV LANG C.UTF-8
 
+# Add bionic repo for libss1.1 from bionic and libreadline6 from artful
+RUN echo 'deb http://security.ubuntu.com/ubuntu bionic-security main' >> /etc/apt/sources.list ; \
+echo 'deb http://cz.archive.ubuntu.com/ubuntu artful main' >> /etc/apt/sources.list;\
+apt-get update 
+
+
 # runtime dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
 		libexpat1 \
 		libffi6 \
 		libgdbm3 \
-		libreadline6 \
-#		libreadline7 \
+		libreadline7 \
 		libsqlite3-0 \
-#		libssl1.1 \
-		libssl1.0.0 \
+		libssl1.1 \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV GPG_KEY 0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D
@@ -252,7 +256,7 @@ RUN set -ex; \
 	\
 	apt-get install -y postgresql-common; \
 	sed -ri 's/#(create_main_cluster) .*$/\1 = false/' /etc/postgresql-common/createcluster.conf; \
-	apt-get install -f -y \
+	apt-get install -y \
 		"postgresql-$PG_MAJOR=$PG_VERSION" \
 	; \
 	\
