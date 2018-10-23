@@ -11,22 +11,30 @@ ENV PATH /usr/local/bin:$PATH
 # > At the moment, setting "LANG=C" on a Linux system *fundamentally breaks Python 3*, and that's not OK.
 ENV LANG C.UTF-8
 
+RUN set -ex; \
+	if ! command -v gpg > /dev/null; then \
+		apt-get update; \
+		apt-get install -y --no-install-recommends \
+			gnupg \
+			dirmngr \
+		; \
+		rm -rf /var/lib/apt/lists/*; \
+	fi
+
+	
 # runtime dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
 		ca-certificates \
-		libexpat1 \
-		libffi6 \
-		libgdbm3 \
-		libreadline7 \
-		libsqlite3-0 \
-		libssl1.1 \
+		netbase \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV GPG_KEY 0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D
-ENV PYTHON_VERSION 3.6.5
+ENV PYTHON_VERSION 3.7.0
 
 RUN set -ex \
-	&& buildDeps=" \
+	\
+	&& savedAptMark="$(apt-mark showmanual)" \
+	&& apt-get update && apt-get install -y --no-install-recommends \
 		dpkg-dev \
 		gcc \
 		libbz2-dev \
@@ -40,21 +48,26 @@ RUN set -ex \
 		libsqlite3-dev \
 		libssl-dev \
 		make \
-		tcl-dev \
 		tk-dev \
+		uuid-dev \
 		wget \
 		xz-utils \
 		zlib1g-dev \
 # as of Stretch, "gpg" is no longer included by default
 		$(command -v gpg > /dev/null || echo 'gnupg dirmngr') \
-	" \
-	&& apt-get update && apt-get install -y $buildDeps --no-install-recommends && rm -rf /var/lib/apt/lists/* \
 	\
 	&& wget -O python.tar.xz "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz" \
 	&& wget -O python.tar.xz.asc "https://www.python.org/ftp/python/${PYTHON_VERSION%%[a-z]*}/Python-$PYTHON_VERSION.tar.xz.asc" \
 	&& export GNUPGHOME="$(mktemp -d)" \
-	&& gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$GPG_KEY" \
+	&& for server in ha.pool.sks-keyservers.net \
+              hkp://p80.pool.sks-keyservers.net:80 \
+              keyserver.ubuntu.com \
+              hkp://keyserver.ubuntu.com:80 \
+              pgp.mit.edu; do \
+    gpg --keyserver "$server" --recv-keys "$GPG_KEY" && break || echo "Trying new server..."; \
+	done \
 	&& gpg --batch --verify python.tar.xz.asc python.tar.xz \
+	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } \
 	&& rm -rf "$GNUPGHOME" python.tar.xz.asc \
 	&& mkdir -p /usr/src/python \
 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz \
@@ -73,7 +86,17 @@ RUN set -ex \
 	&& make install \
 	&& ldconfig \
 	\
-	&& apt-get purge -y --auto-remove $buildDeps \
+	&& apt-mark auto '.*' > /dev/null \
+	&& apt-mark manual $savedAptMark \
+	&& find /usr/local -type f -executable -not \( -name '*tkinter*' \) -exec ldd '{}' ';' \
+		| awk '/=>/ { print $(NF-1) }' \
+		| sort -u \
+		| xargs -r dpkg-query --search \
+		| cut -d: -f1 \
+		| sort -u \
+		| xargs -r apt-mark manual \
+	&& apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false \
+	&& rm -rf /var/lib/apt/lists/* \
 	\
 	&& find /usr/local -depth \
 		\( \
@@ -81,7 +104,9 @@ RUN set -ex \
 			-o \
 			\( -type f -a \( -name '*.pyc' -o -name '*.pyo' \) \) \
 		\) -exec rm -rf '{}' + \
-	&& rm -rf /usr/src/python
+	&& rm -rf /usr/src/python \
+	\
+	&& python3 --version
 
 # make some useful symlinks that are expected to exist
 RUN cd /usr/local/bin \
@@ -91,17 +116,20 @@ RUN cd /usr/local/bin \
 	&& ln -s python3-config python-config
 
 # if this is called "PIP_VERSION", pip explodes with "ValueError: invalid truth value '<VERSION>'"
-ENV PYTHON_PIP_VERSION 9.0.3
+ENV PYTHON_PIP_VERSION 18.1
 
 RUN set -ex; \
 	\
+	savedAptMark="$(apt-mark showmanual)"; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends wget; \
-	rm -rf /var/lib/apt/lists/*; \
 	\
 	wget -O get-pip.py 'https://bootstrap.pypa.io/get-pip.py'; \
 	\
-	apt-get purge -y --auto-remove wget; \
+	apt-mark auto '.*' > /dev/null; \
+	[ -z "$savedAptMark" ] || apt-mark manual $savedAptMark; \
+	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
+	rm -rf /var/lib/apt/lists/*; \
 	\
 	python get-pip.py \
 		--disable-pip-version-check \
@@ -119,24 +147,24 @@ RUN set -ex; \
 	rm -f get-pip.py
 
 # Alembic 
+########################################################
 RUN set -ex && pip install alembic psycopg2-binary
 
 # CMD ["python3"]
 
 
 # Postgres 10
-RUN set -ex; \
-	if ! command -v gpg > /dev/null; then \
-		apt-get update; \
-		apt-get install -y --no-install-recommends \
-			gnupg \
-			dirmngr \
-		; \
-		rm -rf /var/lib/apt/lists/*; \
-	fi
+########################################################
 
 # explicitly set user/group IDs
-RUN groupadd -r postgres --gid=999 && useradd -r -g postgres --uid=999 postgres
+RUN set -eux; \
+	groupadd -r postgres --gid=999; \
+# https://salsa.debian.org/postgresql/postgresql-common/blob/997d842ee744687d99a2b2d95c1083a2615c79e8/debian/postgresql-common.postinst#L32-35
+	useradd -r -g postgres --uid=999 --home-dir=/var/lib/postgresql --shell=/bin/bash postgres; \
+# also create the postgres user's home directory with appropriate permissions
+# see https://github.com/docker-library/postgres/issues/274
+	mkdir -p /var/lib/postgresql; \
+	chown -R postgres:postgres /var/lib/postgresql
 
 # grab gosu for easy step-down from root
 ENV GOSU_VERSION 1.10
@@ -145,7 +173,6 @@ RUN set -x \
 	&& wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture)" \
 	&& wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$(dpkg --print-architecture).asc" \
 	&& export GNUPGHOME="$(mktemp -d)" \
-	&& gpg --keyserver ha.pool.sks-keyservers.net --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 \
 	&& for server in ha.pool.sks-keyservers.net \
               hkp://p80.pool.sks-keyservers.net:80 \
               keyserver.ubuntu.com \
@@ -154,6 +181,7 @@ RUN set -x \
     gpg --keyserver "$server" --recv-keys B42F6819007F00F88E364FD4036A9C25BF357DD4 && break || echo "Trying new server..."; \
 	done \
 	&& gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu \
+	&& { command -v gpgconf > /dev/null && gpgconf --kill all || :; } \
 	&& rm -rf "$GNUPGHOME" /usr/local/bin/gosu.asc \
 	&& chmod +x /usr/local/bin/gosu \
 	&& gosu nobody true \
@@ -187,15 +215,25 @@ RUN set -ex; \
 # uid                  PostgreSQL Debian Repository
 	key='B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8'; \
 	export GNUPGHOME="$(mktemp -d)"; \
-	gpg --keyserver ha.pool.sks-keyservers.net --recv-keys "$key"; \
+	for server in ha.pool.sks-keyservers.net \
+              hkp://p80.pool.sks-keyservers.net:80 \
+              keyserver.ubuntu.com \
+              hkp://keyserver.ubuntu.com:80 \
+              pgp.mit.edu; do \
+    gpg --keyserver "$server" --recv-keys "$key" && break || echo "Trying new server..."; \
+	done; \
 	gpg --export "$key" > /etc/apt/trusted.gpg.d/postgres.gpg; \
+	command -v gpgconf > /dev/null && gpgconf --kill all; \
 	rm -rf "$GNUPGHOME"; \
 	apt-key list
 
 ENV PG_MAJOR 10
-ENV PG_VERSION 10.4-2.pgdg90+1
+ENV PG_VERSION 10.5-2.pgdg90+1
 
 RUN set -ex; \
+	\
+# see note below about "*.pyc" files
+	export PYTHONDONTWRITEBYTECODE=1; \
 	\
 	dpkgArch="$(dpkg --print-architecture)"; \
 	case "$dpkgArch" in \
@@ -208,6 +246,15 @@ RUN set -ex; \
 # we're on an architecture upstream doesn't officially build for
 # let's build binaries from their published source packages
 			echo "deb-src http://apt.postgresql.org/pub/repos/apt/ stretch-pgdg main $PG_MAJOR" > /etc/apt/sources.list.d/pgdg.list; \
+			\
+			case "$PG_MAJOR" in \
+				9.* | 10 ) ;; \
+				*) \
+# https://github.com/docker-library/postgres/issues/484 (clang-6.0 required, only available in stretch-backports)
+# TODO remove this once we hit buster+
+					echo 'deb http://deb.debian.org/debian stretch-backports main' >> /etc/apt/sources.list.d/pgdg.list; \
+					;; \
+			esac; \
 			\
 			tempDir="$(mktemp -d)"; \
 			cd "$tempDir"; \
@@ -257,7 +304,10 @@ RUN set -ex; \
 # if we have leftovers from building, let's purge them (including extra, unnecessary build deps)
 		apt-get purge -y --auto-remove; \
 		rm -rf "$tempDir" /etc/apt/sources.list.d/temp.list; \
-	fi
+	fi; \
+	\
+# some of the steps above generate a lot of "*.pyc" files (and setting "PYTHONDONTWRITEBYTECODE" beforehand doesn't propagate properly for some reason), so we clean them up manually (as long as they aren't owned by a package)
+	find /usr -name '*.pyc' -type f -exec bash -c 'for pyc; do dpkg -S "$pyc" &> /dev/null || rm -vf "$pyc"; done' -- '{}' +
 
 # make the sample config easier to munge (and "correct by default")
 RUN mv -v "/usr/share/postgresql/$PG_MAJOR/postgresql.conf.sample" /usr/share/postgresql/ \
