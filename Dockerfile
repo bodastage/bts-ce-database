@@ -199,7 +199,7 @@ RUN set -ex; \
 	apt-key list
 
 ENV PG_MAJOR 10
-ENV PG_VERSION 10.4-2.pgdg90+1
+ENV PG_VERSION 10.5-2.pgdg90+1
 
 RUN set -ex; \
 	\
