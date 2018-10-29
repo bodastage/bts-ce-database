@@ -6,6 +6,12 @@ Database migration scripts for Boda Telecom Suite Enterprise Edition (BTS-EE). B
 - [Python](https://www.python.org/)
 - [Alembic](http://alembic.zzzcomputing.com)
 - [SQLAlchemy](http://sqlalchemy.readthedocs.io/)
+- [psycopg2](http://initd.org/psycopg/)
+
+## Running migrations
+```python
+alembic migrate head
+```
 
 ## Resources
 
