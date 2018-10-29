@@ -28,6 +28,7 @@ target_metadata = None
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
 
+
 def get_url():
     return 'postgresql://{0}:{1}@{2}:{3}/{4}'.format(
         os.getenv("BTS_DB_USER", "bodastage"),
