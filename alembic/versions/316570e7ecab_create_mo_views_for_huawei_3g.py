@@ -1264,18 +1264,6 @@ INNER JOIN huawei_mml_umts."SYS" t41 ON t41."FileName" = t4."FileName"
 """
 )
 
-FILEFOOTER = ReplaceableObject(
-    'huawei_cm_3g."FILEFOOTER"',
-    """
-
-SELECT
-    t1."FileName",
-    t1."datetime"
-FROM
-huawei_nbi_umts."FILEFOOTER" t1
-
-"""
-)
 
 IPOAPVC = ReplaceableObject(
     'huawei_cm_3g."IPOAPVC"',
@@ -5198,95 +5186,50 @@ huawei_gexport_wcdma."UCELL_BSC6910UMTS" t3
 INNER JOIN huawei_gexport_wcdma."SYS_BSC6910UMTS" t31 ON t31."FILENAME" = t3."FILENAME"
 UNION
 SELECT
-    t4."FileName",
-    t4."varDateTime",
+    t31."FileName" AS FileName,
+    t31."varDateTime" AS varDateTime,
     NULL,
     NULL,
-    t4."BAM_VERSION" AS neversion,
-    t41."SYSOBJECTID" AS neid,
+    t3."BAM_VERSION" AS neversion,
+    t31."SYSOBJECTID" AS neid,
     NULL,
-    t4."OMU_IP" AS module_remark,
+    t3."OMU_IP" AS module_remark,
     NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    t4."CELLID",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
+    NULL, -- t3."ACTSTATUS",
+    t3."BANDIND",
+    NULL, -- t3."BLKSTATUS",
+    t3."CCHCNOPINDEX",
+    t3."CELLHETFLAG",
+    t3."CELLID",
+    t3."CELLNAME",
+    t3."CFGRACIND",
+    t3."CIO",
+    t3."CNOPGRPINDEX",
+    t3."DPGID",
+    t3."DSSFLAG",
+    t3."DSSSMALLCOVMAXTXPOWER",
+    t3."LAC",
+    t3."LOCELL",
+    t32."RNCID" AS "LOGICRNCID",
+    t3."MAXTXPOWER",
+    t3."NINSYNCIND",
+    t3."NODEBNAME",
+    t3."NOUTSYNCIND",
+    t3."PSCRAMBCODE",
+    t3."RAC",
+    t3."SAC",
+    t3."SPGID",
+    t3."TCELL",
+    t3."TRLFAILURE",
+    t3."TXDIVERSITYIND",
+    t3."UARFCNDOWNLINK",
+    t3."UARFCNUPLINK",
+    t3."UARFCNUPLINKIND",
+    t3."VPLIMITIND"
 FROM
-huawei_mml_umts."UCELL_ACT" t4
-INNER JOIN huawei_mml_umts."SYS" t41 ON t41."FileName" = t4."FileName"
-
-UNION
-SELECT
-    t5."FileName",
-    t5."varDateTime",
-    NULL,
-    NULL,
-    t5."BAM_VERSION" AS neversion,
-    t51."SYSOBJECTID" AS neid,
-    NULL,
-    t5."OMU_IP" AS module_remark,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    t5."CELLID",
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL,
-    NULL
-FROM
-huawei_mml_umts."UCELL_BLK" t5
-INNER JOIN huawei_mml_umts."SYS" t51 ON t51."FileName" = t5."FileName"
+huawei_mml_umts."UCELLSETUP" t3
+INNER JOIN huawei_mml_umts."SYS" t31 ON t31."FileName" = t3."FileName"
+INNER JOIN huawei_mml_umts."URNCBASIC" t32 ON t32."FileName" = t3."FileName"
 
 """
 )
@@ -18000,7 +17943,6 @@ def upgrade():
     op.create_view(ETHTRK)
     op.create_view(ETHTRKIP)
     op.create_view(ETHTRKLNK)
-    op.create_view(FILEFOOTER)
     op.create_view(IPOAPVC)
     op.create_view(IPPOOL)
     op.create_view(IPPOOLIP)
