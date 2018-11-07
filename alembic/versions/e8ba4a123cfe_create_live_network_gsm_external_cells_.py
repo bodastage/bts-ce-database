@@ -35,7 +35,7 @@ vw_gsm_external_cells = ReplaceableObject(
         t1.bcc,
         t1.ci
        FROM live_network.gsm_external_cells t1
-       INNER JOIN live_network.cells t2 ON t1.cell_pk = t2.pk
+       LEFT JOIN live_network.cells t2 ON t1.cell_pk = t2.pk
        LEFT JOIN live_network.nodes t3 on t3.pk = t1.node_pk
 
     """)
