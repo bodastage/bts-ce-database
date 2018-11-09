@@ -12984,6 +12984,41 @@ INNER JOIN huawei_mml_umts."SYS" t21 ON t21."FileName" = t2."FileName"
 """
 )
 
+
+ULTECELL = ReplaceableObject(
+    'huawei_cm_3g."ULTECELL"',
+    """
+SELECT
+    t2."FileName",
+    t2."varDateTime",
+    NULL as ne_xsitype,
+    NULL as netype,
+    t2."BAM_VERSION" AS neversion,
+    t21."SYSOBJECTID" AS neid,
+    NULL as module_type,
+    t2."OMU_IP" AS module_remark,
+    NULL as module_productversion,
+    t2."LTECELLINDEX",
+    t2."LTECELLNAME",
+    T2."MCC",
+    t2."MNC",
+    t2."TAC",
+    t2."CNOPGRPINDEX",
+    t2."CELLPHYID",
+    t2."LTEBAND",
+    t2."LTEARFCN",
+    t2."SUPPPSHOFLAG",
+    t2."EUTRANCELLID",
+    t2."BLACKFLAG",
+    T2."U2LRIMCNOPERATORRTINDEX",
+    t2."SLAVEBANDINDICATOR"
+FROM
+huawei_mml_umts."ULTECELL" t2
+INNER JOIN huawei_mml_umts."SYS" t21 ON t21."FileName" = t2."FileName"
+
+"""
+)
+
 UMBSCCRRM = ReplaceableObject(
     'huawei_cm_3g."UMBSCCRRM"',
     """
