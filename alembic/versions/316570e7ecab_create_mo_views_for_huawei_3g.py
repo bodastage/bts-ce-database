@@ -18112,6 +18112,7 @@ def upgrade():
     op.create_view(ULDCPERIOD)
     op.create_view(ULDM)
     op.create_view(ULOCELL)
+    op.create_view(ULTECELL)
     op.create_view(UMBSCCRRM)
     op.create_view(UMCDRD)
     op.create_view(UMCLDR)
