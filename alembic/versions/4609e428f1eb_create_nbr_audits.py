@@ -38,6 +38,8 @@ def upgrade():
         schema=u'network_audit'
     )
     op.execute('ALTER SEQUENCE  network_audit.missing_one_way_relations_pk_seq RENAME TO seq_missing_one_way_relations_pk')
+    op.create_unique_constraint('unique_missing_one_way_relations', 'missing_one_way_relations_pk_seq', ['svrvendor', 'svrtech', 'svrnode', 'svrsite', 'svrcell', 'nbrvendor', 'nbrtech', 'nbrsite', 'nbrcell'], schema='network_audit')
+
 
     missing_cosite_relations = op.create_table(
         'missing_cosite_relations',
@@ -121,5 +123,7 @@ def upgrade():
 def downgrade():
     op.drop_table('missing_one_way_relations', schema=u'network_audit')
     op.drop_table('missing_cosite_relations', schema=u'network_audit')
+
+    op.drop_unique_constraint("unique_missing_one_way_relations", "missing_one_way_relations", schema=u'network_audit')
 
     # @TODO: Remove audit rule table entries
