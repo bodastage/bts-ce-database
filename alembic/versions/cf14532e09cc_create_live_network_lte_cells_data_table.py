@@ -22,7 +22,7 @@ def upgrade():
         sa.Column('pk', sa.Integer, primary_key=True),
         sa.Column('name', sa.String(100), nullable=False),
         sa.Column('cell_pk', sa.Integer, nullable=False),
-        sa.Column('dl_uarfcn', sa.Integer,),
+        sa.Column('dl_earfcn', sa.Integer,),
         sa.Column('ul_earfcn', sa.Integer,),
         sa.Column('mcc', sa.Integer, ),
         sa.Column('mnc', sa.Integer, ),
