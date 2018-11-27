@@ -45,6 +45,10 @@ def upgrade():
         schema=u'network_audit'
     )
     op.execute('ALTER SEQUENCE  network_audit.incosistent_2g_externals_pk_seq RENAME TO seq_incosistent_2g_externals_pk')
+    op.create_unique_constraint('unique_incosistent_2g_externals', 'incosistent_2g_externals', \
+                                ['nodename','ext_vendor', 'int_vendor','int_cellname','ext_mnc','ext_mcc','ext_bcc', \
+                                 'ext_ncc','ext_bcch','ext_lac','int_mnc','int_mcc','int_bcc','int_ncc','int_bcch',\
+                                 'int_lac'], schema='network_audit')
 
     incosistent_3g_externals = op.create_table(
         'incosistent_3g_externals',
@@ -73,6 +77,10 @@ def upgrade():
         schema=u'network_audit'
     )
     op.execute('ALTER SEQUENCE  network_audit.incosistent_3g_externals_pk_seq RENAME TO seq_incosistent_3g_externals_pk')
+    op.create_unique_constraint('unique_incosistent_3g_externals', 'incosistent_3g_externals', \
+                                ['nodename','ext_vendor','int_vendor','ext_cellname','ext_mnc', \
+                                 'ext_mcc','ext_dl_uarfcn','ext_rac','ext_lac','ext_psc','int_mnc',\
+                                 'int_mcc','int_dl_uarfcn','int_rac','int_lac','int_psc'], schema='network_audit')
 
     incosistent_4g_externals = op.create_table(
         'incosistent_4g_externals',
@@ -97,7 +105,28 @@ def upgrade():
         schema=u'network_audit'
     )
     op.execute('ALTER SEQUENCE  network_audit.incosistent_4g_externals_pk_seq RENAME TO seq_incosistent_4g_externals_pk')
+    op.create_unique_constraint('unique_incosistent_4g_externals', 'incosistent_4g_externals', \
+                                ['nodename',' ext_vendor','int_vendor','ext_cellname','ext_mnc','ext_mcc',\
+                                 'ext_dl_earfcn','ext_pci','int_mnc','int_mcc','int_dl_earfcn','int_pci'], \
+                                schema='network_audit')
 
+    redundant_externals = op.create_table(
+        'redundant_externals',
+        sa.Column('pk', sa.Integer, primary_key=True),
+        sa.Column('nodename', sa.String(100), nullable=False),
+        sa.Column('technology', sa.String(100), nullable=False),
+        sa.Column('vendor', sa.String(100), nullable=False),
+        sa.Column('cellname', sa.String(100), nullable=False, default=0),
+        sa.Column('age', sa.Integer, nullable=False, default=0),
+        sa.Column('modified_by', sa.Integer),
+        sa.Column('added_by', sa.Integer),
+        sa.Column('date_added', sa.TIMESTAMP, default=sa.func.now(), onupdate=sa.func.now()),
+        sa.Column('date_modified', sa.TIMESTAMP, default=sa.func.now()),
+        schema=u'network_audit'
+    )
+    op.execute('ALTER SEQUENCE  network_audit.redundant_externals_pk_seq RENAME TO seq_redundant_externals_pk')
+    op.create_unique_constraint('unique_redundant_externals', 'redundant_externals',\
+                                ['nodename',' technology','vendor','cellname'], schema='network_audit')
 
 
     audit_categories = sa.sql.table(
@@ -161,7 +190,19 @@ def upgrade():
          'notes': 'Inconsistent external 4G parameters'},
     ])
 
+    op.bulk_insert(audit_rules, [
+        {'name': 'Redundant Externals', 'category_pk': category_pk, 'in_built': True,
+         'table_name': 'redundant_externals',
+         'sql': 'SELECT * FROM network_audit.redundant_externals',
+         'notes': 'Redundant externals definitions'},
+    ])
+
 def downgrade():
+    op.drop_unique_constraint("unique_incosistent_2g_externals", "incosistent_2g_externals", schema=u'network_audit')
+    op.drop_unique_constraint("unique_incosistent_3g_externals", "incosistent_3g_externals", schema=u'network_audit')
+    op.drop_unique_constraint("unique_incosistent_4g_externals", "incosistent_4g_externals", schema=u'network_audit')
+    op.drop_unique_constraint("unique_redundant_externals", "redundant_externals", schema=u'network_audit')
+
     op.drop_table('incosistent_2g_externals', schema=u'network_audit')
     op.drop_table('incosistent_3g_externals', schema=u'network_audit')
     op.drop_table('incosistent_4g_externals', schema=u'network_audit')
