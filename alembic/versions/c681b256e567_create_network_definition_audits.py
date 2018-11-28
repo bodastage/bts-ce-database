@@ -198,10 +198,10 @@ def upgrade():
     ])
 
 def downgrade():
-    op.drop_unique_constraint("unique_incosistent_2g_externals", "incosistent_2g_externals", schema=u'network_audit')
-    op.drop_unique_constraint("unique_incosistent_3g_externals", "incosistent_3g_externals", schema=u'network_audit')
-    op.drop_unique_constraint("unique_incosistent_4g_externals", "incosistent_4g_externals", schema=u'network_audit')
-    op.drop_unique_constraint("unique_redundant_externals", "redundant_externals", schema=u'network_audit')
+    op.drop_constraint("unique_incosistent_2g_externals", "incosistent_2g_externals", schema=u'network_audit')
+    op.drop_constraint("unique_incosistent_3g_externals", "incosistent_3g_externals", schema=u'network_audit')
+    op.drop_constraint("unique_incosistent_4g_externals", "incosistent_4g_externals", schema=u'network_audit')
+    op.drop_constraint("unique_redundant_externals", "redundant_externals", schema=u'network_audit')
 
     op.drop_table('incosistent_2g_externals', schema=u'network_audit')
     op.drop_table('incosistent_3g_externals', schema=u'network_audit')
