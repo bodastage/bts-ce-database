@@ -126,7 +126,7 @@ def upgrade():
     )
     op.execute('ALTER SEQUENCE  network_audit.redundant_externals_pk_seq RENAME TO seq_redundant_externals_pk')
     op.create_unique_constraint('unique_redundant_externals', 'redundant_externals',\
-                                ['nodename',' technology','vendor','cellname'], schema='network_audit')
+                                ['nodename','technology','vendor','cellname'], schema='network_audit')
 
 
     audit_categories = sa.sql.table(
