@@ -106,7 +106,7 @@ def upgrade():
     )
     op.execute('ALTER SEQUENCE  network_audit.incosistent_4g_externals_pk_seq RENAME TO seq_incosistent_4g_externals_pk')
     op.create_unique_constraint('unique_incosistent_4g_externals', 'incosistent_4g_externals', \
-                                ['nodename',' ext_vendor','int_vendor','ext_cellname','ext_mnc','ext_mcc',\
+                                ['nodename','ext_vendor','int_vendor','ext_cellname','ext_mnc','ext_mcc',\
                                  'ext_dl_earfcn','ext_pci','int_mnc','int_mcc','int_dl_earfcn','int_pci'], \
                                 schema='network_audit')
 
