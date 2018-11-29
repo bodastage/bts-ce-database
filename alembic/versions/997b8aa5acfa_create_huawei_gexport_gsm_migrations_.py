@@ -14,8 +14,9 @@ revision = '997b8aa5acfa'
 down_revision = 'cfebec8f0555'
 branch_labels = None
 depends_on = None
+
 def upgrade():
-    op.create_table('2GHASHKEY_BSC6910GSM',
+    op.create_table('2GHASHKEY',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -41,7 +42,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('2GUSERIDANONSWITCH_BSC6910GSM',
+    op.create_table('2GUSERIDANONSWITCH',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -52,7 +53,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ABISE1T1_BSC6910GSM',
+    op.create_table('ABISE1T1',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -63,10 +64,13 @@ def upgrade():
         sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ACTSTATUS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRANSTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('AE1T1_BSC6910GSM',
+    op.create_table('AE1T1',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -87,7 +91,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('AISSCFG_BSC6910GSM',
+    op.create_table('AISSCFG',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -102,7 +106,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('AITFOTHPARA_BSC6910GSM',
+    op.create_table('AITFOTHPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -132,7 +136,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('AITFREV_BSC6910GSM',
+    op.create_table('AITFREV',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -148,7 +152,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ALGCTRLPARA_BSC6910GSM',
+    op.create_table('ALGCTRLPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -164,7 +168,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ALMBLKPARA_BSC6910GSM',
+    op.create_table('ALMBLKPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -180,7 +184,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ALMBLKSW_BSC6910GSM',
+    op.create_table('ALMBLKSW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -193,7 +197,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ALMCAPACITY_BSC6910GSM',
+    op.create_table('ALMCAPACITY',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -205,7 +209,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ALMLVL_BSC6910GSM',
+    op.create_table('ALMLVL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -217,7 +221,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ALMML_BSC6910GSM',
+    op.create_table('ALMML',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -228,7 +232,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ALMOSCISW_BSC6910GSM',
+    op.create_table('ALMOSCISW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -239,7 +243,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ALMOSCITHRD_BSC6910GSM',
+    op.create_table('ALMOSCITHRD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -254,7 +258,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ALMPORT_BSC6910GSM',
+    op.create_table('ALMPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -267,10 +271,12 @@ def upgrade():
         sa.Column('AID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('AVOL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ALMSCRN_BSC6910GSM',
+    op.create_table('ALMSCRN',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -281,7 +287,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ALMSHLD_BSC6910GSM',
+    op.create_table('ALMSHLD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -293,7 +299,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('APPCERT_BSC6910GSM',
+    op.create_table('APPCERT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -305,7 +311,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ATERE1T1_BSC6910GSM',
+    op.create_table('ATERE1T1',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -323,7 +329,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ATEROML_BSC6910GSM',
+    op.create_table('ATEROML',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -368,7 +374,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ATERSL_BSC6910GSM',
+    op.create_table('ATERSL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -419,7 +425,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ATESTPARA_BSC6910GSM',
+    op.create_table('ATESTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -430,7 +436,31 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BFDPROTOSW_BSC6910GSM',
+    op.create_table('AUTHPOLICY',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AUTHMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('BAMIPRT',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RTDEST', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RTDESTMASK', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NEXTHOP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('BFDPROTOSW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -443,7 +473,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BOXRPT_BSC6910GSM',
+    op.create_table('BOXRPT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -455,18 +485,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BRDSTALMSHLD_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BRDSTALMSHLDSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('BRD_BSC6910GSM',
+    op.create_table('BRD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -483,27 +502,18 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSC6900Equipment_BSC6910GSM',
+    op.create_table('BRDSTALMSHLD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BRDSTALMSHLDSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSC6900GSMFunction_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('BSCACCCTRLP_BSC6910GSM',
+    op.create_table('BSCACCCTRLP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -517,7 +527,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCAISS_BSC6910GSM',
+    op.create_table('BSCAISS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -528,7 +538,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCAITFTMR_BSC6910GSM',
+    op.create_table('BSCAITFTMR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -543,7 +553,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCBASIC_BSC6910GSM',
+    op.create_table('BSCBASIC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -611,10 +621,15 @@ def upgrade():
         sa.Column('UMCROSSDECTECTSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('UMVER', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('WBTONBHO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNPREFIX1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNPREFIX2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNPREFIX3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNPREFIX4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNPREFIX5', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCDSTPA_BSC6910GSM',
+    op.create_table('BSCDSTPA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -623,10 +638,11 @@ def upgrade():
         sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('BSCDYNSWITCHTRXPAALLOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TSTURNINGOFFENABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVIDLECHANNUM', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCEXSOFTPARA_BSC6910GSM',
+    op.create_table('BSCEXSOFTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -751,7 +767,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCFCPARA_BSC6910GSM',
+    op.create_table('BSCFCPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -817,10 +833,12 @@ def upgrade():
         sa.Column('VIPACCESSCPURATE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VIPPRIORITY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VIPSHAREINCPURATE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AINTFMPT2MAXRATIO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AINTFMPT2MAXRATIOPOUC', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCINNSOFT_BSC6910GSM',
+    op.create_table('BSCINNSOFT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -833,7 +851,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCINNTMR_BSC6910GSM',
+    op.create_table('BSCINNTMR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -903,7 +921,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCJBF_BSC6910GSM',
+    op.create_table('BSCJBF',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -920,7 +938,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCNSPARA_BSC6910GSM',
+    op.create_table('BSCNSPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -938,7 +956,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCPCUTYPE_BSC6910GSM',
+    op.create_table('BSCPCUTYPE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -949,7 +967,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCPSGBPARA_BSC6910GSM',
+    op.create_table('BSCPSGBPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -967,10 +985,11 @@ def upgrade():
         sa.Column('USRULPDUTBITVALUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('XIDPDULEN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('XIDPDUPROC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LLCPDUREORDER', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCPSINNERSOFTPARA_BSC6910GSM',
+    op.create_table('BSCPSINNERSOFTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -994,7 +1013,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCPSSOFTPARA_BSC6910GSM',
+    op.create_table('BSCPSSOFTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1126,7 +1145,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCPSSTAT_BSC6910GSM',
+    op.create_table('BSCPSSTAT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1156,7 +1175,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCPSTCDSCPMAP_BSC6910GSM',
+    op.create_table('BSCPSTCDSCPMAP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1173,7 +1192,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCPSUMPARA_BSC6910GSM',
+    op.create_table('BSCPSUMPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1218,7 +1237,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCSIGTRC_BSC6910GSM',
+    op.create_table('BSCSIGTRC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1242,7 +1261,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCSTATATTR_BSC6910GSM',
+    op.create_table('BSCSTATATTR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1263,7 +1282,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCTESTPARA_BSC6910GSM',
+    op.create_table('BSCTESTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1299,7 +1318,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCTMR_BSC6910GSM',
+    op.create_table('BSCTMR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1330,7 +1349,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSCUDBO_BSC6910GSM',
+    op.create_table('BSCUDBO',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1347,7 +1366,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSSGPPARA_BSC6910GSM',
+    op.create_table('BSSGPPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1368,7 +1387,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BSSLS_BSC6910GSM',
+    op.create_table('BSSLS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1377,10 +1396,77 @@ def upgrade():
         sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('BSSLSGENMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('LSCONTROLPLANEDETECT', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBSCLS1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBSCLS10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBSCLS2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBSCLS3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBSCLS4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBSCLS5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBSCLS6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBSCLS7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBSCLS8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBSCLS9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBTSLS1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBTSLS10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBTSLS2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBTSLS3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBTSLS4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBTSLS5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBTSLS6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBTSLS7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBTSLS8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSISDNSEGLIST2AVOIDBTSLS9', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSABISPRIMAP_BSC6910GSM',
+    op.create_table('BTS',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ABISBYPASSMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ABISMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ACTSTATUS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSDESC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CPUNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CTRLSN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CTRLSRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CURE1INPORTNUM', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FLEXABISMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('HOSTTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('INNBBULICSHAEN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('INTRABBPOOLSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ISCONFIGEDRING', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MAINBMPMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MAINPORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MPMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NEWNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OMLLOGICNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SEPERATEMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SERVICEMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SRANMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SRANUPGRADEFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRANDETSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TSASSIGNOPTISW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOMLINPORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOMLINTSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOMLOUTBSCE1PORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOMLOUTBSCSLOTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOMLOUTBSCSUBRACKNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOMLOUTBSCTSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('WORKMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTS3012SRANMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FATHERSITEINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('BTSABISPRIMAP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1395,7 +1481,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSABISTROP_BSC6910GSM',
+    op.create_table('BTSABISTROP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1408,7 +1494,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSAIRCON_BSC6910GSM',
+    op.create_table('BTSAIRCON',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1427,7 +1513,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSAISS_BSC6910GSM',
+    op.create_table('BTSAISS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1441,49 +1527,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSALMFLASHTHD_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ALMID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ALMOCCURACCUTIMEHTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ALMOCCURACCUTIMELTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ALMOCCURTIMESHTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ALMOCCURTIMESLTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('FLASHALMCLRTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('FLASHALMOCCURTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('BTSALMFLASHTW_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('FLASHSTATISALMCLRTW', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('FLASHSTATISALMOCCURTW', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('BTSALMPORT_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('BTSALM_BSC6910GSM',
+    op.create_table('BTSALM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1500,10 +1544,81 @@ def upgrade():
         sa.Column('BTSTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('EXTFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMFLAG4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMFLAG5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AVD4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AVD5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSFILTALMID1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSFILTALMID2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DB9CONNOTHDEV', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FSTNODECONNDEVTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPSALMENABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPSALMINPORTTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPSALMVLDLVL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSANTFEEDERBRD_BSC6910GSM',
+    op.create_table('BTSALMFLASHTHD',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMOCCURACCUTIMEHTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMOCCURACCUTIMELTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMOCCURTIMESHTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMOCCURTIMESLTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FLASHALMCLRTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FLASHALMOCCURTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('BTSALMFLASHTW',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FLASHSTATISALMCLRTW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FLASHSTATISALMOCCURTW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('BTSALMMGMRULE',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ADVALMMGRULETP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMDISACDUR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMOCACDUR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SDTMWDALMDIS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SDTMWDALMOC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('BTSALMPORT',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('BTSANTFEEDERBRD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1527,10 +1642,11 @@ def upgrade():
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('NEWBT1', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('NEWBT2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DMDUB', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSANTFEEDERCONNECT_BSC6910GSM',
+    op.create_table('BTSANTFEEDERCONNECT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1545,16 +1661,28 @@ def upgrade():
         sa.Column('U1TRX', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('BT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('U0GEN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('U0TOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('U0TRXBPN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('U0TRXCN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('U0TRXSN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('U0TRXSRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('U1GEN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('U1TOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('U1TRXBPN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('U1TRXCN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('U1TRXSN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('U1TRXSRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DTRX', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AORB', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DTRXCN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DTRXPN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DTRXSN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DTRXSRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSAPMUBP_BSC6910GSM',
+    op.create_table('BTSAPMUBP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1619,10 +1747,33 @@ def upgrade():
         sa.Column('TEMPOFLOWTEMPLOADPWROFF', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TLTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TUTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('HUMALAMRTHRESHOLDH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('HUMALAMRTHRESHOLDL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TEMPALARMTHRESHOLDH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TEMPALARMTHRESHOLDL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ATMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BATNUM', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DDSTM', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DSCHGT0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DSCHGT1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DSCHGT2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DSCHGT3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DSCHGT4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DSCHGT5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DSCHGT6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DSCHGT7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DSCHGT8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DSCHGT9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DSTML', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('EFF', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ENDV', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SDSEV', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SDSTML', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LSDTF', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSAUTODLDACTINFO_BSC6910GSM',
+    op.create_table('BTSAUTODLDACTINFO',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1642,10 +1793,15 @@ def upgrade():
         sa.Column('RVER', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('STTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VVER', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DAY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MAINVER', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MONTH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PATCHNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SUBVER', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSAUXEQP_BSC6910GSM',
+    op.create_table('BTSAUXEQP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1681,7 +1837,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSBAKPWR_BSC6910GSM',
+    op.create_table('BTSBAKPWR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1694,7 +1850,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSBAT_BSC6910GSM',
+    op.create_table('BTSBAT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1703,6 +1859,8 @@ def upgrade():
         sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CNT', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('HIERPWRPARA1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('HIERPWRPARA2', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('MTVT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('R0BATALLOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1714,7 +1872,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSBBMODE_BSC6910GSM',
+    op.create_table('BTSBBMODE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1727,7 +1885,28 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSBRDCAP_BSC6910GSM',
+    op.create_table('BTSBRD',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ACTSTATUS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BLKSTATUS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BOARDNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BT', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CABINETNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CARDFREATTR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('BTSBRDCAP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1745,27 +1924,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSBRD_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ACTSTATUS', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BLKSTATUS', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BOARDNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BT', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CABINETNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('BTSBREAKPOINT_BSC6910GSM',
+    op.create_table('BTSBREAKPOINT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1780,7 +1939,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSCABINET_BSC6910GSM',
+    op.create_table('BTSCABINET',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1793,12 +1952,14 @@ def upgrade():
         sa.Column('CABINETDESC', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CABINETGRPNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ISMAINCABINET', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SRANMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MAINCABINETSRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSCABPARA_BSC6910GSM',
+    op.create_table('BTSCABPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1809,10 +1970,13 @@ def upgrade():
         sa.Column('CN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MWTRXNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NORTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OVERTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSCELLPATCHPARA_BSC6910GSM',
+    op.create_table('BTSCELLPATCHPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1850,7 +2014,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSCHNFALLBACK_BSC6910GSM',
+    op.create_table('BTSCHNFALLBACK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1868,7 +2032,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSCHRFILTER_BSC6910GSM',
+    op.create_table('BTSCHRFILTER',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1932,7 +2096,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSCLK_BSC6910GSM',
+    op.create_table('BTSCLK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1946,10 +2110,12 @@ def upgrade():
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TRCCLKRNGLMTSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TRCCLKRNGLMTTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CLKSYNCMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('STANDARD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSCONNECT_BSC6910GSM',
+    op.create_table('BTSCONNECT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1971,10 +2137,16 @@ def upgrade():
         sa.Column('RACKGRPNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FPN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPBTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPBTSIDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FCN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FSN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FSRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSCPRIPORT_BSC6910GSM',
+    op.create_table('BTSCPRIPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -1992,7 +2164,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSCRC4_BSC6910GSM',
+    op.create_table('BTSCRC4',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2005,7 +2177,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSCTRLEX_BSC6910GSM',
+    op.create_table('BTSCTRLEX',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2020,7 +2192,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSCTRLLNK_BSC6910GSM',
+    op.create_table('BTSCTRLLNK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2040,7 +2212,53 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSDDPUBP_BSC6910GSM',
+    op.create_table('BTSDATUBP',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CFGFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LOWELECTIMER0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LOWELECTIMER1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LOWELECTIMER2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LOWELECTIMER3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LOWELECTIMER4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LOWELECTIMER5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMD0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMD1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMD2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMD3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMD4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ALMD5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AMPC0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AMPC1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AMPC2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AMPC3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AMPC4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AMPC5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MAJORALMUP0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MAJORALMUP1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MAJORALMUP2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MAJORALMUP3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MAJORALMUP4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MAJORALMUP5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MODE0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MODE1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MODE2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MODE3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MODE4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MODE5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('BTSDDPUBP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2059,7 +2277,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSDEMUBP_BSC6910GSM',
+    op.create_table('BTSDEMUBP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2070,6 +2288,9 @@ def upgrade():
         sa.Column('CN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ASSORXUCN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ASSORXUSN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ASSORXUSRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CAS0_NO1DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CAS0_NO2DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CAS0_NO3DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2136,10 +2357,30 @@ def upgrade():
         sa.Column('CASV3_NO32LOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CFGFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SAAF_48V_DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SAAF_HS_DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SAAF_RES0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SAAF_RES1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SAAF_RES2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SAAF_RES3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SAAF_RES4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SAAF_TS_DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SASV_GMLOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SASV_IMLOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SASV_SMLOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SASV_WILOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SBAF_GS_DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SBAF_IS_DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SBAF_SS_DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SBAF_WS_DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ADDR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MCN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MPN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MSRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSDHEUBP_BSC6910GSM',
+    op.create_table('BTSDHEUBP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2175,10 +2416,19 @@ def upgrade():
         sa.Column('TCMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TLTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TUTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ENDHEATTEMP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('STARTHEATTEMP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DBD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('HTCP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('HTDO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LTCP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NTDI', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NTDO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TLT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSDOMUBP_BSC6910GSM',
+    op.create_table('BTSDOMUBP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2193,7 +2443,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSDPMUBP_BSC6910GSM',
+    op.create_table('BTSDPMUBP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2221,11 +2471,18 @@ def upgrade():
         sa.Column('AVL_NO5', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('AVL_NO6', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('AVL_NO7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BASETEMPERATURE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BATTCAPACITY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('BATTENABLEDIN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BATTTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CELLEQUCHGVOL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CELLFLOATCHGVOL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CELLPWROFFEN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CELLPWROFFVOL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLTEMP1ALARMH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLTEMP1ALARML', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLTEMP1THRESHOLDH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLTEMP1THRESHOLDL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CELLTEMPCOMPENABLED', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CFGFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CNT', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2236,6 +2493,7 @@ def upgrade():
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('LOADPWROFFEN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('LOWTEMPLOADPWROFF', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MAXRECHARGECURRENT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PSU0', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PSU1', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PSU2', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2254,11 +2512,16 @@ def upgrade():
         sa.Column('SETDIESELENGINEENABLED', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SETENVPARAENABLED', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SETHUMPARAENABLED', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TEMPCOMPENSATECOEF', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TEMPOFLOWTEMPLOADPWROFF', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('HUMALAMRTHRESHOLDH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('HUMALAMRTHRESHOLDL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TEMPALARMTHRESHOLDH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TEMPALARMTHRESHOLDL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSDTMUBP_BSC6910GSM',
+    op.create_table('BTSDTMUBP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2271,10 +2534,14 @@ def upgrade():
         sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CFGFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OUTPUT0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OUTPUT1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OUTPUT2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OUTPUT3', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSE1T1BER_BSC6910GSM',
+    op.create_table('BTSE1T1BER',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2288,7 +2555,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSEAMRC_BSC6910GSM',
+    op.create_table('BTSEAMRC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2302,7 +2569,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSENVALMPORT_BSC6910GSM',
+    op.create_table('BTSENVALMPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2318,12 +2585,12 @@ def upgrade():
         sa.Column('AVOL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PT', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('RESALMID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RESALMID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSEQUIPMENT_BSC6910GSM',
+    op.create_table('BTSEQUIPMENT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2337,7 +2604,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSETHOAM_BSC6910GSM',
+    op.create_table('BTSETHOAM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2350,7 +2617,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSETHPORT_BSC6910GSM',
+    op.create_table('BTSETHPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2376,7 +2643,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSEXD_BSC6910GSM',
+    op.create_table('BTSEXD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2392,7 +2659,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSFALLBACK_BSC6910GSM',
+    op.create_table('BTSFALLBACK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2405,7 +2672,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSFCUPARA_BSC6910GSM',
+    op.create_table('BTSFCUPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2418,7 +2685,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSFLEXABISPARA_BSC6910GSM',
+    op.create_table('BTSFLEXABISPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2434,7 +2701,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSFMUABP_BSC6910GSM',
+    op.create_table('BTSFMUABP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2477,7 +2744,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSFORBIDTS_BSC6910GSM',
+    op.create_table('BTSFORBIDTS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2498,7 +2765,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSGUPWRSHRFP_BSC6910GSM',
+    op.create_table('BTSGUPWRSHRFP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2511,7 +2778,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSIDLETS_BSC6910GSM',
+    op.create_table('BTSIDLETS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2527,7 +2794,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSINTRXUSPEC_BSC6910GSM',
+    op.create_table('BTSINTRXUSPEC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2543,7 +2810,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSLAPDWS_BSC6910GSM',
+    op.create_table('BTSLAPDWS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2559,7 +2826,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSLLDPGLOBAL_BSC6910GSM',
+    op.create_table('BTSLLDPGLOBAL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2577,7 +2844,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSLOCALETHPORT_BSC6910GSM',
+    op.create_table('BTSLOCALETHPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2590,7 +2857,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSLOCALUSBPORT_BSC6910GSM',
+    op.create_table('BTSLOCALUSBPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2606,7 +2873,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSLOCKBCCH_BSC6910GSM',
+    op.create_table('BTSLOCKBCCH',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2619,7 +2886,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSLR_BSC6910GSM',
+    op.create_table('BTSLR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2637,7 +2904,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSLSW_BSC6910GSM',
+    op.create_table('BTSLSW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2650,7 +2917,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSMNTMODE_BSC6910GSM',
+    op.create_table('BTSMNTMODE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2661,10 +2928,12 @@ def upgrade():
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('MMSETREMARK', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('MNTMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ET', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ST', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSNFCBBP_BSC6910GSM',
+    op.create_table('BTSNFCBBP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2677,10 +2946,11 @@ def upgrade():
         sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CFGFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('STC', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSOMLBACKUP_BSC6910GSM',
+    op.create_table('BTSOMLBACKUP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2693,7 +2963,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSOMLDETECT_BSC6910GSM',
+    op.create_table('BTSOMLDETECT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2703,10 +2973,11 @@ def upgrade():
         sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('OMLDETECTSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSBARCODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSOTHPARA_BSC6910GSM',
+    op.create_table('BTSOTHPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2733,12 +3004,14 @@ def upgrade():
         sa.Column('HIGHMODPWRSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IPCLKSYNMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ISSUPERBTS', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IWFVLANOPTSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('JITBUFDELAY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('MCPACUTPWRPRIPOLICY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('MTSTURNOFF', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('NOTRAFFICSELFHEALSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('OMLFAILROLLBACKPOLICY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PAADJVOL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PDCHGBR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PROBESEQ', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PSUTURNINGOFFENABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2758,7 +3031,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSOUTPUT_BSC6910GSM',
+    op.create_table('BTSOUTPUT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2776,7 +3049,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSPATCHPARA_BSC6910GSM',
+    op.create_table('BTSPATCHPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2808,7 +3081,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSPLRALM_BSC6910GSM',
+    op.create_table('BTSPLRALM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2821,7 +3094,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSPMUBP_BSC6910GSM',
+    op.create_table('BTSPMUBP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2836,7 +3109,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSPOWERTYPE_BSC6910GSM',
+    op.create_table('BTSPOWERTYPE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2847,10 +3120,11 @@ def upgrade():
         sa.Column('CN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('POWERTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSPSUFP_BSC6910GSM',
+    op.create_table('BTSPSUFP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2860,10 +3134,13 @@ def upgrade():
         sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CFGFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ISTRANCABCON', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MCSTANDARD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SRVPRIPOLICY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSPWRSHARE_BSC6910GSM',
+    op.create_table('BTSPWRSHARE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2885,7 +3162,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSPWRTYPE_BSC6910GSM',
+    op.create_table('BTSPWRTYPE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2893,16 +3170,16 @@ def upgrade():
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BRDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FREQMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('MCSTANDARD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PWRINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PWRVAL_W', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BRDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSRELIALOGSWITCH_BSC6910GSM',
+    op.create_table('BTSRELIALOGSWITCH',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2915,7 +3192,82 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSRINGATTR_BSC6910GSM',
+    op.create_table('BTSRET',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DEVICENO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CTRLPORTCN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CTRLPORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CTRLPORTSN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CTRLPORTSRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DEVICENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('POLARTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RETTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SCENARIO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SERIALNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDORCODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('BTSRETDEVICEDATA',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DEVICENO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SUBUNITNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BAND1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BAND2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BAND3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BAND4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BEARING', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('INSTALLERID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MODELNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SECTORID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SERIALNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TILT', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('BTSRETSUBUNIT',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DEVICENO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SUBUNITNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AER', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLIDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CONNCN1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CONNCN2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CONNPN1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CONNPN2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CONNSN1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CONNSN2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CONNSRN1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CONNSRN2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TILT', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('BTSRINGATTR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2931,7 +3283,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSRSTINFOEFFECT_BSC6910GSM',
+    op.create_table('BTSRSTINFOEFFECT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -2942,7 +3294,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSRSTLIST_BSC6910GSM',
+    op.create_table('BTSRSTLIST',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3017,7 +3369,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSRSV_BSC6910GSM',
+    op.create_table('BTSRSV',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3031,7 +3383,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSRXUBP_BSC6910GSM',
+    op.create_table('BTSRXUBP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3042,6 +3394,8 @@ def upgrade():
         sa.Column('CN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ADEF_PORT0_CDEF', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ADEF_PORT1_CDEF', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ALARMENABLE_NO1DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ALARMENABLE_NO2DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('GUPWRSHARESWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3056,6 +3410,8 @@ def upgrade():
         sa.Column('HAVETT8', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IFOFFSET', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LNA1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LNA2', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('LVL1VSWR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('LVL2VSWR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('MRRUATTENFACTOR1', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3075,23 +3431,35 @@ def upgrade():
         sa.Column('PWRSWITCHF', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PWRSWITCHG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PWRSWITCHH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PWRSWITCHRET', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RELATEDMODFUNC', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RFDCPWROFFALMDETECTSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('RRCSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RSSIALARMCFGSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RXFREQBANDMUTUALSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RXUIDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RXUTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SNDRCVMODE3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SNDRCVMODE2', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SPTSHARING', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SWITCHERLEVEL_NO1DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SWITCHERLEVEL_NO2DISABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VSWRALMDISPOSE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('WORKINGSTANDARD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RRCSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SNDRCVMODE3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSSILOWTHRESHOLD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSSIUNBALANCEDTHRESHOLD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OVERCURALMTHDRET', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OVERCURCLRTHDRET', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('THRESHOLDTYPERET', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UNDERCURALMTHDRET', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UNDERCURCLRTHDRET', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ATTENFACTOR1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ATTENFACTOR2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SNDRCVMODE1', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSRXUBRD_BSC6910GSM',
+    op.create_table('BTSRXUBRD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3116,10 +3484,15 @@ def upgrade():
         sa.Column('RXUNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RXUPOS', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RXUSPEC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BRDRXBW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BRDTXBW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PWRMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRXNUM', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RXUSPECNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSRXUCHAIN_BSC6910GSM',
+    op.create_table('BTSRXUCHAIN',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3142,7 +3515,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSSHARING_BSC6910GSM',
+    op.create_table('BTSSHARING',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3155,7 +3528,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSTHEFTALM_BSC6910GSM',
+    op.create_table('BTSTHEFTALM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3165,10 +3538,12 @@ def upgrade():
         sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ANTITHEFTALLOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CLRDELAY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CLRINTERVAL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSTRANS_BSC6910GSM',
+    op.create_table('BTSTRANS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3181,7 +3556,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSTRXBACKUP_BSC6910GSM',
+    op.create_table('BTSTRXBACKUP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3194,7 +3569,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSTRXBRD_BSC6910GSM',
+    op.create_table('BTSTRXBRD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3213,7 +3588,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSXFC_BSC6910GSM',
+    op.create_table('BTSXFC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3223,11 +3598,13 @@ def upgrade():
         sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ABISSIGCTRLSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ABISSIGTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSSIGCTRLHIGHTHRESHOLD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSSIGCTRLSTARTTHRESHOLD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTSXMUFP_BSC6910GSM',
+    op.create_table('BTSXMUFP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3240,51 +3617,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('BTS_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ABISBYPASSMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ABISMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ACTSTATUS', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BTSDESC', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BTSNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BTSTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CPUNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CTRLSN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CTRLSRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CURE1INPORTNUM', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('FLEXABISMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('HOSTTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('INNBBULICSHAEN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('INTRABBPOOLSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ISCONFIGEDRING', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('MAINBMPMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('MAINPORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('MPMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NEWNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('OMLLOGICNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SEPERATEMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SERVICEMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SRANUPGRADEFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRANDETSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TSASSIGNOPTISW', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('UPOMLINPORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('UPOMLINTSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('UPOMLOUTBSCE1PORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('UPOMLOUTBSCSLOTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('UPOMLOUTBSCSUBRACKNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('UPOMLOUTBSCTSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('WORKMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('CAB_BSC6910GSM',
+    op.create_table('CAB',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3297,7 +3630,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CCGN_BSC6910GSM',
+    op.create_table('CCGN',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3309,7 +3642,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CELLBIND2BTS_BSC6910GSM',
+    op.create_table('CELLBIND2BTS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3322,7 +3655,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CELLGLDSS_BSC6910GSM',
+    op.create_table('CELLGLDSS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3336,7 +3669,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CERTCHKTSK_BSC6910GSM',
+    op.create_table('CERTCHKTSK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3350,7 +3683,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CERTMK_BSC6910GSM',
+    op.create_table('CERTMK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3361,7 +3694,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CERTREQ_BSC6910GSM',
+    op.create_table('CERTREQ',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3386,7 +3719,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CFGCHK_BSC6910GSM',
+    op.create_table('CFGCHK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3398,30 +3731,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CLKMODE_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('MODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('CLKSRC_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SRCGRD', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SRCT', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('CLK_BSC6910GSM',
+    op.create_table('CLK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3437,10 +3747,39 @@ def upgrade():
         sa.Column('REF2MCLKSW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('REF2MCLKSW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SRT', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('REF2MCLK2SRC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SUPPORTBAKCLK2SRC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SUPPORTBAKCLKSRC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('REF2MCLK2SRCBAK', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('REF2MCLKSRCBAK', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CONFIGURE_BSC6910GSM',
+    op.create_table('CLKMODE',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SRCGRD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('CLKSRC',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SRCGRD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SRCT', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('CONFIGURE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3452,7 +3791,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CONNTYPE_BSC6910GSM',
+    op.create_table('CONNTYPE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3463,7 +3802,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('COPTLNK_BSC6910GSM',
+    op.create_table('COPTLNK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3484,7 +3823,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CPUTHD_BSC6910GSM',
+    op.create_table('CPUTHD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3494,10 +3833,14 @@ def upgrade():
         sa.Column('BRDCLASS', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SSCPUAVEUSAGEALMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SSCPUMAXUSAGEALMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SSDSPAVEUSAGEALMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SSDSPMAXUSAGEALMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SSTHRUPUTAVEUSAGEALMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SSTHRUPUTMAXUSAGEALMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CRLPOLICY_BSC6910GSM',
+    op.create_table('CRLPOLICY',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3508,7 +3851,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CSPRECTRL_BSC6910GSM',
+    op.create_table('CSPRECTRL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3529,7 +3872,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('CTFTST_BSC6910GSM',
+    op.create_table('CTFTST',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3540,7 +3883,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('DEVIP_BSC6910GSM',
+    op.create_table('DEVIP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3555,7 +3898,313 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('DEVSOFTPARA_BSC6910GSM',
+    op.create_table('DEVRSVDPARA',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA33', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA34', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA35', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA36', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA37', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA38', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA39', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA40', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDPARA9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW1_BIT9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW2_BIT9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW3_BIT9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW4_BIT9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW5_BIT9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW6_BIT9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW7_BIT9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RSVDSW8_BIT9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('DEVSOFTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3570,7 +4219,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('DSCPMAP_BSC6910GSM',
+    op.create_table('DSCPMAP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3582,20 +4231,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('DSPLVDSMODE_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('LVDS252DSPNUM', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('DSP_BSC6910GSM',
+    op.create_table('DSP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3612,7 +4248,20 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('E1T1_BSC6910GSM',
+    op.create_table('DSPLVDSMODE',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LVDS252DSPNUM', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('E1T1',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3630,10 +4279,13 @@ def upgrade():
         sa.Column('PTTXT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('REMARK', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('WORKMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PTCODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PTTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UNBA', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('EMSIP_BSC6910GSM',
+    op.create_table('EMSIP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3647,7 +4299,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('EMSTZ_BSC6910GSM',
+    op.create_table('EMSTZ',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3659,16 +4311,20 @@ def upgrade():
         sa.Column('EM', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('EMONTH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ET', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('EWEEK', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('EWSEQ', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SDAY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SM', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SMONTH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ST', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SWEEK', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SWSEQ', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TO', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ZONET', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('EMU_BSC6910GSM',
+    op.create_table('EMU',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3721,7 +4377,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ENVALMPARA_BSC6910GSM',
+    op.create_table('ENVALMPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3735,7 +4391,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('EQMTOINVENTORYUNITHW_BSC6910GSM',
+    op.create_table('EQMTOINVENTORYUNITHW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3753,7 +4409,17 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ETHIP_BSC6910GSM',
+    op.create_table('EQUIPMENT',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('ETHIP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3770,7 +4436,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ETHPORT_BSC6910GSM',
+    op.create_table('ETHPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3789,6 +4455,7 @@ def upgrade():
         sa.Column('CFMVER', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ERRALARMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ERRDETECTSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FC', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FCINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FLOWCTRLSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('MTU', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3797,10 +4464,11 @@ def upgrade():
         sa.Column('PTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('REMARK', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TRMLOADTHINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SPEED', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ETHREDPORT_BSC6910GSM',
+    op.create_table('ETHREDPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -3813,7 +4481,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ETHSWITCH_BSC6910GSM',
+    op.create_table('ETHSWITCH',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4017,7 +4685,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('FACFG_BSC6910GSM',
+    op.create_table('FACFG',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4034,7 +4702,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('FANALMSW_BSC6910GSM',
+    op.create_table('FANALMSW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4052,7 +4720,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('FANSPEED_BSC6910GSM',
+    op.create_table('FANSPEED',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4062,10 +4730,11 @@ def upgrade():
         sa.Column('FANFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FANSPEEDMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FANADJUSTCOMMAND2', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('FCCOMMPARA_BSC6910GSM',
+    op.create_table('FCCOMMPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4102,7 +4771,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('FTPCLTPORT_BSC6910GSM',
+    op.create_table('FTPCLTPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4114,7 +4783,20 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('FTPSCLTDPORT_BSC6910GSM',
+    op.create_table('FTPSCLT',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ENCRYMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SPTSTATEFWL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SSLCERTAUTH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('FTPSCLTDPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4126,19 +4808,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('FTPSCLT_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ENCRYMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SPTSTATEFWL', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('FTPSRVSPD_BSC6910GSM',
+    op.create_table('FTPSRVSPD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4149,7 +4819,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('FTPSSRV_BSC6910GSM',
+    op.create_table('FTPSSRV',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4167,7 +4837,17 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('G2GNCELL_BSC6910GSM',
+    op.create_table('FUNCTION',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('G2GNCELL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4227,7 +4907,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('G3GARFCN_BSC6910GSM',
+    op.create_table('G3GARFCN',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4238,7 +4918,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('G3GNCELL_BSC6910GSM',
+    op.create_table('G3GNCELL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4259,7 +4939,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GAFCALMPARA_BSC6910GSM',
+    op.create_table('GAFCALMPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4274,7 +4954,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GALLCELLBLKSTAT_BSC6910GSM',
+    op.create_table('GALLCELLBLKSTAT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4286,7 +4966,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GBSCREDGRP_BSC6910GSM',
+    op.create_table('GBSCREDGRP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4301,7 +4981,55 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELL2GBA1_BSC6910GSM',
+    op.create_table('GCELL',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ACTSTATUS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ADMSTAT', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BCC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BCCHNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSPAGBLKSRES', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSPBCCHBLKS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSPRACHBLKS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CGI', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CI', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CSDSP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CSVSP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CnOpIndex', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DISPERFDATADEACELL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('EXTTP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FLEXMAIO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GLOCELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('HYBHIFREQBANDSUPPORT', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IUOTP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LAC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MCC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MNC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MOCNCMCELL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NCC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NEWCELLNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OPNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PSHPSP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PSLPSVP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('REMARK', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SiteIndex', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VIPCELL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ENIUO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DBFREQBCCHIUO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('GCELL2GBA1',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4314,10 +5042,12 @@ def upgrade():
         sa.Column('CELL2GBA1TAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ITEMVALID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELL2GBA1BCCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELL2GBA1OPTENHSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELL3GARFCN_BSC6910GSM',
+    op.create_table('GCELL3GARFCN',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4330,7 +5060,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLAMRQUL_BSC6910GSM',
+    op.create_table('GCELLAMRQUL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4359,7 +5089,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLBASICPARA_BSC6910GSM',
+    op.create_table('GCELLBASICPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4429,10 +5159,32 @@ def upgrade():
         sa.Column('ULROTSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('UMAISSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('UPPCEN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MICCENIISW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MICCENSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MICCINTERFDETECTHLD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FACCHIDENTIFYLEVEL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MICCENIIBERTHLDHIGH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MICCENIIBERTHLDLOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ENUMAISSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLBTSSOFTPARA_BSC6910GSM',
+    op.create_table('GCELLBTSSOFT',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ITEMINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ITEMVALUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('GCELLBTSSOFTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4457,22 +5209,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLBTSSOFT_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ITEMINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ITEMVALUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('GCELLCCACCESS_BSC6910GSM',
+    op.create_table('GCELLCCACCESS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4504,7 +5241,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLCCAD_BSC6910GSM',
+    op.create_table('GCELLCCAD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4533,7 +5270,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLCCAMR_BSC6910GSM',
+    op.create_table('GCELLCCAMR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4633,10 +5370,12 @@ def upgrade():
         sa.Column('ULTHH3', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ULTHWB1', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ULTHWB2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AUTOADJULTHHYSTF', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AUTOADJULTHHYSTH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLCCBASIC_BSC6910GSM',
+    op.create_table('GCELLCCBASIC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4687,10 +5426,11 @@ def upgrade():
         sa.Column('UMSFRLLRFACTOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('UMSFRLLRTHRESH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('UMSFRSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('REPEATDLFATHRED', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLCCCH_BSC6910GSM',
+    op.create_table('GCELLCCCH',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4717,10 +5457,15 @@ def upgrade():
         sa.Column('RACHLDAVERSLOT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RACHLOADALM', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RFRESINDPRD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DYNCCCHLOADDURATION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DYNCCCHLOADINCRTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DYNCCCHLOADREDCTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DYNCCCHREDUCEINTERVAL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MAXDYNCCCHNUM', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLCCTMR_BSC6910GSM',
+    op.create_table('GCELLCCTMR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4738,10 +5483,18 @@ def upgrade():
         sa.Column('T200SACCT0', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('T200SDCCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('T200SDCCH3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('N200ESTAB', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('N200FFULL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('N200FHALF', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('N200REL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('N200SACCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('N200SDCCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IMMASSMAXDELAYTIME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IMMASSMAXSENDNUM', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLCCUTRANSYS_BSC6910GSM',
+    op.create_table('GCELLCCUTRANSYS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4789,7 +5542,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLCHMGAD_BSC6910GSM',
+    op.create_table('GCELLCHMGAD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4799,7 +5552,6 @@ def upgrade():
         sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('AMRLOADOPTEN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('AMRTCHHPRIORALLOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('AMRTCHHPRIORLOAD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ASSOLRXLEVOFFSET', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('BTRXPRIORITYSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CELLOPPWRGRP', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4921,10 +5673,11 @@ def upgrade():
         sa.Column('UPRXLEVSTATICTIME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VAMOSAHSUSERDLSOFTBLOCKTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('WAITSDCCHIDLETIMER', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AMRTCHHPRIORLOAD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLCHMGBASIC_BSC6910GSM',
+    op.create_table('GCELLCHMGBASIC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4958,7 +5711,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLCONGACALGO_BSC6910GSM',
+    op.create_table('GCELLCONGACALGO',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4966,12 +5719,22 @@ def upgrade():
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ACPOLLPERIOD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLCONGRSTRCTMAXACNUM', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CNCONGSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CONGCHECKPERIOD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CONGOFCPUSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CONGOFSDCCHSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IACCSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SDCONGRELTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SDCONGTRIGTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TCHCONGRELTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TCHCONGTRIGTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLCSFBPARA_BSC6910GSM',
+    op.create_table('GCELLCSFBPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -4990,7 +5753,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLDYNTURNOFF_BSC6910GSM',
+    op.create_table('GCELLDYNTURNOFF',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5005,7 +5768,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLEGPRSPARA_BSC6910GSM',
+    op.create_table('GCELLEGPRSPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5040,7 +5803,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLEXTMSRPARA_BSC6910GSM',
+    op.create_table('GCELLEXTMSRPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5057,23 +5820,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLFREQSCAN_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('FREQLST', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('LOCGRPNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('STRTM', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TIME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('GCELLFREQ_BSC6910GSM',
+    op.create_table('GCELLFREQ',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5083,17 +5830,70 @@ def upgrade():
         sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FREQ1', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FREQ2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FREQ3', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FREQ4', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FREQ5', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FREQ6', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FREQ7', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FREQ8', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ33', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ34', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ35', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ36', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ37', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ38', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ39', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ40', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ41', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ42', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ43', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ44', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ45', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLGPRS_BSC6910GSM',
+    op.create_table('GCELLFREQSCAN',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQLST', sa.Text, autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LOCGRPNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('STRTM', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TIME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('GCELLGPRS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5130,7 +5930,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLGSMR_BSC6910GSM',
+    op.create_table('GCELLGSMR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5166,7 +5966,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHO2GBA2_BSC6910GSM',
+    op.create_table('GCELLHO2GBA2',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5179,10 +5979,12 @@ def upgrade():
         sa.Column('CELL2GBA2TAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ITEMVALID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELL2GBA2BCCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELL2GBA2OPTENHSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOAD_BSC6910GSM',
+    op.create_table('GCELLHOAD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5236,7 +6038,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOBASIC_BSC6910GSM',
+    op.create_table('GCELLHOBASIC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5342,10 +6144,12 @@ def upgrade():
         sa.Column('TIGHTBCCHHOSTATTIME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ULEDGETHRES', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ULMCRITOPTSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AMRH2FHOLEVPROTTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AMRH2FHOQUALPROTTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOCTRL_BSC6910GSM',
+    op.create_table('GCELLHOCTRL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5370,7 +6174,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOEDBPARA_BSC6910GSM',
+    op.create_table('GCELLHOEDBPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5405,7 +6209,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOEMG_BSC6910GSM',
+    op.create_table('GCELLHOEMG',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5435,7 +6239,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOFAST_BSC6910GSM',
+    op.create_table('GCELLHOFAST',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5463,7 +6267,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOFDDBA2_BSC6910GSM',
+    op.create_table('GCELLHOFDDBA2',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5472,16 +6276,16 @@ def upgrade():
         sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ITEM', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DF', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DIVERSITY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FDDBA2TAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ITEMVALID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DF', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DIVERSITY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SCRAMBLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOFITPEN_BSC6910GSM',
+    op.create_table('GCELLHOFITPEN',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5523,7 +6327,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOINTERRATLDB_BSC6910GSM',
+    op.create_table('GCELLHOINTERRATLDB',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5552,7 +6356,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOIUO_BSC6910GSM',
+    op.create_table('GCELLHOIUO',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5616,7 +6420,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOPANT_BSC6910GSM',
+    op.create_table('GCELLHOPANT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5629,7 +6433,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOPTP_BSC6910GSM',
+    op.create_table('GCELLHOPTP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5642,7 +6446,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOTDDBA2_BSC6910GSM',
+    op.create_table('GCELLHOTDDBA2',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5657,7 +6461,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOUTRANFDD_BSC6910GSM',
+    op.create_table('GCELLHOUTRANFDD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5674,7 +6478,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHOUTRANTDD_BSC6910GSM',
+    op.create_table('GCELLHOUTRANTDD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5690,7 +6494,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLHSRPLCUSRIDFMG_BSC6910GSM',
+    op.create_table('GCELLHSRPLCUSRIDFMG',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5703,7 +6507,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLIBCAII_BSC6910GSM',
+    op.create_table('GCELLIBCAII',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5716,7 +6520,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLIDLEAD_BSC6910GSM',
+    op.create_table('GCELLIDLEAD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5731,7 +6535,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLIDLEBASIC_BSC6910GSM',
+    op.create_table('GCELLIDLEBASIC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5763,7 +6567,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLIDLEFDDBA1_BSC6910GSM',
+    op.create_table('GCELLIDLEFDDBA1',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5775,10 +6579,13 @@ def upgrade():
         sa.Column('FDDBA1TAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ITEMVALID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FDDDIVERSITY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FDDDLUARFAN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FDDSCRAMBLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLIDLETDDBA1_BSC6910GSM',
+    op.create_table('GCELLIDLETDDBA1',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5793,7 +6600,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLINNHOBASI_BSC6910GSM',
+    op.create_table('GCELLINNHOBASI',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5807,7 +6614,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLINNSOFT_BSC6910GSM',
+    op.create_table('GCELLINNSOFT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5853,7 +6660,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLINNTMR_BSC6910GSM',
+    op.create_table('GCELLINNTMR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5905,7 +6712,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLLCS_BSC6910GSM',
+    op.create_table('GCELLLCS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5928,7 +6735,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLMAGRP_BSC6910GSM',
+    op.create_table('GCELLMAGRP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5938,14 +6745,55 @@ def upgrade():
         sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('HOPINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('FREQ1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ6', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('HOPMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('HSN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TSC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ33', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ34', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ35', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ36', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ37', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ38', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ39', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ40', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ41', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ42', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLMAIOPLAN_BSC6910GSM',
+    op.create_table('GCELLMAIOPLAN',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5958,7 +6806,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLMOCN_BSC6910GSM',
+    op.create_table('GCELLMOCN',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5972,7 +6820,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLNC2PARA_BSC6910GSM',
+    op.create_table('GCELLNC2PARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6005,7 +6853,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLNCRESELECTPARA_BSC6910GSM',
+    op.create_table('GCELLNCRESELECTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6020,7 +6868,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLNONSTANDARDBW_BSC6910GSM',
+    op.create_table('GCELLNONSTANDARDBW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6033,7 +6881,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLNWCTRLMSRPARA_BSC6910GSM',
+    op.create_table('GCELLNWCTRLMSRPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6048,7 +6896,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLOPTREV_BSC6910GSM',
+    op.create_table('GCELLOPTREV',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6090,7 +6938,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLOSPMAP_BSC6910GSM',
+    op.create_table('GCELLOSPMAP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6103,7 +6951,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLOTHBASIC_BSC6910GSM',
+    op.create_table('GCELLOTHBASIC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6118,10 +6966,11 @@ def upgrade():
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('LTEFASTRETURNFRQSENDOPTSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RPTVOICE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LOWNOISESWH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLOTHEXT_BSC6910GSM',
+    op.create_table('GCELLOTHEXT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6214,7 +7063,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLOTHPARA_BSC6910GSM',
+    op.create_table('GCELLOTHPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6244,7 +7093,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPRACH_BSC6910GSM',
+    op.create_table('GCELLPRACH',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6267,7 +7116,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPRIEUTRANSYS_BSC6910GSM',
+    op.create_table('GCELLPRIEUTRANSYS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6300,10 +7149,11 @@ def upgrade():
         sa.Column('TRESEL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('UTRANPRI', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('UTRANQRXLEVMIN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FASTRETURNFILTERSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPRIVATEOPTPARA_BSC6910GSM',
+    op.create_table('GCELLPRIVATEOPTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6363,7 +7213,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPSABISPARA_BSC6910GSM',
+    op.create_table('GCELLPSABISPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6379,7 +7229,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPSBASE_BSC6910GSM',
+    op.create_table('GCELLPSBASE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6419,7 +7269,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPSCHM_BSC6910GSM',
+    op.create_table('GCELLPSCHM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6451,16 +7301,11 @@ def upgrade():
         sa.Column('CHIDLLOWTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CSBUSYPDAPPINTERVAL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DEFAULTDYNPDCHPRETRANNUM', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DEGRADEEGPRS', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DIFFCALCCELLLOADSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DUTYCYCLEBASEDPDCHMAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DWNDYNCHNTRANLEV', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DYNCHFREETM', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DYNCHNPREEMPTLEV', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DYNCHTRANRESLEV', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('E64KPRISWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ENCONVT4PD', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ENEDGEPRIGPRS', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ENPDADMINOPT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('GPRSLOADOPT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6482,7 +7327,6 @@ def upgrade():
         sa.Column('PDCHDWNLEV', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PDCHPOWERPLENT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PDCHPOWERPLENTTHRES', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('PDCHRECLAIMPOLICY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PDCHREFORMING', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PDCHUPLEV', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('POWTUNIT', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6498,7 +7342,6 @@ def upgrade():
         sa.Column('RAMBCAP', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RESERVEDDYNPDCHPRETRANNUM', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RTTIPDCHMULTIPLEXTHRESH', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SEQSELPDCONVT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('THP1ARP1PDCHWEIGHT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('THP1ARP1PRIMAXPDCHNUM', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('THP1ARP1PRIWEIGHT', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6528,10 +7371,21 @@ def upgrade():
         sa.Column('THP3ARP3PRIWEIGHT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TWOTHLDCNVTONOTHERTRXSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('UPDYNCHNTRANLEV', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DWNDYNCHNRETRANLEV', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPDYNCHNRETRANLEV', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ACTIVETBFPDADJHYST', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DEGRADEEGPRS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DIFFCALCCELLLOADSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('E64KPRISWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ENCONVT4PD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ENEDGEPRIGPRS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PDCHRECLAIMPOLICY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SEQSELPDCONVT', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PDREFORMPERIOD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPSCS_BSC6910GSM',
+    op.create_table('GCELLPSCS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6560,7 +7414,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPSDIFFSERVICE_BSC6910GSM',
+    op.create_table('GCELLPSDIFFSERVICE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6618,7 +7472,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPSI1_BSC6910GSM',
+    op.create_table('GCELLPSI1',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6633,7 +7487,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPSOTHERPARA_BSC6910GSM',
+    op.create_table('GCELLPSOTHERPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6695,7 +7549,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPSPWPARA_BSC6910GSM',
+    op.create_table('GCELLPSPWPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6705,18 +7559,12 @@ def upgrade():
         sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ALPHA', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DLPCINITPR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DLPCSTARTTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DUMMYPRGRAN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('EGPRSDLMRFLTGENE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('EGPRSINITATTTARGETLEVEL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('EGPRSSIGINITATTOFFSET', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('EGPRSSIGPOWEROFFSET', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('EGPRSULPCTARGETTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('GAMMA', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('GPRSDLMRFLTGENE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('GPRSDLPCRELADJGENE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('GPRSDLPCRELTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('GPRSDLPCSTARTTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('GPRSINITATTTARGETLEVEL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('GPRSSIGINITATTOFFSET', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('GPRSSIGPOWEROFFSET', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6729,19 +7577,25 @@ def upgrade():
         sa.Column('PCMEASCHAN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PSPCPOLICY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PSPCPRES', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SUPEGPRSDLPCMROPT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SUPEGPRSULPC', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SUPGPRSDLPC', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SUPPSDLPC', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TAVGT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TAVGW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('USFDUMMYPCFACTOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DLPCSTARTTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('EGPRSDLMRFLTGENE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GPRSDLMRFLTGENE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GPRSDLPCRELADJGENE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GPRSDLPCRELTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GPRSDLPCSTARTTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SUPEGPRSDLPCMROPT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TGTCIROFFSET', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TGTCIRPOS', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('USFDUMMYPCFACTOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPSSMALLPKTRESBAL_BSC6910GSM',
+    op.create_table('GCELLPSSMALLPKTRESBAL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6754,7 +7608,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPWR2_BSC6910GSM',
+    op.create_table('GCELLPWR2',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6812,7 +7666,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPWR3_BSC6910GSM',
+    op.create_table('GCELLPWR3',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6898,7 +7752,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLPWRBASIC_BSC6910GSM',
+    op.create_table('GCELLPWRBASIC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6929,15 +7783,15 @@ def upgrade():
         sa.Column('PWRCTLSAICOFFSETSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PWRCTRLSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SAICALLOWED', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SIGCHPWRBCDSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ULQHIGHTHRED', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ULQLOWTHRED', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ULSSHIGHTHRED', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ULSSLOWTHRED', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SIGCHPWRBCDSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLRESELECTPARA_BSC6910GSM',
+    op.create_table('GCELLRESELECTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6955,7 +7809,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLRESELECTUTRANTDD_BSC6910GSM',
+    op.create_table('GCELLRESELECTUTRANTDD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6972,7 +7826,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLRESELUTRANFDD_BSC6910GSM',
+    op.create_table('GCELLRESELUTRANFDD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6992,8 +7846,343 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
+    op.create_table('GCELLRSVPARA',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA33', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA34', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA35', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA36', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA37', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA38', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA39', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA40', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA41', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA42', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA43', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA44', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA45', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA46', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA47', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA48', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA49', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA50', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA51', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA52', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA53', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA54', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA55', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA56', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA57', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA58', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA59', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSDPARA9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV0_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV1_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV2_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV3_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLCSSWRSV4_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSDPARA9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV0_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GCELLPSSWRSV1_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
 
-    op.create_table('GCELLSERVPARA_BSC6910GSM',
+    op.create_table('GCELLSBC',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BROADCASTCONTENT', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BROADCASTINTERVAL', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CHANID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SCHEME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SUPPORTCELLBROADCAST', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('GCELLSERVPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7012,7 +8201,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLSOFT_BSC6910GSM',
+    op.create_table('GCELLSOFT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7133,10 +8322,14 @@ def upgrade():
         sa.Column('UMCROSSTALKOPTALLOWED', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VOICEALMSTATMUTETYPE_LEVEL_1_MUTE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VOICEALMSTATMUTETYPE_LEVEL_2_MUTE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CSFBIDENTIFYMOSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CSFBIDENTIFYMTSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CSFBIMMASSENSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UTRANCMDELAYFORCSFBSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLSON_BSC6910GSM',
+    op.create_table('GCELLSON',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7154,7 +8347,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLSRVCC_BSC6910GSM',
+    op.create_table('GCELLSRVCC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7172,7 +8365,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLSTANDARDOPTPARA_BSC6910GSM',
+    op.create_table('GCELLSTANDARDOPTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7187,7 +8380,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLSTATOPTPARA_BSC6910GSM',
+    op.create_table('GCELLSTATOPTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7213,7 +8406,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLTA_BSC6910GSM',
+    op.create_table('GCELLTA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7233,22 +8426,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLTEMPLATEPARA_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('MOCATTRNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('MOCNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TEMPLATEID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('MOCATTRVALUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('GCELLTEMPLATE_BSC6910GSM',
+    op.create_table('GCELLTEMPLATE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7269,7 +8447,22 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLTMR_BSC6910GSM',
+    op.create_table('GCELLTEMPLATEPARA',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MOCATTRNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MOCNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TEMPLATEID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MOCATTRVALUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('GCELLTMR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7312,7 +8505,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLTRANPARA_BSC6910GSM',
+    op.create_table('GCELLTRANPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7329,7 +8522,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLUNDPARA_BSC6910GSM',
+    op.create_table('GCELLUNDPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7356,7 +8549,21 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLVAMOSPWR_BSC6910GSM',
+    op.create_table('GCELLVAMOS',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TSCUNIFYSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VAMOSSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('GCELLVAMOSPWR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7392,21 +8599,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELLVAMOS_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TSCUNIFYSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VAMOSSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('GCELLWLAN_BSC6910GSM',
+    op.create_table('GCELLWLAN',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7424,53 +8617,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCELL_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ACTSTATUS', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ADMSTAT', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BCC', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BCCHNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BSPAGBLKSRES', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BSPBCCHBLKS', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BSPRACHBLKS', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CELLNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CELLNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CGI', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CI', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CSDSP', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CSVSP', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CnOpIndex', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DISPERFDATADEACELL', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('EXTTP', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('FLEXMAIO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('GLOCELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('HYBHIFREQBANDSUPPORT', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('IUOTP', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('LAC', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('MCC', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('MNC', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('MOCNCMCELL', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NCC', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NEWCELLNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('OPNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('PSHPSP', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('PSLPSVP', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('REMARK', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SiteIndex', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VIPCELL', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('GCNCFGALMTHD_BSC6910GSM',
+    op.create_table('GCNCFGALMTHD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7484,7 +8631,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCNNODE_BSC6910GSM',
+    op.create_table('GCNNODE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7509,23 +8656,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCNOPERATORREV_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('OPINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('OPERRSVPARA1', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('OPERRSVPARA2', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('OPERRSVPARA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('OPERRSVPARA4', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('OPERRSVPARA5', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('GCNOPERATOR_BSC6910GSM',
+    op.create_table('GCNOPERATOR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7544,7 +8675,23 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCSCHRCTRL_BSC6910GSM',
+    op.create_table('GCNOPERATORREV',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OPINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OPERRSVPARA1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OPERRSVPARA2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OPERRSVPARA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OPERRSVPARA4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OPERRSVPARA5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('GCSCHRCTRL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7577,10 +8724,13 @@ def upgrade():
         sa.Column('CSTRAFTYPE_LU', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CSTRAFTYPE_SMS', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('U2GMROSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CSCHRMR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CSHOPRPFAILINFOSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CSVOICEINFO', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCSCHRSCOPE_BSC6910GSM',
+    op.create_table('GCSCHRSCOPE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7593,7 +8743,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GCSFILE_BSC6910GSM',
+    op.create_table('GCSFILE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7604,7 +8754,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GDSSPARA_BSC6910GSM',
+    op.create_table('GDSSPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7627,7 +8777,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GDSSTM_BSC6910GSM',
+    op.create_table('GDSSTM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7645,7 +8795,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GEXT2GCELL_BSC6910GSM',
+    op.create_table('GEXT2GCELL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7687,7 +8837,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GEXT3GCELL_BSC6910GSM',
+    op.create_table('GEXT3GCELL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7723,7 +8873,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GEXTLTECELL_BSC6910GSM',
+    op.create_table('GEXTLTECELL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7747,7 +8897,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GEXTSMLC_BSC6910GSM',
+    op.create_table('GEXTSMLC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7762,7 +8912,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GFORCESWITCH_BSC6910GSM',
+    op.create_table('GFORCESWITCH',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7775,7 +8925,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GHOSTSTATUS_BSC6910GSM',
+    op.create_table('GHOSTSTATUS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7787,7 +8937,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GKPIALMTHD_BSC6910GSM',
+    op.create_table('GKPIALMTHD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7809,7 +8959,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GLOBALROUTESW_BSC6910GSM',
+    op.create_table('GLOBALROUTESW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7820,7 +8970,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GLTENCELL_BSC6910GSM',
+    op.create_table('GLTENCELL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7840,7 +8990,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GMMCSCHRCTRL_BSC6910GSM',
+    op.create_table('GMMCSCHRCTRL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7873,10 +9023,13 @@ def upgrade():
         sa.Column('CSTRAFTYPE_LU', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CSTRAFTYPE_SMS', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('U2GMROSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CSCHRMR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CSHOPRPFAILINFOSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CSVOICEINFO', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GMMCSCHRSCOPE_BSC6910GSM',
+    op.create_table('GMMCSCHRSCOPE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7888,7 +9041,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GMMMRCTRL_BSC6910GSM',
+    op.create_table('GMMMRCTRL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7903,7 +9056,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GMMMRSCOPE_BSC6910GSM',
+    op.create_table('GMMMRSCOPE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7915,7 +9068,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GMMPSCHRCTRL_BSC6910GSM',
+    op.create_table('GMMPSCHRCTRL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7952,7 +9105,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GMMPSCHRSCOPE_BSC6910GSM',
+    op.create_table('GMMPSCHRSCOPE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7964,7 +9117,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GMRCTRL_BSC6910GSM',
+    op.create_table('GMRCTRL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7979,7 +9132,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GMRSCOPE_BSC6910GSM',
+    op.create_table('GMRSCOPE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -7992,7 +9145,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GNETAWARENESS_BSC6910GSM',
+    op.create_table('GNETAWARENESS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8003,7 +9156,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GNODEREDCFGCTRL_BSC6910GSM',
+    op.create_table('GNODEREDCFGCTRL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8014,7 +9167,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GNODEREDUNDANCY_BSC6910GSM',
+    op.create_table('GNODEREDUNDANCY',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8025,7 +9178,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GPSCHRCTRL_BSC6910GSM',
+    op.create_table('GPSCHRCTRL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8058,10 +9211,11 @@ def upgrade():
         sa.Column('TDSERVPDUINTERVALTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TDSERVPDURCVTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TDSERVPDUSNDTHR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PSCHRGBPOLICY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GPSCHRSCOPE_BSC6910GSM',
+    op.create_table('GPSCHRSCOPE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8074,7 +9228,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GPSKPIALMTHD_BSC6910GSM',
+    op.create_table('GPSKPIALMTHD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8091,7 +9245,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GREDGRPHOSTPOLICY_BSC6910GSM',
+    op.create_table('GREDGRPHOSTPOLICY',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8107,9 +9261,525 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
+    op.create_table('GRSVPARA',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA33', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA34', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA35', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA36', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA37', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA38', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA39', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA40', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA41', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA42', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA43', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA44', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA45', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA46', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA47', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA48', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA49', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA50', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA51', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA52', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA53', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA54', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA55', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA56', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA57', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA58', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA59', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSDPARA9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV0_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV1_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV2_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV3_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV4_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV5_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV6_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV7_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV8_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCCSSWRSV9_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA0', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSDPARA9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV0_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW10', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW11', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW12', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW13', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW14', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW15', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW16', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW17', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW18', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW19', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW20', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW21', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW22', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW23', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW24', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW25', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW26', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW27', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW28', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW29', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW3', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW30', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW31', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW32', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW4', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW5', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW6', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW7', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW8', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCPSSWRSV1_SW9', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
 
+    op.create_table('GTRX',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRXID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ABISMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ACTSTATUS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ADMSTAT', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ANTPASSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BUFZONETRXSHAREFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CABINETNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DISPERFDATADEATRX', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FREQ', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('GTRXGROUPID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ISMAINBCCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ISTMPTRX', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NEWTRXNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TEI', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRXABILITY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRXNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRXNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRXPN1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRXSHAREFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPRSLLOGICNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRANSTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOUTBSCE1PORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOUTBSCSLOTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOUTBSCSUBRACKNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOUTBSCTSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPRSLPORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPRSLTSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
 
-    op.create_table('GTRXBASE_BSC6910GSM',
+    op.create_table('GTRXBASE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8124,25 +9794,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GTRXCHANHOP_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CHNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRXID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRXDSSHOPINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRXDSSMAIO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRXHOPINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRXMAIO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('GTRXCHAN_BSC6910GSM',
+    op.create_table('GTRXCHAN',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8162,10 +9814,34 @@ def upgrade():
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TRANSTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TSPRIORITY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPBTSPORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPBTSTSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOUTBSCE1PORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOUTBSCSLOTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOUTBSCSUBRACKNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UPOUTBSCTSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GTRXDEV_BSC6910GSM',
+    op.create_table('GTRXCHANHOP',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CHNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRXID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRXDSSHOPINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRXDSSMAIO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRXHOPINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRXMAIO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('GTRXDEV',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8196,10 +9872,11 @@ def upgrade():
         sa.Column('TCHAJFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TRXLOGICLOCKSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TSPWRRESERVE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('EGBTSPOWT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GTRXFC_BSC6910GSM',
+    op.create_table('GTRXFC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8216,7 +9893,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GTRXHOP_BSC6910GSM',
+    op.create_table('GTRXHOP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8230,7 +9907,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GTRXIUO_BSC6910GSM',
+    op.create_table('GTRXIUO',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8244,7 +9921,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GTRXRLALM_BSC6910GSM',
+    op.create_table('GTRXRLALM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8255,10 +9932,24 @@ def upgrade():
         sa.Column('TRXID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('WLNKALMFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AREDISTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ARELBASE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ARELWTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BBDIF', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BFRANGE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BWTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NOTRAALMREPSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NOTRASHM', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NOTRASHSP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NOTRASP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('WLAETIME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('WLAFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('WLARP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('WLASTIME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GTRXRSVPARA_BSC6910GSM',
+    op.create_table('GTRXRSVPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8311,49 +10002,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('GTRX_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRXID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ABISMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ACTSTATUS', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ADMSTAT', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ANTPASSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BUFZONETRXSHAREFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('CABINETNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DISPERFDATADEATRX', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('FREQ', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('GTRXGROUPID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ISMAINBCCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ISTMPTRX', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NEWTRXNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TEI', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRANSTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRXABILITY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRXNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRXNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRXPN1', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRXSHAREFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('UPOUTBSCE1PORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('UPOUTBSCSLOTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('UPOUTBSCSUBRACKNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('UPOUTBSCTSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('UPRSLLOGICNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('UPRSLPORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('UPRSLTSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('HOSTLOGSPD_BSC6910GSM',
+    op.create_table('HOSTLOGSPD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8364,7 +10013,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('IDRQTEST_BSC6910GSM',
+    op.create_table('IDRQTEST',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8372,6 +10021,7 @@ def upgrade():
         sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ENCRYID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IDRQDURATION', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDRQSEQSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDRQSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('LUIDRQALLOW', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8381,7 +10031,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('INFBRDRESCFG_BSC6910GSM',
+    op.create_table('INFBRDRESCFG',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8393,10 +10043,29 @@ def upgrade():
         sa.Column('RESSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RESTIMESPERDAY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('STATISTICUOIPLOOPFAULTTIME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BRDFAULTBCRATE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CONTINUOUSFAULTTIMES', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MERELOADCONTINUOUSFAULTTIMES', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BRDFAULTNSRATE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NSRESSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BRDHEALBTSFAULTNUMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BRDHEALCELLFAULTRATETHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CELLFAULTRATEPERPORT', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('QUERYTIMES', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('QUERYPERIOD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ASIGRESSW_FG2C', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ASIGRESSW_FG2D', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ASIGRESSW_FG2E', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ASIGRESSW_GOUC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ASIGRESSW_GOUD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ASIGRESSW_GOUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ASIGRESSW_PEUC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ASIGRESSW_POUC', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SHBCONTINUOUSFAULTTIMES', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('INGCHKTSK_BSC6910GSM',
+    op.create_table('INGCHKTSK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8407,7 +10076,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('INNSOFTPARA_BSC6910GSM',
+    op.create_table('INNSOFTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8421,7 +10090,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('INTBRDPARA_BSC6910GSM',
+    op.create_table('INTBRDPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8443,10 +10112,45 @@ def upgrade():
         sa.Column('MSPCHECKSW_PN7', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('OPTBRDK1K2FCSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('OPTCONNERRALMSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ARPEXPIRETIMEOPTIMIZESW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ARPPKTSENDMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ARPVLANPRI', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BPCHIPSELFCURESW_FPGA', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BPCHIPSELFCURESW_GESWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BRDCHIPSELFCURESW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BRDFEEDBACKSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BRDRAMSELFCURESW_DCACHE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BRDRAMSELFCURESW_SRAM', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DHCPDSCP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DYARPLOSSCHKSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ENETPORTCFGERRCHKSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ETHOAMPKTEXCEEDSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ETHPORTBCPKTEXCEEDSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FCALMRTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FCALMSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FCALMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FPCHIPSELFCURESW_RXMODULE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FPCHIPSELFCURESW_SDRAM', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FPCHIPSELFCURESW_TXMODULE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IPPROTOCOLCHECKSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MERELOADSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PERIODMERELOADSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RECEIVEUDPCHECKSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SBFDSENDADMINDOWNPKTSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('STANDBYPORTCHKSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('STDBYETHLNKPACKDETECTSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRANSFAULTCHKSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RECPORTSWITCHOVERSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LOSTPKTDETECTSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OVERSIZEPKTSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PORTFCSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('QUEUERATECONGALMSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SIGPACKCTRLSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('STANDBYBRDFEEDBACKSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('InventoryBoard_BSC6910GSM',
+    op.create_table('INVENTORYBOARD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8462,24 +10166,52 @@ def upgrade():
         sa.Column('BiosVer', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('BiosVerEx', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('BoardName', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('BoardType', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DateOfManufacture', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('InventoryUnitType', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('LogicVer', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ManufacturerData', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ModuleNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('PortNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SerialNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SoftVer', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SourceFlag', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('UnitPosition', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VendorName', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VendorUnitFamilyType', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VendorUnitTypeNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BoardType', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DateOfManufacture', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ManufacturerData', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SerialNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CLEICode', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IssueNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('Item', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BOM', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('InventoryBTSBoard_BSC6910GSM',
+    op.create_table('INVENTORYBTSANTENNA',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('InventoryUnitId', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SiteIndex', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AntennaDeviceType', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DateOfManufacture', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('InventoryUnitType', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ManufacturerData', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ProdNr', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SerialNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SourceFlag', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('UnitPosition', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VendorName', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VendorUnitFamilyType', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VendorUnitTypeNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VersionNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('INVENTORYBTSBOARD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8502,17 +10234,25 @@ def upgrade():
         sa.Column('ManufacturerData', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ModuleNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SerialNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SoftVer', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SourceFlag', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('UnitPosition', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VendorName', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VendorUnitFamilyType', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VendorUnitTypeNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BiosVer', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BiosVerEx', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LANVer', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('LogicVer', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MBUSVer', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SoftVer', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VersionNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CLEICode', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BOM', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('WorkMode', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('InventoryBTSFrame_BSC6910GSM',
+    op.create_table('INVENTORYBTSFRAME',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8532,10 +10272,18 @@ def upgrade():
         sa.Column('VendorName', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VendorUnitFamilyType', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VendorUnitTypeNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BOMFrameType', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DateOfManufacture', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IssueNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('Item', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ManufacturerData', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SerialNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CLEICode', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ExtInfo', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('InventoryBTSHostVer_BSC6910GSM',
+    op.create_table('INVENTORYBTSHOSTVER',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8549,7 +10297,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('InventoryBTSRack_BSC6910GSM',
+    op.create_table('INVENTORYBTSRACK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8559,17 +10307,24 @@ def upgrade():
         sa.Column('InventoryUnitId', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RackNo', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SiteIndex', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BOMRackType', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DateOfManufacture', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('InventoryUnitType', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IssueNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('Item', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ManufacturerData', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RackType', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SerialNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SourceFlag', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('UnitPosition', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VendorName', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VendorUnitFamilyType', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VendorUnitTypeNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ExtInfo', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('InventoryBTSSlot_BSC6910GSM',
+    op.create_table('INVENTORYBTSSLOT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8591,7 +10346,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('InventoryFrame_BSC6910GSM',
+    op.create_table('INVENTORYFRAME',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8613,7 +10368,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('InventoryHostVer_BSC6910GSM',
+    op.create_table('INVENTORYHOSTVER',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8622,10 +10377,11 @@ def upgrade():
         sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('HostVerType', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SourceFlag', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('HostVer', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('InventoryPort_BSC6910GSM',
+    op.create_table('INVENTORYPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8645,10 +10401,11 @@ def upgrade():
         sa.Column('UnitPosition', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VendorName', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VendorUnitTypeNumber', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MacAddr', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('InventoryRack_BSC6910GSM',
+    op.create_table('INVENTORYRACK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8667,7 +10424,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('InventorySlot_BSC6910GSM',
+    op.create_table('INVENTORYSLOT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8688,7 +10445,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('INVENTORYUNITHW_BSC6910GSM',
+    op.create_table('INVENTORYUNITHW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8705,7 +10462,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('IPCHK_BSC6910GSM',
+    op.create_table('IPCHK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8727,7 +10484,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('IPGUARD_BSC6910GSM',
+    op.create_table('IPGUARD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8736,7 +10493,6 @@ def upgrade():
         sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ARPANTICHEATSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ARPLRNSTRICTSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ARPREQALMCLRTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ARPREQALMSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8754,23 +10510,24 @@ def upgrade():
         sa.Column('ETHOAMALMCLRTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ETHOAMALMSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ETHOAMALMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('FWPKTTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ICMPALMRTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ICMPALMSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ICMPALMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('INVALIDMCASTALMRTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('INVALIDMCASTALMSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('INVALIDMCASTALMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('LACPALMCLRTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('LACPALMSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('LACPALMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ARPANTICHEATSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('FWPKTTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('INVALIDMCASTALMRTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('INVALIDMCASTALMSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('INVALIDMCASTALMTHD', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('OMUFWFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TWAMPCTRLALMSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VALIDPKTCHKSW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('IPRT_BSC6910GSM',
+    op.create_table('IPRT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8791,7 +10548,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('ITWKPIALMTHD_BSC6910GSM',
+    op.create_table('ITWKPIALMTHD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8802,7 +10559,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('L2L3ROUTEPOLICY_BSC6910GSM',
+    op.create_table('L2L3ROUTEPOLICY',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8813,7 +10570,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('LAPDLINK_BSC6910GSM',
+    op.create_table('LAPDLINK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8865,10 +10622,11 @@ def upgrade():
         sa.Column('UPSITEPORTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('UPSITETSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('WORKMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ATERMASK', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('LDR_BSC6910GSM',
+    op.create_table('LDR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8884,7 +10642,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('LICALMTHD_BSC6910GSM',
+    op.create_table('LICALMTHD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8896,7 +10654,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('LICPOLICY_BSC6910GSM',
+    op.create_table('LICPOLICY',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8908,7 +10666,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('LODCTRL_BSC6910GSM',
+    op.create_table('LODCTRL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8919,7 +10677,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('LOGLIMIT_BSC6910GSM',
+    op.create_table('LOGLIMIT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8932,7 +10690,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('MAXDSPFLTNUM_BSC6910GSM',
+    op.create_table('MAXDSPFLTNUM',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8943,7 +10701,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('MDTLCS_BSC6910GSM',
+    op.create_table('MDTLCS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8960,7 +10718,20 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('MNTMODE_BSC6910GSM',
+    op.create_table('MNCMAP',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('MNCMAPIDX', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DSTRAI', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SRCRAI', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('MNTMODE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8972,7 +10743,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('MOCNPARA_BSC6910GSM',
+    op.create_table('MOCNPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8986,7 +10757,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('MSGSOFTPARA_BSC6910GSM',
+    op.create_table('MSGSOFTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9022,7 +10793,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('MSP_BSC6910GSM',
+    op.create_table('MSP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9038,10 +10809,11 @@ def upgrade():
         sa.Column('RT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SDENABLE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SDSFPRI', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('WTRT', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('MTP3LKS_BSC6910GSM',
+    op.create_table('MTP3LKS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9058,7 +10830,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('MTP3LNK_BSC6910GSM',
+    op.create_table('MTP3LNK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9161,7 +10933,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('MTP3RT_BSC6910GSM',
+    op.create_table('MTP3RT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9175,7 +10947,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('MTP3TMR_BSC6910GSM',
+    op.create_table('MTP3TMR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9200,7 +10972,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('N7DPC_BSC6910GSM',
+    op.create_table('N7DPC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9220,10 +10992,25 @@ def upgrade():
         sa.Column('SPDF', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SPX', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SSTTIMEOUTSTRA', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SCCPSSNID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('STP', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('NSE_BSC6910GSM',
+    op.create_table('NRISGSNMAP',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NRI', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('OPNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CNID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('NSE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9247,7 +11034,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('NSVLLOCAL_BSC6910GSM',
+    op.create_table('NSVLLOCAL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9266,7 +11053,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('OBJALMSHLD_BSC6910GSM',
+    op.create_table('OBJALMSHLD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9275,10 +11062,14 @@ def upgrade():
         sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('AID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('OBJTP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AIDST', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('OBJAUTHSW_BSC6910GSM',
+    op.create_table('OBJAUTHSW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9289,7 +11080,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('OMUCOMMSVCSW_BSC6910GSM',
+    op.create_table('OMUCOMMSVCSW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9300,7 +11091,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('OMUETH_BSC6910GSM',
+    op.create_table('OMUETH',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9311,7 +11102,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('OMUPARA_BSC6910GSM',
+    op.create_table('OMUPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9336,7 +11127,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('OMUPORT_BSC6910GSM',
+    op.create_table('OMUPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9348,7 +11139,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('OPC_BSC6910GSM',
+    op.create_table('OPC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9366,7 +11157,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('OPLOCK_BSC6910GSM',
+    op.create_table('OPLOCK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9377,7 +11168,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('OPSW_BSC6910GSM',
+    op.create_table('OPSW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9388,7 +11179,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('OPT_BSC6910GSM',
+    op.create_table('OPT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9419,10 +11210,11 @@ def upgrade():
         sa.Column('RSDSRC', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RSFSRC', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('S1SWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('S1VALUE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('OSPWDPOLICY_BSC6910GSM',
+    op.create_table('OSPWDPOLICY',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9442,7 +11234,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('OTHSOFTPARA_BSC6910GSM',
+    op.create_table('OTHSOFTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9635,10 +11427,12 @@ def upgrade():
         sa.Column('VIPUSRTCHTHRES', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VOICEOPENTRACESW', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('WINADJSWITCH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('AINTERMSGTRACE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SENDBSSINVOKETRACE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('PACKETFILTERALMPARA_BSC6910GSM',
+    op.create_table('PACKETFILTERALMPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9650,7 +11444,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('PHBMAP_BSC6910GSM',
+    op.create_table('PHBMAP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9664,7 +11458,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('PORTOSCCTRLPARA_BSC6910GSM',
+    op.create_table('PORTOSCCTRLPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9677,7 +11471,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('PSPREFABISCONGCTRL_BSC6910GSM',
+    op.create_table('PSPREFABISCONGCTRL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9698,7 +11492,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('PSUSRRESBIND_BSC6910GSM',
+    op.create_table('PSUSRRESBIND',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9709,7 +11503,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('PTPBVC_BSC6910GSM',
+    op.create_table('PTPBVC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9725,7 +11519,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('PWDPOLICY_BSC6910GSM',
+    op.create_table('PWDPOLICY',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9753,7 +11547,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('PWRALMSW_BSC6910GSM',
+    op.create_table('PWRALMSW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9794,7 +11588,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('PWRPARA_BSC6910GSM',
+    op.create_table('PWRPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9817,7 +11611,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('QUEUEMAP_BSC6910GSM',
+    op.create_table('QUEUEMAP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9835,7 +11629,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('RDTLOGSWITCH_BSC6910GSM',
+    op.create_table('RDTLOGSWITCH',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9846,7 +11640,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('RSVRES_BSC6910GSM',
+    op.create_table('RSVRES',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9860,10 +11654,19 @@ def upgrade():
         sa.Column('BMDSPNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('BMDSPSTARTTS', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RESRESERVEDMINUTES', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('BSCTID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ATERENDTS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ATERIDX', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ATERSTARTTS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TCDPUSLOTNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TCDPUSUBRACKNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TCDSPENDTS', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TCDSPNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TCDSPSTARTTS', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('RULELIBVER_BSC6910GSM',
+    op.create_table('RULELIBVER',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9874,7 +11677,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SAUCENTER_BSC6910GSM',
+    op.create_table('SAUCENTER',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9885,7 +11688,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SCCPTMR_BSC6910GSM',
+    op.create_table('SCCPTMR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9910,7 +11713,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SCTPPROF_BSC6910GSM',
+    op.create_table('SCTPPROF',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9938,7 +11741,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SCTPSRVPORT_BSC6910GSM',
+    op.create_table('SCTPSRVPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9948,10 +11751,11 @@ def upgrade():
         sa.Column('ABISCPSRVPN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('BBAPSRVPN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('M3UASRVPN', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NBAPSRVPN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SCUPORT_BSC6910GSM',
+    op.create_table('SCUPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9965,7 +11769,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SDSECPOLICY_BSC6910GSM',
+    op.create_table('SDSECPOLICY',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9976,7 +11780,21 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SGSNNODE_BSC6910GSM',
+    op.create_table('SGSN',
+        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
+        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SGSNNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IPADDR1', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('IPADDR2', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SGSNINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        schema='huawei_gexport_gsm'
+    )
+
+    op.create_table('SGSNNODE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -9991,20 +11809,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SGSN_BSC6910GSM',
-        sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
-        sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VENDOR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SGSNNAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('IPADDR1', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('SGSNINDEX', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        schema='huawei_gexport_gsm'
-    )
-
-    op.create_table('SLFSLVSW_BSC6910GSM',
+    op.create_table('SLFSLVSW',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10021,7 +11826,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SNTPCLTPARA_BSC6910GSM',
+    op.create_table('SNTPCLTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10032,7 +11837,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SNTPSRVINFO_BSC6910GSM',
+    op.create_table('SNTPSRVINFO',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10045,7 +11850,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SRCONPATH_BSC6910GSM',
+    op.create_table('SRCONPATH',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10060,7 +11865,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SS7PATCHSWITCH_BSC6910GSM',
+    op.create_table('SS7PATCHSWITCH',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10090,7 +11895,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SSLAUTHMODE_BSC6910GSM',
+    op.create_table('SSLAUTHMODE',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10101,7 +11906,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SSLCONF_BSC6910GSM',
+    op.create_table('SSLCONF',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10118,7 +11923,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SSLCS_BSC6910GSM',
+    op.create_table('SSLCS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10130,7 +11935,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SUBNET_BSC6910GSM',
+    op.create_table('SUBNET',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10142,7 +11947,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SUBRACK_BSC6910GSM',
+    op.create_table('SUBRACK',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10158,10 +11963,11 @@ def upgrade():
         sa.Column('SRTTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('WORKMODE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ISTCCENTRAL', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SYNSWITCH_BSC6910GSM',
+    op.create_table('SYNSWITCH',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10172,7 +11978,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('SYS_BSC6910GSM',
+    op.create_table('SYS',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10181,10 +11987,11 @@ def upgrade():
         sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SYSDESC', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SYSOBJECTID', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SYSLOCATION', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TCPARA_BSC6910GSM',
+    op.create_table('TCPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10291,7 +12098,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TCPOOLBSCID_BSC6910GSM',
+    op.create_table('TCPOOLBSCID',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10302,7 +12109,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TCRSVPARA_BSC6910GSM',
+    op.create_table('TCRSVPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10450,7 +12257,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TNALMPARA_BSC6910GSM',
+    op.create_table('TNALMPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10466,7 +12273,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TNLOADBALANCEPARA_BSC6910GSM',
+    op.create_table('TNLOADBALANCEPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10484,7 +12291,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TNRSVDPARA_BSC6910GSM',
+    op.create_table('TNRSVDPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10600,7 +12407,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TNSOFTPARA_BSC6910GSM',
+    op.create_table('TNSOFTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10690,7 +12497,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TRANSCFGSPEC_BSC6910GSM',
+    op.create_table('TRANSCFGSPEC',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10701,7 +12508,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TRANSCHKPOLICY_BSC6910GSM',
+    op.create_table('TRANSCHKPOLICY',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10714,7 +12521,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TRANSPATCHPARA_BSC6910GSM',
+    op.create_table('TRANSPATCHPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10740,7 +12547,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TRANSPHYLNKPARA_BSC6910GSM',
+    op.create_table('TRANSPHYLNKPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10760,7 +12567,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TRANSRSVPARA_BSC6910GSM',
+    op.create_table('TRANSRSVPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10886,7 +12693,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TRCLOGSPD_BSC6910GSM',
+    op.create_table('TRCLOGSPD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10897,7 +12704,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TRMFACTOR_BSC6910GSM',
+    op.create_table('TRMFACTOR',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10915,7 +12722,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TRMLOADTH_BSC6910GSM',
+    op.create_table('TRMLOADTH',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10938,7 +12745,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TRMMAP_BSC6910GSM',
+    op.create_table('TRMMAP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10953,10 +12760,14 @@ def upgrade():
         sa.Column('PSLPRIDATAPRI', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('REMARK', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TRANST', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CSDATAPATH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('CSVOICEPATH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PSHPRIDATAPATH', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('PSLPRIDATAPATH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TRUSTCERT_BSC6910GSM',
+    op.create_table('TRUSTCERT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10967,7 +12778,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TRXBIND2PHYBRD_BSC6910GSM',
+    op.create_table('TRXBIND2PHYBRD',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -10976,20 +12787,20 @@ def upgrade():
         sa.Column('NETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CELLID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TRXID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('ANTPASSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('BTSID', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('CN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('RXUIDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SRN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TRXIDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('TRXPN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TRXTP', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('ANTPASSNO', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('RXUIDTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('TRXPN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('TZ_BSC6910GSM',
+    op.create_table('TZ',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11001,16 +12812,18 @@ def upgrade():
         sa.Column('EM', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('EMONTH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ET', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('EWEEK', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SDAY', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SM', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SMONTH', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ST', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('SWEEK', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TO', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ZONET', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('UMTESTPARA_BSC6910GSM',
+    op.create_table('UMTESTPARA',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11032,7 +12845,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('USEREVTRTNPOLICY_BSC6910GSM',
+    op.create_table('USEREVTRTNPOLICY',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11044,7 +12857,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('USRRESBIND_BSC6910GSM',
+    op.create_table('USRRESBIND',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11060,7 +12873,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('WEBLOGINPOLICY_BSC6910GSM',
+    op.create_table('WEBLOGINPOLICY',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11075,7 +12888,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('XPUPORT_BSC6910GSM',
+    op.create_table('XPUPORT',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11089,7 +12902,7 @@ def upgrade():
         schema='huawei_gexport_gsm'
     )
 
-    op.create_table('XPUVLAN_BSC6910GSM',
+    op.create_table('XPUVLAN',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DATETIME', sa.DateTime, autoincrement=False, nullable=True),
         sa.Column('TECHNOLOGY', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11106,444 +12919,457 @@ def upgrade():
     )
 
 def downgrade():
-    op.drop_table('2GHASHKEY_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('2GUSERIDANONSWITCH_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ABISE1T1_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('AE1T1_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('AISSCFG_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('AITFOTHPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('AITFREV_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ALGCTRLPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ALMBLKPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ALMBLKSW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ALMCAPACITY_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ALMLVL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ALMML_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ALMOSCISW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ALMOSCITHRD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ALMPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ALMSCRN_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ALMSHLD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('APPCERT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ATERE1T1_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ATEROML_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ATERSL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ATESTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BFDPROTOSW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BOXRPT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BRDSTALMSHLD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BRD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSC6900Equipment_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSC6900GSMFunction_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCACCCTRLP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCAISS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCAITFTMR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCBASIC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCDSTPA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCEXSOFTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCFCPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCINNSOFT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCINNTMR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCJBF_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCNSPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCPCUTYPE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCPSGBPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCPSINNERSOFTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCPSSOFTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCPSSTAT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCPSTCDSCPMAP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCPSUMPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCSIGTRC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCSTATATTR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCTESTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCTMR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSCUDBO_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSSGPPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BSSLS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSABISPRIMAP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSABISTROP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSAIRCON_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSAISS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSALMFLASHTHD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSALMFLASHTW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSALMPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSALM_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSANTFEEDERBRD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSANTFEEDERCONNECT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSAPMUBP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSAUTODLDACTINFO_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSAUXEQP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSBAKPWR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSBAT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSBBMODE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSBRDCAP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSBRD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSBREAKPOINT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSCABINET_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSCABPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSCELLPATCHPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSCHNFALLBACK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSCHRFILTER_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSCLK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSCONNECT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSCPRIPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSCRC4_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSCTRLEX_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSCTRLLNK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSDDPUBP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSDEMUBP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSDHEUBP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSDOMUBP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSDPMUBP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSDTMUBP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSE1T1BER_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSEAMRC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSENVALMPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSEQUIPMENT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSETHOAM_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSETHPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSEXD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSFALLBACK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSFCUPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSFLEXABISPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSFMUABP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSFORBIDTS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSGUPWRSHRFP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSIDLETS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSINTRXUSPEC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSLAPDWS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSLLDPGLOBAL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSLOCALETHPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSLOCALUSBPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSLOCKBCCH_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSLR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSLSW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSMNTMODE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSNFCBBP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSOMLBACKUP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSOMLDETECT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSOTHPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSOUTPUT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSPATCHPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSPLRALM_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSPMUBP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSPOWERTYPE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSPSUFP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSPWRSHARE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSPWRTYPE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSRELIALOGSWITCH_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSRINGATTR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSRSTINFOEFFECT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSRSTLIST_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSRSV_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSRXUBP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSRXUBRD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSRXUCHAIN_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSSHARING_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSTHEFTALM_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSTRANS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSTRXBACKUP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSTRXBRD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSXFC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTSXMUFP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('BTS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CAB_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CCGN_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CELLBIND2BTS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CELLGLDSS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CERTCHKTSK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CERTMK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CERTREQ_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CFGCHK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CLKMODE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CLKSRC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CLK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CONFIGURE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CONNTYPE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('COPTLNK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CPUTHD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CRLPOLICY_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CSPRECTRL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('CTFTST_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('DEVIP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('DEVSOFTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('DSCPMAP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('DSPLVDSMODE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('DSP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('E1T1_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('EMSIP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('EMSTZ_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('EMU_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ENVALMPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('EQMTOINVENTORYUNITHW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ETHIP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ETHPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ETHREDPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ETHSWITCH_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('FACFG_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('FANALMSW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('FANSPEED_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('FCCOMMPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('FTPCLTPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('FTPSCLTDPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('FTPSCLT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('FTPSRVSPD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('FTPSSRV_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('G2GNCELL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('G3GARFCN_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('G3GNCELL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GAFCALMPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GALLCELLBLKSTAT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GBSCREDGRP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELL2GBA1_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELL3GARFCN_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLAMRQUL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLBASICPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLBTSSOFTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLBTSSOFT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLCCACCESS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLCCAD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLCCAMR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLCCBASIC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLCCCH_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLCCTMR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLCCUTRANSYS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLCHMGAD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLCHMGBASIC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLCONGACALGO_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLCSFBPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLDYNTURNOFF_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLEGPRSPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLEXTMSRPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLFREQSCAN_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLFREQ_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLGPRS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLGSMR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHO2GBA2_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOAD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOBASIC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOCTRL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOEDBPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOEMG_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOFAST_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOFDDBA2_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOFITPEN_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOINTERRATLDB_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOIUO_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOPANT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOPTP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOTDDBA2_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOUTRANFDD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHOUTRANTDD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLHSRPLCUSRIDFMG_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLIBCAII_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLIDLEAD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLIDLEBASIC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLIDLEFDDBA1_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLIDLETDDBA1_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLINNHOBASI_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLINNSOFT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLINNTMR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLLCS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLMAGRP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLMAIOPLAN_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLMOCN_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLNC2PARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLNCRESELECTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLNONSTANDARDBW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLNWCTRLMSRPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLOPTREV_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLOSPMAP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLOTHBASIC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLOTHEXT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLOTHPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPRACH_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPRIEUTRANSYS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPRIVATEOPTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPSABISPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPSBASE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPSCHM_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPSCS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPSDIFFSERVICE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPSI1_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPSOTHERPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPSPWPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPSSMALLPKTRESBAL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPWR2_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPWR3_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLPWRBASIC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLRESELECTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLRESELECTUTRANTDD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLRESELUTRANFDD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLSBC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLSERVPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLSOFT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLSON_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLSRVCC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLSTANDARDOPTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLSTATOPTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLTA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLTEMPLATEPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLTEMPLATE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLTMR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLTRANPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLUNDPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLVAMOSPWR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLVAMOS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELLWLAN_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCELL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCNCFGALMTHD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCNNODE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCNOPERATORREV_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCNOPERATOR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCSCHRCTRL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCSCHRSCOPE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GCSFILE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GDSSPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GDSSTM_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GEXT2GCELL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GEXT3GCELL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GEXTLTECELL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GEXTSMLC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GFORCESWITCH_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GHOSTSTATUS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GKPIALMTHD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GLOBALROUTESW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GLTENCELL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GMMCSCHRCTRL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GMMCSCHRSCOPE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GMMMRCTRL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GMMMRSCOPE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GMMPSCHRCTRL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GMMPSCHRSCOPE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GMRCTRL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GMRSCOPE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GNETAWARENESS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GNODEREDCFGCTRL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GNODEREDUNDANCY_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GPSCHRCTRL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GPSCHRSCOPE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GPSKPIALMTHD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GREDGRPHOSTPOLICY_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GTRXBASE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GTRXCHANHOP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GTRXCHAN_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GTRXDEV_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GTRXFC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GTRXHOP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GTRXIUO_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GTRXRLALM_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GTRXRSVPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('GTRX_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('HOSTLOGSPD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('IDRQTEST_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('INFBRDRESCFG_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('INGCHKTSK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('INNSOFTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('INTBRDPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('InventoryBoard_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('InventoryBTSBoard_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('InventoryBTSFrame_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('InventoryBTSHostVer_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('InventoryBTSRack_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('InventoryBTSSlot_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('InventoryFrame_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('InventoryHostVer_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('InventoryPort_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('InventoryRack_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('InventorySlot_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('INVENTORYUNITHW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('IPCHK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('IPGUARD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('IPRT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('ITWKPIALMTHD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('L2L3ROUTEPOLICY_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('LAPDLINK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('LDR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('LICALMTHD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('LICPOLICY_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('LODCTRL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('LOGLIMIT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('MAXDSPFLTNUM_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('MDTLCS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('MNTMODE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('MOCNPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('MSGSOFTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('MSP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('MTP3LKS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('MTP3LNK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('MTP3RT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('MTP3TMR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('N7DPC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('NSE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('NSVLLOCAL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('OBJALMSHLD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('OBJAUTHSW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('OMUCOMMSVCSW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('OMUETH_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('OMUPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('OMUPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('OPC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('OPLOCK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('OPSW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('OPT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('OSPWDPOLICY_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('OTHSOFTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('PACKETFILTERALMPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('PHBMAP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('PORTOSCCTRLPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('PSPREFABISCONGCTRL_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('PSUSRRESBIND_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('PTPBVC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('PWDPOLICY_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('PWRALMSW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('PWRPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('QUEUEMAP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('RDTLOGSWITCH_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('RSVRES_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('RULELIBVER_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SAUCENTER_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SCCPTMR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SCTPPROF_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SCTPSRVPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SCUPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SDSECPOLICY_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SGSNNODE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SGSN_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SLFSLVSW_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SNTPCLTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SNTPSRVINFO_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SRCONPATH_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SS7PATCHSWITCH_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SSLAUTHMODE_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SSLCONF_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SSLCS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SUBNET_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SUBRACK_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SYNSWITCH_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('SYS_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TCPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TCPOOLBSCID_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TCRSVPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TNALMPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TNLOADBALANCEPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TNRSVDPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TNSOFTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TRANSCFGSPEC_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TRANSCHKPOLICY_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TRANSPATCHPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TRANSPHYLNKPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TRANSRSVPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TRCLOGSPD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TRMFACTOR_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TRMLOADTH_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TRMMAP_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TRUSTCERT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TRXBIND2PHYBRD_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('TZ_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('UMTESTPARA_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('USEREVTRTNPOLICY_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('USRRESBIND_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('WEBLOGINPOLICY_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('XPUPORT_BSC6910GSM', schema='huawei_gexport_gsm')
-    op.drop_table('XPUVLAN_BSC6910GSM', schema='huawei_gexport_gsm')
+    op.drop_table('2GHASHKEY', schema='huawei_gexport_gsm')
+    op.drop_table('2GUSERIDANONSWITCH', schema='huawei_gexport_gsm')
+    op.drop_table('ABISE1T1', schema='huawei_gexport_gsm')
+    op.drop_table('AE1T1', schema='huawei_gexport_gsm')
+    op.drop_table('AISSCFG', schema='huawei_gexport_gsm')
+    op.drop_table('AITFOTHPARA', schema='huawei_gexport_gsm')
+    op.drop_table('AITFREV', schema='huawei_gexport_gsm')
+    op.drop_table('ALGCTRLPARA', schema='huawei_gexport_gsm')
+    op.drop_table('ALMBLKPARA', schema='huawei_gexport_gsm')
+    op.drop_table('ALMBLKSW', schema='huawei_gexport_gsm')
+    op.drop_table('ALMCAPACITY', schema='huawei_gexport_gsm')
+    op.drop_table('ALMLVL', schema='huawei_gexport_gsm')
+    op.drop_table('ALMML', schema='huawei_gexport_gsm')
+    op.drop_table('ALMOSCISW', schema='huawei_gexport_gsm')
+    op.drop_table('ALMOSCITHRD', schema='huawei_gexport_gsm')
+    op.drop_table('ALMPORT', schema='huawei_gexport_gsm')
+    op.drop_table('ALMSCRN', schema='huawei_gexport_gsm')
+    op.drop_table('ALMSHLD', schema='huawei_gexport_gsm')
+    op.drop_table('APPCERT', schema='huawei_gexport_gsm')
+    op.drop_table('ATERE1T1', schema='huawei_gexport_gsm')
+    op.drop_table('ATEROML', schema='huawei_gexport_gsm')
+    op.drop_table('ATERSL', schema='huawei_gexport_gsm')
+    op.drop_table('ATESTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('AUTHPOLICY', schema='huawei_gexport_gsm')
+    op.drop_table('BAMIPRT', schema='huawei_gexport_gsm')
+    op.drop_table('BFDPROTOSW', schema='huawei_gexport_gsm')
+    op.drop_table('BOXRPT', schema='huawei_gexport_gsm')
+    op.drop_table('BRD', schema='huawei_gexport_gsm')
+    op.drop_table('BRDSTALMSHLD', schema='huawei_gexport_gsm')
+    op.drop_table('BSCACCCTRLP', schema='huawei_gexport_gsm')
+    op.drop_table('BSCAISS', schema='huawei_gexport_gsm')
+    op.drop_table('BSCAITFTMR', schema='huawei_gexport_gsm')
+    op.drop_table('BSCBASIC', schema='huawei_gexport_gsm')
+    op.drop_table('BSCDSTPA', schema='huawei_gexport_gsm')
+    op.drop_table('BSCEXSOFTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BSCFCPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BSCINNSOFT', schema='huawei_gexport_gsm')
+    op.drop_table('BSCINNTMR', schema='huawei_gexport_gsm')
+    op.drop_table('BSCJBF', schema='huawei_gexport_gsm')
+    op.drop_table('BSCNSPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BSCPCUTYPE', schema='huawei_gexport_gsm')
+    op.drop_table('BSCPSGBPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BSCPSINNERSOFTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BSCPSSOFTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BSCPSSTAT', schema='huawei_gexport_gsm')
+    op.drop_table('BSCPSTCDSCPMAP', schema='huawei_gexport_gsm')
+    op.drop_table('BSCPSUMPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BSCSIGTRC', schema='huawei_gexport_gsm')
+    op.drop_table('BSCSTATATTR', schema='huawei_gexport_gsm')
+    op.drop_table('BSCTESTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BSCTMR', schema='huawei_gexport_gsm')
+    op.drop_table('BSCUDBO', schema='huawei_gexport_gsm')
+    op.drop_table('BSSGPPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BSSLS', schema='huawei_gexport_gsm')
+    op.drop_table('BTS', schema='huawei_gexport_gsm')
+    op.drop_table('BTSABISPRIMAP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSABISTROP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSAIRCON', schema='huawei_gexport_gsm')
+    op.drop_table('BTSAISS', schema='huawei_gexport_gsm')
+    op.drop_table('BTSALM', schema='huawei_gexport_gsm')
+    op.drop_table('BTSALMFLASHTHD', schema='huawei_gexport_gsm')
+    op.drop_table('BTSALMFLASHTW', schema='huawei_gexport_gsm')
+    op.drop_table('BTSALMMGMRULE', schema='huawei_gexport_gsm')
+    op.drop_table('BTSALMPORT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSANTFEEDERBRD', schema='huawei_gexport_gsm')
+    op.drop_table('BTSANTFEEDERCONNECT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSAPMUBP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSAUTODLDACTINFO', schema='huawei_gexport_gsm')
+    op.drop_table('BTSAUXEQP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSBAKPWR', schema='huawei_gexport_gsm')
+    op.drop_table('BTSBAT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSBBMODE', schema='huawei_gexport_gsm')
+    op.drop_table('BTSBRD', schema='huawei_gexport_gsm')
+    op.drop_table('BTSBRDCAP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSBREAKPOINT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSCABINET', schema='huawei_gexport_gsm')
+    op.drop_table('BTSCABPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BTSCELLPATCHPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BTSCHNFALLBACK', schema='huawei_gexport_gsm')
+    op.drop_table('BTSCHRFILTER', schema='huawei_gexport_gsm')
+    op.drop_table('BTSCLK', schema='huawei_gexport_gsm')
+    op.drop_table('BTSCONNECT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSCPRIPORT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSCRC4', schema='huawei_gexport_gsm')
+    op.drop_table('BTSCTRLEX', schema='huawei_gexport_gsm')
+    op.drop_table('BTSCTRLLNK', schema='huawei_gexport_gsm')
+    op.drop_table('BTSDATUBP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSDDPUBP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSDEMUBP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSDHEUBP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSDOMUBP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSDPMUBP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSDTMUBP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSE1T1BER', schema='huawei_gexport_gsm')
+    op.drop_table('BTSEAMRC', schema='huawei_gexport_gsm')
+    op.drop_table('BTSENVALMPORT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSEQUIPMENT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSETHOAM', schema='huawei_gexport_gsm')
+    op.drop_table('BTSETHPORT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSEXD', schema='huawei_gexport_gsm')
+    op.drop_table('BTSFALLBACK', schema='huawei_gexport_gsm')
+    op.drop_table('BTSFCUPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BTSFLEXABISPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BTSFMUABP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSFORBIDTS', schema='huawei_gexport_gsm')
+    op.drop_table('BTSGUPWRSHRFP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSIDLETS', schema='huawei_gexport_gsm')
+    op.drop_table('BTSINTRXUSPEC', schema='huawei_gexport_gsm')
+    op.drop_table('BTSLAPDWS', schema='huawei_gexport_gsm')
+    op.drop_table('BTSLLDPGLOBAL', schema='huawei_gexport_gsm')
+    op.drop_table('BTSLOCALETHPORT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSLOCALUSBPORT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSLOCKBCCH', schema='huawei_gexport_gsm')
+    op.drop_table('BTSLR', schema='huawei_gexport_gsm')
+    op.drop_table('BTSLSW', schema='huawei_gexport_gsm')
+    op.drop_table('BTSMNTMODE', schema='huawei_gexport_gsm')
+    op.drop_table('BTSNFCBBP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSOMLBACKUP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSOMLDETECT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSOTHPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BTSOUTPUT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSPATCHPARA', schema='huawei_gexport_gsm')
+    op.drop_table('BTSPLRALM', schema='huawei_gexport_gsm')
+    op.drop_table('BTSPMUBP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSPOWERTYPE', schema='huawei_gexport_gsm')
+    op.drop_table('BTSPSUFP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSPWRSHARE', schema='huawei_gexport_gsm')
+    op.drop_table('BTSPWRTYPE', schema='huawei_gexport_gsm')
+    op.drop_table('BTSRELIALOGSWITCH', schema='huawei_gexport_gsm')
+    op.drop_table('BTSRET', schema='huawei_gexport_gsm')
+    op.drop_table('BTSRETDEVICEDATA', schema='huawei_gexport_gsm')
+    op.drop_table('BTSRETSUBUNIT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSRINGATTR', schema='huawei_gexport_gsm')
+    op.drop_table('BTSRSTINFOEFFECT', schema='huawei_gexport_gsm')
+    op.drop_table('BTSRSTLIST', schema='huawei_gexport_gsm')
+    op.drop_table('BTSRSV', schema='huawei_gexport_gsm')
+    op.drop_table('BTSRXUBP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSRXUBRD', schema='huawei_gexport_gsm')
+    op.drop_table('BTSRXUCHAIN', schema='huawei_gexport_gsm')
+    op.drop_table('BTSSHARING', schema='huawei_gexport_gsm')
+    op.drop_table('BTSTHEFTALM', schema='huawei_gexport_gsm')
+    op.drop_table('BTSTRANS', schema='huawei_gexport_gsm')
+    op.drop_table('BTSTRXBACKUP', schema='huawei_gexport_gsm')
+    op.drop_table('BTSTRXBRD', schema='huawei_gexport_gsm')
+    op.drop_table('BTSXFC', schema='huawei_gexport_gsm')
+    op.drop_table('BTSXMUFP', schema='huawei_gexport_gsm')
+    op.drop_table('CAB', schema='huawei_gexport_gsm')
+    op.drop_table('CCGN', schema='huawei_gexport_gsm')
+    op.drop_table('CELLBIND2BTS', schema='huawei_gexport_gsm')
+    op.drop_table('CELLGLDSS', schema='huawei_gexport_gsm')
+    op.drop_table('CERTCHKTSK', schema='huawei_gexport_gsm')
+    op.drop_table('CERTMK', schema='huawei_gexport_gsm')
+    op.drop_table('CERTREQ', schema='huawei_gexport_gsm')
+    op.drop_table('CFGCHK', schema='huawei_gexport_gsm')
+    op.drop_table('CLK', schema='huawei_gexport_gsm')
+    op.drop_table('CLKMODE', schema='huawei_gexport_gsm')
+    op.drop_table('CLKSRC', schema='huawei_gexport_gsm')
+    op.drop_table('CONFIGURE', schema='huawei_gexport_gsm')
+    op.drop_table('CONNTYPE', schema='huawei_gexport_gsm')
+    op.drop_table('COPTLNK', schema='huawei_gexport_gsm')
+    op.drop_table('CPUTHD', schema='huawei_gexport_gsm')
+    op.drop_table('CRLPOLICY', schema='huawei_gexport_gsm')
+    op.drop_table('CSPRECTRL', schema='huawei_gexport_gsm')
+    op.drop_table('CTFTST', schema='huawei_gexport_gsm')
+    op.drop_table('DEVIP', schema='huawei_gexport_gsm')
+    op.drop_table('DEVRSVDPARA', schema='huawei_gexport_gsm')
+    op.drop_table('DEVSOFTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('DSCPMAP', schema='huawei_gexport_gsm')
+    op.drop_table('DSP', schema='huawei_gexport_gsm')
+    op.drop_table('DSPLVDSMODE', schema='huawei_gexport_gsm')
+    op.drop_table('E1T1', schema='huawei_gexport_gsm')
+    op.drop_table('EMSIP', schema='huawei_gexport_gsm')
+    op.drop_table('EMSTZ', schema='huawei_gexport_gsm')
+    op.drop_table('EMU', schema='huawei_gexport_gsm')
+    op.drop_table('ENVALMPARA', schema='huawei_gexport_gsm')
+    op.drop_table('EQMTOINVENTORYUNITHW', schema='huawei_gexport_gsm')
+    op.drop_table('EQUIPMENT', schema='huawei_gexport_gsm')
+    op.drop_table('ETHIP', schema='huawei_gexport_gsm')
+    op.drop_table('ETHPORT', schema='huawei_gexport_gsm')
+    op.drop_table('ETHREDPORT', schema='huawei_gexport_gsm')
+    op.drop_table('ETHSWITCH', schema='huawei_gexport_gsm')
+    op.drop_table('FACFG', schema='huawei_gexport_gsm')
+    op.drop_table('FANALMSW', schema='huawei_gexport_gsm')
+    op.drop_table('FANSPEED', schema='huawei_gexport_gsm')
+    op.drop_table('FCCOMMPARA', schema='huawei_gexport_gsm')
+    op.drop_table('FTPCLTPORT', schema='huawei_gexport_gsm')
+    op.drop_table('FTPSCLT', schema='huawei_gexport_gsm')
+    op.drop_table('FTPSCLTDPORT', schema='huawei_gexport_gsm')
+    op.drop_table('FTPSRVSPD', schema='huawei_gexport_gsm')
+    op.drop_table('FTPSSRV', schema='huawei_gexport_gsm')
+    op.drop_table('FUNCTION', schema='huawei_gexport_gsm')
+    op.drop_table('G2GNCELL', schema='huawei_gexport_gsm')
+    op.drop_table('G3GARFCN', schema='huawei_gexport_gsm')
+    op.drop_table('G3GNCELL', schema='huawei_gexport_gsm')
+    op.drop_table('GAFCALMPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GALLCELLBLKSTAT', schema='huawei_gexport_gsm')
+    op.drop_table('GBSCREDGRP', schema='huawei_gexport_gsm')
+    op.drop_table('GCELL', schema='huawei_gexport_gsm')
+    op.drop_table('GCELL2GBA1', schema='huawei_gexport_gsm')
+    op.drop_table('GCELL3GARFCN', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLAMRQUL', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLBASICPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLBTSSOFT', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLBTSSOFTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLCCACCESS', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLCCAD', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLCCAMR', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLCCBASIC', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLCCCH', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLCCTMR', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLCCUTRANSYS', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLCHMGAD', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLCHMGBASIC', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLCONGACALGO', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLCSFBPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLDYNTURNOFF', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLEGPRSPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLEXTMSRPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLFREQ', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLFREQSCAN', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLGPRS', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLGSMR', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHO2GBA2', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOAD', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOBASIC', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOCTRL', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOEDBPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOEMG', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOFAST', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOFDDBA2', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOFITPEN', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOINTERRATLDB', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOIUO', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOPANT', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOPTP', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOTDDBA2', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOUTRANFDD', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHOUTRANTDD', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLHSRPLCUSRIDFMG', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLIBCAII', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLIDLEAD', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLIDLEBASIC', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLIDLEFDDBA1', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLIDLETDDBA1', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLINNHOBASI', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLINNSOFT', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLINNTMR', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLLCS', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLMAGRP', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLMAIOPLAN', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLMOCN', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLNC2PARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLNCRESELECTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLNONSTANDARDBW', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLNWCTRLMSRPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLOPTREV', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLOSPMAP', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLOTHBASIC', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLOTHEXT', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLOTHPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPRACH', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPRIEUTRANSYS', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPRIVATEOPTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPSABISPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPSBASE', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPSCHM', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPSCS', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPSDIFFSERVICE', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPSI1', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPSOTHERPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPSPWPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPSSMALLPKTRESBAL', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPWR2', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPWR3', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLPWRBASIC', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLRESELECTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLRESELECTUTRANTDD', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLRESELUTRANFDD', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLRSVPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLSBC', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLSERVPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLSOFT', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLSON', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLSRVCC', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLSTANDARDOPTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLSTATOPTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLTA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLTEMPLATE', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLTEMPLATEPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLTMR', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLTRANPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLUNDPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLVAMOS', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLVAMOSPWR', schema='huawei_gexport_gsm')
+    op.drop_table('GCELLWLAN', schema='huawei_gexport_gsm')
+    op.drop_table('GCNCFGALMTHD', schema='huawei_gexport_gsm')
+    op.drop_table('GCNNODE', schema='huawei_gexport_gsm')
+    op.drop_table('GCNOPERATOR', schema='huawei_gexport_gsm')
+    op.drop_table('GCNOPERATORREV', schema='huawei_gexport_gsm')
+    op.drop_table('GCSCHRCTRL', schema='huawei_gexport_gsm')
+    op.drop_table('GCSCHRSCOPE', schema='huawei_gexport_gsm')
+    op.drop_table('GCSFILE', schema='huawei_gexport_gsm')
+    op.drop_table('GDSSPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GDSSTM', schema='huawei_gexport_gsm')
+    op.drop_table('GEXT2GCELL', schema='huawei_gexport_gsm')
+    op.drop_table('GEXT3GCELL', schema='huawei_gexport_gsm')
+    op.drop_table('GEXTLTECELL', schema='huawei_gexport_gsm')
+    op.drop_table('GEXTSMLC', schema='huawei_gexport_gsm')
+    op.drop_table('GFORCESWITCH', schema='huawei_gexport_gsm')
+    op.drop_table('GHOSTSTATUS', schema='huawei_gexport_gsm')
+    op.drop_table('GKPIALMTHD', schema='huawei_gexport_gsm')
+    op.drop_table('GLOBALROUTESW', schema='huawei_gexport_gsm')
+    op.drop_table('GLTENCELL', schema='huawei_gexport_gsm')
+    op.drop_table('GMMCSCHRCTRL', schema='huawei_gexport_gsm')
+    op.drop_table('GMMCSCHRSCOPE', schema='huawei_gexport_gsm')
+    op.drop_table('GMMMRCTRL', schema='huawei_gexport_gsm')
+    op.drop_table('GMMMRSCOPE', schema='huawei_gexport_gsm')
+    op.drop_table('GMMPSCHRCTRL', schema='huawei_gexport_gsm')
+    op.drop_table('GMMPSCHRSCOPE', schema='huawei_gexport_gsm')
+    op.drop_table('GMRCTRL', schema='huawei_gexport_gsm')
+    op.drop_table('GMRSCOPE', schema='huawei_gexport_gsm')
+    op.drop_table('GNETAWARENESS', schema='huawei_gexport_gsm')
+    op.drop_table('GNODEREDCFGCTRL', schema='huawei_gexport_gsm')
+    op.drop_table('GNODEREDUNDANCY', schema='huawei_gexport_gsm')
+    op.drop_table('GPSCHRCTRL', schema='huawei_gexport_gsm')
+    op.drop_table('GPSCHRSCOPE', schema='huawei_gexport_gsm')
+    op.drop_table('GPSKPIALMTHD', schema='huawei_gexport_gsm')
+    op.drop_table('GREDGRPHOSTPOLICY', schema='huawei_gexport_gsm')
+    op.drop_table('GRSVPARA', schema='huawei_gexport_gsm')
+    op.drop_table('GTRX', schema='huawei_gexport_gsm')
+    op.drop_table('GTRXBASE', schema='huawei_gexport_gsm')
+    op.drop_table('GTRXCHAN', schema='huawei_gexport_gsm')
+    op.drop_table('GTRXCHANHOP', schema='huawei_gexport_gsm')
+    op.drop_table('GTRXDEV', schema='huawei_gexport_gsm')
+    op.drop_table('GTRXFC', schema='huawei_gexport_gsm')
+    op.drop_table('GTRXHOP', schema='huawei_gexport_gsm')
+    op.drop_table('GTRXIUO', schema='huawei_gexport_gsm')
+    op.drop_table('GTRXRLALM', schema='huawei_gexport_gsm')
+    op.drop_table('GTRXRSVPARA', schema='huawei_gexport_gsm')
+    op.drop_table('HOSTLOGSPD', schema='huawei_gexport_gsm')
+    op.drop_table('IDRQTEST', schema='huawei_gexport_gsm')
+    op.drop_table('INFBRDRESCFG', schema='huawei_gexport_gsm')
+    op.drop_table('INGCHKTSK', schema='huawei_gexport_gsm')
+    op.drop_table('INNSOFTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('INTBRDPARA', schema='huawei_gexport_gsm')
+    op.drop_table('INVENTORYBOARD', schema='huawei_gexport_gsm')
+    op.drop_table('INVENTORYBTSANTENNA', schema='huawei_gexport_gsm')
+    op.drop_table('INVENTORYBTSBOARD', schema='huawei_gexport_gsm')
+    op.drop_table('INVENTORYBTSFRAME', schema='huawei_gexport_gsm')
+    op.drop_table('INVENTORYBTSHOSTVER', schema='huawei_gexport_gsm')
+    op.drop_table('INVENTORYBTSRACK', schema='huawei_gexport_gsm')
+    op.drop_table('INVENTORYBTSSLOT', schema='huawei_gexport_gsm')
+    op.drop_table('INVENTORYFRAME', schema='huawei_gexport_gsm')
+    op.drop_table('INVENTORYHOSTVER', schema='huawei_gexport_gsm')
+    op.drop_table('INVENTORYPORT', schema='huawei_gexport_gsm')
+    op.drop_table('INVENTORYRACK', schema='huawei_gexport_gsm')
+    op.drop_table('INVENTORYSLOT', schema='huawei_gexport_gsm')
+    op.drop_table('INVENTORYUNITHW', schema='huawei_gexport_gsm')
+    op.drop_table('IPCHK', schema='huawei_gexport_gsm')
+    op.drop_table('IPGUARD', schema='huawei_gexport_gsm')
+    op.drop_table('IPRT', schema='huawei_gexport_gsm')
+    op.drop_table('ITWKPIALMTHD', schema='huawei_gexport_gsm')
+    op.drop_table('L2L3ROUTEPOLICY', schema='huawei_gexport_gsm')
+    op.drop_table('LAPDLINK', schema='huawei_gexport_gsm')
+    op.drop_table('LDR', schema='huawei_gexport_gsm')
+    op.drop_table('LICALMTHD', schema='huawei_gexport_gsm')
+    op.drop_table('LICPOLICY', schema='huawei_gexport_gsm')
+    op.drop_table('LODCTRL', schema='huawei_gexport_gsm')
+    op.drop_table('LOGLIMIT', schema='huawei_gexport_gsm')
+    op.drop_table('MAXDSPFLTNUM', schema='huawei_gexport_gsm')
+    op.drop_table('MDTLCS', schema='huawei_gexport_gsm')
+    op.drop_table('MNCMAP', schema='huawei_gexport_gsm')
+    op.drop_table('MNTMODE', schema='huawei_gexport_gsm')
+    op.drop_table('MOCNPARA', schema='huawei_gexport_gsm')
+    op.drop_table('MSGSOFTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('MSP', schema='huawei_gexport_gsm')
+    op.drop_table('MTP3LKS', schema='huawei_gexport_gsm')
+    op.drop_table('MTP3LNK', schema='huawei_gexport_gsm')
+    op.drop_table('MTP3RT', schema='huawei_gexport_gsm')
+    op.drop_table('MTP3TMR', schema='huawei_gexport_gsm')
+    op.drop_table('N7DPC', schema='huawei_gexport_gsm')
+    op.drop_table('NRISGSNMAP', schema='huawei_gexport_gsm')
+    op.drop_table('NSE', schema='huawei_gexport_gsm')
+    op.drop_table('NSVLLOCAL', schema='huawei_gexport_gsm')
+    op.drop_table('OBJALMSHLD', schema='huawei_gexport_gsm')
+    op.drop_table('OBJAUTHSW', schema='huawei_gexport_gsm')
+    op.drop_table('OMUCOMMSVCSW', schema='huawei_gexport_gsm')
+    op.drop_table('OMUETH', schema='huawei_gexport_gsm')
+    op.drop_table('OMUPARA', schema='huawei_gexport_gsm')
+    op.drop_table('OMUPORT', schema='huawei_gexport_gsm')
+    op.drop_table('OPC', schema='huawei_gexport_gsm')
+    op.drop_table('OPLOCK', schema='huawei_gexport_gsm')
+    op.drop_table('OPSW', schema='huawei_gexport_gsm')
+    op.drop_table('OPT', schema='huawei_gexport_gsm')
+    op.drop_table('OSPWDPOLICY', schema='huawei_gexport_gsm')
+    op.drop_table('OTHSOFTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('PACKETFILTERALMPARA', schema='huawei_gexport_gsm')
+    op.drop_table('PHBMAP', schema='huawei_gexport_gsm')
+    op.drop_table('PORTOSCCTRLPARA', schema='huawei_gexport_gsm')
+    op.drop_table('PSPREFABISCONGCTRL', schema='huawei_gexport_gsm')
+    op.drop_table('PSUSRRESBIND', schema='huawei_gexport_gsm')
+    op.drop_table('PTPBVC', schema='huawei_gexport_gsm')
+    op.drop_table('PWDPOLICY', schema='huawei_gexport_gsm')
+    op.drop_table('PWRALMSW', schema='huawei_gexport_gsm')
+    op.drop_table('PWRPARA', schema='huawei_gexport_gsm')
+    op.drop_table('QUEUEMAP', schema='huawei_gexport_gsm')
+    op.drop_table('RDTLOGSWITCH', schema='huawei_gexport_gsm')
+    op.drop_table('RSVRES', schema='huawei_gexport_gsm')
+    op.drop_table('RULELIBVER', schema='huawei_gexport_gsm')
+    op.drop_table('SAUCENTER', schema='huawei_gexport_gsm')
+    op.drop_table('SCCPTMR', schema='huawei_gexport_gsm')
+    op.drop_table('SCTPPROF', schema='huawei_gexport_gsm')
+    op.drop_table('SCTPSRVPORT', schema='huawei_gexport_gsm')
+    op.drop_table('SCUPORT', schema='huawei_gexport_gsm')
+    op.drop_table('SDSECPOLICY', schema='huawei_gexport_gsm')
+    op.drop_table('SGSN', schema='huawei_gexport_gsm')
+    op.drop_table('SGSNNODE', schema='huawei_gexport_gsm')
+    op.drop_table('SLFSLVSW', schema='huawei_gexport_gsm')
+    op.drop_table('SNTPCLTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('SNTPSRVINFO', schema='huawei_gexport_gsm')
+    op.drop_table('SRCONPATH', schema='huawei_gexport_gsm')
+    op.drop_table('SS7PATCHSWITCH', schema='huawei_gexport_gsm')
+    op.drop_table('SSLAUTHMODE', schema='huawei_gexport_gsm')
+    op.drop_table('SSLCONF', schema='huawei_gexport_gsm')
+    op.drop_table('SSLCS', schema='huawei_gexport_gsm')
+    op.drop_table('SUBNET', schema='huawei_gexport_gsm')
+    op.drop_table('SUBRACK', schema='huawei_gexport_gsm')
+    op.drop_table('SYNSWITCH', schema='huawei_gexport_gsm')
+    op.drop_table('SYS', schema='huawei_gexport_gsm')
+    op.drop_table('TCPARA', schema='huawei_gexport_gsm')
+    op.drop_table('TCPOOLBSCID', schema='huawei_gexport_gsm')
+    op.drop_table('TCRSVPARA', schema='huawei_gexport_gsm')
+    op.drop_table('TNALMPARA', schema='huawei_gexport_gsm')
+    op.drop_table('TNLOADBALANCEPARA', schema='huawei_gexport_gsm')
+    op.drop_table('TNRSVDPARA', schema='huawei_gexport_gsm')
+    op.drop_table('TNSOFTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('TRANSCFGSPEC', schema='huawei_gexport_gsm')
+    op.drop_table('TRANSCHKPOLICY', schema='huawei_gexport_gsm')
+    op.drop_table('TRANSPATCHPARA', schema='huawei_gexport_gsm')
+    op.drop_table('TRANSPHYLNKPARA', schema='huawei_gexport_gsm')
+    op.drop_table('TRANSRSVPARA', schema='huawei_gexport_gsm')
+    op.drop_table('TRCLOGSPD', schema='huawei_gexport_gsm')
+    op.drop_table('TRMFACTOR', schema='huawei_gexport_gsm')
+    op.drop_table('TRMLOADTH', schema='huawei_gexport_gsm')
+    op.drop_table('TRMMAP', schema='huawei_gexport_gsm')
+    op.drop_table('TRUSTCERT', schema='huawei_gexport_gsm')
+    op.drop_table('TRXBIND2PHYBRD', schema='huawei_gexport_gsm')
+    op.drop_table('TZ', schema='huawei_gexport_gsm')
+    op.drop_table('UMTESTPARA', schema='huawei_gexport_gsm')
+    op.drop_table('USEREVTRTNPOLICY', schema='huawei_gexport_gsm')
+    op.drop_table('USRRESBIND', schema='huawei_gexport_gsm')
+    op.drop_table('WEBLOGINPOLICY', schema='huawei_gexport_gsm')
+    op.drop_table('XPUPORT', schema='huawei_gexport_gsm')
+    op.drop_table('XPUVLAN', schema='huawei_gexport_gsm')
