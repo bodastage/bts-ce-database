@@ -63,7 +63,19 @@ def upgrade():
         {'name': 'alcatel_cm_2g', 'parent_pk': 0, 'vendor_pk': 6, 'tech_pk': 1, 'modified_by': 0, 'added_by': 0},
         {'name': 'alcatel_cm_3g', 'parent_pk': 0, 'vendor_pk': 6, 'tech_pk': 2, 'modified_by': 0, 'added_by': 0},
         {'name': 'alcatel_cm_4g', 'parent_pk': 0, 'vendor_pk': 6, 'tech_pk': 3, 'modified_by': 0, 'added_by': 0},
-   ])
+    ])
+
+    # Create cm loads table
+    op.create_table(
+        'cm_loads',
+        sa.Column('pk', sa.Integer, primary_key=True),
+        sa.Column('load_status', sa.CHAR(length=250)), # RUNNING,FAILED,SUCCEEDED
+        sa.Column('is_current_load', sa.Boolean, default=False), #
+        sa.Column('load_start', sa.TIMESTAMP, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow),
+        sa.Column('load_end', sa.TIMESTAMP, default=datetime.datetime.utcnow)
+    )
+    op.execute('ALTER SEQUENCE  cm_loads_pk_seq RENAME TO seq_cm_loads_pk')
 
 def downgrade():
     op.drop_table('managedobjects_schemas')
+    op.drop_table('cm_loads')
