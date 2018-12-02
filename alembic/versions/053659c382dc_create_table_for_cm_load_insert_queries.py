@@ -25,8 +25,8 @@ def upgrade():
         sa.Column('insert_query', sa.Text),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
-        sa.Column('date_added', sa.TIMESTAMP, default=datetime.datetime.utcnow, onupdate=datetime.datetime.utcnow),
-        sa.Column('date_modified', sa.TIMESTAMP, default=datetime.datetime.utcnow)
+        sa.Column('date_added', sa.TIMESTAMP, default=sa.func.now(), onupdate=sa.func.now()),
+        sa.Column('date_modified', sa.TIMESTAMP, default=sa.func.now())
     )
     op.execute('ALTER SEQUENCE  cm_load_insert_queries_pk_seq RENAME TO seq_cm_load_insert_queries_pk')
     op.create_unique_constraint('unique_cm_load_insert_queries', 'cm_load_insert_queries', ['file_format', 'mo'])
