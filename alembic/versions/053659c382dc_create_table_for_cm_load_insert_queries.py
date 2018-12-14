@@ -22,6 +22,7 @@ def upgrade():
         sa.Column('pk', sa.Integer, primary_key=True),
         sa.Column('file_format', sa.String(200), nullable=False),
         sa.Column('mo', sa.String(200)),
+        sa.Column('format_mo', sa.String(200)),
         sa.Column('insert_query', sa.Text),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
