@@ -29,6 +29,7 @@ def upgrade():
     op.execute("CREATE SCHEMA huawei_mml")
     op.execute("CREATE SCHEMA huawei_nbi")
     op.execute("CREATE SCHEMA huawei_cfgsyn")
+    op.execute("CREATE SCHEMA huawei_rnp") # Radio Network Planning Data Template xlsm
 
     # ZTE
     op.execute("CREATE SCHEMA zte_cm")
@@ -50,6 +51,7 @@ def downgrade():
     op.execute("DROP SCHEMA huawei_mml")
     op.execute("DROP SCHEMA huawei_nbi")
     op.execute("DROP SCHEMA huawei_cfgsyn")
+    op.execute("DROP SCHEMA huawei_rnp")
 
     # ZTE
     op.execute("DROP SCHEMA zte_cm")
