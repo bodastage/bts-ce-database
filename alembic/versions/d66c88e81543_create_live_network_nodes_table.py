@@ -32,6 +32,8 @@ def upgrade():
         schema=u'live_network'
     )
     op.execute('ALTER SEQUENCE  live_network.nodes_pk_seq RENAME TO seq_nodes_pk')
+    op.create_unique_constraint('unique_nodes', 'nodes', \
+                                ['name','tech_pk', 'vendor_pk'], schema='live_network')
 
     op.bulk_insert(nodes, [
         {'name': 'SubNetwork', 'notes': 'Ericsson 3G SubNetwork', type: 'SUBNETWORK', 'tech_pk': 2, 'vendor_pk': 1,
@@ -49,4 +51,6 @@ def upgrade():
 
 
 def downgrade():
+    op.drop_constraint("unique_nodes", "nodes", schema=u'live_network')
+
     op.drop_table('nodes',schema=u'live_network')
