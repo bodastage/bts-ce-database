@@ -17,7 +17,7 @@ depends_on = None
 
 
 def upgrade():
-    op.create_table('CELL',
+    op.create_table('UCELL',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('NE_VERSION', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('BSCName', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -559,7 +559,7 @@ def upgrade():
     )
 
 def downgrade():
-    op.drop_table('CELL', schema='huawei_rnp')
+    op.drop_table('UCELL', schema='huawei_rnp')
     op.drop_table('G2GNCELL', schema='huawei_rnp')
     op.drop_table('G3GNCELL', schema='huawei_rnp')
     op.drop_table('GEXT2GCELL', schema='huawei_rnp')
