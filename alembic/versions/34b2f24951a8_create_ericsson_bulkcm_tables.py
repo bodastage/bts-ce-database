@@ -15,6 +15,7 @@ down_revision = 'c74f8ec66ed1'
 branch_labels = None
 depends_on = None
 
+
 def upgrade():
     op.create_table('AlarmIRP',
         sa.Column('FILENAME', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -5625,7 +5626,7 @@ def upgrade():
         sa.Column('interface1', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('interface2', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('reassemblyTimeout', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('reservedByMos', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('reservedByMos', sa.Text, autoincrement=False, nullable=True),
         sa.Column('dnsClient2Ref', sa.Text, autoincrement=False, nullable=True),
         sa.Column('dnsClient1Ref', sa.Text, autoincrement=False, nullable=True),
         sa.Column('networkPrefixLength2', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -6510,7 +6511,7 @@ def upgrade():
         sa.Column('lmState', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('lastInventoryChange', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('fingerprintUpdateable', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('referenceToLicenseServer', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('referenceToLicenseServer', sa.Text, autoincrement=False, nullable=True),
         sa.Column('lastLicenseInventoryRefresh', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='ericsson_bulkcm'
     )
@@ -7288,7 +7289,7 @@ def upgrade():
         sa.Column('address', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('bfdMonitoring', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('adminDistance', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('reference', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('reference', sa.Text, autoincrement=False, nullable=True),
         sa.Column('discard', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('vsDataHost_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('nexthop', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -8992,7 +8993,7 @@ def upgrade():
         sa.Column('vsDataSynchronization_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('vsDataRadioEquipmentClock_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('vsDataRadioEquipmentClockReference_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('referenceStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('referenceStatus', sa.Text, autoincrement=False, nullable=True),
         sa.Column('adminQualityLevel_qualityLevelValueOptionI', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('adminQualityLevel_qualityLevelValueOptionII', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('adminQualityLevel_qualityLevelValueOptionIII', sa.CHAR(length=250), autoincrement=False, nullable=True),
@@ -11999,7 +12000,7 @@ def upgrade():
         sa.Column('vsDataSynchronization_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('vsDataRadioEquipmentClock_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('vsDataSyncServer_id', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('referenceStatus', sa.CHAR(length=250), autoincrement=False, nullable=True),
+        sa.Column('referenceStatus', sa.Text, autoincrement=False, nullable=True),
         sa.Column('priority', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('encapsulation', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('lockOut', sa.CHAR(length=250), autoincrement=False, nullable=True),
