@@ -30,7 +30,9 @@ def upgrade():
         schema=u'live_network'
     )
     op.execute('ALTER SEQUENCE  live_network.cells_pk_seq RENAME TO seq_cells_pk')
+    op.create_unique_constraint("uq_live_cells", "cells", ["name", "site_pk", "tech_pk", "vendor_pk"], "live_network")
 
 
 def downgrade():
     op.drop_table('cells', schema=u'live_network')
+    op.drop_constraint('uq_live_cells', "sites", type='unique', schema='live_network')
