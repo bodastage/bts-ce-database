@@ -291,6 +291,123 @@ def upgrade():
     ])
 
 
+
+    r2 = connection.execute(report_categories.select().where(report_categories.c.name == 'Network Entities'))
+    category_pk = 0
+
+    for row in r2:  category_pk = row['pk']
+
+
+    op.bulk_insert(reports, [
+        {'name': 'Network Controllers',
+         'notes': 'RNCs and BSCs in the network',
+         'options': '{}',
+         'category_pk': category_pk,
+         'query': """
+            SELECT 
+            nodename as "NODENAME",
+            technology AS "TECHNOLOGY",
+            vendor AS "VENDOR"
+            FROM 
+            live_network.vw_nodes t
+            WHERE 
+            nodename != 'SubNetwork'
+         """
+         },
+        {'name': 'Network Sites',
+         'notes': 'List of sites in the live network',
+         'options': '{}',
+         'category_pk': category_pk,
+         'query': """
+              SELECT 
+                node AS "NODENAME",
+                name as "SITENAME",
+                technology AS "TECHNOLOGY",
+                vendor AS "VENDOR"
+              FROM 
+                live_network.vw_sites
+             """
+         },
+        {'name': 'Network Relations',
+         'notes': 'List of relations in the live network',
+         'options': '{}',
+         'category_pk': category_pk,
+         'query': """
+            SELECT 
+                svrnode AS "sVRNODE",
+                svrsite AS "SVRSITE",
+                svrcell AS "SVRCELL",
+                svrvendor AS "SVRVENDOR",
+                svrtechnology AS "SVRTECHNOLOGY",
+                nbrnode AS "NBRNODE",
+                nbrsite AS "NBRSITE",
+                nbrcell AS "NBRCELL",
+                nbrvendor AS "NBRVENDR",
+                nbrtechnology AS "NBRTECHNOLOGY"
+            FROM 
+                live_network.vw_relations
+                 """
+         },
+        {'name': 'Network 2G Externals',
+         'notes': 'List of GSM externals defined in the live network',
+         'options': '{}',
+         'category_pk': category_pk,
+         'query': """
+            SELECT 
+                nodename AS "NODENAME",
+                cellname AS "cellname",
+                mcc AS "MCC",
+                mnc AS "MNC",
+                lac AS "LAC",
+                bcch AS "bcch",
+                ncc AS "NCC",
+                bcc AS "BCC",
+                ci AS "CI"
+            FROM
+                live_network.vw_gsm_external_cells
+             """
+         },
+        {'name': 'Network 3G Externals',
+         'notes': 'List of UMTS externals defined in the live network',
+         'options': '{}',
+         'category_pk': category_pk,
+         'query': """
+            SELECT 
+                nodename AS "NODENAME",
+                cellname AS "cellname",
+                mcc AS "MCC",
+                mnc AS "MNC",
+                lac AS "LAC",
+                rac AS "RAC",
+                uarfcn_dl AS "UARFCN_DL",
+                psc AS "PSC",
+                rnc_id AS "RNC_ID"
+            FROM
+                live_network.vw_umts_external_cells t
+         """
+         },
+        {'name': 'Network 4G Externals',
+         'notes': 'List of LTE externals defined in the live network',
+         'options': '{}',
+         'category_pk': category_pk,
+         'query': """
+            SELECT 
+                nodename as "NODENAME",
+                cellname AS "CELLNAME",
+                sitename AS "SITENAME",
+                mnc as "MNC",
+                mcc as "MCC",
+                dl_earfcn as "EARFCN_DL",
+                pci AS "PCI",
+                tac AS "TAC"
+            FROM
+                live_network.vw_lte_external_cells t
+     """
+         },
+    ])
+
+
+
 def downgrade():
     op.execute('TRUNCATE table reports.reports')
     op.execute('TRUNCATE table reports.report_categories')
