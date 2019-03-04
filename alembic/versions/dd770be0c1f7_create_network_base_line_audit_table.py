@@ -20,15 +20,13 @@ def upgrade():
     op.create_table(
         'network_baseline',
         sa.Column('pk', sa.Integer, primary_key=True),
-        sa.Column('node', sa.String(100), nullable=False),
-        sa.Column('site', sa.String(200), nullable=False),
-        sa.Column('cellname', sa.String(200), nullable=False, default=0),
-        sa.Column('mo', sa.String(100), nullable=False, default=0),
-        sa.Column('parameter', sa.String(100), nullable=False, default=0),
-        sa.Column('bvalue', sa.String(200), nullable=False, default=0),
-        sa.Column('nvalue', sa.String(100), nullable=False, default=0),
-        sa.Column('vendor', sa.String(100), nullable=False, default=0),
-        sa.Column('technology', sa.String(100), nullable=False, default=0),
+        sa.Column('vendor', sa.String(100), nullable=False),
+        sa.Column('technology', sa.String(200), nullable=False),
+        sa.Column('nename', sa.String(200), nullable=False),
+        sa.Column('mo', sa.String(100), nullable=False),
+        sa.Column('parameter', sa.String(100), nullable=False),
+        sa.Column('bvalue', sa.String(200), nullable=False),
+        sa.Column('nvalue', sa.String(200), nullable=False),
         sa.Column('age', sa.Integer, nullable=False, default=0),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
@@ -79,11 +77,10 @@ def upgrade():
         category_pk = row['pk']
 
     op.bulk_insert(audit_rules, [
-        {'name': 'Cell Parameter Discrepancies', 'category_pk':
-            category_pk, 'in_built':
-            True,
+        {'name': 'Parameter Value Discrepancies', 'category_pk':
+            category_pk, 'in_built': True,
          'table_name': 'network_baseline',
-         'sql':'SELECT * FROM network_audit.network_baseline', 'notes': 'Network Baseline Discrepancies for Cell parameters'},
+         'sql':'SELECT * FROM network_audit.network_baseline', 'notes': 'Parameter Value Discrepancies'},
     ])
 
 
