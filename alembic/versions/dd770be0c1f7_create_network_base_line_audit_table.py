@@ -35,6 +35,10 @@ def upgrade():
         schema=u'network_audit'
     )
     op.execute('ALTER SEQUENCE  network_audit.network_baseline_pk_seq RENAME TO seq_network_baseline_pk')
+    op.create_unique_constraint('unique_network_baseline', 'network_baseline', \
+                                ['vendor','technology','nename','mo','parameter','bvalue',\
+                                 'nvalue'], \
+                                schema='network_audit')
 
     audit_categories = sa.sql.table(
         'audit_categories',
@@ -85,4 +89,6 @@ def upgrade():
 
 
 def downgrade():
+    op.drop_constraint("unique_network_baseline", "network_baseline", schema=u'network_audit')
+
     op.drop_table('network_baseline', schema=u'network_audit')
