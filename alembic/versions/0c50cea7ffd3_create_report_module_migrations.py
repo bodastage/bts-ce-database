@@ -7,7 +7,7 @@ Create Date: 2019-02-20 01:26:27.307465
 """
 from alembic import op
 import sqlalchemy as sa
-
+from sqlalchemy.dialects import postgresql
 
 # revision identifiers, used by Alembic.
 revision = '0c50cea7ffd3'
@@ -28,7 +28,7 @@ def upgrade():
         sa.Column('notes', sa.Text),
         sa.Column('query', sa.Text, nullable=False),
         sa.Column('db_connector_pk', sa.Integer),
-        sa.Column('options', sa.Text), #JSON
+        sa.Column('options', postgresql.JSON), #JSON
         sa.Column('category_pk', sa.Integer),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
@@ -59,7 +59,7 @@ def upgrade():
         sa.Column('pk', sa.Integer, primary_key=True),
         sa.Column('action', sa.String(200), nullable=False), # reports.generate
         sa.Column('log', sa.Text),
-        sa.Column('options', sa.Text),
+        sa.Column('options', postgresql.JSON),
         sa.Column('status', sa.String(200)), # FAILED,RUNNING,PENDING,STARTED
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
