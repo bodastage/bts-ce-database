@@ -1,4 +1,4 @@
-"""Create MO views for Huawei 4G
+"""Unused migration
 
 Revision ID: 0588ebb5527a
 Revises: 316570e7ecab
