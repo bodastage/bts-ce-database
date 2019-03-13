@@ -34,6 +34,7 @@ def upgrade():
     # ZTE
     op.execute("CREATE SCHEMA zte_cm")
     op.execute("CREATE SCHEMA zte_bulkcm")
+    op.execute("CREATE SCHEMA zte_excel")
 
     # Nokia
     op.execute("CREATE SCHEMA nokia_cm")
@@ -56,6 +57,7 @@ def downgrade():
     # ZTE
     op.execute("DROP SCHEMA zte_cm")
     op.execute("DROP SCHEMA zte_bulkcm")
+    op.execute("DROP SCHEMA zte_excel")
 
     # Nokia
     op.execute("DROP SCHEMA nokia_cm")
