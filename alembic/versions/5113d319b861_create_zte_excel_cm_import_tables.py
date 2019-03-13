@@ -395,7 +395,6 @@ def upgrade():
         sa.Column('DENIPADDR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IPMASKADDR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('OMCBPATHPRIORITY', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='zte_excel'
     )
 
@@ -574,7 +573,6 @@ def upgrade():
         sa.Column('IMPEDANCE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('WIRETYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('USESCENE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='zte_excel'
     )
 
@@ -592,7 +590,6 @@ def upgrade():
         sa.Column('SCTYPE2', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SCTYPE3', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SCTYPE4', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='zte_excel'
     )
 
@@ -6693,7 +6690,6 @@ def upgrade():
         sa.Column('REASSEMBLEBOARD5', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('REASSEMBLEBOARD6', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('REASSEMBLEBOARD7', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='zte_excel'
     )
 
@@ -8613,7 +8609,6 @@ def upgrade():
         sa.Column('MAC', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('IPADDR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SUBNETMASKLEN', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='zte_excel'
     )
 
@@ -8671,7 +8666,6 @@ def upgrade():
         sa.Column('IPNETMASKLEN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('TXBITRATE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('RXBITRATE', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='zte_excel'
     )
 
@@ -10077,7 +10071,6 @@ def upgrade():
         sa.Column('SOURCEIPADDR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DEST1IPADDR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('DEST2IPADDR', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='zte_excel'
     )
 
@@ -10934,7 +10927,6 @@ def upgrade():
         sa.Column('SHELFSEQ', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SHELFTYPE', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('ISMASTFLAG', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='zte_excel'
     )
 
@@ -11726,7 +11718,6 @@ def upgrade():
         sa.Column('IPADDR', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('SUBNETMASKLEN', sa.CHAR(length=250), autoincrement=False, nullable=True),
         sa.Column('VPNID', sa.CHAR(length=250), autoincrement=False, nullable=True),
-        sa.Column('', sa.CHAR(length=250), autoincrement=False, nullable=True),
         schema='zte_excel'
     )
 
