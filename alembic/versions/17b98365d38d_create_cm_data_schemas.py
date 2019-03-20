@@ -38,7 +38,7 @@ def upgrade():
 
     # Nokia
     op.execute("CREATE SCHEMA nokia_cm")
-    op.execute("CREATE SCHEMA nokia_raml2")
+    op.execute("CREATE SCHEMA nokia_raml20")
 
 
 def downgrade():
@@ -61,4 +61,4 @@ def downgrade():
 
     # Nokia
     op.execute("DROP SCHEMA nokia_cm")
-    op.execute("DROP SCHEMA nokia_raml2")
+    op.execute("DROP SCHEMA nokia_raml20")
