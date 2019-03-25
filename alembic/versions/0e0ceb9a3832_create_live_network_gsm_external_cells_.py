@@ -31,6 +31,7 @@ def upgrade():
         sa.Column('bcc', sa.Integer,),
         sa.Column('ci', sa.Integer,),
         sa.Column('rac', sa.Integer, ),
+        sa.Column('sac', sa.Integer, ),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
         sa.Column('date_added', sa.TIMESTAMP, default=sa.func.now(), onupdate=sa.func.now()),

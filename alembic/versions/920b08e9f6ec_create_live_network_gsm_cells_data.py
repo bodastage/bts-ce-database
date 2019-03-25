@@ -31,7 +31,7 @@ def upgrade():
         sa.Column('latitude', sa.Float,),
         sa.Column('longitude', sa.Float,),
         sa.Column('cgi', sa.String(200),),
-        sa.Column('azimuth', sa.Integer,),
+        sa.Column('azimuth', sa.Float,),
         sa.Column('height', sa.Integer,),
         sa.Column('mechanical_tilt', sa.Integer,),
         sa.Column('electrical_tilt', sa.Integer,),
