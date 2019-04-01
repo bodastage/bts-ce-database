@@ -4315,7 +4315,6 @@ def upgrade():
         sa.Column('ulCacIgnore', sa.CHAR(length=150), autoincrement=False, nullable=True),
         sa.Column('ulCacSelection', sa.CHAR(length=150), autoincrement=False, nullable=True),
         sa.Column('ulStaticCac', sa.CHAR(length=150), autoincrement=False, nullable=True),
-        sa.Column('lowerMarginCio', sa.CHAR(length=150), autoincrement=False, nullable=True),
         sa.Column('maxNumCaConfUe', sa.CHAR(length=150), autoincrement=False, nullable=True),
         sa.Column('maxNumCaConfUe3c', sa.CHAR(length=150), autoincrement=False, nullable=True),
         sa.Column('maxNumScells', sa.CHAR(length=150), autoincrement=False, nullable=True),
@@ -4329,7 +4328,6 @@ def upgrade():
         sa.Column('tLoadMeasX2', sa.CHAR(length=150), autoincrement=False, nullable=True),
         sa.Column('tLoadMeasX2Eicic', sa.CHAR(length=150), autoincrement=False, nullable=True),
         sa.Column('tPingPong', sa.CHAR(length=150), autoincrement=False, nullable=True),
-        sa.Column('upperMarginCio', sa.CHAR(length=150), autoincrement=False, nullable=True),
         sa.Column('cellPwrRedForMBMS', sa.CHAR(length=150), autoincrement=False, nullable=True),
         sa.Column('actDlIsh', sa.CHAR(length=150), autoincrement=False, nullable=True),
         sa.Column('amountBlankedRes', sa.CHAR(length=150), autoincrement=False, nullable=True),
@@ -5239,7 +5237,7 @@ def upgrade():
         sa.Column('assuredForwardingClass4', sa.CHAR(length=150), autoincrement=False, nullable=True),
         sa.Column('bestEffort', sa.CHAR(length=150), autoincrement=False, nullable=True),
         sa.Column('sseDscpOverwrite', sa.CHAR(length=150), autoincrement=False, nullable=True),
-        sa.Column('trafficTypesMap_dscp_trafficType', sa.CHAR(length=150), autoincrement=False, nullable=True),
+        sa.Column('trafficTypesMap_dscp_trafficType', sa.Text, autoincrement=False, nullable=True),
         schema='nokia_cm'
     )
 
