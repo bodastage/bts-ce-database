@@ -125,7 +125,7 @@ def upgrade():
 
 def downgrade():
     op.drop_constraint("unique_missing_one_way_relations", "missing_one_way_relations", schema=u'network_audit')
-    op.drop_constraint("unique_unique_missing_cosite_relations", "missing_cosite_relations", schema=u'network_audit')
+    op.drop_constraint("unique_missing_cosite_relations", "missing_cosite_relations", schema=u'network_audit')
 
     op.drop_table('missing_one_way_relations', schema=u'network_audit')
     op.drop_table('missing_cosite_relations', schema=u'network_audit')

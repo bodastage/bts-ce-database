@@ -17,7 +17,7 @@ depends_on = None
 
 
 def upgrade():
-    op.execute("CREATE SCHEMA network_audit")
+    op.execute("CREATE SCHEMA IF NOT EXISTS network_audit")
 
 def downgrade():
-    op.execute("DROP SCHEMA network_audit")
+    op.execute("DROP SCHEMA IF EXISTS network_audit CASCADE ")
