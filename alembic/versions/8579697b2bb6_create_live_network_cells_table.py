@@ -34,5 +34,5 @@ def upgrade():
 
 
 def downgrade():
+    op.drop_constraint('uq_live_cells', "cells", type_='unique', schema='live_network')
     op.drop_table('cells', schema=u'live_network')
-    op.drop_constraint('uq_live_cells', "sites", type='unique', schema='live_network')

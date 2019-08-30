@@ -29,7 +29,9 @@ def upgrade():
         sa.Column('query', sa.Text, nullable=False),
         sa.Column('db_connector_pk', sa.Integer),
         sa.Column('options', postgresql.JSON), #JSON
+		sa.Column('type', sa.String(50)),
         sa.Column('category_pk', sa.Integer),
+		sa.Column('in_built', sa.Boolean),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),
         sa.Column('date_added', sa.TIMESTAMP, default=sa.func.now(), onupdate=sa.func.now()),
@@ -44,6 +46,7 @@ def upgrade():
         sa.Column('pk', sa.Integer, primary_key=True),
         sa.Column('name', sa.String(100), nullable=False, unique=True),
         sa.Column('notes', sa.Text, nullable=False),
+		sa.Column('in_built', sa.Boolean),
         sa.Column('parent_pk', sa.Integer),
         sa.Column('modified_by', sa.Integer),
         sa.Column('added_by', sa.Integer),

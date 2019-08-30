@@ -20,7 +20,7 @@ def upgrade():
     pass
 
 def downgrade():
-    opass
+    pass
 
 
 
